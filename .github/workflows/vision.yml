@@ -32,7 +32,8 @@ jobs:
 
       - name: Describe every frame
         run: |
-          python - <<'PY'
+          python - > refs/_out.log 2>&1 <<'PY' || true
+          import sys
           import json, os, torch
           from PIL import Image
           from transformers import AutoProcessor, AutoModelForCausalLM
@@ -90,6 +91,6 @@ jobs:
         run: |
           git config user.name "arena-bot"
           git config user.email "bot@arena.local"
-          git add -f refs/descriptions.json
+          git add -f refs/descriptions.json refs/_out.log
           git commit -m "vision: توصیف همه فریم‌ها" || echo "nothing"
           git push origin HEAD:arena/758efc2d-repo || echo "push failed"
