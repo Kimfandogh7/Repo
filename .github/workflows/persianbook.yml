@@ -54,10 +54,8 @@ jobs:
           asyncio.run(m())" 2>&1
             echo "=== ۲. ساختِ نریشن ==="
             cd edu-agent
-            SK=vendor/papermorph/.claude/skills/papermorph
-            uv run --with edge-tts python $SK/scripts/tts.py \
-              content/moshkel/ch01/narration.fa.json books/moshkel/ch01/audio/fa 2>&1
-            echo "tts exit=$?"
+            uv run --with edge-tts python tools/tts.py \
+              content/moshkel/ch01/narration.fa.json books/moshkel/ch01/audio/fa 2>&1 || echo "TTS FAILED rc=$?"
             ls -la books/moshkel/ch01/audio/fa/ 2>&1
             cd ..
             echo "=== ۳. رندر ==="
