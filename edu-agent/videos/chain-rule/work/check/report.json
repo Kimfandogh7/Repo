@@ -6,38 +6,19 @@
     {
       "severity": "warning",
       "code": "dead_air",
-      "message": "nothing moves from 0:01.13 to 0:06.00 (~5.0s; qa flags still holds of 2.5s or more)",
-      "t": 1.1333333333333333,
+      "message": "nothing moves from 0:03.07 to 0:06.00 (~3.1s; qa flags still holds of 2.5s or more)",
+      "t": 3.066666666666667,
       "to": 6,
-      "seconds": 5.03,
+      "seconds": 3.1,
       "fix": "add subtle motion (a slow push-in, drift, a progress element), another beat, or shorten the scene (showtime retime)"
     },
     {
       "severity": "warning",
       "code": "dead_air",
-      "message": "nothing moves from 0:06.80 to 0:09.90 (~3.3s; qa flags still holds of 2.5s or more)",
-      "t": 6.8,
-      "to": 9.9,
-      "seconds": 3.26,
-      "fix": "add subtle motion (a slow push-in, drift, a progress element), another beat, or shorten the scene (showtime retime)"
-    },
-    {
-      "severity": "warning",
-      "code": "short_text",
-      "message": "\"هر دو با هم تغییر می‌کنند — پس هر دو را…\" is readable for only ~3.4s (from 0:10.07); 54 characters need ~4.6s at 17 characters/s or 3 words/s (fa)",
-      "t": 10.066666666666666,
-      "selector": "#why section > div.center > p.t-body.st-kinetic-type",
-      "held": 3.4,
-      "need": 4.63,
-      "fix": "hold it longer, shorten it, or mark it data-caption if it is read along with the voice"
-    },
-    {
-      "severity": "warning",
-      "code": "dead_air",
-      "message": "nothing moves from 0:18.33 to 0:20.93 (~2.8s; qa flags still holds of 2.5s or more)",
-      "t": 18.333333333333332,
+      "message": "nothing moves from 0:18.50 to 0:20.93 (~2.6s; qa flags still holds of 2.5s or more)",
+      "t": 18.5,
       "to": 20.933333333333334,
-      "seconds": 2.76,
+      "seconds": 2.6,
       "fix": "add subtle motion (a slow push-in, drift, a progress element), another beat, or shorten the scene (showtime retime)"
     },
     {
@@ -48,44 +29,17 @@
     {
       "severity": "info",
       "code": "flat_background",
-      "message": "the background is one flat colour in most frames (89% of the picture within ~2 levels): it reads unlit and generic",
+      "message": "the background is one flat colour in most frames (88% of the picture within ~2 levels): it reads unlit and generic",
       "fix": "light the ground: 1-2 large radial glows from theme colours (peak <= 0.45), a faint grid or texture, depth layers, plus data-st=\"grain\" (references/color.md)"
-    },
-    {
-      "severity": "info",
-      "code": "text_overlap",
-      "message": "\"۱\" overlaps \"دو لایه، دو مشتق\" (100% of the smaller text's glyphs, 14px deep) at 0:21.67 (mid-transition: sdf-iris into #close; the settled frame at 0:21.87 is judged on its own)",
-      "t": 21.666667,
-      "selector": "div.step.st-kinetic-type > span.num > span.st-w | #close section > div.center > h2.t-hero.st-kinetic-type",
-      "overlap_px": 14,
-      "fix": "move one of them by at least 18px, or make sure they are not on screen at the same time (if one is still entering, start it after the other has landed)",
-      "transition": "sdf-iris"
-    },
-    {
-      "severity": "info",
-      "code": "text_overlap",
-      "message": "\"مشتقِ لایه‌ی بیرونی را بگیر\" overlaps \"دو لایه، دو مشتق\" (100% of the smaller text's glyphs, 68px deep) at 0:21.67 (mid-transition: sdf-iris into #close; the settled frame at 0:21.87 is judged on its own)",
-      "t": 21.666667,
-      "selector": "div.steps > div.step.st-kinetic-type > span.t-body | #close section > div.center > h2.t-hero.st-kinetic-type",
-      "overlap_px": 68,
-      "fix": "move one of them by at least 72px, or make sure they are not on screen at the same time (if one is still entering, start it after the other has landed)",
-      "transition": "sdf-iris"
-    },
-    {
-      "severity": "info",
-      "code": "final_hold",
-      "message": "the last 2.5s are a still hold (from 0:23.53); fine for an end card up to 4s",
-      "t": 23.533333333333335,
-      "to": 26
     }
   ],
   "timings": {
-    "ready": 1078,
-    "samples": 6761,
-    "determinism": 1514,
-    "timeline": 10557,
-    "cuts": 786,
-    "total": 22114
+    "ready": 1565,
+    "samples": 9690,
+    "determinism": 2050,
+    "timeline": 16819,
+    "cuts": 1100,
+    "total": 33213
   },
   "samples": [
     {
@@ -169,13 +123,17 @@
       "onSeek#12",
       "onSeek#13",
       "onSeek#14",
+      "onSeek#15",
+      "onSeek#16",
+      "onSeek#17",
+      "onSeek#18",
       "transitions"
     ],
     "hasScore": false,
     "conflicts": [],
     "pace": {
       "factor": 1,
-      "frame_ms": 17,
+      "frame_ms": 24,
       "seek_ms": 8,
       "seeks": 1,
       "ceiling": 5,
@@ -220,7 +178,7 @@
       "ratio": 10.69,
       "worst": 10.69,
       "need": 4.5,
-      "t": 4.333333,
+      "t": 1.433333,
       "fg": "#c9beb3",
       "bg": "#0e0c0b"
     },
@@ -247,7 +205,7 @@
       "ratio": 18.17,
       "worst": 18.17,
       "need": 4.5,
-      "t": 6.666667,
+      "t": 10.1,
       "fg": "#fbf6f1",
       "bg": "#0e0c0b"
     },
@@ -288,14 +246,14 @@
       "bg": "#1f1c1b"
     },
     {
-      "text": "هر دو با هم تغییر می‌کنند — پس هر دو را باید حساب…",
-      "ratio": 12.63,
-      "worst": 12.63,
+      "text": "پس هر دو را باید حساب کرد.",
+      "ratio": 7.39,
+      "worst": 7.39,
       "need": 4.5,
       "t": 10.1,
       "fg": "#fbf6f1",
-      "bg": "#0e0c0b",
-      "opacity": 0.83
+      "bg": "#0d0b0a",
+      "opacity": 0.63
     },
     {
       "text": "قاعده‌ی زنجیره‌ای",
@@ -313,7 +271,7 @@
       "need": 4.5,
       "t": 15.866667,
       "fg": "#10201d",
-      "bg": "#f0b45a"
+      "bg": "#f0b45b"
     },
     {
       "text": "مشتقِ لایه‌ی بیرونی را بگیر",
@@ -331,7 +289,7 @@
       "need": 4.5,
       "t": 18.766667,
       "fg": "#10201d",
-      "bg": "#f0b45a"
+      "bg": "#f0b45b"
     },
     {
       "text": "در مشتقِ لایه‌ی درونی ضرب کن",
@@ -356,7 +314,7 @@
       "ratio": 18.17,
       "worst": 18.17,
       "need": 4.5,
-      "t": 21.866667,
+      "t": 25.966667,
       "fg": "#fbf6f1",
       "bg": "#0e0c0b"
     },
@@ -382,7 +340,7 @@
     "used": {
       "Vazirmatn": {
         "custom": true,
-        "glyphs": 250,
+        "glyphs": 229,
         "sample": "مشتقِ این تابع چیست؟",
         "declared": "Vazirmatn, \"Noto Naskh Arabic\", Tahoma, sans-serif"
       },
@@ -435,8 +393,8 @@
   },
   "timeline_holes": [],
   "design": {
-    "flat_share": 0.888,
-    "sparse_share": 0.101
+    "flat_share": 0.88,
+    "sparse_share": 0.063
   },
   "pacing": [],
   "timeline": {
@@ -444,28 +402,16 @@
     "samples": 161,
     "still": [
       [
-        1.1333333333333333,
+        3.066666666666667,
         6,
-        5.029166666666667,
+        3.095833333333333,
         false
       ],
       [
-        6.8,
-        9.9,
-        3.2625000000000006,
-        false
-      ],
-      [
-        18.333333333333332,
+        18.5,
         20.933333333333334,
-        2.7625000000000015,
+        2.5958333333333337,
         false
-      ],
-      [
-        23.533333333333335,
-        26,
-        2.547916666666665,
-        true
       ]
     ],
     "textBlocks": 17
@@ -541,6 +487,22 @@
       {
         "label": "waitFor#15",
         "state": "done"
+      },
+      {
+        "label": "waitFor#16",
+        "state": "done"
+      },
+      {
+        "label": "waitFor#17",
+        "state": "done"
+      },
+      {
+        "label": "waitFor#18",
+        "state": "done"
+      },
+      {
+        "label": "waitFor#19",
+        "state": "done"
       }
     ],
     "rafFlushed": 0,
@@ -548,7 +510,7 @@
   },
   "pace": {
     "factor": 1,
-    "frame_ms": 17,
+    "frame_ms": 24,
     "seek_ms": 4,
     "ceiling": 5
   },
@@ -581,13 +543,13 @@
     }
   ],
   "estimate": {
-    "seconds": 118,
-    "msPerFrame": 98,
+    "seconds": 212,
+    "msPerFrame": 159,
     "workers": 1,
     "frames": 780,
     "videos": 0,
-    "load": 1.05,
-    "note": "machine busy (load 1.1 per core): x1.1"
+    "load": 1.24,
+    "note": "machine busy (load 1.2 per core): x1.2"
   },
   "sheet": "/home/runner/work/Repo/Repo/edu-agent/videos/chain-rule/work/check/sheet.jpg",
   "look": {
@@ -596,7 +558,7 @@
     "repeats": []
   },
   "phone": {
-    "ok": false,
+    "ok": true,
     "aspect": "16:9",
     "phone_width_pt": 390,
     "scale": 0.2031,
@@ -618,79 +580,69 @@
     "texts": 17,
     "smallest": {
       "text": "مشتقِ این تابع چیست؟",
-      "px": 39,
-      "pt": 7.8,
+      "px": 40,
+      "pt": 8.1,
       "t": 0.3
     },
     "smallest_texts": [
       {
         "text": "مشتقِ این تابع چیست؟",
-        "px": 39,
-        "pt": 7.8,
+        "px": 40,
+        "pt": 8.1,
         "t": 0.3,
         "caption": false
       },
       {
         "text": "لایه‌ی بیرونی",
-        "px": 39,
-        "pt": 7.8,
+        "px": 40,
+        "pt": 8.2,
         "t": 7.47,
         "caption": false
       },
       {
         "text": "لایه‌ی درونی",
-        "px": 39,
-        "pt": 7.8,
+        "px": 41,
+        "pt": 8.3,
         "t": 8.43,
         "caption": false
       },
       {
         "text": "۱",
-        "px": 43,
-        "pt": 8.8,
+        "px": 46,
+        "pt": 9.3,
         "t": 14.3,
         "caption": false
       },
       {
         "text": "۲",
-        "px": 43,
-        "pt": 8.8,
+        "px": 46,
+        "pt": 9.3,
         "t": 15.9,
         "caption": false
       },
       {
+        "text": "هر وقت تابعی داخلِ تابعِ دیگری دیدی، زنج",
+        "px": 56,
+        "pt": 11.5,
+        "t": 22.9,
+        "caption": false
+      },
+      {
         "text": "جوابِ رایج — و غلط: 2(3x + 1)",
-        "px": 54,
-        "pt": 11,
+        "px": 57,
+        "pt": 11.6,
         "t": 2.73,
         "caption": false
       },
       {
-        "text": "هر دو با هم تغییر می‌کنند — پس هر دو را ",
-        "px": 54,
-        "pt": 11,
-        "t": 10.07,
-        "caption": false
-      },
-      {
         "text": "مشتقِ لایه‌ی بیرونی را بگیر",
-        "px": 54,
-        "pt": 11,
+        "px": 57,
+        "pt": 11.6,
         "t": 14.3,
         "caption": false
       }
     ],
-    "items": [
-      {
-        "part": "reading",
-        "code": "short_text",
-        "severity": "warning",
-        "t": 10.066666666666666,
-        "message": "\"هر دو با هم تغییر می‌کنند — پس هر دو را…\" is readable for only ~3.4s (from 0:10.07); 54 characters need ~4.6s at 17 characters/s or 3 words/s (fa)",
-        "held": 3.4,
-        "need": 4.63
-      }
-    ]
+    "items": []
   },
   "texts": [
     {
@@ -750,7 +702,7 @@
       "caption": false
     },
     {
-      "text": "هر دو با هم تغییر می‌کنند — پس هر دو را باید حساب کرد.",
+      "text": "پس هر دو را باید حساب کرد.",
       "first": 10.067,
       "last": 13.3,
       "source": "dom",
@@ -815,7 +767,7 @@
   ],
   "summary": {
     "errors": 0,
-    "warnings": 4,
-    "infos": 5
+    "warnings": 2,
+    "infos": 2
   }
 }

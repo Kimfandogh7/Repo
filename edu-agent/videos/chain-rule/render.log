@@ -1,59 +1,54 @@
 === pwd: /home/runner/work/Repo/Repo/edu-agent/videos/chain-rule ===
 === check ===
 قاعده‌ی زنجیره‌ای  1920x1080 @ 30 fps, 26.00s
-  PASS  page, determinism, no Math.random, fonts, contrast
-  WARN  dead_air x3 (0:01.13, 0:06.80, 0:18.33), e.g. nothing moves from 0:01.13 to 0:06.00 (~5.0s; qa flags still holds of 2.5s or more)
+  PASS  page, determinism, no Math.random, fonts, contrast, text layout
+  WARN  nothing moves from 0:03.07 to 0:06.00 (~3.1s; qa flags still holds of 2.5s or more)
         fix: add subtle motion (a slow push-in, drift, a progress element), another beat, or shorten the scene (showtime retime)
-  WARN  "هر دو با هم تغییر می‌کنند — پس هر دو را…" is readable for only ~3.4s (from 0:10.07); 54 characters need ~4.6s at 17 characters/s or 3 words/s (fa)
-        fix: hold it longer, shorten it, or mark it data-caption if it is read along with the voice
-  5 note(s) in report.txt
+  WARN  nothing moves from 0:18.50 to 0:20.93 (~2.6s; qa flags still holds of 2.5s or more)
+  2 note(s) in report.txt
   look    showtime look .   (one small image of the key frames; sheet.jpg is for reviewers)
   report  /home/runner/work/Repo/Repo/edu-agent/videos/chain-rule/work/check/report.txt (full), report.json
-  estimate: full render ~1m58s
-  WARN  phone check: FAIL - reading "هر دو با هم تغییر می‌کنند — پس هر دو را…" 3.4s of 4.63s at 0:10.1
-result: PASS with warnings (0 error(s), 4 warning(s), 5 note(s)) in 22.1s
+  estimate: full render ~3m32s
+  PASS  phone check: PASS (smallest text 8.1 pt (minimum 5 pt for 16:9); every text held to its reading time at 17 characters/s or 3 words/s (fa); nothing under platform UI)
+result: PASS with warnings (0 error(s), 2 warning(s), 2 note(s)) in 33.2s
 === render ===
 showtime render /home/runner/work/Repo/Repo/edu-agent/videos/chain-rule
-  final.mp4 exists: writing final-3.mp4 (renders never overwrite)
   1920x1080 @ 30 fps, 26.00s, 780 frames, 1 worker, chrome 154.0.8037.97, jpeg
   workers: no GPU (SwiftShader): one browser per 8 of 2 CPU threads, at least 3, at most 8
-  estimated 58.7s left for frames
-  frames 188/780  24%  8.5/s  ETA 1m10s
-  frames 195/780  25%  8.5/s  ETA 1m09s
-  frames 390/780  50%  9.4/s  ETA 41.7s
+  estimated 1m29s left for frames
+  frames 188/780  24%  5.4/s  ETA 1m49s
+  frames 195/780  25%  5.5/s  ETA 1m47s
 showtime: render still running (45 s)
-  frames 585/780  75%  9.3/s  ETA 20.9s
-  frames 780/780 100%  9.2/s  ETA 0.0s
-  captured 780 frames in 1m25s (9.2 fps; seek 16 ms + shot 92 ms per frame per worker)
-  encode 763/780  97%  0.0/s  ETA ?
+  frames 390/780  50%  6.1/s  ETA 1m04s
+showtime: render still running (1 min 30 s)
+  frames 585/780  75%  6.0/s  ETA 32.7s
+  frames 780/780 100%  5.9/s  ETA 0.0s
+  captured 780 frames in 2m12s (5.9 fps; seek 20 ms + shot 149 ms per frame per worker)
+  encode 760/780  97%  0.0/s  ETA ?
+showtime: render still running (2 min 15 s)
   encode 780/780 100%  0.0/s  ETA ?
-  encoded in 0.2s after the capture (the encoder ran during it) (x264 veryfast crf 16)
-done final-3.mp4  1920x1080 30fps 26.00s, 780 frames, audio mix at -14.0 LUFS
-  output  /home/runner/work/Repo/Repo/edu-agent/videos/chain-rule/final-3.mp4 (5.6 MB, 1.7 Mb/s)
-          final.mp4 exists, so this is final-3.mp4 (renders never overwrite)
-  poster  /home/runner/work/Repo/Repo/edu-agent/videos/chain-rule/final-3.poster.jpg (1.5s baked into frame 0)
-  report  /home/runner/work/Repo/Repo/edu-agent/videos/chain-rule/final-3.work/render.json
+  encoded in 0.3s after the capture (the encoder ran during it) (x264 veryfast crf 16)
+done final.mp4  1920x1080 30fps 26.00s, 780 frames, audio mix at -14.0 LUFS
+  output  /home/runner/work/Repo/Repo/edu-agent/videos/chain-rule/final.mp4 (9.2 MB, 2.8 Mb/s)
+  poster  /home/runner/work/Repo/Repo/edu-agent/videos/chain-rule/poster.jpg (1.5s baked into frame 0)
+  report  /home/runner/work/Repo/Repo/edu-agent/videos/chain-rule/final.work/render.json
   next fix: prove it on the changed seconds first (showtime render . --from S --to S), then one full render
 render rc=0
 === محتویات ===
-total 11016
-drwxr-xr-x 8 runner runner    4096 Oct 11 14:58 .
-drwxr-xr-x 3 runner runner    4096 Oct 11 14:55 ..
-drwxr-xr-x 2 runner runner    4096 Oct 11 14:55 audio
--rw-r--r-- 1 runner runner 2416734 Oct 11 14:55 final-2.mp4
--rw-r--r-- 1 runner runner   75691 Oct 11 14:55 final-2.poster.jpg
-drwxr-xr-x 4 runner runner    4096 Oct 11 14:55 final-2.work
--rw-r--r-- 1 runner runner 5629716 Oct 11 14:58 final-3.mp4
--rw-r--r-- 1 runner runner   75691 Oct 11 14:56 final-3.poster.jpg
-drwxr-xr-x 4 runner runner    4096 Oct 11 14:58 final-3.work
--rw-r--r-- 1 runner runner 2942404 Oct 11 14:55 final.mp4
-drwxr-xr-x 4 runner runner    4096 Oct 11 14:55 final.work
-drwxr-xr-x 2 runner runner    4096 Oct 11 14:55 fonts
--rw-r--r-- 1 runner runner    7396 Oct 11 14:55 index.html
--rw-r--r-- 1 runner runner   74662 Oct 11 14:55 poster.jpg
--rw-r--r-- 1 runner runner    2666 Oct 11 14:58 render.log
--rw-r--r-- 1 runner runner     374 Oct 11 14:55 showtime.json
-drwxr-xr-x 3 runner runner    4096 Oct 11 14:55 work
+total 14680
+drwxr-xr-x 7 runner runner    4096 Oct 11 15:06 .
+drwxr-xr-x 3 runner runner    4096 Oct 11 15:02 ..
+drwxr-xr-x 2 runner runner    4096 Oct 11 15:02 audio
+-rw-r--r-- 1 runner runner 5629716 Oct 11 15:02 final-3.mp4
+-rw-r--r-- 1 runner runner   75691 Oct 11 15:02 final-3.poster.jpg
+drwxr-xr-x 4 runner runner    4096 Oct 11 15:02 final-3.work
+-rw-r--r-- 1 runner runner 9197368 Oct 11 15:06 final.mp4
+drwxr-xr-x 4 runner runner    4096 Oct 11 15:06 final.work
+drwxr-xr-x 2 runner runner    4096 Oct 11 15:02 fonts
+-rw-r--r-- 1 runner runner    7577 Oct 11 15:02 index.html
+-rw-r--r-- 1 runner runner   75484 Oct 11 15:03 poster.jpg
+-rw-r--r-- 1 runner runner    2406 Oct 11 15:06 render.log
+-rw-r--r-- 1 runner runner     374 Oct 11 15:02 showtime.json
+drwxr-xr-x 3 runner runner    4096 Oct 11 15:02 work
 /home/runner/work/Repo/Repo/edu-agent/videos/chain-rule/final.mp4
 /home/runner/work/Repo/Repo/edu-agent/videos/chain-rule/final-3.mp4
-/home/runner/work/Repo/Repo/edu-agent/videos/chain-rule/final-2.mp4
