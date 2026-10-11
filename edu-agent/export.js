@@ -1,5 +1,4 @@
-// export.js — دک را با مرورگر واقعی رندر می‌کند و از هر صفحه PNG می‌گیرد.
-// در GitHub Actions اجرا می‌شود (جایی که مرورگر واقعاً کار می‌کند).
+// export.js — حالتِ شناسایی: ساختار صفحه را می‌گردد تا بومِ واقعی را پیدا کند
 const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
@@ -7,70 +6,56 @@ const path = require('path');
 const BASE = process.env.BASE || 'http://127.0.0.1:4173';
 const SLIDE = process.env.SLIDE || 'forgetting-curve';
 const OUT = path.join(__dirname, 'out');
-const PAGES = Number(process.env.PAGES || 6);
-const RUN_ID = process.env.RUN_ID || '1791689749';
-
+const RUN_ID = process.env.RUN_ID || '1791690065';
 fs.mkdirSync(OUT, { recursive: true });
 const log = (...a) => console.log(...a);
 log('RUN_ID: ' + RUN_ID);
 
-// نامزدهای احتمالی برای خودِ بومِ اسلاید (۱۹۲۰×۱۰۸۰)
-const CANDIDATES = [
-  '[data-slide-canvas]',
-  '[data-canvas]',
-  '.osd-canvas',
-  '[class*="canvas" i]',
-  '[class*="stage" i]',
-  '[class*="slide-frame" i]',
-  'main',
-];
-
 (async () => {
   const browser = await chromium.launch({ args: ['--no-sandbox', '--disable-dev-shm-usage'] });
   const page = await browser.newPage({ viewport: { width: 1920, height: 1080 } });
+  page.on('console', (m) => { if (m.type() === 'error') log('[console] ' + m.text().slice(0, 160)); });
+  page.on('pageerror', (e) => log('[pageerror] ' + e.message.slice(0, 200)));
 
+  // ۱) صفحه اصلی: چه دک‌هایی هست و مسیرها چیست؟
+  await page.goto(BASE + '/', { waitUntil: 'networkidle', timeout: 60000 });
+  await page.waitForTimeout(3000);
+  log('HOME url: ' + page.url());
+  log('HOME title: ' + (await page.title()));
+  log('--- HOME links ---');
+  log((await page.evaluate(() => Array.from(document.querySelectorAll('a')).map((a) => a.getAttribute('href')).filter(Boolean))).slice(0, 25).join('\n'));
+  log('--- HOME text (800) ---');
+  log(((await page.evaluate(() => document.body.innerText)) || '').slice(0, 800));
+
+  // ۲) صفحه‌ی اسلاید
   const url = `${BASE}/slides/${SLIDE}`;
-  log('goto: ' + url);
-  await page.goto(url, { waitUntil: 'networkidle', timeout: 60000 });
-  await page.waitForTimeout(4000);
+  log('--- goto: ' + url);
+  const resp = await page.goto(url, { waitUntil: 'networkidle', timeout: 60000 });
+  log('status: ' + (resp && resp.status()) + ' | url: ' + page.url());
+  await page.waitForTimeout(6000);
+  log('--- SLIDE text (1200) ---');
+  log(((await page.evaluate(() => document.body.innerText)) || '').slice(0, 1200));
 
-  // کدام انتخابگر بومِ واقعی است؟
-  let sel = null;
-  for (const c of CANDIDATES) {
-    try {
-      const box = await page.locator(c).first().boundingBox().catch(() => null);
-      if (box && box.width > 900 && box.height > 500) {
-        log(`canvas candidate ${c} -> ${Math.round(box.width)}x${Math.round(box.height)}`);
-        if (!sel) sel = c;
+  // ۳) همه عناصرِ بزرگ — بوم کدام است؟
+  log('--- BIG ELEMENTS ---');
+  log(await page.evaluate(() => {
+    const out = [];
+    document.querySelectorAll('*').forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.width > 700 && r.height > 400) {
+        out.push(
+          `${el.tagName}.${(el.className && el.className.toString ? el.className.toString() : '').slice(0, 40)} ` +
+          `[${Math.round(r.width)}x${Math.round(r.height)}]` +
+          (el.getAttribute('data-testid') ? ' testid=' + el.getAttribute('data-testid') : '') +
+          (el.getAttribute('data-slide') ? ' data-slide=' + el.getAttribute('data-slide') : '')
+        );
       }
-    } catch { /* ignore */ }
-  }
-  if (!sel) {
-    // آخرین راه: کل صفحه
-    log('no canvas found; falling back to full page');
-    sel = 'body';
-  }
-  log('USING: ' + sel);
-
-  const target = page.locator(sel).first();
-
-  for (let i = 0; i < PAGES; i++) {
-    await page.waitForTimeout(i === 0 ? 2500 : 1400);
-    const f = path.join(OUT, `page-${String(i + 1).padStart(2, '0')}.png`);
-    await target.screenshot({ path: f }).catch(async (e) => {
-      log(`  page ${i + 1} canvas shot failed: ${e.message.slice(0, 80)}`);
-      await page.screenshot({ path: f });
     });
-    const sz = fs.statSync(f).size;
-    log(`  page-${i + 1}.png  ${sz} bytes`);
-    if (i < PAGES - 1) {
-      await page.keyboard.press('ArrowRight');
-    }
-  }
+    return out.slice(0, 25).join('\n') || 'none';
+  }));
 
+  await page.screenshot({ path: path.join(OUT, 'debug-slide.png') });
+  log('debug screenshot written');
   await browser.close();
   log('DONE');
-})().catch((e) => {
-  console.log('FATAL: ' + e.message);
-  process.exit(1);
-});
+})().catch((e) => { console.log('FATAL: ' + e.message); process.exit(1); });
