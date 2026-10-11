@@ -1,48 +1,25 @@
-RUN_ID: 1791686671
---- ALL LINKS (unique) ---
-https://www.biodigital.com/cookie-policy
-javascript:void(0)
-/
-/product/the-biodigital-human
-/product/human-studio
-/product/mobile-apps
-/product/virtual-reality
-/product/developer-toolkits
-/product/3d-visualization-services
-/customers/consumer-health
-/customers/all#publisher-ed-tech
-/customers/hospitals-and-providers
-/customers/med-device
-/customers/pharma
-/customers/for-schools
-/customers/customer-stories
-https://developer.biodigital.com/
-https://support.biodigital.com/hc/en-us
-/p/customer-showcase
-https://human.biodigital.com/?ref=www.biodigital.com
-/contact
-https://human.biodigital.com/login/create?ref=www.biodigital.com
-https://abcnews.go.com/Health/virtual-reality-body-transforming-innovations/story?id=16134453
-https://www.wired.com/2012/04/biodigital-human/
-/news
-https://itunes.apple.com/us/app/biodigital-human-anatomy-health/id771825569
-https://play.google.com/store/apps/details?id=com.biodigitalhuman.humanAndroid&hl=en_US&gl=US
-/customers/all
-/about
-/careers
-/terms
-/privacy
-https://support.biodigital.com/
-https://twitter.com/biodigitalhuman
-https://www.youtube.com/c/BioDigital
-https://www.facebook.com/BioDigitalHuman
-https://www.instagram.com/biodigital.human/
---- TRY https://www.biodigital.com/human/signup -> 404 | final: https://www.biodigital.com/human/signup
-  INPUTS: []
-  BUTTONS: []
---- TRY https://human.biodigital.com/signup -> 404 | final: https://human.biodigital.com/signup
-  INPUTS: []
-  BUTTONS: []
---- TRY https://www.biodigital.com/sign-up -> 404 | final: https://www.biodigital.com/sign-up
-  INPUTS: []
-  BUTTONS: []
+RUN_ID: 1791686754
+STATUS: 200 | URL: https://human.biodigital.com/login/create
+TITLE: Sign Up | BioDigital Human Platform
+--- INPUTS ---
+{"type":"text","name":"firstName","id":"","ph":"","req":false}
+{"type":"text","name":"lastName","id":"","ph":"","req":false}
+{"type":"email","name":"email","id":"","ph":"","req":false}
+{"type":"password","name":"password","id":"","ph":"At least 8 characters","req":false}
+--- BUTTONS ---
+Sign up with email
+--- CAPTCHA SIGNS ---
+recaptcha, g-recaptcha
+--- VISIBLE TEXT (1200) ---
+The most complete, scientifically accurate, virtual human body ever assembled.
+Anatomy, health conditions, and treatments - all visualized in interactive 3D.
+Create a free account
+Sign in with Google
+OR
+First Name
+Last Name
+Email
+Password
+Sign up with email
+By signing up, you agree to our Terms of Service and Privacy Policy.
+Already have an account?Sign in
