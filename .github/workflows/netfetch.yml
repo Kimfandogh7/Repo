@@ -24,7 +24,7 @@ jobs:
             n=$((n+1))
             {
               echo "=============== #$n  $URL"
-              if curl -sSL --max-time 40 -A "Mozilla/5.0 (compatible; netfetch)" \
+              if curl -sSL --max-time 60 -A "Mozilla/5.0 (compatible; netfetch)" -H "x-timeout: 40" \
                    -w '\nHTTP_CODE:%{http_code}\nSIZE:%{size_download}\nIP:%{remote_ip}\n' \
                    -o /tmp/body "$URL"; then
                 sed -n '1p;/^HTTP_CODE/p;/^SIZE/p;/^IP/p' /tmp/body > /dev/null
