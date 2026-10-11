@@ -1,0 +1,43 @@
+RUN_ID=
+=== pwd ===
+/home/runner/work/Repo/Repo
+=== درختِ خروجی out/ ===
+edu-agent/out/page-02.png
+edu-agent/out/page-03.png
+edu-agent/out/forgetting-curve.pdf
+edu-agent/out/page-01.png
+edu-agent/out/book/moshkel/ch01/beat-02.png
+edu-agent/out/book/moshkel/ch01/beat-01.png
+edu-agent/out/book/moshkel/ch01/beat-00.png
+edu-agent/out/book/moshkel/ch01/beat-06.png
+edu-agent/out/book/moshkel/ch01/beat-05.png
+edu-agent/out/book/moshkel/ch01/beat-03.png
+edu-agent/out/book/moshkel/ch01/beat-04.png
+edu-agent/out/book/moshkel/ch01/beat-07.png
+edu-agent/out/diag-.log
+edu-agent/out/page-06.png
+edu-agent/out/page-04.png
+edu-agent/out/tts.log
+edu-agent/out/page-05.png
+=== صداها / timings ===
+=== آیا چیزی ignore شده؟ ===
+(png NOT ignored)
+(tts.log NOT ignored)
+=== محتوای tts.log ===
+RUN_ID=38135491256
+=== edge-tts version ===
+Downloading aiohttp (1.8MiB)
+ Downloaded aiohttp
+Installed 13 packages in 8ms
+7.2.8
+/home/runner/.cache/uv/archive-v0/twQ1hyaw1xztxmAo/lib/python3.11/site-packages/edge_tts/__init__.py
+=== فارسی پشتیبانی می‌شود؟ ===
+fa voices: ['fa-IR-DilaraNeural', 'fa-IR-FaridNeural']
+total voices: 322
+=== اجرای tts.py ===
+/home/runner/.cache/uv/builds-v0/.tmpU3PC9V/bin/python: can't open file '/home/runner/work/Repo/Repo/edu-agent/vendor/papermorph/.claude/skills/papermorph/scripts/tts.py': [Errno 2] No such file or directory
+=== git status ===
+?? edu-agent/out/book/
+?? edu-agent/out/diag-.log
+?? edu-agent/out/tts.log
+?? edu-agent/package.json
