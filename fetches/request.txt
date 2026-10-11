@@ -1,5 +1,2 @@
-# job 1791688768-11438
-https://www.tiktok.com/oembed?url=https://vt.tiktok.com/ZSbsDBmkr
-https://www.tiktok.com/oembed?url=https://vt.tiktok.com/ZSbsDVMoY
-https://www.tiktok.com/oembed?url=https://vt.tiktok.com/ZSbsD5Mr7
-https://www.tiktok.com/oembed?url=https://vt.tiktok.com/ZSbsDqA8j
+# job 1791715259-2198
+https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=neuron+myelin+sheath&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url&iiurlwidth=1600&format=json
