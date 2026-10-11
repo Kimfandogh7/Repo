@@ -1,0 +1,77 @@
+name: showtime video
+
+# ویدیوی آموزشیِ فارسی را رندر می‌کند.
+# showtime به اینترنت (۱.۹GB ابزار و مدل)، مرورگر و ffmpeg نیاز دارد — هیچ‌کدام
+# در سندباکس در دسترس نیستند، همه در Actions هستند.
+on:
+  push:
+    paths:
+      - 'edu-agent/videos/**'
+      - 'edu-agent/video-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      RUN_ID: ${{ github.run_id }}
+      ST: /home/runner/work/Repo/Repo/edu-agent/vendor-showtime/skills/showtime/bin/showtime
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
+      - name: Fetch showtime (vendor/, gitignored)
+        run: |
+          cd edu-agent
+          rm -rf vendor-showtime
+          git clone --depth 1 -q https://github.com/faviovazquez/showtime.git vendor-showtime
+
+      - name: showtime setup
+        run: |
+          export PATH="$HOME/.cargo/bin:$PATH"
+          sh "$ST" setup 2>&1 | tail -25
+        continue-on-error: true
+
+      - name: doctor + Persian voices?
+        continue-on-error: true
+        run: |
+          export PATH="$HOME/.cargo/bin:$PATH"
+          sh "$ST" doctor 2>&1 | tail -20
+          echo "=== صداهای موجود ==="
+          sh "$ST" voice --help 2>&1 | tail -20
+
+      - name: check + render
+        continue-on-error: true
+        run: |
+          export PATH="$HOME/.cargo/bin:$PATH"
+          cd edu-agent/videos/chain-rule
+          echo "=== check ==="
+          sh "$ST" check . 2>&1 | tail -30
+          echo "=== render ==="
+          sh "$ST" render . -o final.mp4 2>&1 | tail -25
+          echo "render rc=$?"
+          ls -la final.mp4 2>&1
+
+      - name: Commit video
+        if: always()
+        run: |
+          mkdir -p edu-agent/videos/chain-rule
+          git config user.name "arena-agent"
+          git config user.email "agent@arena.local"
+          git add -A edu-agent/videos/chain-rule/final.mp4 edu-agent/videos/chain-rule/look.png
+          git diff --cached --quiet && echo "NOTHING TO COMMIT" || \
+            git commit -m "video: Persian chain-rule explainer (run $RUN_ID)"
+          git push origin HEAD:arena/758efc2d-repo

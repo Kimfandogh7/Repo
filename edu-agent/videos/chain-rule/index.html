@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>قاعده‌ی زنجیره‌ای</title>
+<script src="/_st/stage.js"></script>
+<link rel="stylesheet" href="/_st/themes/bold.css">
+<script type="module" src="/_st/components/index.js"></script>
+<style>
+  /* فونتِ فارسی. بدونِ آن مرورگر به فونتِ پیش‌فرض برمی‌گردد و کیفیت می‌افتد. */
+  @font-face {
+    font-family: 'Vazirmatn';
+    src: url('fonts/Vazirmatn[wght].woff2') format('woff2 supports variations'),
+         url('fonts/Vazirmatn[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+  }
+
+  .stage {
+    --persian: 'Vazirmatn', 'Noto Naskh Arabic', 'Tahoma', sans-serif;
+    --gold: #f0b45a;
+    --mint: #8fd6b0;
+    --rose: #f08c7a;
+    direction: rtl;
+  }
+
+  /* ---------- تایپوگرافیِ فارسی ---------- */
+  .scene { font-family: var(--persian); direction: rtl; text-align: right; }
+
+  .t-hero {
+    font-family: var(--persian);
+    font-size: 13cqh; font-weight: 800; line-height: 1.25;
+    letter-spacing: 0;                  /* فارسی فاصله‌ی منفی نمی‌خواهد، حروف می‌چسبند */
+    margin: 0;
+  }
+  .t-display { font-family: var(--persian); font-size: 9cqh; font-weight: 700; line-height: 1.35; margin: 0; }
+  .t-body    { font-family: var(--persian); font-size: 5cqh; font-weight: 400; line-height: 1.6; margin: 0; }
+  .t-label   { font-family: var(--persian); font-size: 3.4cqh; font-weight: 500; letter-spacing: 0; margin: 0; }
+
+  .accent { color: var(--gold); }
+  .good   { color: var(--mint); }
+  .bad    { color: var(--rose); }
+
+  /* فرمول‌ها: لاتین و چپ‌به‌راست می‌مانند (رویه‌ی کتاب‌های فارسیِ STEM) */
+  .formula {
+    font-family: 'STIX Two Text', 'Cambria Math', Georgia, serif;
+    direction: ltr; unicode-bidi: isolate; text-align: center;
+    font-size: 10cqh; font-weight: 500;
+  }
+  .formula .wrong { color: var(--rose); text-decoration: line-through; text-decoration-thickness: 3px; }
+  .formula .right { color: var(--mint); }
+
+  /* ---------- چیدمان ---------- */
+  .center {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 3cqh; height: 100%; padding: 8cqh 10cqw;
+    text-align: center;
+  }
+  .row { display: flex; gap: 6cqw; align-items: center; justify-content: center; width: 100%; }
+  .card {
+    background: color-mix(in oklab, var(--fg) 7%, transparent);
+    border: 2px solid color-mix(in oklab, var(--fg) 14%, transparent);
+    border-radius: 4cqh;
+    padding: 4cqh 4cqw;
+    min-width: 34cqw;
+  }
+  .card .t-label { margin-bottom: 1.5cqh; }
+  .steps { display: flex; flex-direction: column; gap: 3.5cqh; }
+  .step { display: flex; align-items: baseline; gap: 2cqw; }
+  .num {
+    font-family: var(--persian);
+    width: 7cqh; height: 7cqh; flex: none;
+    border-radius: 50%; background: var(--gold); color: #10201d;
+    display: grid; place-items: center;
+    font-size: 4cqh; font-weight: 800;
+  }
+</style>
+</head>
+<body>
+
+<!-- صحنه‌ی ۱: قلاب. همان اشتباهی که همه می‌کنند. -->
+<section class="scene" id="hook" data-dur="5.0" data-design-dur="5.0">
+  <div class="center">
+    <p class="t-label" data-st="kinetic-type" data-style="rise" data-at="0.15">مشتقِ این تابع چیست؟</p>
+    <div class="formula" data-st="kinetic-type" data-style="mask" data-at="0.6">(3x + 1)<sup>2</sup></div>
+    <p class="t-body bad" data-st="kinetic-type" data-style="rise" data-at="2.6">جوابی که بیشتر می‌نویسند: 2(3x + 1)</p>
+  </div>
+</section>
+
+<!-- صحنه‌ی ۲: چرا غلط است -->
+<section class="scene" id="why" data-start="#hook" data-dur="5.5" data-design-dur="5.5" data-transition="push left 0.6">
+  <div class="center">
+    <h2 class="t-display" data-st="kinetic-type" data-style="mask" data-at="0.1">داخلِ پرانتز <span class="accent">فقط ایکس نیست</span></h2>
+    <div class="row" style="margin-top: 3cqh">
+      <div class="card" data-st="kinetic-type" data-style="rise" data-at="1.0">
+        <p class="t-label accent">لایه‌ی بیرونی</p>
+        <div class="formula" style="font-size: 7cqh">(...)<sup>2</sup></div>
+      </div>
+      <div class="card" data-st="kinetic-type" data-style="rise" data-at="1.9">
+        <p class="t-label good">لایه‌ی درونی</p>
+        <div class="formula" style="font-size: 7cqh">3x + 1</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- صحنه‌ی ۳: قاعده -->
+<section class="scene" id="rule" data-start="#why" data-dur="6.5" data-design-dur="6.5" data-transition="push left 0.6">
+  <div class="center">
+    <h2 class="t-display" data-st="kinetic-type" data-style="mask" data-at="0.1">قاعده‌ی زنجیره‌ای</h2>
+    <div class="steps" style="margin-top: 4cqh">
+      <div class="step" data-st="kinetic-type" data-style="rise" data-at="0.9">
+        <span class="num">۱</span>
+        <span class="t-body">مشتقِ لایه‌ی <span class="accent">بیرونی</span> را بگیر</span>
+      </div>
+      <div class="step" data-st="kinetic-type" data-style="rise" data-at="2.2">
+        <span class="num">۲</span>
+        <span class="t-body">در مشتقِ لایه‌ی <span class="good">درونی</span> ضرب کن</span>
+      </div>
+    </div>
+    <div class="formula" style="margin-top: 3cqh" data-st="kinetic-type" data-style="mask" data-at="3.8">
+      2(3x + 1) × 3 = <span class="right">6(3x + 1)</span>
+    </div>
+  </div>
+</section>
+
+<!-- صحنه‌ی ۴: جمع‌بندی -->
+<section class="scene" id="close" data-start="#rule" data-dur="5.0" data-design-dur="5.0" data-transition="sdf-iris 0.8">
+  <div class="center">
+    <h2 class="t-hero" data-st="kinetic-type" data-style="mask" data-at="0.15">دو لایه، <span class="accent">دو مشتق</span></h2>
+    <p class="t-body" data-st="kinetic-type" data-style="rise" data-at="1.4">هر وقت تابعی داخلِ تابعِ دیگری دیدی، زنجیره را کامل برو.</p>
+  </div>
+</section>
+
+<div data-st="grain"></div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "_comment": "موسیقی و افکتِ تولیدی، بدون دانلود. زمان‌ها با برش‌های صحنه در index.html هماهنگ‌اند: hook 0، why 5.0، rule 10.5، close 17.0 (مجموع ۲۲ ثانیه).",
+  "sample_rate": 48000,
+  "tracks": [
+    {"id": "bed", "kind": "music", "compose": {"style": "underscore", "bpm": 96, "sections": "0:intro,5.0:build,10.5:drop,17.0:outro", "seed": "auto"}, "gain_db": -1, "fade_out": 1.2},
+    {"kind": "sfx", "synth": {"type": "whoosh", "intensity": 0.5, "seed": 2}, "at": 2.6, "align": "hit", "gain_db": -3},
+    {"kind": "sfx", "synth": {"type": "whoosh", "intensity": 0.5, "seed": 3}, "at": 5.0, "align": "hit", "gain_db": -4},
+    {"kind": "sfx", "synth": {"type": "click", "seed": 4}, "at": 6.0, "align": "hit", "gain_db": -2},
+    {"kind": "sfx", "synth": {"type": "click", "seed": 5}, "at": 6.9, "align": "hit", "gain_db": -2},
+    {"kind": "sfx", "synth": {"type": "whoosh", "intensity": 0.5, "seed": 6}, "at": 10.5, "align": "hit", "gain_db": -4},
+    {"kind": "sfx", "synth": {"type": "thock", "intensity": 0.6, "seed": 7}, "at": 11.4, "align": "hit", "gain_db": -3},
+    {"kind": "sfx", "synth": {"type": "thock", "intensity": 0.6, "seed": 8}, "at": 12.7, "align": "hit", "gain_db": -3},
+    {"kind": "sfx", "synth": {"type": "whoosh", "intensity": 0.5, "seed": 9}, "at": 17.0, "align": "hit", "gain_db": -4},
+    {"kind": "sfx", "synth": {"type": "logo-sting", "key": "D", "seed": 10}, "at": 18.4, "align": "hit", "gain_db": -3}
+  ],
+  "master": {"lufs": -14, "true_peak": -1}
+}
