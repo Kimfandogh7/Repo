@@ -32,8 +32,11 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y -qq tesseract-ocr ffmpeg
 
       - name: Describe frames
+        id: describe
+        continue-on-error: true
         run: |
-          python - <<'PY'
+          set +e
+          python - <<'PY' 2>&1 | tee refs/_vision.log
           import json, os, torch, gc
           from PIL import Image
           from transformers import AutoProcessor, AutoModelForCausalLM
@@ -94,6 +97,6 @@ jobs:
         run: |
           git config user.name "arena-bot"
           git config user.email "bot@arena.local"
-          git add -f refs/descriptions.json
+          git add -f refs/descriptions.json refs/_vision.log 2>/dev/null || true
           git commit -m "vision: توصیف فریم‌ها با Florence-2" || echo "nothing"
           git push origin HEAD:arena/758efc2d-repo || echo "push failed"
