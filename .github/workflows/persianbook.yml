@@ -7,6 +7,8 @@ on:
       - 'edu-agent/books/**'
       - 'edu-agent/content/**'
   workflow_dispatch:
+permissions:
+  contents: write      # بدونِ این، git push در Actions با ۴۰۳ رد می‌شود
 
 jobs:
   render:
@@ -107,7 +109,7 @@ jobs:
           git add -f edu-agent/out/commit-diag.log
           git diff --cached --quiet && echo "diag: nothing to commit" || \
             git commit -m "diag: book render (run ${{ github.run_id }})"
-          git push origin HEAD:arena/758efc2d-repo || echo "DIAG PUSH FAILED"
+          git push origin HEAD:arena/758efc2d-repo
 
       - name: Commit artifacts
         if: always()
