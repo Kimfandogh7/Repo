@@ -1,3 +1,4 @@
-https://www.mojeek.com/search?q=agent+harness+engineering+open+source
-https://search.marcia.dev/
-https://html.duckduckgo.com/html/?q=test
+http://export.arxiv.org/api/query?search_query=all:%22agent+harness%22&max_results=3
+https://hn.algolia.com/api/v1/search?query=agent+harness&hitsPerPage=3
+https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=reinforcement%20learning&format=json&srlimit=3
+https://r.jina.ai/https://example.com
