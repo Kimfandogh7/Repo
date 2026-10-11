@@ -1,260 +1,146 @@
-=============== #1  http://export.arxiv.org/api/query?search_query=all:%22agent+harness%22&max_results=3
+=============== #1  https://r.jina.ai/https://www.google.com/search?q=agent+harness
 
 HTTP_CODE:200
-SIZE:10603
-IP:151.101.75.42
-    </author>
-  </entry>
-</feed>
+SIZE:737
+IP:104.26.11.242
+IP address: 2600:1900:0:4001::1600  
+Time: 2026-10-11T02:04:04Z  
+URL: https://www.google.com/search?q=agent+harness&sei=k-7Kas3nJ9z10PEP07XLwQI
 ---BODY (max 20KB)---
-<?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
-  <id>https://arxiv.org/api/g5sC+jbuGlmh++nB3jj8fIAkwtc</id>
-  <title>arXiv Query: search_query=all:"agent harness"&amp;id_list=&amp;start=0&amp;max_results=3</title>
-  <updated>2026-10-11T02:03:19Z</updated>
-  <link href="https://arxiv.org/api/query?search_query=all:%22agent+harness%22&amp;start=0&amp;max_results=3&amp;id_list=" type="application/atom+xml"/>
-  <opensearch:itemsPerPage>3</opensearch:itemsPerPage>
-  <opensearch:totalResults>415</opensearch:totalResults>
-  <opensearch:startIndex>0</opensearch:startIndex>
-  <entry>
-    <id>http://arxiv.org/abs/2605.18747v1</id>
-    <title>Code as Agent Harness</title>
-    <updated>2026-05-18T17:59:03Z</updated>
-    <link href="https://arxiv.org/abs/2605.18747v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2605.18747v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>Recent large language models (LLMs) have demonstrated strong capabilities in understanding and generating code, from competitive programming to repository-level software engineering. In emerging agentic systems, code is no longer only a target output. It increasingly serves as an operational substrate for agent reasoning, acting, environment modeling, and execution-based verification. We frame this shift through the lens of agent harnesses and introduce code as agent harness: a unified view that centers code as the basis for agent infrastructure. To systematically study this perspective, we organize the survey around three connected layers. First, we study the harness interface, where code connects agents to reasoning, action, and environment modeling. Second, we examine harness mechanisms: planning, memory, and tool use for long-horizon execution, together with feedback-driven control and optimization that make harness reliable and adaptive. Third, we discuss scaling the harness from single-agent systems to multi-agent settings, where shared code artifacts support multi-agent coordination, review, and verification. Across these layers, we summarize representative methods and practical applications of code as agent harness, spanning coding assistants, GUI/OS automation, embodied agents, scientific discovery, personalization and recommendation, DevOps, and enterprise workflows. We further outline open challenges for harness engineering, including evaluation beyond final task success, verification under incomplete feedback, regression-free harness improvement, consistent shared state across multiple agents, human oversight for safety-critical actions, and extensions to multimodal environments. By centering code as the harness of agentic AI, this survey provides a unified roadmap toward executable, verifiable, and stateful AI agent systems.</summary>
-    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-05-18T17:59:03Z</published>
-    <arxiv:comment>GitHub: https://github.com/YennNing/Awesome-Code-as-Agent-Harness-Papers</arxiv:comment>
-    <arxiv:primary_category term="cs.CL"/>
-    <author>
-      <name>Xuying Ning</name>
-    </author>
-    <author>
-      <name>Katherine Tieu</name>
-    </author>
-    <author>
-      <name>Dongqi Fu</name>
-    </author>
-    <author>
-      <name>Tianxin Wei</name>
-    </author>
-    <author>
-      <name>Zihao Li</name>
-    </author>
-    <author>
-      <name>Yuanchen Bei</name>
-    </author>
-    <author>
-      <name>Jiaru Zou</name>
-    </author>
-    <author>
-      <name>Mengting Ai</name>
-    </author>
-    <author>
-      <name>Zhining Liu</name>
-    </author>
-    <author>
-      <name>Ting-Wei Li</name>
-    </author>
-    <author>
-      <name>Lingjie Chen</name>
-    </author>
-    <author>
-      <name>Yanjun Zhao</name>
-    </author>
-    <author>
-      <name>Ke Yang</name>
-    </author>
-    <author>
-      <name>Bingxuan Li</name>
-    </author>
-    <author>
-      <name>Cheng Qian</name>
-    </author>
-    <author>
-      <name>Gaotang Li</name>
-    </author>
-    <author>
-      <name>Xiao Lin</name>
-    </author>
-    <author>
-      <name>Zhichen Zeng</name>
-    </author>
-    <author>
-      <name>Ruizhong Qiu</name>
-    </author>
-    <author>
-      <name>Sirui Chen</name>
-    </author>
-    <author>
-      <name>Yifan Sun</name>
-    </author>
-    <author>
-      <name>Xiyuan Yang</name>
-    </author>
-    <author>
-      <name>Ruida Wang</name>
-    </author>
-    <author>
-      <name>Rui Pan</name>
-    </author>
-    <author>
-      <name>Chenyuan Yang</name>
-    </author>
-    <author>
-      <name>Dylan Zhang</name>
-    </author>
-    <author>
-      <name>Liri Fang</name>
-    </author>
-    <author>
-      <name>Zikun Cui</name>
-    </author>
-    <author>
-      <name>Yang Cao</name>
-    </author>
-    <author>
-      <name>Pan Chen</name>
-    </author>
-    <author>
-      <name>Dorothy Sun</name>
-    </author>
-    <author>
-      <name>Ren Chen</name>
-    </author>
-    <author>
-      <name>Mahesh Srinivasan</name>
-    </author>
-    <author>
-      <name>Nipun Mathur</name>
-    </author>
-    <author>
-      <name>Yinglong Xia</name>
-    </author>
-    <author>
-      <name>Hong Li</name>
-    </author>
-    <author>
-      <name>Hong Yan</name>
-    </author>
-    <author>
-      <name>Pan Lu</name>
-    </author>
-    <author>
-      <name>Lingming Zhang</name>
-    </author>
-    <author>
-      <name>Tong Zhang</name>
-    </author>
-    <author>
-      <name>Hanghang Tong</name>
-    </author>
-    <author>
-      <name>Jingrui He</name>
-    </author>
-  </entry>
-  <entry>
-    <id>http://arxiv.org/abs/2610.08432v1</id>
-    <title>EMHO: EMbodied Agent Harness Optimization via Experience Traces</title>
-    <updated>2026-10-06T14:30:42Z</updated>
-    <link href="https://arxiv.org/abs/2610.08432v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2610.08432v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>Improving embodied agents often focuses on optimizing the underlying model through training, while the surrounding agent harness that controls planning, context, and tool use is typically engineered. We ask whether this harness can instead improve itself directly from experience traces under sparse environmental feedback. We propose EMbodied Agent Harness Optimization (EMHO), a self-evolving framework that keeps the embodied model frozen and iteratively revises its harness by analyzing execution trajectories and prior harness history. EMHO optimizes beyond skills or recovery prompts, modifying how the agent monitors progress, uses vision tools, grounds observations, and responds to failures. To support multiple subtasks with a single harness, we introduce EMHO-Merge, which addresses trade-offs in jointly optimizing a single shared harness across subtasks by using episode-level gains and losses to guide evidence-supported refinement of when and how revised behaviors are applied. We evaluate EMHO on EmbodiedBench across navigation and manipulation tasks, and EMHO consistently improves task success for both Qwen 9B and 27B models. Qualitative analysis shows that EMHO goes beyond recovering from failures and unproductive actions to reshape how the embodied agent interprets and interacts with its environment.</summary>
-    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-10-06T14:30:42Z</published>
-    <arxiv:primary_category term="cs.AI"/>
-    <author>
-      <name>Hyun Jung Lee</name>
-    </author>
-    <author>
-      <name>Jungtaek Kim</name>
-    </author>
-    <author>
-      <name>Jongwon Jeong</name>
-    </author>
-    <author>
-      <name>Tae-Eui Kam</name>
-    </author>
-    <author>
-      <name>Donghyun Kim</name>
-    </author>
-    <author>
-      <name>Yong Jae Lee</name>
-    </author>
-  </entry>
-  <entry>
-    <id>http://arxiv.org/abs/2607.03691v2</id>
-    <title>Don't Blame the Large Language Model: How Agent Harness Evolution Shapes Coding Agent Quality</title>
-    <updated>2026-07-20T18:11:41Z</updated>
-    <link href="https://arxiv.org/abs/2607.03691v2" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2607.03691v2" rel="related" type="application/pdf" title="pdf"/>
-    <summary>Coding agents, autonomous systems that use large language models (LLMs) to resolve software engineering tasks, rely on agent harness: a middleware layer in between a developer and a large language model that orchestrates system prompts, tool execution, context management, and iterative reasoning loops. While these agent harnesses evolve at extreme velocities, no study has examined how this evolution affects agent quality (i.e., effectiveness and efficiency) over time. Practitioners regularly report quality regressions after agent harness updates, yet consistently attribute them to the underlying model rather than the harness itself. In this paper, we address this gap by conducting the first controlled longitudinal study that isolates the agent harness contribution. Unlike prior work that fixes the agent harness and varies the model, we fix the model and vary only the agent harness, evaluating 35 sequential releases to measure their impact on agent effectiveness and efficiency. We first empirically study the development and release evolution of five major open-source agent harnesses (i.e., Codex, Qwen Code, Gemini, OpenCode, and OpenHands), revealing extreme release velocities exceeding two releases per day and thousands of issues within months. We then perform a controlled deep dive into 35 sequential releases of the Qwen Code CLI, evaluating each against 50 stratified SWE-bench Verified tasks while holding the underlying LLM constant. We trace the resulting quality fluctuations to specific development patterns and architectural components, and illustrate our findings with concrete qualitative evidence linking individual pull requests to measured quality shifts.</summary>
-    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-07-04T03:55:25Z</published>
-    <arxiv:primary_category term="cs.SE"/>
-    <author>
-      <name>Oussama Ben Sghaier</name>
-    </author>
-    <author>
-      <name>Hao Li</name>
-    </author>
-    <author>
-      <name>Bram Adams</name>
-    </author>
-    <author>
-      <name>Ahmed E. Hassan</name>
-    </author>
-  </entry>
-</feed>
+Title: https://www.google.com/search?q=agent+harness&sei=k-7Kas3nJ9z10PEP07XLwQI
 
-=============== #2  https://hn.algolia.com/api/v1/search?query=agent+harness&hitsPerPage=3
+URL Source: https://www.google.com/search?q=agent+harness
 
-HTTP_CODE:200
-SIZE:3928
-IP:34.160.168.181
-{"exhaustive":{"nbHits":false,"typo":false},"exhaustiveNbHits":false,"exhaustiveTypo":false,"hits":[{"_highlightResult":{"author":{"matchLevel":"none","matchedWords":[],"value":"tosh"},"title":{"fullyHighlighted":false,"matchLevel":"full","matchedWords":["agent","harness"],"value":"qm \u2013 Multiplayer <em>agent</em> <em>harness</em> for work"},"url":{"matchLevel":"none","matchedWords":[],"value":"https://github.com/yc-software/qm"}},"_tags":["story","author_tosh","story_49126604"],"author":"tosh","children":[49126830,49126928,49126933,49127245,49127268,49127293,49127384,49127537,49127622,49127875,49127925,49128067,49128298,49128344,49128345,49128601,49128629,49128712,49129444,49129636,49129947,49129948,49130046,49130140,49130348,49130390,49130564,49130619,49131148,49131878,49132589,49132889,49132929,49133382,49134190,49134237,49134285,49134567,49134708,49134789,49134902,49135561,49136949,49137048,49137288,49138945,49139988,49142476,49145893,49150270,49158585,49209691],"created_at":"2026-07-31T18:04:58Z","created_at_i":1785521098,"num_comments":163,"objectID":"49126604","points":682,"story_id":49126604,"title":"qm \u2013 Multiplayer agent harness for work","updated_at":"2026-10-04T03:27:39Z","url":"https://github.com/yc-software/qm"},{"_highlightResult":{"author":{"matchLevel":"none","matchedWords":[],"value":"simonpure"},"title":{"fullyHighlighted":false,"matchLevel":"full","matchedWords":["agent","harness"],"value":"Munder Difflin \u2013 <em>Agent</em> <em>harness</em> to run an office of your clones"},"url":{"matchLevel":"none","matchedWords":[],"value":"https://munderdiffl.in/"}},"_tags":["story","author_simonpure","story_49398152"],"author":"simonpure","children":[49398628,49398677,49398695,49398753,49398820,49399015,49399018,49399264,49399331,49399441,49399474,49399504,49399533,49399845,49400352,49400442,49400485,49400755,49400941,49401074,49401224,49401407,49401411,49401580,49402083,49402404,49402526,49402713,49402827,49404779,49405597,49406205,49408351,49412821,49539283],"created_at":"2026-08-22T09:49:14Z","created_at_i":1787392154,"num_comments":145,"objectID":"49398152","points":312,"story_id":49398152,"title":"Munder Difflin \u2013 Agent harness to run an office of your clones","updated_at":"2026-10-10T00:38:29Z","url":"https://munderdiffl.in/"},{"_highlightResult":{"author":{"matchLevel":"none","matchedWords":[],"value":"shad42"},"title":{"fullyHighlighted":false,"matchLevel":"full","matchedWords":["agent","harness"],"value":"The <em>agent</em> <em>harness</em> belongs outside the sandbox"},"url":{"fullyHighlighted":false,"matchLevel":"full","matchedWords":["agent","harness"],"value":"https://www.mendral.com/blog/<em>agent</em>-<em>harness</em>-belongs-outside-sandbox"}},"_tags":["story","author_shad42","story_47990675"],"author":"shad42","children":[47990998,47991000,47991058,47991108,47991128,47991142,47991147,47991208,47991214,47991347,47991419,47991477,47991481,47991486,47991503,47991669,47991683,47991796,47991871,47991972,47992009,47992077,47992502,47992777,47992814,47993129,47993142,47993353,47993487,47993579,47993677,47993958,47994031,47994647,47994866,47994979,47995564,47995623,47995867,47996350,47996437,47997498,47997618,47997631,47997993,47998078,47998321,47999058,48001088,48001671,48002289,48159555],"created_at":"2026-05-02T21:21:27Z","created_at_i":1777756887,"num_comments":121,"objectID":"47990675","points":182,"story_id":47990675,"title":"The agent harness belongs outside the sandbox","updated_at":"2026-09-10T05:23:36Z","url":"https://www.mendral.com/blog/agent-harness-belongs-outside-sandbox"}],"hitsPerPage":3,"nbHits":5132,"nbPages":334,"page":0,"params":"query=agent+harness&hitsPerPage=3&advancedSyntax=true&analyticsTags=backend","processingTimeMS":35,"processingTimingsMS":{"_request":{"queue":174,"roundTrip":20},"fetch":{"query":16,"scanning":15,"total":32},"getCache":1,"total":35},"query":"agent harness","serverTimeMS":210}
----BODY (max 20KB)---
-{"exhaustive":{"nbHits":false,"typo":false},"exhaustiveNbHits":false,"exhaustiveTypo":false,"hits":[{"_highlightResult":{"author":{"matchLevel":"none","matchedWords":[],"value":"tosh"},"title":{"fullyHighlighted":false,"matchLevel":"full","matchedWords":["agent","harness"],"value":"qm \u2013 Multiplayer <em>agent</em> <em>harness</em> for work"},"url":{"matchLevel":"none","matchedWords":[],"value":"https://github.com/yc-software/qm"}},"_tags":["story","author_tosh","story_49126604"],"author":"tosh","children":[49126830,49126928,49126933,49127245,49127268,49127293,49127384,49127537,49127622,49127875,49127925,49128067,49128298,49128344,49128345,49128601,49128629,49128712,49129444,49129636,49129947,49129948,49130046,49130140,49130348,49130390,49130564,49130619,49131148,49131878,49132589,49132889,49132929,49133382,49134190,49134237,49134285,49134567,49134708,49134789,49134902,49135561,49136949,49137048,49137288,49138945,49139988,49142476,49145893,49150270,49158585,49209691],"created_at":"2026-07-31T18:04:58Z","created_at_i":1785521098,"num_comments":163,"objectID":"49126604","points":682,"story_id":49126604,"title":"qm \u2013 Multiplayer agent harness for work","updated_at":"2026-10-04T03:27:39Z","url":"https://github.com/yc-software/qm"},{"_highlightResult":{"author":{"matchLevel":"none","matchedWords":[],"value":"simonpure"},"title":{"fullyHighlighted":false,"matchLevel":"full","matchedWords":["agent","harness"],"value":"Munder Difflin \u2013 <em>Agent</em> <em>harness</em> to run an office of your clones"},"url":{"matchLevel":"none","matchedWords":[],"value":"https://munderdiffl.in/"}},"_tags":["story","author_simonpure","story_49398152"],"author":"simonpure","children":[49398628,49398677,49398695,49398753,49398820,49399015,49399018,49399264,49399331,49399441,49399474,49399504,49399533,49399845,49400352,49400442,49400485,49400755,49400941,49401074,49401224,49401407,49401411,49401580,49402083,49402404,49402526,49402713,49402827,49404779,49405597,49406205,49408351,49412821,49539283],"created_at":"2026-08-22T09:49:14Z","created_at_i":1787392154,"num_comments":145,"objectID":"49398152","points":312,"story_id":49398152,"title":"Munder Difflin \u2013 Agent harness to run an office of your clones","updated_at":"2026-10-10T00:38:29Z","url":"https://munderdiffl.in/"},{"_highlightResult":{"author":{"matchLevel":"none","matchedWords":[],"value":"shad42"},"title":{"fullyHighlighted":false,"matchLevel":"full","matchedWords":["agent","harness"],"value":"The <em>agent</em> <em>harness</em> belongs outside the sandbox"},"url":{"fullyHighlighted":false,"matchLevel":"full","matchedWords":["agent","harness"],"value":"https://www.mendral.com/blog/<em>agent</em>-<em>harness</em>-belongs-outside-sandbox"}},"_tags":["story","author_shad42","story_47990675"],"author":"shad42","children":[47990998,47991000,47991058,47991108,47991128,47991142,47991147,47991208,47991214,47991347,47991419,47991477,47991481,47991486,47991503,47991669,47991683,47991796,47991871,47991972,47992009,47992077,47992502,47992777,47992814,47993129,47993142,47993353,47993487,47993579,47993677,47993958,47994031,47994647,47994866,47994979,47995564,47995623,47995867,47996350,47996437,47997498,47997618,47997631,47997993,47998078,47998321,47999058,48001088,48001671,48002289,48159555],"created_at":"2026-05-02T21:21:27Z","created_at_i":1777756887,"num_comments":121,"objectID":"47990675","points":182,"story_id":47990675,"title":"The agent harness belongs outside the sandbox","updated_at":"2026-09-10T05:23:36Z","url":"https://www.mendral.com/blog/agent-harness-belongs-outside-sandbox"}],"hitsPerPage":3,"nbHits":5132,"nbPages":334,"page":0,"params":"query=agent+harness&hitsPerPage=3&advancedSyntax=true&analyticsTags=backend","processingTimeMS":35,"processingTimingsMS":{"_request":{"queue":174,"roundTrip":20},"fetch":{"query":16,"scanning":15,"total":32},"getCache":1,"total":35},"query":"agent harness","serverTimeMS":210}
-
-=============== #3  https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=reinforcement%20learning&format=json&srlimit=3
-
-HTTP_CODE:200
-SIZE:1307
-IP:198.35.26.224
-{"batchcomplete":"","continue":{"sroffset":3,"continue":"-||"},"query":{"searchinfo":{"totalhits":2530},"search":[{"ns":0,"title":"Reinforcement learning","pageid":66294,"size":79844,"wordcount":8980,"snippet":"In machine <span class=\"searchmatch\">learning</span> and optimal control, <span class=\"searchmatch\">reinforcement</span> <span class=\"searchmatch\">learning</span> (RL) (also known as approximate dynamic programming) is concerned with how an intelligent","timestamp":"2026-09-05T22:02:46Z"},{"ns":0,"title":"Reinforcement learning from human feedback","pageid":73200355,"size":59746,"wordcount":7659,"snippet":"In machine <span class=\"searchmatch\">learning</span>, <span class=\"searchmatch\">reinforcement</span> <span class=\"searchmatch\">learning</span> from human feedback (RLHF) is a technique to align an intelligent agent with human preferences. It involves","timestamp":"2026-09-22T23:27:23Z"},{"ns":0,"title":"Jev (AI model)","pageid":84271113,"size":10539,"wordcount":1178,"snippet":"<span class=\"searchmatch\">reinforcement</span> <span class=\"searchmatch\">learning</span> from human feedback (RLHF), InstructGPT, ChatGPT and GPT-4 before leaving in 2024. The System One model works on <span class=\"searchmatch\">Reinforcement</span>","timestamp":"2026-10-06T17:16:17Z"}]}}---BODY (max 20KB)---
-{"batchcomplete":"","continue":{"sroffset":3,"continue":"-||"},"query":{"searchinfo":{"totalhits":2530},"search":[{"ns":0,"title":"Reinforcement learning","pageid":66294,"size":79844,"wordcount":8980,"snippet":"In machine <span class=\"searchmatch\">learning</span> and optimal control, <span class=\"searchmatch\">reinforcement</span> <span class=\"searchmatch\">learning</span> (RL) (also known as approximate dynamic programming) is concerned with how an intelligent","timestamp":"2026-09-05T22:02:46Z"},{"ns":0,"title":"Reinforcement learning from human feedback","pageid":73200355,"size":59746,"wordcount":7659,"snippet":"In machine <span class=\"searchmatch\">learning</span>, <span class=\"searchmatch\">reinforcement</span> <span class=\"searchmatch\">learning</span> from human feedback (RLHF) is a technique to align an intelligent agent with human preferences. It involves","timestamp":"2026-09-22T23:27:23Z"},{"ns":0,"title":"Jev (AI model)","pageid":84271113,"size":10539,"wordcount":1178,"snippet":"<span class=\"searchmatch\">reinforcement</span> <span class=\"searchmatch\">learning</span> from human feedback (RLHF), InstructGPT, ChatGPT and GPT-4 before leaving in 2024. The System One model works on <span class=\"searchmatch\">Reinforcement</span>","timestamp":"2026-10-06T17:16:17Z"}]}}
-=============== #4  https://r.jina.ai/https://example.com
-
-HTTP_CODE:200
-SIZE:1465
-IP:172.67.70.54
-Este dominio está destinado al uso en ejemplos de documentación sin necesidad de permiso. Esto no es un servicio; evitar utilizarlo para realizar pruebas o monitoreos.
-
-[Learn more](https://iana.org/help/example-domains)
----BODY (max 20KB)---
-Title: Example Domain
-
-URL Source: https://example.com/
-
-Published Time: Fri, 09 Oct 2026 20:18:28 GMT
+Warning: This page maybe not yet fully loaded, consider explicitly specify a timeout.
+Warning: This page maybe requiring CAPTCHA, please make sure you are authorized to access this page.
 
 Markdown Content:
-This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.
+**About this page**
 
-هذا النطاق مُخصص للاستخدام في أمثلة التوثيق دون الحاجة إلى إذن. هذه ليست خدمة، يُرجى تجنب الاعتماد عليها لأغراض الاختبار والمراقبة.
+Our systems have detected unusual traffic from your computer network. This page checks to see if it's really you sending the requests, and not a robot. [Why did this happen?](https://www.google.com/search?q=agent+harness#)
 
-该域名仅用于文档示例，无需获得许可。这并非一项服务，请勿将其用于测试和监控目的。
+IP address: 2600:1900:0:4001::1600  
+Time: 2026-10-11T02:04:04Z  
+URL: https://www.google.com/search?q=agent+harness&sei=k-7Kas3nJ9z10PEP07XLwQI
 
-L’usage de ce domaine est réservé à des exemples de documentation, sans autorisation préalable. Il ne s’agit pas d’un service ; son utilisation à des fins de test ou de surveillance est à éviter.
+=============== #2  https://r.jina.ai/https://en.wikipedia.org/wiki/Reinforcement_learning
 
-Данный домен предназначен для использования в примерах документации без необходимости получения предварительного разрешения. Это не сервис; не рекомендуется его использование для тестирования и мониторинга.
+HTTP_CODE:200
+SIZE:128867
+IP:104.26.10.242
+*   [Dissecting Reinforcement Learning](https://mpatacchiola.github.io/blog/2016/12/09/dissecting-reinforcement-learning.html) Series of blog post on reinforcement learning with Python code
+*   [A (Long) Peek into Reinforcement Learning](https://lilianweng.github.io/posts/2018-02-19-rl-overview/)
+*   [QSMM – reinforcement learning through adaptive probabilistic assembler programs](http://qsmm.org/)
+---BODY (max 20KB)---
+Title: Reinforcement learning
 
-Este dominio está destinado al uso en ejemplos de documentación sin necesidad de permiso. Esto no es un servicio; evitar utilizarlo para realizar pruebas o monitoreos.
+URL Source: https://en.wikipedia.org/wiki/Reinforcement_learning
 
-[Learn more](https://iana.org/help/example-domains)
+Published Time: 2002-07-31T13:24:55Z
 
-fetched 4 url(s)
+Markdown Content:
+[![Image 1](https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Reinforcement_learning_diagram.svg/250px-Reinforcement_learning_diagram.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Reinforcement_learning_diagram.svg)
+
+ The typical framing of a reinforcement learning (RL) scenario: an agent takes actions in an environment, which is interpreted into a reward and a state representation, which are fed back to the agent.
+
+In [machine learning](https://en.wikipedia.org/wiki/Machine_learning "Machine learning") and [optimal control](https://en.wikipedia.org/wiki/Optimal_control "Optimal control"), **reinforcement learning** (**RL**) (_also known as approximate dynamic programming_)[[1]](https://en.wikipedia.org/wiki/Reinforcement_learning#cite_note-1) is concerned with how an [intelligent agent](https://en.wikipedia.org/wiki/Intelligent_agent "Intelligent agent") should [take actions](https://en.wikipedia.org/wiki/Action_selection "Action selection") in a dynamic environment in order to [maximize a reward](https://en.wikipedia.org/wiki/Reward-based_selection "Reward-based selection") signal. Reinforcement learning is one of the [three basic machine learning paradigms](https://en.wikipedia.org/wiki/Machine_learning#Approaches "Machine learning"), alongside [supervised learning](https://en.wikipedia.org/wiki/Supervised_learning "Supervised learning") and [unsupervised learning](https://en.wikipedia.org/wiki/Unsupervised_learning "Unsupervised learning").
+
+While supervised learning and unsupervised learning algorithms respectively attempt to discover patterns in labeled and unlabeled data, reinforcement learning involves training an agent through interactions with its environment. To learn to maximize rewards from these interactions, the agent makes decisions between trying new actions to learn more about the environment (exploration), or using current knowledge of the environment to take the best action (exploitation).[[2]](https://en.wikipedia.org/wiki/Reinforcement_learning#cite_note-kaelbling-2) The search for the optimal balance between these two strategies is known as the [exploration–exploitation dilemma](https://en.wikipedia.org/wiki/Exploration%E2%80%93exploitation_dilemma "Exploration–exploitation dilemma").
+
+The environment is typically stated in the form of a [Markov decision process](https://en.wikipedia.org/wiki/Markov_decision_process "Markov decision process"), as many reinforcement learning algorithms use [dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming "Dynamic programming") techniques.[[3]](https://en.wikipedia.org/wiki/Reinforcement_learning#cite_note-3) The main difference between classical dynamic programming methods and reinforcement learning algorithms is that the latter do not assume knowledge of an exact mathematical model of the Markov decision process, and they target large Markov decision processes where exact methods become infeasible.[[4]](https://en.wikipedia.org/wiki/Reinforcement_learning#cite_note-Li-2023-4)
+
+Due to its generality, reinforcement learning is studied in many disciplines, such as [game theory](https://en.wikipedia.org/wiki/Game_theory "Game theory"), [control theory](https://en.wikipedia.org/wiki/Control_theory "Control theory"), [operations research](https://en.wikipedia.org/wiki/Operations_research "Operations research"), [information theory](https://en.wikipedia.org/wiki/Information_theory "Information theory"), [simulation-based optimization](https://en.wikipedia.org/wiki/Simulation-based_optimization "Simulation-based optimization"), [multi-agent systems](https://en.wikipedia.org/wiki/Multi-agent_system "Multi-agent system"), [swarm intelligence](https://en.wikipedia.org/wiki/Swarm_intelligence "Swarm intelligence"), and [statistics](https://en.wikipedia.org/wiki/Statistics "Statistics"). In the operations research and control literature, RL is called _approximate dynamic programming_, or _neuro-dynamic programming._ The problems of interest in RL have also been studied in the [theory of optimal control](https://en.wikipedia.org/wiki/Optimal_control_theory "Optimal control theory"), which is concerned mostly with the existence and characterization of optimal solutions, and algorithms for their exact computation, and less with learning or approximation (particularly in the absence of a mathematical model of the environment).
+
+Basic reinforcement learning is modeled as a [Markov decision process](https://en.wikipedia.org/wiki/Markov_decision_process "Markov decision process"):
+
+The purpose of reinforcement learning is for the agent to learn an optimal (or near-optimal) policy that maximizes the reward function or other user-provided reinforcement signal that accumulates from immediate rewards. This is similar to [processes](https://en.wikipedia.org/wiki/Reinforcement "Reinforcement") that appear to occur in animal psychology. For example, biological brains are hardwired to interpret signals such as pain and hunger as negative reinforcements, and interpret pleasure and food intake as positive reinforcements. In some circumstances, animals learn to adopt behaviors that optimize these rewards. This suggests that animals are capable of reinforcement learning.[[5]](https://en.wikipedia.org/wiki/Reinforcement_learning#cite_note-5)[[6]](https://en.wikipedia.org/wiki/Reinforcement_learning#cite_note-6)
+
+A basic reinforcement learning agent interacts with its environment in discrete time steps. At each time step t, the agent receives the current state ![Image 2: {\displaystyle S_{t}}](https://wikimedia.org/api/rest_v1/media/math/render/svg/7e2391e6e796fbf718be3828080775ac2ac3d3d4) and reward ![Image 3: {\displaystyle R_{t}}](https://wikimedia.org/api/rest_v1/media/math/render/svg/d65b678ee539ac36de96b554af181ac03b7f16a8). It then chooses an action ![Image 4: {\displaystyle A_{t}}](https://wikimedia.org/api/rest_v1/media/math/render/svg/265483c517cb98cde609f03a31964d86cdcb05c9) from the set of available actions, which is subsequently sent to the environment. The environment moves to a new state ![Image 5: {\displaystyle S_{t+1}}](https://wikimedia.org/api/rest_v1/media/math/render/svg/7fde0b9d29bcb7e8d3eee3a8f42ead14aa3b8cee) and the reward ![Image 6: {\displaystyle R_{t+1}}](https://wikimedia.org/api/rest_v1/media/math/render/svg/78bc3f077c19f7db4e89b5529a5861b06ae782b7) associated with the _transition_![Image 7: {\displaystyle (S_{t},A_{t},S_{t+1})}](https://wikimedia.org/api/rest_v1/media/math/render/svg/efa800ac9fbf81e68eb97515e04cf99ef35b730d) is determined. The goal of a reinforcement learning agent is to learn a _policy_:
+
+![Image 8: {\displaystyle {\begin{aligned}&\pi :{\mathcal {S}}\times {\mathcal {A}}\to [0,1]\\&\pi (s,a)=\Pr(A_{t}{=}a\mid S_{t}{=}s)\end{aligned}}}](https://wikimedia.org/api/rest_v1/media/math/render/svg/ee75e84787ca0c966a0e9f0211d5cc6d7e620cbd)
+
+that maximizes the expected cumulative reward.
+
+Formulating the problem as a Markov decision process assumes the agent directly observes the current environmental state; in this case, the problem is said to have _full observability_. If the agent only has access to a subset of states, or if the observed states are corrupted by noise, the agent is said to have _partial observability_, and formally the problem must be formulated as a [partially observable Markov decision process](https://en.wikipedia.org/wiki/Partially_observable_Markov_decision_process "Partially observable Markov decision process"). In both cases, the set of actions available to the agent can be restricted. For example, the state of an account balance could be restricted to be positive; if the current value of the state is 3 and the state transition attempts to reduce the value by 4, the transition will not be allowed.
+
+When the agent's performance is compared to that of an agent that acts optimally, the difference in performance yields the notion of [regret](https://en.wikipedia.org/wiki/Regret_(decision_theory) "Regret (decision theory)"). In order to act near optimally, the agent must reason about long-term consequences of its actions (i.e., maximize future rewards), although the immediate reward associated with this might be negative.
+
+Thus, reinforcement learning is particularly well-suited to problems that include a long-term versus short-term reward trade-off. It has been applied successfully to various problems, including [energy storage](https://en.wikipedia.org/wiki/Energy_storage "Energy storage"),[[7]](https://en.wikipedia.org/wiki/Reinforcement_learning#cite_note-7)[robot control](https://en.wikipedia.org/wiki/Robot_control "Robot control"),[[8]](https://en.wikipedia.org/wiki/Reinforcement_learning#cite_note-8)[photovoltaic generators](https://en.wikipedia.org/wiki/Photovoltaic_system "Photovoltaic system"),[[9]](https://en.wikipedia.org/wiki/Reinforcement_learning#cite_note-9)[backgammon](https://en.wikipedia.org/wiki/Backgammon "Backgammon"), [checkers](https://en.wikipedia.org/wiki/Checkers "Checkers"),[[10]](https://en.wikipedia.org/wiki/Reinforcement_learning#cite_note-FOOTNOTESuttonBarto2018Chapter_11-10)[Go](https://en.wikipedia.org/wiki/Go_(game) "Go (game)") ([AlphaGo](https://en.wikipedia.org/wiki/AlphaGo "AlphaGo")), and [autonomous driving systems](https://en.wikipedia.org/wiki/Self-driving_car "Self-driving car").[[11]](https://en.wikipedia.org/wiki/Reinforcement_learning#cite_note-Ren-2022-11)
+
+Two elements make reinforcement learning powerful: the use of samples to optimize performance, and the use of [function approximation](https://en.wikipedia.org/wiki/Neural_network_(machine_learning) "Neural network (machine learning)") to deal with large environments. Thanks to these two key components, RL can be used in large environments in the following situations:
+
+*   A model of the environment is known, but an [analytic solution](https://en.wikipedia.org/wiki/Closed-form_expression "Closed-form expression") is not available;
+*   Only a simulation model of the environment is given (the subject of [simulation-based optimization](https://en.wikipedia.org/wiki/Simulation-based_optimization "Simulation-based optimization"));[[12]](https://en.wikipedia.org/wiki/Reinforcement_learning#cite_note-12)
+*   The only way to collect information about the environment is to interact with it.
+
+The first two of these problems could be considered planning problems (since some form of model is available), while the last one could be considered to be a genuine learning problem. However, reinforcement learning converts both planning problems to [machine learning](https://en.wikipedia.org/wiki/Machine_learning "Machine learning") problems.
+
+The [trade-off between exploration and exploitation](https://en.wikipedia.org/wiki/Exploration%E2%80%93exploitation_dilemma "Exploration–exploitation dilemma") has been most thoroughly studied through the [multi-armed bandit](https://en.wikipedia.org/wiki/Multi-armed_bandit "Multi-armed bandit") problem and for finite state space Markov decision processes in Burnetas and Katehakis (1997).[[13]](https://en.wikipedia.org/wiki/Reinforcement_learning#cite_note-Optimal_adaptive_policies_for_Marko-13)
+
+Reinforcement learning requires clever exploration mechanisms; randomly selecting actions, without reference to an estimated probability distribution, shows poor performance. The case of (small) finite Markov decision processes is relatively well understood. However, due to the lack of algorithms that scale well with the number of states (or scale to problems with infinite state spaces), simple exploration methods are the most practical.
+
+One such method is ![Image 9: {\displaystyle \varepsilon }](https://wikimedia.org/api/rest_v1/media/math/render/svg/a30c89172e5b88edbd45d3e2772c7f5e562e5173)-greedy, where ![Image 10: {\displaystyle 0<\varepsilon <1}](https://wikimedia.org/api/rest_v1/media/math/render/svg/a62c0bbc36352f492bde6217430cfe342032487d) is a parameter controlling the amount of exploration vs. exploitation. With probability ![Image 11: {\displaystyle 1-\varepsilon }](https://wikimedia.org/api/rest_v1/media/math/render/svg/09646b74d0bca9befab4b7e9456a44a20d250ace), exploitation is chosen, and the agent chooses the action that it believes has the best long-term effect (ties between actions are broken uniformly at random). Alternatively, with probability ![Image 12: {\displaystyle \varepsilon }](https://wikimedia.org/api/rest_v1/media/math/render/svg/a30c89172e5b88edbd45d3e2772c7f5e562e5173), exploration is chosen, and the action is chosen uniformly at random. ![Image 13: {\displaystyle \varepsilon }](https://wikimedia.org/api/rest_v1/media/math/render/svg/a30c89172e5b88edbd45d3e2772c7f5e562e5173) is usually a fixed parameter but can be adjusted either according to a schedule (making the agent explore progressively less), or adaptively based on heuristics.[[14]](https://en.wikipedia.org/wiki/Reinforcement_learning#cite_note-14)
+
+## Algorithms for control learning
+
+[[edit](https://en.wikipedia.org/w/index.php?title=Reinforcement_learning&action=edit&section=3 "Edit section: Algorithms for control learning")]
+
+Even if the issue of exploration is disregarded and even if the state was observable (assumed hereafter), the problem remains to use past experience to find out which actions lead to higher cumulative rewards.
+
+### Criterion of optimality
+
+[[edit](https://en.wikipedia.org/w/index.php?title=Reinforcement_learning&action=edit&section=4 "Edit section: Criterion of optimality")]
+
+The agent's action selection is modeled as a map called _policy_: ![Image 14: {\displaystyle {\begin{aligned}&\pi :{\mathcal {A}}\times {\mathcal {S}}\to [0,1]\\&\pi (a,s)=\Pr(A_{t}{=}a\mid S_{t}{=}s)\end{aligned}}}](https://wikimedia.org/api/rest_v1/media/math/render/svg/faf86ca6e9ac691c88adc9e5181f49aa9c8ed658)
+
+The policy map gives the probability of taking action ![Image 15: {\displaystyle a}](https://wikimedia.org/api/rest_v1/media/math/render/svg/ffd2487510aa438433a2579450ab2b3d557e5edc) when in state ![Image 16: {\displaystyle s}](https://wikimedia.org/api/rest_v1/media/math/render/svg/01d131dfd7673938b947072a13a9744fe997e632).[[15]](https://en.wikipedia.org/wiki/Reinforcement_learning#cite_note-:0-15):61 There are also deterministic policies ![Image 17: {\displaystyle \pi }](https://wikimedia.org/api/rest_v1/media/math/render/svg/9be4ba0bb8df3af72e90a0535fabcc17431e540a) for which ![Image 18: {\displaystyle \pi (s)}](https://wikimedia.org/api/rest_v1/media/math/render/svg/a3df25793e1e7a06faa8e939a794c8de8b4459bf) denotes the action that should be played at state ![Image 19: {\displaystyle s}](https://wikimedia.org/api/rest_v1/media/math/render/svg/01d131dfd7673938b947072a13a9744fe997e632).
+
+#### State-value function
+
+[[edit](https://en.wikipedia.org/w/index.php?title=Reinforcement_learning&action=edit&section=6 "Edit section: State-value function")]
+
+The state-value function ![Image 20: {\displaystyle V_{\pi }(s)}](https://wikimedia.org/api/rest_v1/media/math/render/svg/04f08b168d05891950e565017e284abee8bf7cf1) is defined as, _expected discounted return_ starting with state ![Image 21: {\displaystyle s}](https://wikimedia.org/api/rest_v1/media/math/render/svg/01d131dfd7673938b947072a13a9744fe997e632), i.e. ![Image 22: {\displaystyle S_{0}=s}](https://wikimedia.org/api/rest_v1/media/math/render/svg/76b9df1ecbdbd4dbae77931a7aa185959d3b55f3), and successively following policy ![Image 23: {\displaystyle \pi }](https://wikimedia.org/api/rest_v1/media/math/render/svg/9be4ba0bb8df3af72e90a0535fabcc17431e540a). Hence, roughly speaking, the value function estimates "how good" it is to be in a given state.[[15]](https://en.wikipedia.org/wiki/Reinforcement_learning#cite_note-:0-15):60
+
+![Image 24: {\displaystyle V_{\pi }(s)=\operatorname {\mathbb {E} } [G\mid S_{0}{=}s]=\operatorname {\mathbb {E} } \left[\sum _{t=0}^{\infty }\gamma ^{t}R_{t+1}\mid S_{0}{=}s\right],}](https://wikimedia.org/api/rest_v1/media/math/render/svg/2996eb96d86d3825a44865cba9f412f447f5066d)
+
+where the random variable ![Image 25: {\displaystyle G}](https://wikimedia.org/api/rest_v1/media/math/render/svg/f5f3c8921a3b352de45446a6789b104458c9f90b) denotes the **discounted return**, and is defined as the sum of future discounted rewards:
+
+![Image 26: {\displaystyle G=\sum _{t=0}^{\infty }\gamma ^{t}R_{t+1}=R_{1}+\gamma R_{2}+\gamma ^{2}R_{3}+\cdots ,}](https://wikimedia.org/api/rest_v1/media/math/render/svg/2ea5e83239be695abb7fef3a349fda8063852820)
+
+where ![Image 27: {\displaystyle R_{t+1}}](https://wikimedia.org/api/rest_v1/media/math/render/svg/78bc3f077c19f7db4e89b5529a5861b06ae782b7) is the reward for transitioning from state ![Image 28: {\displaystyle S_{t}}](https://wikimedia.org/api/rest_v1/media/math/render/svg/7e2391e6e796fbf718be3828080775ac2ac3d3d4) to ![Image 29: {\displaystyle S_{t+1}}](https://wikimedia.org/api/rest_v1/media/math/render/svg/7fde0b9d29bcb7e8d3eee3a8f42ead14aa3b8cee),![Image 30: {\displaystyle 0\leq \gamma <1}](https://wikimedia.org/api/rest_v1/media/math/render/svg/84796b874665109176d8773a2e6495f00c7cc360) is the [discount rate](https://en.wikipedia.org/wiki/Q-learning#Discount_factor "Q-learning"). ![Image 31: {\displaystyle \gamma }](https://wikimedia.org/api/rest_v1/media/math/render/svg/a223c880b0ce3da8f64ee33c4f0010beee400b1a) is less than 1, so rewards in the distant future are weighted less than rewards in the immediate future.
+
+The goal is to find a policy that maximizes the expected discounted return. From the theory of Markov decision processes it is known that, without loss of generality, the search can be restricted to the set of so-called _stationary_ policies. A policy is _stationary_ if the action-distribution returned by it depends only on the last state visited (from the observation agent's history). The search can be further restricted to _deterministic_ stationary policies. A _deterministic stationary_ policy deterministically selects actions based on the current state. Since any such policy can be identified with a mapping from the set of states to the set of actions, these policies can be identified with such mappings with no loss of generality.
+
+The [brute force](https://en.wikipedia.org/wiki/Brute-force_search "Brute-force search") approach entails two steps:
+
+*   For each possible policy, sample returns while following it
+*   Choose the policy with the largest expected discounted return
+
+One problem with this is that the number of policies can be large, or even infinite. Another is that the variance of the returns may be large, which requires many samples to accurately estimate the discounted return of each policy.
+
+These problems can be ameliorated if we assume some structure and allow samples generated from one policy to influence the estimates made for others. The two main approaches for achieving this are [value function estimation](https://en.wikipedia.org/wiki/Reinforcement_learning#Value_function) and [direct policy search](https://en.wikipedia.org/wiki/Reinforcement_learning#Direct_policy_search).
+
+Value function approaches attempt to find a policy that maximizes the discounted return by maintaining a set of estimates of expected discounted returns ![Image 32: {\displaystyle \operatorname {\mathbb {E} } [G]}](https://wikimedia.org/api/rest_v1/media/math/render/svg/c17deb2341b047040bbddcbb56bae20d587311cb) for some policy (usually either the "current" [on-policy] or the optimal [off-policy] one).
+
+These methods rely on the theory of Markov decision processes, where optimality is defined in a sense stronger than the one above: A policy is optimal if it achieves the best-expected discounted return from _any_ initial state (i.e., initial distributions play no role in this definition). Again, an optimal policy can always be found among stationary policies.
+
+To 
+=============== #3  https://r.jina.ai/https://www.reuters.com/technology/
+
+HTTP_CODE:200
+SIZE:190
+IP:104.26.11.242
+
+Markdown Content:
+
+---BODY (max 20KB)---
+Title: reuters.com
+
+URL Source: https://www.reuters.com/technology/
+
+Warning: This page maybe requiring CAPTCHA, please make sure you are authorized to access this page.
+
+Markdown Content:
+
+
+fetched 3 url(s)
