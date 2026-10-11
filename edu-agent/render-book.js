@@ -71,6 +71,15 @@ const SHOTS = [
       for (const e of els) {
         const txt = (e.textContent || '').trim();
         if (!txt) continue;
+        // کدریِ مؤثر: متنی از بیت‌های قبل که panel() محو کرده، نباید شمرده شود
+        let op = 1, n = e;
+        while (n && n !== document.body) {
+          const o = getComputedStyle(n).opacity;
+          if (o !== '') op *= parseFloat(o);
+          if (n.getAttribute && n.getAttribute('display') === 'none') { op = 0; break; }
+          n = n.parentElement;
+        }
+        if (op < 0.05) continue;                           // عملاً نامرئی
         const r = e.getBoundingClientRect();
         if (!r.width && !r.height) continue;               // پنهان یا سایز صفر
         const fa = /[\u0600-\u06FF]/.test(txt);
