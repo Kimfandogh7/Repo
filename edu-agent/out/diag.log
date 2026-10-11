@@ -1,9 +1,9 @@
-RUN_ID=38137363862
+RUN_ID=38146524287
 === pwd: /home/runner/work/Repo/Repo ===
 === ۱. صداهای فارسیِ Edge TTS ===
 Downloading aiohttp (1.8MiB)
  Downloaded aiohttp
-Installed 13 packages in 4ms
+Installed 13 packages in 13ms
 fa: ['fa-IR-DilaraNeural', 'fa-IR-FaridNeural']
 === ۲. ساختِ نریشن ===
 intro: synthesized
@@ -16,89 +16,91 @@ q1: synthesized
 wrap: synthesized
 finish: synthesized
 total 620
-drwxr-xr-x 2 runner runner   4096 Oct 11 11:56 .
-drwxr-xr-x 3 runner runner   4096 Oct 11 11:55 ..
--rw------- 1 runner runner 116208 Oct 11 11:56 example.mp3
--rw------- 1 runner runner  44640 Oct 11 11:56 finish.mp3
--rw------- 1 runner runner  53568 Oct 11 11:56 idea.mp3
--rw------- 1 runner runner  41760 Oct 11 11:56 intro.mp3
--rw------- 1 runner runner  57024 Oct 11 11:56 q1.mp3
--rw------- 1 runner runner  67968 Oct 11 11:56 rule.mp3
--rw------- 1 runner runner   7304 Oct 11 11:56 timings.js
--rw------- 1 runner runner  97776 Oct 11 11:56 why.mp3
--rw------- 1 runner runner  60336 Oct 11 11:56 wrap.mp3
--rw------- 1 runner runner  63936 Oct 11 11:56 wrong.mp3
+drwxr-xr-x 2 runner runner   4096 Oct 11 14:17 .
+drwxr-xr-x 3 runner runner   4096 Oct 11 14:16 ..
+-rw------- 1 runner runner 116208 Oct 11 14:17 example.mp3
+-rw------- 1 runner runner  44640 Oct 11 14:17 finish.mp3
+-rw------- 1 runner runner  53568 Oct 11 14:17 idea.mp3
+-rw------- 1 runner runner  41760 Oct 11 14:17 intro.mp3
+-rw------- 1 runner runner  57024 Oct 11 14:17 q1.mp3
+-rw------- 1 runner runner  67968 Oct 11 14:17 rule.mp3
+-rw------- 1 runner runner   7304 Oct 11 14:17 timings.js
+-rw------- 1 runner runner  97776 Oct 11 14:17 why.mp3
+-rw------- 1 runner runner  60336 Oct 11 14:17 wrap.mp3
+-rw------- 1 runner runner  63936 Oct 11 14:17 wrong.mp3
 === ۳. رندر ===
-RUN_ID=38137363862  http://127.0.0.1:8765/moshkel/ch01/
-127.0.0.1 - - [11/Oct/2026 11:56:52] "GET /moshkel/ch01/ HTTP/1.1" 200 -
-127.0.0.1 - - [11/Oct/2026 11:56:52] "GET /moshkel/lib/engine.css HTTP/1.1" 200 -
-127.0.0.1 - - [11/Oct/2026 11:56:52] "GET /moshkel/lib/engine.js HTTP/1.1" 200 -
-127.0.0.1 - - [11/Oct/2026 11:56:52] "GET /moshkel/ch01/audio/fa/timings.js HTTP/1.1" 200 -
-127.0.0.1 - - [11/Oct/2026 11:56:52] "GET /moshkel/ch01/audio/fa/intro.mp3 HTTP/1.1" 200 -
-DIAG {"dir":"rtl","lang":"fa","hasTimings":true,"beats":9,"rtl":true,"svgTexts":3,"sample":["فصل یک","قاعده‌ی زنجیره‌ای","وقتی یک تابع، داخلِ تابعِ دیگری است"]}
-127.0.0.1 - - [11/Oct/2026 11:56:54] "GET /moshkel/ch01/?beat=0&t=3 HTTP/1.1" 200 -
-127.0.0.1 - - [11/Oct/2026 11:56:54] "GET /moshkel/ch01/audio/fa/timings.js HTTP/1.1" 304 -
-127.0.0.1 - - [11/Oct/2026 11:56:54] "GET /moshkel/ch01/audio/fa/intro.mp3 HTTP/1.1" 304 -
-beat 0 @3s -> beat-00.png 1196371b  text=3 بیرون‌زده=0 مشکوک‌به‌توفو=0
-   [فا] x= 800 y=304 w=  99  «فصل یک»
-   [فا] x= 800 y=361 w= 558  «قاعده‌ی زنجیره‌ای»
-127.0.0.1 - - [11/Oct/2026 11:56:56] "GET /moshkel/ch01/?beat=1&t=4 HTTP/1.1" 200 -
-127.0.0.1 - - [11/Oct/2026 11:56:56] "GET /moshkel/ch01/audio/fa/timings.js HTTP/1.1" 304 -
-127.0.0.1 - - [11/Oct/2026 11:56:56] "GET /moshkel/ch01/audio/fa/idea.mp3 HTTP/1.1" 200 -
-beat 1 @4s -> beat-01.png 1209402b  text=7 بیرون‌زده=0 مشکوک‌به‌توفو=0
-   [فا] x= 800 y=206 w= 339  «مشتقِ این تابع را بگیر:»
+RUN_ID=38146524287  http://127.0.0.1:8765/moshkel/ch01/
+127.0.0.1 - - [11/Oct/2026 14:17:43] "GET /moshkel/ch01/ HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 14:17:43] "GET /moshkel/lib/engine.css HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 14:17:43] "GET /moshkel/lib/engine.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 14:17:43] "GET /moshkel/ch01/audio/fa/timings.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 14:17:43] "GET /moshkel/lib/fonts/Vazirmatn[wght].woff2 HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 14:17:43] "GET /moshkel/ch01/audio/fa/intro.mp3 HTTP/1.1" 200 -
+DIAG {"dir":"rtl","lang":"fa","hasTimings":true,"beats":9,"rtl":true,"vazirLoaded":true,"fontsStatus":"loaded","widthVazir":261,"widthGeneric":291,"svgTexts":3,"sample":["فصل یک","قاعده‌ی زنجیره‌ای","وقتی یک تابع، داخلِ تابعِ دیگری است"]}
+فونت: Vazirmatn بار شده = true | پهنای فارسی: Vazirmatn=261 در برابر serif=291 | ✓ متفاوت (فونت واقعی)
+127.0.0.1 - - [11/Oct/2026 14:17:45] "GET /moshkel/ch01/?beat=0&t=3 HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 14:17:45] "GET /moshkel/ch01/audio/fa/timings.js HTTP/1.1" 304 -
+127.0.0.1 - - [11/Oct/2026 14:17:45] "GET /moshkel/ch01/audio/fa/intro.mp3 HTTP/1.1" 304 -
+beat 0 @3s -> beat-00.png 1195727b  text=3 بیرون‌زده=0 مشکوک‌به‌توفو=0
+   [فا] x= 800 y=301 w= 100  «فصل یک»
+   [فا] x= 800 y=352 w= 510  «قاعده‌ی زنجیره‌ای»
+127.0.0.1 - - [11/Oct/2026 14:17:47] "GET /moshkel/ch01/?beat=1&t=4 HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 14:17:47] "GET /moshkel/ch01/audio/fa/timings.js HTTP/1.1" 304 -
+127.0.0.1 - - [11/Oct/2026 14:17:47] "GET /moshkel/ch01/audio/fa/idea.mp3 HTTP/1.1" 200 -
+beat 1 @4s -> beat-01.png 1210411b  text=7 بیرون‌زده=0 مشکوک‌به‌توفو=0
+   [فا] x= 800 y=201 w= 332  «مشتقِ این تابع را بگیر:»
    [لا] x= 628 y=296 w=  26  «2»
    [لا] x= 416 y=306 w= 267  «(3x + 1)»
-   [فا] x= 800 y=511 w= 538  «اولین چیزی که به ذهنت می‌رسد»
-127.0.0.1 - - [11/Oct/2026 11:56:58] "GET /moshkel/ch01/?beat=2&t=4 HTTP/1.1" 200 -
-127.0.0.1 - - [11/Oct/2026 11:56:58] "GET /moshkel/lib/engine.css HTTP/1.1" 304 -
-127.0.0.1 - - [11/Oct/2026 11:56:58] "GET /moshkel/lib/engine.js HTTP/1.1" 304 -
-127.0.0.1 - - [11/Oct/2026 11:56:58] "GET /moshkel/ch01/audio/fa/timings.js HTTP/1.1" 304 -
-127.0.0.1 - - [11/Oct/2026 11:56:58] "GET /moshkel/ch01/audio/fa/wrong.mp3 HTTP/1.1" 200 -
-beat 2 @4s -> beat-02.png 1201993b  text=10 بیرون‌زده=0 مشکوک‌به‌توفو=0
-   [فا] x= 800 y=187 w= 586  «پاسخی که بیشترِ دانش‌آموزان »
+   [فا] x= 800 y=507 w= 516  «اولین چیزی که به ذهنت می‌رسد»
+127.0.0.1 - - [11/Oct/2026 14:17:49] "GET /moshkel/ch01/?beat=2&t=4 HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 14:17:49] "GET /moshkel/lib/engine.css HTTP/1.1" 304 -
+127.0.0.1 - - [11/Oct/2026 14:17:49] "GET /moshkel/lib/engine.js HTTP/1.1" 304 -
+127.0.0.1 - - [11/Oct/2026 14:17:49] "GET /moshkel/ch01/audio/fa/timings.js HTTP/1.1" 304 -
+127.0.0.1 - - [11/Oct/2026 14:17:50] "GET /moshkel/ch01/audio/fa/wrong.mp3 HTTP/1.1" 200 -
+beat 2 @4s -> beat-02.png 1202819b  text=10 بیرون‌زده=0 مشکوک‌به‌توفو=0
+   [فا] x= 800 y=186 w= 546  «پاسخی که بیشترِ دانش‌آموزان »
    [لا] x= 381 y=292 w= 279  «2(3x + 1)»
-127.0.0.1 - - [11/Oct/2026 11:57:00] "GET /moshkel/ch01/?beat=3&t=6 HTTP/1.1" 200 -
-127.0.0.1 - - [11/Oct/2026 11:57:00] "GET /moshkel/ch01/audio/fa/timings.js HTTP/1.1" 304 -
-127.0.0.1 - - [11/Oct/2026 11:57:00] "GET /moshkel/ch01/audio/fa/why.mp3 HTTP/1.1" 200 -
-beat 3 @6s -> beat-03.png 1207251b  text=17 بیرون‌زده=0 مشکوک‌به‌توفو=0
-   [فا] x= 800 y=169 w= 543  «چون داخلِ پرانتز فقط «ایکس» »
-   [فا] x= 420 y=303 w= 156  «لایه‌ی بیرونی»
-   [لا] x= 350 y=370 w=  19  «2»
-   [لا] x= 304 y=377 w=  85  «(...)»
-   [فا] x=1180 y=303 w= 149  «لایه‌ی درونی»
-   [لا] x= 954 y=377 w= 150  «3x + 1»
-127.0.0.1 - - [11/Oct/2026 11:57:02] "GET /moshkel/ch01/?beat=4&t=6 HTTP/1.1" 200 -
-127.0.0.1 - - [11/Oct/2026 11:57:02] "GET /moshkel/ch01/audio/fa/timings.js HTTP/1.1" 304 -
-127.0.0.1 - - [11/Oct/2026 11:57:02] "GET /moshkel/ch01/audio/fa/rule.mp3 HTTP/1.1" 200 -
-beat 4 @6s -> beat-04.png 1206138b  text=23 بیرون‌زده=0 مشکوک‌به‌توفو=0
-   [فا] x= 800 y=166 w= 289  «قاعده‌ی زنجیره‌ای:»
-   [فا] x= 700 y=292 w= 384  «۱. مشتقِ لایه‌ی بیرونی»
-   [فا] x= 700 y=392 w= 538  «۲. ضرب در مشتقِ لایه‌ی درونی»
-127.0.0.1 - - [11/Oct/2026 11:57:04] "GET /moshkel/ch01/?beat=5&t=8 HTTP/1.1" 200 -
-127.0.0.1 - - [11/Oct/2026 11:57:04] "GET /moshkel/lib/engine.js HTTP/1.1" 304 -
-127.0.0.1 - - [11/Oct/2026 11:57:04] "GET /moshkel/lib/engine.css HTTP/1.1" 304 -
-127.0.0.1 - - [11/Oct/2026 11:57:04] "GET /moshkel/ch01/audio/fa/timings.js HTTP/1.1" 304 -
-127.0.0.1 - - [11/Oct/2026 11:57:04] "GET /moshkel/ch01/audio/fa/example.mp3 HTTP/1.1" 200 -
-beat 5 @8s -> beat-05.png 1195721b  text=30 بیرون‌زده=0 مشکوک‌به‌توفو=0
-   [فا] x= 360 y=221 w= 245  «بیرونی: توانِ دو →»
-   [فا] x= 360 y=441 w= 327  «درونی: مشتقِ (3x+1) →»
-127.0.0.1 - - [11/Oct/2026 11:57:06] "GET /moshkel/ch01/?beat=6&t=2.5 HTTP/1.1" 200 -
-127.0.0.1 - - [11/Oct/2026 11:57:06] "GET /moshkel/ch01/audio/fa/timings.js HTTP/1.1" 304 -
-127.0.0.1 - - [11/Oct/2026 11:57:06] "GET /moshkel/ch01/audio/fa/q1.mp3 HTTP/1.1" 200 -
-beat 6 @2.5s -> beat-06.png 1049775b  text=34 بیرون‌زده=0 مشکوک‌به‌توفو=0
-   [فا] x= 984 y=755 w= 357  «مشتقِ 2(5x − 1) چیست؟»
-   [لا] x= 157 y=732 w= 799  «110(5x − 1)22(5x − 1)310x − »
-127.0.0.1 - - [11/Oct/2026 11:57:08] "GET /moshkel/ch01/?beat=7&t=5 HTTP/1.1" 200 -
-127.0.0.1 - - [11/Oct/2026 11:57:08] "GET /moshkel/ch01/audio/fa/timings.js HTTP/1.1" 304 -
-127.0.0.1 - - [11/Oct/2026 11:57:08] "GET /moshkel/ch01/audio/fa/wrap.mp3 HTTP/1.1" 200 -
-beat 7 @5s -> beat-07.png 1203229b  text=34 بیرون‌زده=0 مشکوک‌به‌توفو=0
+127.0.0.1 - - [11/Oct/2026 14:17:52] "GET /moshkel/ch01/?beat=3&t=6 HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 14:17:52] "GET /moshkel/ch01/audio/fa/timings.js HTTP/1.1" 304 -
+127.0.0.1 - - [11/Oct/2026 14:17:52] "GET /moshkel/ch01/audio/fa/why.mp3 HTTP/1.1" 200 -
+beat 3 @6s -> beat-03.png 1206917b  text=17 بیرون‌زده=0 مشکوک‌به‌توفو=0
+   [فا] x= 800 y=166 w= 511  «چون داخلِ پرانتز فقط «ایکس» »
+   [فا] x=1180 y=299 w= 148  «لایه‌ی بیرونی»
+   [لا] x=1110 y=370 w=  19  «2»
+   [لا] x=1064 y=377 w=  85  «(...)»
+   [فا] x= 420 y=299 w= 140  «لایه‌ی درونی»
+   [لا] x= 194 y=377 w= 150  «3x + 1»
+127.0.0.1 - - [11/Oct/2026 14:17:54] "GET /moshkel/ch01/?beat=4&t=6 HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 14:17:54] "GET /moshkel/ch01/audio/fa/timings.js HTTP/1.1" 304 -
+127.0.0.1 - - [11/Oct/2026 14:17:54] "GET /moshkel/ch01/audio/fa/rule.mp3 HTTP/1.1" 200 -
+beat 4 @6s -> beat-04.png 1205757b  text=23 بیرون‌زده=0 مشکوک‌به‌توفو=0
+   [فا] x= 800 y=161 w= 264  «قاعده‌ی زنجیره‌ای:»
+   [فا] x= 700 y=287 w= 358  «۱. مشتقِ لایه‌ی بیرونی»
+   [فا] x= 700 y=387 w= 503  «۲. ضرب در مشتقِ لایه‌ی درونی»
+127.0.0.1 - - [11/Oct/2026 14:17:56] "GET /moshkel/ch01/?beat=5&t=8 HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 14:17:56] "GET /moshkel/ch01/audio/fa/timings.js HTTP/1.1" 304 -
+127.0.0.1 - - [11/Oct/2026 14:17:56] "GET /moshkel/lib/engine.js HTTP/1.1" 304 -
+127.0.0.1 - - [11/Oct/2026 14:17:56] "GET /moshkel/lib/engine.css HTTP/1.1" 304 -
+127.0.0.1 - - [11/Oct/2026 14:17:56] "GET /moshkel/ch01/audio/fa/example.mp3 HTTP/1.1" 200 -
+beat 5 @8s -> beat-05.png 1194817b  text=30 بیرون‌زده=0 مشکوک‌به‌توفو=0
+   [فا] x= 360 y=217 w= 228  «بیرونی: توانِ دو →»
+   [فا] x= 360 y=437 w= 306  «درونی: مشتقِ (3x+1) →»
+127.0.0.1 - - [11/Oct/2026 14:17:58] "GET /moshkel/ch01/?beat=6&t=2.5 HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 14:17:58] "GET /moshkel/ch01/audio/fa/timings.js HTTP/1.1" 304 -
+127.0.0.1 - - [11/Oct/2026 14:17:58] "GET /moshkel/ch01/audio/fa/q1.mp3 HTTP/1.1" 200 -
+beat 6 @2.5s -> beat-06.png 1049258b  text=34 بیرون‌زده=0 مشکوک‌به‌توفو=0
+   [فا] x= 258 y=755 w= 383  «مشتقِ 2(5x − 1) چیست؟»
+   [لا] x= 669 y=732 w= 774  «110(5x − 1)22(5x − 1)310x − »
+127.0.0.1 - - [11/Oct/2026 14:18:00] "GET /moshkel/ch01/?beat=7&t=5 HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 14:18:00] "GET /moshkel/ch01/audio/fa/timings.js HTTP/1.1" 304 -
+127.0.0.1 - - [11/Oct/2026 14:18:00] "GET /moshkel/ch01/audio/fa/wrap.mp3 HTTP/1.1" 200 -
+beat 7 @5s -> beat-07.png 1203563b  text=34 بیرون‌زده=0 مشکوک‌به‌توفو=0
    [لا] x= 200 y=292 w=  17  «1»
-   [فا] x= 280 y=281 w= 451  «لایه‌ی بیرونی را مشتق بگیر.»
+   [فا] x= 280 y=279 w= 422  «لایه‌ی بیرونی را مشتق بگیر.»
    [لا] x= 200 y=442 w=  17  «2»
-   [فا] x= 280 y=433 w= 536  «در مشتقِ لایه‌ی درونی ضرب کن»
+   [فا] x= 280 y=429 w= 500  «در مشتقِ لایه‌ی درونی ضرب کن»
 no page errors
-RUN_ID=38137363862 DONE
+RUN_ID=38146524287 DONE
 render exit=0
 === ۴. خروجی ===
 edu-agent/out/page-02.png
