@@ -1,0 +1,36 @@
+[
+  {"id": "d01", "text": "مشتقِ x⁵ چیست؟", "b": -2.2, "concepts": ["power_rule"], "options": ["5x⁴", "x⁴", "5x", "4x⁵"], "answer": 0, "explanation": "توان ضرب در ضریب، و توان یکی کم می‌شود."},
+  {"id": "d02", "text": "مشتقِ 3x² چیست؟", "b": -1.9, "concepts": ["power_rule"], "options": ["6x", "3x", "6x²", "x²"], "answer": 0, "explanation": ""},
+  {"id": "d03", "text": "مشتقِ عدد ثابت (مثل ۷) چیست؟", "b": -2.5, "concepts": ["power_rule", "concept_constant"], "options": ["صفر", "۷", "۱", "تعریف نشده"], "answer": 0, "explanation": ""},
+  {"id": "d04", "text": "مشتقِ x⁻² چیست؟", "b": -0.8, "concepts": ["power_rule", "negative_exponent"], "options": ["-2x⁻³", "2x⁻³", "-2x⁻¹", "x⁻³"], "answer": 0, "explanation": ""},
+  {"id": "d05", "text": "مشتقِ √x چیست؟", "b": -0.4, "concepts": ["power_rule", "radical"], "options": ["1/(2√x)", "2√x", "1/√x", "√x/2"], "answer": 0, "explanation": "√x = x^(1/2)"},
+
+  {"id": "p01", "text": "مشتقِ x·sin(x) چیست؟", "b": 0.2, "concepts": ["product_rule"], "options": ["sin(x) + x·cos(x)", "cos(x)", "x·cos(x)", "sin(x)·cos(x)"], "answer": 0, "explanation": "(uv)' = u'v + uv'"},
+  {"id": "p02", "text": "مشتقِ x²·eˣ چیست؟", "b": 0.6, "concepts": ["product_rule", "exp_derivative"], "options": ["2x·eˣ + x²·eˣ", "2x·eˣ", "x²·eˣ", "2x + eˣ"], "answer": 0, "explanation": ""},
+  {"id": "p03", "text": "مشتقِ (x+1)(x-1) چیست؟", "b": -0.6, "concepts": ["product_rule", "expansion"], "options": ["2x", "x²", "1", "2"], "answer": 0, "explanation": "یا اول بسط بده: x²-1"},
+
+  {"id": "q01", "text": "مشتقِ (x²+1)/(x-1) — کدام قانون؟", "b": 0.8, "concepts": ["quotient_rule"], "options": ["قانونِ خارج‌قسمت", "قانونِ ضرب", "قانونِ توان", "قانونِ زنجیره‌ای"], "answer": 0, "explanation": ""},
+  {"id": "q02", "text": "مشتقِ 1/x² چیست؟", "b": 0.1, "concepts": ["quotient_rule", "negative_exponent"], "options": ["-2/x³", "2/x³", "-1/x", "-2/x"], "answer": 0, "explanation": ""},
+  {"id": "q03", "text": "مشتقِ sin(x)/x در چه صورتی ساده می‌شود؟", "b": 1.6, "concepts": ["quotient_rule", "trig_derivative"], "options": ["هیچ‌وقت — همیشه به خارج‌قسمت نیاز است", "وقتی x=0", "وقتی x=1", "همیشه"], "answer": 0, "explanation": ""},
+
+  {"id": "c01", "text": "مشتقِ sin(3x) چیست؟", "b": 0.4, "concepts": ["chain_rule", "trig_derivative"], "options": ["3cos(3x)", "cos(3x)", "-3cos(3x)", "3sin(3x)"], "answer": 0, "explanation": "مشتقِ لایه‌ی داخلی ضرب می‌شود."},
+  {"id": "c02", "text": "مشتقِ (x²+1)¹⁰ چیست؟", "b": 1.2, "concepts": ["chain_rule", "power_rule"], "options": ["10(x²+1)⁹·2x", "10(x²+1)⁹", "(x²+1)⁹·2x", "10x"], "answer": 0, "explanation": ""},
+  {"id": "c03", "text": "مشتقِ e^(x²) چیست؟", "b": 1.0, "concepts": ["chain_rule", "exp_derivative"], "options": ["e^(x²)·2x", "e^(x²)", "2x", "e^(2x)"], "answer": 0, "explanation": ""},
+  {"id": "c04", "text": "مشتقِ ln(sin x) چیست؟", "b": 1.9, "concepts": ["chain_rule", "log_derivative", "trig_derivative"], "options": ["cos(x)/sin(x)", "1/sin(x)", "cos(x)", "1/x"], "answer": 0, "explanation": ""},
+  {"id": "c05", "text": "مشتقِ √(x²+1) چیست؟", "b": 1.4, "concepts": ["chain_rule", "radical"], "options": ["x/√(x²+1)", "1/(2√(x²+1))", "2x/√(x²+1)", "√(x²+1)"], "answer": 0, "explanation": ""},
+  {"id": "c06", "text": "اگر f(x)=g(h(x)) باشد، f'(x) چیست؟", "b": 0.3, "concepts": ["chain_rule", "concept_notation"], "options": ["g'(h(x))·h'(x)", "g'(h(x))", "h'(x)·g'(x)·x", "g(h'(x))"], "answer": 0, "explanation": ""},
+
+  {"id": "t01", "text": "مشتقِ cos(x) چیست؟", "b": -1.2, "concepts": ["trig_derivative"], "options": ["-sin(x)", "sin(x)", "-cos(x)", "tan(x)"], "answer": 0, "explanation": ""},
+  {"id": "t02", "text": "مشتقِ tan(x) چیست؟", "b": 0.9, "concepts": ["trig_derivative"], "options": ["sec²(x)", "csc²(x)", "sec(x)tan(x)", "1/cos(x)"], "answer": 0, "explanation": ""},
+  {"id": "e01", "text": "مشتقِ eˣ چیست؟", "b": -1.5, "concepts": ["exp_derivative"], "options": ["eˣ", "x·eˣ⁻¹", "eˣ⁻¹", "1"], "answer": 0, "explanation": "این تابع مشتقش خودش است."},
+  {"id": "l01", "text": "مشتقِ ln(x) چیست؟", "b": -1.0, "concepts": ["log_derivative"], "options": ["1/x", "x", "ln(x)", "1"], "answer": 0, "explanation": ""},
+
+  {"id": "a01", "text": "مشتقِ f در نقطه‌ی x چه چیزی را نشان می‌دهد؟", "b": -1.8, "concepts": ["concept_meaning"], "options": ["نرخِ لحظه‌ایِ تغییر / شیبِ مماس", "مساحتِ زیر نمودار", "بیشینه‌ی تابع", "ریشه‌ی تابع"], "answer": 0, "explanation": ""},
+  {"id": "a02", "text": "برای یافتنِ نقاطِ بیشینه/کمینه‌ی محلی، مشتق را با چه چیزی برابر می‌گذاریم؟", "b": 0.5, "concepts": ["applications"], "options": ["صفر", "یک", "بی‌نهایت", "x"], "answer": 0, "explanation": ""},
+  {"id": "a03", "text": "اگر f''(x) > 0 باشد، نمودار در آن نقطه چگونه است؟", "b": 1.1, "concepts": ["applications", "second_derivative"], "options": ["کاو (concave up)", "کوژ (concave down)", "خطی", "نقطه‌ی عطف"], "answer": 0, "explanation": ""},
+  {"id": "a04", "text": "یک توپ پرتاب می‌شود. مشتقِ دومِ ارتفاع نسبت به زمان چیست؟", "b": 1.7, "concepts": ["applications", "physics_link"], "options": ["شتابِ گرانش", "سرعت", "ارتفاع", "تکانه"], "answer": 0, "explanation": ""},
+
+  {"id": "m01", "text": "مشتقِ مرتبه‌ی دومِ x⁴ چیست؟", "b": 0.7, "concepts": ["second_derivative", "power_rule"], "options": ["12x²", "4x³", "12x", "4x²"], "answer": 0, "explanation": ""},
+  {"id": "m02", "text": "مشتق ضمنیِ x² + y² = 25 را نسبت به x بگیرید. y' چیست؟", "b": 2.2, "concepts": ["implicit_diff", "chain_rule"], "options": ["-x/y", "x/y", "-y/x", "2x+2y"], "answer": 0, "explanation": ""},
+  {"id": "m03", "text": "مشتقِ xˣ چیست؟", "b": 2.6, "concepts": ["log_diff", "exp_derivative", "chain_rule"], "options": ["xˣ(ln x + 1)", "xˣ", "x·xˣ⁻¹", "xˣ·ln x"], "answer": 0, "explanation": "با لگاریتم‌گیری."}
+]

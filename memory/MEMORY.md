@@ -28,6 +28,7 @@
   * مرورگر: کرومیوم ۱۵۳ با npm نصب و اجرا شد (--version کار کرد) ولی رندر نمی‌کند: GPU process exit_code=15
   * git push به برنچ محدود است و باتِ workflow هم روی همان برنچ کامیت می‌زند -> قبل از هر push باید git pull --rebase کرد
   * توکن گیت‌هاب integration است: ساخت Gist و workflow_dispatch هر دو ۴۰۳ می‌دهند
+  * مهم: سندباکس واقعاً ریست می‌شود — تاریخچه‌ی git محلی به initial commit برگشت. همیشه قبل از کار: git fetch و مقایسه با remote
 
 ## tools
   * entroly: حتی با بودجه ۹۴٪ هیچ chunk ای برنمی‌گرداند (Selected: 0) — استفاده نشود
