@@ -1,0 +1,72 @@
+name: netexport
+# اسلایدها را با مرورگرِ واقعی رندر می‌کند و PDF/PNG تحویل می‌دهد
+# (export در open-slide فقط در مرورگر است، CLI ندارد)
+on:
+  push:
+    paths: ['edu-agent/export.js']
+permissions:
+  contents: write
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/758efc2d-repo
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: install deck deps and build
+        working-directory: edu-agent/decks/bio-demo
+        run: |
+          npm ci --no-audit --no-fund
+          npm run build
+
+      - name: serve the built deck
+        working-directory: edu-agent/decks/bio-demo
+        run: |
+          npm run preview -- --port 4173 --host 127.0.0.1 > /tmp/preview.log 2>&1 &
+          sleep 6
+          curl -s -o /dev/null -w "preview HTTP %{http_code}\n" http://127.0.0.1:4173/
+
+      - name: install playwright
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm i playwright@1.48.0 --no-audit --no-fund
+          npx playwright install --with-deps chromium
+
+      - name: render slides to PNG
+        run: |
+          node edu-agent/export.js > edu-agent/export.log 2>&1 || echo "SCRIPT_FAILED" >> edu-agent/export.log
+
+      - name: merge PNGs into one PDF
+        run: |
+          pip install --quiet pillow
+          python3 - <<'PY'
+          import os, glob
+          from PIL import Image
+          out = "edu-agent/out"
+          files = sorted(glob.glob(f"{out}/page-*.png"))
+          if not files:
+              print("NO_PAGES"); raise SystemExit(0)
+          imgs = [Image.open(f).convert("RGB") for f in files]
+          pdf = f"{out}/forgetting-curve.pdf"
+          imgs[0].save(pdf, save_all=True, append_images=imgs[1:])
+          print(f"PDF pages={len(imgs)} size={os.path.getsize(pdf)}")
+          PY
+
+      - name: commit artifacts
+        if: always()
+        run: |
+          mkdir -p edu-agent/out
+          git config user.name "netexport-bot"
+          git config user.email "netexport-bot@users.noreply.github.com"
+          git add edu-agent/out edu-agent/export.log || true
+          git diff --cached --quiet && echo "no change" || git commit -m "netexport: rendered deck"
+          git push origin HEAD:arena/758efc2d-repo
