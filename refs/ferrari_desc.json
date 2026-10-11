@@ -3,43 +3,43 @@
     {
       "frame": "01_cover.png",
       "caption": {
-        "<MORE_DETAILED_CAPTION>": "The image is a promotional graphic for the Ferrari F2004 Formula 1 car in Scuderia, Italy. The background is a solid red color, and the car is shown in a side view. The car is a bright red color with the Ferrari logo on the side and the words \"Ferrari F2004\" written in white on the top left corner. On the right side of the image, there is a smaller image of the car, which is a close-up of the front wing and the rear wing. The text on the image reads \"Scuderia - 2026\" and \"The most dominant car in Formula 1 history.\""
+        "<MORE_DETAILED_CAPTION>": "The image is a promotional graphic for the Ferrari F2004 season. It features a red Ferrari Formula 1 car on a red background. The car is shown from the front three-quarter angle, with the driver's side facing towards the left side of the image. The body of the car is predominantly red, with a sleek and aerodynamic design. The Ferrari logo is prominently displayed on the side, along with the words \"Ferrari F2004\" and \"Season 2004\" in white text. Below the car, there is a subtitle that reads \"The most dominant car in Formula 1 history.\""
       },
       "ocr": {
-        "<OCR>": "SCUDERIA - 2026FERRARIF2004The most dominant carin Formula 1 history."
+        "<OCR>": "SEASON 2004FERRARIF2004The most dominant carin Formula 1 history."
       },
       "objects": {
         "<OD>": {
           "bboxes": [
             [
-              775.3095092773438,
-              162.1125030517578,
-              1432.5255126953125,
-              685.1624755859375
+              507.3599853515625,
+              106.11000061035156,
+              937.4400024414062,
+              448.47003173828125
             ],
             [
-              0.7335000038146973,
-              0.4124999940395355,
-              1464.799560546875,
-              823.7625122070312
+              0.47999998927116394,
+              0.27000001072883606,
+              958.5599975585938,
+              539.1900024414062
             ],
             [
-              1121.521484375,
-              353.5124816894531,
-              1259.4195556640625,
-              676.9124755859375
+              733.9199829101562,
+              231.9300079345703,
+              824.1599731445312,
+              443.6100158691406
             ],
             [
-              857.4614868164062,
-              321.3374938964844,
-              979.2225341796875,
-              529.2374877929688
+              562.0800170898438,
+              210.87001037597656,
+              640.7999877929688,
+              346.4100036621094
             ],
             [
-              1341.571533203125,
-              290.8125,
-              1431.0584716796875,
-              501.1875
+              877.9199829101562,
+              190.8900146484375,
+              936.47998046875,
+              328.59002685546875
             ]
           ],
           "labels": [
@@ -55,42 +55,35 @@
     {
       "frame": "02_motion.png",
       "caption": {
-        "<MORE_DETAILED_CAPTION>": "The image shows a red Formula One racing car on a race track. The car is in motion, with the wheels slightly blurred, indicating that it is moving at a high speed. The background shows a large crowd of spectators in the stands, with trees and a fence visible in the distance. The sky is blue and the sun is setting, casting a warm glow over the scene. The text on the image reads \"The numbers 15 wins from 18 races. A season so complete it was never repeated.\""
+        "<MORE_DETAILED_CAPTION>": "The image shows a red Formula One racing car on a race track. The car is in motion, with the wheels slightly blurred, indicating that it is moving at a high speed. The background is dark, making the car stand out even more. The text on the image reads \"The numbers 15 wins from 18 races. A season so complete it was never repeated.\""
       },
       "ocr": {
-        "<OCR>": "55SantanderRID MILLERavsCevaRayonVGW@ SantanderChampionTHE NUMBERS15 wins from 18 races.A season so complete it was never repeated."
+        "<OCR>": "THE NUMBERS15 wins from 18 races.A season so complete it was never repeated."
       },
       "objects": {
         "<OD>": {
           "bboxes": [
             [
-              173.83950805664062,
-              229.7624969482422,
-              1274.0894775390625,
-              411.2624816894531
+              0.47999998927116394,
+              69.93000030517578,
+              923.0399780273438,
+              329.6700134277344
             ],
             [
-              421.76251220703125,
-              307.3125,
-              594.8685302734375,
-              409.61248779296875
+              666.719970703125,
+              121.77000427246094,
+              836.6399536132812,
+              231.9300079345703
             ],
             [
-              1102.4505615234375,
-              285.86248779296875,
-              1266.7545166015625,
-              384.0375061035156
-            ],
-            [
-              289.7325134277344,
-              294.11248779296875,
-              414.427490234375,
-              344.4375
+              0.47999998927116394,
+              193.0500030517578,
+              85.91999816894531,
+              330.21002197265625
             ]
           ],
           "labels": [
             "car",
-            "wheel",
             "wheel",
             "wheel"
           ]
@@ -109,10 +102,10 @@
         "<OD>": {
           "bboxes": [
             [
-              0.7335000038146973,
-              0.4124999940395355,
-              1464.799560546875,
-              823.7625122070312
+              0.47999998927116394,
+              0.27000001072883606,
+              958.5599975585938,
+              539.1900024414062
             ]
           ],
           "labels": [
@@ -133,10 +126,10 @@
         "<OD>": {
           "bboxes": [
             [
-              0.7335000038146973,
-              0.4124999940395355,
-              1464.799560546875,
-              823.7625122070312
+              0.47999998927116394,
+              0.27000001072883606,
+              958.5599975585938,
+              539.1900024414062
             ]
           ],
           "labels": [
