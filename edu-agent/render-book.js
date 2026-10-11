@@ -19,7 +19,7 @@ const SHOTS = [
   [3, 6.0],   // why
   [4, 6.0],   // rule
   [5, 8.0],   // example
-  [6, 0.5],   // q1 (تمرین)
+  [6, 2.5],   // q1 (تمرین)
   [7, 5.0],   // wrap
 ];
 
@@ -61,7 +61,7 @@ const SHOTS = [
     //    فارسیِ واقعی پهنایِ متنوع دارد؛ tofu همه هم‌عرض‌اند.
     // ۲) آیا متن از کادرِ ۱۶۰۰×۹۰۰ بیرون زده؟
     const audit = await page.evaluate(() => {
-      const els = [...document.querySelectorAll('#scene text')];
+      const els = [...document.querySelectorAll('#scene text, #ui .prompt, #ui .btn, #ui .body')];
       const out = [];
       let offscreen = 0, tofuish = 0;
       // مختصاتِ واقعیِ صفحه، نه دستگاهِ محلیِ g/هایِ تو‌در‌تو
@@ -69,7 +69,7 @@ const SHOTS = [
       const R = stage.getBoundingClientRect();
       const sx = 1600 / (R.width || 1600), sy = 900 / (R.height || 900);
       for (const e of els) {
-        const txt = (e.textContent || '').trim();
+        const txt = (e.textContent || '').replace(/\s+/g,' ').trim();
         if (!txt) continue;
         // کدریِ مؤثر: متنی از بیت‌های قبل که panel() محو کرده، نباید شمرده شود
         let op = 1, n = e;
