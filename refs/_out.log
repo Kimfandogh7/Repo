@@ -1,4 +1,4 @@
-=== شروع Sun Oct 11 20:27:53 UTC 2026 ===
+=== شروع Sun Oct 11 20:35:36 UTC 2026 ===
 --- نصب torch+torchvision ---
 Looking in indexes: https://download.pytorch.org/whl/cpu
 Collecting torch
@@ -27,20 +27,20 @@ Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch)
 Collecting MarkupSafe>=2.0 (from jinja2->torch)
   Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
 Downloading torch-2.14.1%2Bcpu-cp311-cp311-manylinux_2_28_x86_64.whl (196.2 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 196.2/196.2 MB 103.8 MB/s  0:00:01
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 196.2/196.2 MB 44.7 MB/s  0:00:04
 Downloading torchvision-0.29.1%2Bcpu-cp311-cp311-manylinux_2_28_x86_64.whl (1.7 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 29.1 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 4.6 MB/s  0:00:00
 Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 76.1 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 49.4 MB/s  0:00:00
 Downloading fsspec-2026.7.0-py3-none-any.whl (206 kB)
 Downloading networkx-3.6.1-py3-none-any.whl (2.1 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 289.9 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 78.8 MB/s  0:00:00
 Downloading pillow-12.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 318.9 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 87.0 MB/s  0:00:00
 Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 364.1 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 85.6 MB/s  0:00:00
 Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 92.9 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 19.2 MB/s  0:00:00
 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
 Downloading filelock-3.32.3-py3-none-any.whl (98 kB)
 Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
@@ -50,125 +50,85 @@ Installing collected packages: mpmath, typing-extensions, sympy, pillow, numpy, 
 Successfully installed MarkupSafe-3.0.3 filelock-3.32.3 fsspec-2026.7.0 jinja2-3.1.6 mpmath-1.3.0 networkx-3.6.1 numpy-2.4.6 pillow-12.3.0 sympy-1.14.0 torch-2.14.1+cpu torchvision-0.29.1+cpu typing-extensions-4.16.0
 exit=0
 --- نصب transformers ---
-Collecting transformers
-  Downloading transformers-5.19.0-py3-none-any.whl.metadata (32 kB)
+Collecting transformers==4.49.0
+  Downloading transformers-4.49.0-py3-none-any.whl.metadata (44 kB)
 Requirement already satisfied: pillow in /opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages (12.3.0)
-Collecting huggingface-hub<3.0,>=1.31.0 (from transformers)
-  Downloading huggingface_hub-2.2.0-py3-none-any.whl.metadata (16 kB)
-Requirement already satisfied: numpy>=1.17 in /opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages (from transformers) (2.4.6)
-Collecting packaging>=20.0 (from transformers)
+Requirement already satisfied: filelock in /opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages (from transformers==4.49.0) (3.32.3)
+Collecting huggingface-hub<1.0,>=0.26.0 (from transformers==4.49.0)
+  Downloading huggingface_hub-0.36.2-py3-none-any.whl.metadata (15 kB)
+Requirement already satisfied: numpy>=1.17 in /opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages (from transformers==4.49.0) (2.4.6)
+Collecting packaging>=20.0 (from transformers==4.49.0)
   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
-Collecting pyyaml>=5.1 (from transformers)
+Collecting pyyaml>=5.1 (from transformers==4.49.0)
   Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
-Collecting regex>=2025.10.22 (from transformers)
+Collecting regex!=2019.12.17 (from transformers==4.49.0)
   Downloading regex-2026.9.29-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
-Collecting tokenizers<0.24.0,>=0.23.1 (from transformers)
-  Downloading tokenizers-0.23.3-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.8 kB)
-Collecting typer (from transformers)
-  Downloading typer-0.27.3-py3-none-any.whl.metadata (16 kB)
-Collecting safetensors>=0.8.0 (from transformers)
+Collecting requests (from transformers==4.49.0)
+  Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting tokenizers<0.22,>=0.21 (from transformers==4.49.0)
+  Downloading tokenizers-0.21.4-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
+Collecting safetensors>=0.4.1 (from transformers==4.49.0)
   Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
-Collecting tqdm>=4.60 (from transformers)
+Collecting tqdm>=4.27 (from transformers==4.49.0)
   Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
-Collecting click<9.0.0,>=8.4.2 (from huggingface-hub<3.0,>=1.31.0->transformers)
-  Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
-Requirement already satisfied: filelock>=3.10.0 in /opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages (from huggingface-hub<3.0,>=1.31.0->transformers) (3.32.3)
-Requirement already satisfied: fsspec>=2023.5.0 in /opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages (from huggingface-hub<3.0,>=1.31.0->transformers) (2026.7.0)
-Collecting hf-xet<2.0.0,>=1.6.0 (from huggingface-hub<3.0,>=1.31.0->transformers)
+Requirement already satisfied: fsspec>=2023.5.0 in /opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages (from huggingface-hub<1.0,>=0.26.0->transformers==4.49.0) (2026.7.0)
+Collecting hf-xet<2.0.0,>=1.1.3 (from huggingface-hub<1.0,>=0.26.0->transformers==4.49.0)
   Downloading hf_xet-1.7.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
-Collecting httpx2<3,>=2.0.0 (from huggingface-hub<3.0,>=1.31.0->transformers)
-  Downloading httpx2-2.13.1-py3-none-any.whl.metadata (9.8 kB)
-Requirement already satisfied: typing-extensions>=4.1.0 in /opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages (from huggingface-hub<3.0,>=1.31.0->transformers) (4.16.0)
-Collecting anyio>=4.10 (from httpx2<3,>=2.0.0->huggingface-hub<3.0,>=1.31.0->transformers)
-  Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
-Collecting httpcore2==2.13.1 (from httpx2<3,>=2.0.0->huggingface-hub<3.0,>=1.31.0->transformers)
-  Downloading httpcore2-2.13.1-py3-none-any.whl.metadata (26 kB)
-Collecting idna>=3.18 (from httpx2<3,>=2.0.0->huggingface-hub<3.0,>=1.31.0->transformers)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in /opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages (from huggingface-hub<1.0,>=0.26.0->transformers==4.49.0) (4.16.0)
+Collecting charset_normalizer<4,>=2 (from requests->transformers==4.49.0)
+  Downloading charset_normalizer-3.5.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+Collecting idna<4,>=2.5 (from requests->transformers==4.49.0)
   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
-Collecting truststore>=0.10 (from httpx2<3,>=2.0.0->huggingface-hub<3.0,>=1.31.0->transformers)
-  Downloading truststore-0.10.4-py3-none-any.whl.metadata (4.4 kB)
-Collecting h11>=0.16 (from httpcore2==2.13.1->httpx2<3,>=2.0.0->huggingface-hub<3.0,>=1.31.0->transformers)
-  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
-Collecting shellingham>=1.3.0 (from typer->transformers)
-  Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
-Collecting rich>=13.8.0 (from typer->transformers)
-  Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
-Collecting annotated-doc>=0.0.2 (from typer->transformers)
-  Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
-Collecting markdown-it-py>=2.2.0 (from rich>=13.8.0->typer->transformers)
-  Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
-Collecting pygments<3.0.0,>=2.13.0 (from rich>=13.8.0->typer->transformers)
-  Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
-Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.8.0->typer->transformers)
-  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
-Downloading transformers-5.19.0-py3-none-any.whl (12.6 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.6/12.6 MB 62.4 MB/s  0:00:00
-Downloading huggingface_hub-2.2.0-py3-none-any.whl (839 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 839.9/839.9 kB 189.4 MB/s  0:00:00
-Downloading click-8.5.0-py3-none-any.whl (125 kB)
+Collecting urllib3<3,>=1.26 (from requests->transformers==4.49.0)
+  Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting certifi>=2023.5.7 (from requests->transformers==4.49.0)
+  Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+Downloading transformers-4.49.0-py3-none-any.whl (10.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.0/10.0 MB 20.9 MB/s  0:00:00
+Downloading huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 30.2 MB/s  0:00:00
 Downloading hf_xet-1.7.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.2 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 317.9 MB/s  0:00:00
-Downloading httpx2-2.13.1-py3-none-any.whl (95 kB)
-Downloading httpcore2-2.13.1-py3-none-any.whl (83 kB)
-Downloading tokenizers-0.23.3-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.4 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.4/3.4 MB 305.7 MB/s  0:00:00
-Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
-Downloading h11-0.16.0-py3-none-any.whl (37 kB)
-Downloading idna-3.20-py3-none-any.whl (69 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 42.7 MB/s  0:00:00
+Downloading tokenizers-0.21.4-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 36.4 MB/s  0:00:00
 Downloading packaging-26.3-py3-none-any.whl (129 kB)
 Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 122.0 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 46.5 MB/s  0:00:00
 Downloading regex-2026.9.29-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (804 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 805.0/805.0 kB 183.2 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 805.0/805.0 kB 49.2 MB/s  0:00:00
 Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
 Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
-Downloading truststore-0.10.4-py3-none-any.whl (18 kB)
-Downloading typer-0.27.3-py3-none-any.whl (123 kB)
-Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
-Downloading rich-15.0.0-py3-none-any.whl (310 kB)
-Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 236.9 MB/s  0:00:00
-Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
-Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
-Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
-Installing collected packages: truststore, tqdm, shellingham, safetensors, regex, pyyaml, pygments, packaging, mdurl, idna, hf-xet, h11, click, annotated-doc, markdown-it-py, httpcore2, anyio, rich, httpx2, typer, huggingface-hub, tokenizers, transformers
+Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Downloading charset_normalizer-3.5.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (269 kB)
+Downloading idna-3.20-py3-none-any.whl (69 kB)
+Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+Installing collected packages: urllib3, tqdm, safetensors, regex, pyyaml, packaging, idna, hf-xet, charset_normalizer, certifi, requests, huggingface-hub, tokenizers, transformers
 
-Successfully installed annotated-doc-0.0.5 anyio-4.15.1 click-8.5.0 h11-0.16.0 hf-xet-1.7.0 httpcore2-2.13.1 httpx2-2.13.1 huggingface-hub-2.2.0 idna-3.20 markdown-it-py-4.2.0 mdurl-0.1.2 packaging-26.3 pygments-2.21.0 pyyaml-6.0.3 regex-2026.9.29 rich-15.0.0 safetensors-0.8.0 shellingham-1.5.4 tokenizers-0.23.3 tqdm-4.70.1 transformers-5.19.0 truststore-0.10.4 typer-0.27.3
+Successfully installed certifi-2026.7.22 charset_normalizer-3.5.2 hf-xet-1.7.0 huggingface-hub-0.36.2 idna-3.20 packaging-26.3 pyyaml-6.0.3 regex-2026.9.29 requests-2.34.2 safetensors-0.8.0 tokenizers-0.21.4 tqdm-4.70.1 transformers-4.49.0 urllib3-2.8.0
 exit=0
 --- بررسی import ---
-ok 2.14.1+cpu 0.29.1+cpu 5.19.0
+ok 2.14.1+cpu 0.29.1+cpu 4.49.0
 exit=0
 --- اجرای توصیف ---
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-[transformers] A new version of the following files was downloaded from https://huggingface.co/microsoft/Florence-2-base:
+A new version of the following files was downloaded from https://huggingface.co/microsoft/Florence-2-base:
 - configuration_florence2.py
 . Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+Encountered exception while importing einops: No module named 'einops'
+Encountered exception while importing timm: No module named 'timm'
 Traceback (most recent call last):
   File "<stdin>", line 5, in <module>
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 345, in from_pretrained
-    config, kwargs = AutoConfig.from_pretrained(
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/transformers/models/auto/configuration_auto.py", line 418, in from_pretrained
-    return config_class.from_pretrained(pretrained_model_name_or_path, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/transformers/configuration_utils.py", line 763, in from_pretrained
-    return cls.from_dict(config_dict, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/transformers/configuration_utils.py", line 946, in from_dict
-    config = cls(**config_dict)
-             ^^^^^^^^^^^^^^^^^^
-  File "/home/runner/.cache/huggingface/modules/transformers_modules/microsoft/Florence_hyphen_2_hyphen_base/5ca5edf5bd017b9919c05d08aebef5e4c7ac3bac/configuration_florence2.py", line 336, in __init__
-    self.text_config = Florence2LanguageConfig(**text_config)
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/.cache/huggingface/modules/transformers_modules/microsoft/Florence_hyphen_2_hyphen_base/5ca5edf5bd017b9919c05d08aebef5e4c7ac3bac/configuration_florence2.py", line 265, in __init__
-    if self.forced_bos_token_id is None and kwargs.get("force_bos_token_to_be_generated", False):
-       ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/transformers/configuration_utils.py", line 525, in __getattribute__
-    return super().__getattribute__(key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/transformers/integrations/heterogeneity/configuration_utils.py", line 312, in __getattribute__
-    return super().__getattribute__(key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'Florence2LanguageConfig' object has no attribute 'forced_bos_token_id'
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 553, in from_pretrained
+    model_class = get_class_from_dynamic_module(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/transformers/dynamic_module_utils.py", line 541, in get_class_from_dynamic_module
+    final_module = get_cached_module_file(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/transformers/dynamic_module_utils.py", line 366, in get_cached_module_file
+    modules_needed = check_imports(resolved_module_file)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/transformers/dynamic_module_utils.py", line 198, in check_imports
+    raise ImportError(
+ImportError: This modeling file requires the following packages that were not found in your environment: einops, timm. Run `pip install einops timm`
 exit=1
-=== پایان Sun Oct 11 20:28:40 UTC 2026 ===
+=== پایان Sun Oct 11 20:36:18 UTC 2026 ===
