@@ -167,6 +167,69 @@ X Failed to create gist: HTTP 403: Resource not accessible by integration
 
 ---
 
+## ۵.۵ آیا می‌توان مرورگر نصب کرد و هر سایتی را باز کرد؟
+
+سؤالِ مستقیم بود: «بتونی یه مرورگر نصب کنی و بری داخل یه سایت». جواب، بعد از اجرای واقعی، سه‌قسمتی است.
+
+### الف) نصب مرورگر: **بله، آن هم بدون root** ✅
+
+`apt` نیاز به root دارد (`Permission denied` روی dpkg lock) و `playwright install` هم شکست می‌خورد چون
+هاست‌های دانلود مرورگر مسدودند:
+
+```
+HOST                        DNS     TCP    HTTPS  VERDICT
+cdn.playwright.dev           OK      OK     000    L7/SNI filtered
+storage.googleapis.com       OK      OK     000    L7/SNI filtered
+playwright.azureedge.net     OK      OK     000    L7/SNI filtered
+```
+
+اما بعضی پکیج‌های npm باینری کرومیوم را **داخل tarball** دارند (برای Lambda).
+`@playwright/browser-chromium` فقط یک stub ۵ کیلوبایتی است، ولی
+`@sparticuz/chromium` باینری واقعی را دارد. مسیر کامل:
+
+```bash
+npmget @sparticuz/chromium 153.0.0 .      # ۶۹٬۹۹۵٬۳۰۹ بایت از registry.npmjs.org
+python -c "import brotli;open('chromium','wb').write(brotli.decompress(open('package/bin/chromium.br','rb').read()))"
+# → ۶۷ MB فشرده / ۲۰۹ MB باز شده
+# libnspr4.so هم داخل al2023.tar.br همان پکیج است (۱۳ کتابخانه)
+export LD_LIBRARY_PATH=.../libs/lib
+chromium --version   →   Chromium 153.0.8010.0
+```
+
+پس باینری ۲۰۹ مگابایتیِ کرومیوم ۱۵۳ با **فقط هاست‌های مجاز** و بدون root داخل سندباکس آمد و اجرا شد.
+کتابخانه‌های missing: **صفر**.
+
+### ب) رندر کردن صفحه: **نه** ❌
+
+مرورگر بالا می‌آید ولی هیچ صفحه‌ای — حتی `about:blank` — باز نمی‌شود:
+
+```
+ERROR:gpu_process_host.cc:1054] GPU process exited unexpectedly: exit_code=15
+WARNING:gpu_process_host.cc:1506] The GPU process has crashed 1 time(s)
+```
+
+و فرآیند تا اتمام timeout معلق می‌ماند (`exit=124`). علت، نبودِ GL/Vulkan/EGL در این محیط است
+(`eglInitialize SwANGLE failed with error EGL_NOT_INITIALIZED`). با `--use-gl=disabled`،
+`--use-angle=swiftshader`، `--in-process-gpu`، `--single-process` و `headless=old/new` هم تفاوتی نکرد.
+
+### ج) باز کردن سایت — حتی اگر رندر هم درست می‌شد: **نه** ❌
+
+این مهم‌ترین بخش است. خودِ Chromium از داخل شبکه‌اش تأیید کرد:
+
+```
+$ chromium --dump-dom https://example.com
+ERROR:ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -100
+```
+
+`net_error -100` یعنی شکست در TLS handshake — **همان تشخیصی که در بخش ۱ با tcp/curl گرفته بودم،
+این‌بار مستقلاً از داخل مرورگر کرومیوم**. این خطا برای `google.com` هم تکرار شد.
+
+> **خلاصه‌ی این بخش:** مرورگر را می‌توان نصب کرد (و جالب است که شد)، اما (۱) در این محیط نمی‌تواند
+> صفحه‌ای رندر کند، و (۲) اگر هم می‌توانست، هیچ سایتی را باز نمی‌کرد چون هر اتصال HTTPS در
+> دست‌تکانی TLS کشته می‌شود. مانع، مرورگر نیست؛ شبکه است.
+
+---
+
 ## ۶. نکات فنی برای کسی که این را توسعه می‌دهد
 
 سه باگ واقعی در نوشتن این ابزارها پیدا شد که ارزشِ ثبت دارد (همه رفع شدند):
