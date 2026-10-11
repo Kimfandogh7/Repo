@@ -238,3 +238,33 @@ a.btn { text-decoration: none; display: inline-block; }
 /* The finish screen speaks the same type as the chapter cover and the contents page. */
 .fin .kicker { font-size: 20px; letter-spacing: .14em; text-transform: uppercase; }
 .fin .prompt { margin: 6px 0 14px; font: 500 56px/1.15 "Iowan Old Style", Palatino, Georgia, serif; }
+
+/* ── فونتِ فارسی (افزوده‌شده) ────────────────────────────────────────────
+   Vazirmatn variable، مجوزِ OFL. بدونِ این، مرورگر به فونتِ پیش‌فرضِ
+   سیستم برمی‌گشت و فارسی با ظاهرِ درست ولی بی‌کیفیت رندر می‌شد. */
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('fonts/Vazirmatn[wght].woff2') format('woff2 supports variations'),
+       url('fonts/Vazirmatn[wght].woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: block;   /* فونت حتماً بار شود، مبادا عکس با فونتِ جایگزین گرفته شود */
+}
+
+/* ── جهتِ راست‌به‌چپ برای کارت‌ها و رابط (افزوده‌شده) ────────────────── */
+html[dir="rtl"] {
+  --ui: "Vazirmatn", "Noto Naskh Arabic", "Tahoma", sans-serif;
+}
+html[dir="rtl"] body { direction: rtl; text-align: right; }
+html[dir="rtl"] .card { direction: rtl; border-left: 0; border-right: 7px solid var(--quiz); }
+html[dir="rtl"] .prompt,
+html[dir="rtl"] .body,
+html[dir="rtl"] .btn { direction: rtl; text-align: right; }
+/* شبکه‌ی کارتِ پایینی: در RTL ستون‌ها باید برعکس شوند */
+html[dir="rtl"] .card.band {
+  grid-template-columns: auto auto minmax(0, 1fr) auto;
+  grid-template-areas: "acts body head pic" "acts body fb pic";
+}
+html[dir="rtl"] .band .body { text-align: right; }
+/* شماره‌گذاریِ فارسی برای شماره‌ی صفحه و پیشرفت */
+html[dir="rtl"] .num { direction: ltr; display: inline-block; }

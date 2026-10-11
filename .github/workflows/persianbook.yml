@@ -74,7 +74,10 @@ jobs:
         run: |
           git config user.name "arena-agent"
           git config user.email "agent@arena.local"
-          git add -A edu-agent/out edu-agent/books
+          # فقط خروجی را کامیت می‌کنیم، نه منبع را.
+          # اگر منبع هم کامیت شود، با کامیت‌های بعدیِ من تداخل پیدا می‌کند.
+          git add -A edu-agent/out
+          git add -A edu-agent/books/moshkel/ch01/audio
           echo "--- staged ---"
           git diff --cached --name-only | head -40
           git diff --cached --quiet && echo "NOTHING TO COMMIT" || \

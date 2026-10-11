@@ -3,3 +3,5 @@ dist/
 .slide/
 vendor/
 package-lock.json
+__pycache__/
+*.pyc

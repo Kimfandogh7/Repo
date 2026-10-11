@@ -37,16 +37,30 @@ const SHOTS = [
   await page.waitForTimeout(1500);
 
   // وضعیتِ موتور را گزارش می‌کنیم تا بدانیم RTL فعال شده یا نه
-  const diag = await page.evaluate(() => ({
-    dir: document.documentElement.getAttribute('dir'),
-    lang: document.documentElement.getAttribute('lang'),
-    hasTimings: typeof window.TIMINGS === 'object' && !!window.TIMINGS,
-    beats: (typeof window.TIMINGS === 'object' && window.TIMINGS) ? Object.keys(window.TIMINGS).length : 0,
-    rtl: typeof RTL !== 'undefined' ? RTL : 'undef',
-    svgTexts: document.querySelectorAll('#scene text').length,
-    sample: [...document.querySelectorAll('#scene text')].slice(0, 4).map(t => t.textContent),
-  }));
+  const diag = await page.evaluate(async () => {
+    // صبر می‌کنیم فونت‌ها واقعاً بار شوند — وگرنه عکس با فونتِ جایگزین می‌افتد
+    try { await document.fonts.ready; } catch {}
+    // اندازه‌گیریِ مقایسه‌ای: اگر فونتِ فارسی بار شده باشد، پهنایِ «قاعده» با
+    // پهنایِ همان رشته با فونتِ لاتین فرق می‌کند
+    const c = document.createElement('canvas').getContext('2d');
+    const w = (fam) => { c.font = `40px ${fam}`; return c.measureText('قاعده‌ی زنجیره‌ای').width; };
+    return {
+      dir: document.documentElement.getAttribute('dir'),
+      lang: document.documentElement.getAttribute('lang'),
+      hasTimings: typeof window.TIMINGS === 'object' && !!window.TIMINGS,
+      beats: (typeof window.TIMINGS === 'object' && window.TIMINGS) ? Object.keys(window.TIMINGS).length : 0,
+      rtl: typeof RTL !== 'undefined' ? RTL : 'undef',
+      // آیا Vazirmatn واقعاً در دسترس است؟
+      vazirLoaded: document.fonts.check('40px Vazirmatn'),
+      fontsStatus: document.fonts.status,
+      widthVazir: Math.round(w('Vazirmatn')),
+      widthGeneric: Math.round(w('serif')),
+      svgTexts: document.querySelectorAll('#scene text').length,
+      sample: [...document.querySelectorAll('#scene text')].slice(0, 4).map(t => t.textContent),
+    };
+  });
   console.log('DIAG ' + JSON.stringify(diag));
+  console.log(`فونت: Vazirmatn بار شده = ${diag.vazirLoaded} | پهنای فارسی: Vazirmatn=${diag.widthVazir} در برابر serif=${diag.widthGeneric} | ${diag.widthVazir !== diag.widthGeneric ? '✓ متفاوت (فونت واقعی)' : '⚠ یکسان (احتمالاً جایگزین)'}`);
 
   for (const [n, t] of SHOTS) {
     const u = `${URL}?beat=${n}&t=${t}`;
