@@ -1,238 +1,41 @@
-# job 1791685867-9320
-=============== #1  https://developer.biodigital.com
+# job 1791685898-9377
+=============== #1  https://r.jina.ai/https://developer.biodigital.com
 
 HTTP_CODE:200
-SIZE:9924
-IP:50.17.246.201
-</script>
-<script src="/js/vendor/ga.js?v=3.3"></script>
-</html>
+SIZE:1088
+IP:172.67.70.54
+[![Image 3](https://developer.biodigital.com/images/twitter-icon.svg)](https://twitter.com/biodigitalhuman)[![Image 4](https://developer.biodigital.com/images/facebook-icon.svg)](https://www.facebook.com/BioDigitalHuman)[![Image 5](https://developer.biodigital.com/images/youtube-icon.svg)](https://www.youtube.com/c/BioDigital)
+
+© BioDigital, Inc. All rights reserved.[Privacy](https://www.biodigital.com/privacy)[Terms](https://www.biodigital.com/terms)
 ---BODY (max 20KB)---
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" ng-app="humanDeveloperApp">
-<head>
-    <meta http-equiv="Cache-Control" content="no-store" />
-    <title>BioDigital Human Viewer API and Developer Tools</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
-    <meta name="Publisher" content="BioDigital" />
-    <meta name="Author" content="BioDigital" />
-    <meta name="Copyright" content="BioDigital 2020" />
-    <meta name="description" content="Use the BioDigital Human Viewer API to add interactive virtual models to your application. Robust web API and mobile SDKs provide programmatic manipulation of the 3D body and its components." />
-    <meta name="keywords" content="BioDigital Human Viewer API, Human Viewer API, BioDigital Viewer API, Viewer API, Biodigital SDK, Human Anatomy Software, 3D Anatomy, 3D Anatomy Software, Virtual 3D body, 3D human platform, 3D body, human body API, 3D body, virtual human body, human body map">
+Title: BioDigital Human Viewer API and Developer Tools
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+URL Source: https://developer.biodigital.com/
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css?v=3.3">
-    <link rel="stylesheet" type="text/css" href="/js/vendor/prism/prism.css?v=3.3" />
-    <link rel="stylesheet" type="text/css" href="/css/human-developer.css?v=3.3" />
-    <link rel="stylesheet" type="text/css" href="/css/documentation.css?v=3.3" />
-    <link rel="stylesheet" type="text/css" href="/css/developer.css?v=3.3" />
-    <link rel="stylesheet" type="text/css" href="/builds/human-components/1.0.0/css/human-components.css?v=3.3" />
+Published Time: Sun, 23 Jun 2024 18:53:53 GMT
 
+Markdown Content:
+×Close
+#### Choose App
 
-    <script src="/js/vendor/zendesk.js?v=3.3"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.30/angular.js?v=3.3"></script>
-    <script src="/js/vendor/angular-ui-router.min.js?v=3.3"></script>
-    <script src="/js/vendor/angular-middleware.min.js?v=3.3"></script>
-</head>
-<body class="index" ng-controller="AppCtrl">
-    <div id="body-wrapper" class="body-wrapper">
-        <portal-header id="header"></portal-header>
-        <div class="modal" id="choose-app-modal" tabindex="-1" role="dialog" aria-hidden="true" style="margin-bottom:0px;">
-            <div id="choose-app-modal-dialog" class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">
-                            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-                        </button>
-                        <h4 id="choose-app-modal-title" class="modal-title">Choose App</h4>
-                    </div>
-                    <div class="modal-body">
-                       <div id="choose-app-layer" style="display: none;">
-                            <section align="center">
-                                <p><b>Select the site where you will embed the Human Widget</b></p>
-                                <span class="choose-app-loading add-margin-top-15">Loading your apps...</span>
-                                <img class="choose-app-loading" src="/images/ajax-loader.gif" />
-                                <span class="choose-app-none add-margin-top-15">you have no apps!</span>
-                                <div class="form-group choose-app-found">
-                                    <select id="selected-app" class="form-control" style="display: inline; width: 300px;">
-                                        <option value="">------------ Select Your App ------------</option>
-                                    </select>
-                                    <br /><br />
-                                    <span class="selected-app-domain" style="display: none;"></span>
-                                </div>
-                                <div class="form-group choose-app-none choose-app-found">
-                                    <button id="choose_app_edit_btn" class="btn btn-sm btn-primary choose-app-found" type="submit">
-                                        Edit App
-                                    </button>
-                                    <button id="choose_app_view_btn" class="btn btn-sm btn-info choose-app-found" type="submit">
-                                        View My Apps
-                                    </button>
-                                    <button id="choose_app_create_btn" class="btn btn-sm btn-main" type="submit">
-                                        Create New App
-                                    </button>
-                                </div>
+**Select the site where you will embed the Human Widget**
 
-                            </section>
-                        </div>
-                        <div class="clearfix">&nbsp;</div>
-                        <div class="text-center">
-                            <small><a href="/faq#what-is-an-app" target="_blank">What is an App? Check out our FAQs</a></small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+Loading your apps...![Image 1](https://developer.biodigital.com/images/ajax-loader.gif)you have no apps!
 
-        <div class="center"><span id="notice"></span>  </div>
+  
+  
 
-        <div ui-view></div>
+ Edit App  View My Apps  Create New App 
 
-        <!-- Modal -->
-        <div class="modal fade" id="fullScreenModal" tabindex="-1" role="dialog" aria-labelledby="fullScreenModalLabel" aria-hidden="true">
-            <input type="hidden" id="modal-result" />
-            <div class="modal-dialog">
-                <div class="modal-content modal-content-one">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                        <h1 class="modal-title" id="fullScreenModalLabel"></h1>
-                    </div>
-                    <div class="modal-body">
-                        <iframe id="fullScreenModalFrame" name="fullScreenModalFrame" frameborder="0" src="" scrolling="auto" allowfullscreen="true" style="position: relative; height: 100%; width: 100%;"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
+[What is an App? Check out our FAQs](https://developer.biodigital.com/faq#what-is-an-app)
 
-        <!-- Start Footer -->
-        <footer>
-            <div class="container clearfix">
-                <img src="/images/biodigital-logo.svg" class="logo">
+×Close
 
-                <address>
-                    228 Park Ave S Suite 31100<br>
-                    New York, NY 10003<br>
-                    <div class="social-media">
-                        <a href="https://twitter.com/biodigitalhuman" target="_blank"><img src="/images/twitter-icon.svg"></a>
-                        <a href="https://www.facebook.com/BioDigitalHuman" target="_blank"><img src="/images/facebook-icon.svg"></a>
-                        <a href="https://www.youtube.com/c/BioDigital" target="_blank"><img src="/images/youtube-icon.svg"></a>
-                   </div>
-                </address>
+![Image 2](https://developer.biodigital.com/images/biodigital-logo.svg) 228 Park Ave S Suite 31100  
+ New York, NY 10003  
 
+[![Image 3](https://developer.biodigital.com/images/twitter-icon.svg)](https://twitter.com/biodigitalhuman)[![Image 4](https://developer.biodigital.com/images/facebook-icon.svg)](https://www.facebook.com/BioDigitalHuman)[![Image 5](https://developer.biodigital.com/images/youtube-icon.svg)](https://www.youtube.com/c/BioDigital)
 
-            <div class="links">
+© BioDigital, Inc. All rights reserved.[Privacy](https://www.biodigital.com/privacy)[Terms](https://www.biodigital.com/terms)
 
-                <div class="legal">
-                    <span>&copy; BioDigital, Inc. All rights reserved.</span>
-                    <a href="https://www.biodigital.com/privacy" target="_blank">Privacy</a>
-                    <a href="https://www.biodigital.com/terms" target="_blank">Terms</a>
-               </div>
-
-            </div>
-
-               
-            </div>
-        </footer>
-        <!-- End Footer -->
-    </div>
-</body>
-
-<script src="https://code.jquery.com/jquery-1.12.4.min.js?v=3.3"
-        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-        crossorigin="anonymous"></script>
-<script>
-    if (!window.jQuery) { document.write('<script src="/js/vendor/jquery-1.12.4.min.js?v=3.3"><\/script>'); }
-</script>
-<script src="/js/vendor/moment.min.js?v=3.3"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js?v=3.3" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-<!-- Legacy TODO: Remove this stuff, rewrite in angular -->
-<script src="/js/legacy/developer-bd.js?v=3.3"></script>
-<script src="/js/legacy/developer.js?v=3.3"></script>
-<script src="/js/legacy/developer-content.js?v=3.3"></script>
-<script src="/js/legacy/developer-apps.js?v=3.3"></script>
-<script src="/js/legacy/developer-users.js?v=3.3"></script>
-<script src="/js/legacy/developer-zendesk.js?v=3.3"></script>
-<script src="/js/vendor/jquery.validate.js?v=3.3"></script>
-<script src="/js/vendor/jquery-ui.min.js?v=3.3"></script>
-<script src="/js/vendor/jquery-ui-timepicker.js?v=3.3"></script>
-<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js?v=3.3"></script>
-
-
-<!-- Angular -->
-<script src="/js/app/app.js?v=3.3"></script>
-<script src="/js/app/api.js?v=3.3"></script>
-<script src="/js/app/authentication.js?v=3.3"></script>
-<script src="/js/app/header.js?v=3.3"></script>
-<script src="/js/app/router.js?v=3.3"></script>
-<script src="/js/app/router.listeners.js?v=3.3"></script>
-<script src="/js/app/faq.js?v=3.3"></script>
-<script src="/js/app/account.js?v=3.3"></script>
-<script src="/js/app/signin.js?v=3.3"></script>
-<script src="/js/app/nav.js?v=3.3"></script>
-<script src="/js/app/documentation.js?v=3.3"></script>
-<script src="/js/app/home.js?v=3.3"></script>
-<script src="/js/app/hubspot.js?v=3.3"></script>
-
-
-<script src="/builds/api/human-api-3.0.0.min.js?v=3.3"></script>
-<script src="/builds/human-components/1.0.0/js/human-components.js?v=3.3"></script>
-
-<!-- Prism Highlighter -->
-<script src="/js/vendor/prism/prism.js?v=3.3"></script>
-
-<script type="text/javascript">
-    $(function () {
-        $('.copyright-year').text((new Date().getFullYear()));
-    });
-</script>
-<script src="/js/vendor/ga.js?v=3.3"></script>
-</html>
-
-=============== #2  https://www.biodigital.com/signup
-
-HTTP_CODE:404
-SIZE:28378
-IP:44.208.121.210
-<script src="https://www.biodigital.com/cpresources/63bcda25/cp.js?v=1790304855"></script>
-</body>
-</html>
----BODY (max 20KB)---
-
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
-<head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <title>Page Not Found - Craft-BioDigital</title>
-    <title>BioDigital | The Virtual Body Platform | Human Anatomy, Conditions…</title><meta name="generator" content="SEOmatic">
-<meta name="keywords" content="3D human anatomy, 3D anatomy software, 3D anatomy and physiology, virtual body, human anatomy, virtual anatomy, human API, human visualization platform">
-<meta name="description" content="A better way to understand the human body - the BioDigital virtual body platform provides unprecendented views of human anatomy, health conditions and…">
-<meta name="referrer" content="no-referrer-when-downgrade">
-<meta name="robots" content="none">
-<meta content="BioDigitalHuman" property="fb:profile_id">
-<meta content="en_US" property="og:locale">
-<meta content="BioDigital" property="og:site_name">
-<meta content="website" property="og:type">
-<meta content="The Virtual Body Platform | Human Anatomy, Conditions and Treatments…" property="og:title">
-<meta content="A better way to understand the human body - the BioDigital virtual body platform provides unprecendented views of human anatomy, health conditions and…" property="og:description">
-<meta content="https://d8m06gjwz59rp.cloudfront.net/assets/_1200x630_crop_center-center_82_none/BioDigital_-_Multidevice_-_Apple_Products__VR_-_Med_Device_V2_orig.png?mtime=1621541610" property="og:image">
-<meta content="1200" property="og:image:width">
-<meta content="630" property="og:image:height">
-<meta content="The BioDigital Human interactive 3D virtual body platform that works on any computer, phone or VR headset." property="og:image:alt">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@biodigitalhuman">
-<meta name="twitter:creator" content="@biodigitalhuman">
-<meta name="twitter:title" content="The Virtual Body Platform | Human Anatomy, Conditions and Treatments…">
-<meta name="twitter:description" content="A better way to understand the human body - the BioDigital virtual body platform provides unprecendented views of human anatomy, health conditions and…">
-<meta name="twitter:image" content="https://d8m06gjwz59rp.cloudfront.net/assets/_800x800_fit_center-center_82_none/BioDigital_-_Multidevice_-_Apple_Products__VR_-_Med_Device_V2_orig.png?mtime=1621541610">
-<meta name="twitter:image:width" content="800">
-<meta name="twitter:image:height" content="599">
-<meta name="twitter:image:alt" content="The BioDigital Human interactive 3D virtual body platform that works on any computer, phone or VR headset.">
-<link href="https://www.biodigital.com" rel="home">
-<link href="https://www.biodigital.com/cpresources/6ff4786d/css/selectize.css?v=1790304855" rel="stylesheet">
-<link href="https://www.biodigital.com/cpresources/63bcda25/css/cp.css?v=1790304855" rel="stylesheet">
-<script>window.Craft = {"actionTrigger":"actions","actionUrl":"https:\/\/www.biodigital.com\/index.php?p=actions\/","announcements":[],"asciiCharMap":{"Á":"A","á":"a","Ä":"A","ä":"a","À":"A","à":"a","Â":"A","â":"a","É":"E","é":"e","Ë":"E","ë":"e","È":"E","è":"e","Ê":"E","ê":"e","Í":"I","í":"i","Ï":"I","ï":"i","Ì":"I","ì":"i","Î":"I","î":"i","Ó":"O","ó":"o","Ö":"O","ö":"o","Ò":"O","ò":"o","Ô":"O","ô":"o","Ú":"U","ú":"u","Ü":"U","ü":"u","Ù":"U","ù":"u","Û":"U","û":"u","Ý":"Y","ý":"y","Ÿ":"Y","А":"A","Б":"B","В":"V","Г":"G","Д":"D","Ѓ":"Gj","Е":"E","Ж":"Z","З":"Z","Ѕ":"Dz","И":"I","Ј":"j","К":"K","Л":"L","Љ":"Lj","М":"M","Н":"N","Њ":"Nj","О":"O","П":"P","Р":"R","С":"S","Т":"T","Ќ":"Kj","У":"U","Ф":"F","Х":"X","Ц":"C","Ч":"C","Џ":"Dz","Ш":"S","а":"a","б":"b","в":"v","г":"g","д":"d","ѓ":"gj","е":"e","ж":"z","з":"z","ѕ":"dz","и":"i","ј":"j","к":"k","л":"l","љ":"lj","м":"m","н":"n","њ":"nj","о":"o","п":"p","р":"r","с":"s","т":"t","ќ":"kj","у":"u","ф":"f","х":"x","ц":"c","ч":"c","џ":"dz","ш":"s","æ":"ae","ǽ":"ae","Ã":"A","Å":"A","Ǻ":"A","Ă":"A","Ǎ":"A","Æ":"AE","Ǽ":"AE","ã":"a","å":"a","ǻ":"a","ă":"a","ǎ":"a","ª":"a","Ĉ":"C","Ċ":"C","Ç":"C","ç":"c","ĉ":"c","ċ":"c","Ð":"D","Đ":"D","ð":"d","đ":"d","Ĕ":"E","Ė":"E","ĕ":"e","ė":"e","ƒ":"f","Ĝ":"G","Ġ":"G","ĝ":"g","ġ":"g","Ĥ":"H","Ħ":"H","ĥ":"h","ħ":"h","Ĩ":"I","Ĭ":"I","Ǐ":"I","Į":"I","Ĳ":"IJ","ĩ":"i","ĭ":"i","ǐ":"i","į":"i","ĳ":"ij","Ĵ":"J","ĵ":"j","Ĺ":"L","Ľ":"L","Ŀ":"L","ĺ":"l","ľ":"l","ŀ":"l","Ñ":"N","ñ":"n","ŉ":"n","Õ":"O","Ō":"O","Ŏ":"O","Ǒ":"O","Ő":"O","Ơ":"O","Ø":"O","Ǿ":"O","Œ":"OE","õ":"o","ō":"o","ŏ":"o","ǒ":"o","ő":"o","ơ":"o","ø":"o","ǿ":"o","º":"o","œ":"oe","Ŕ":"R","Ŗ":"R","ŕ":"r","ŗ":"r","Ŝ":"S","Ș":"S","ŝ":"s","ș":"s","ſ":"s","Ţ":"T","Ț":"T","Ŧ":"T","Þ":"TH","ţ":"t","ț":"t","ŧ":"t","þ":"th","Ũ":"U","Ŭ":"U","Ű":"U","Ų":"U","Ư":"U","Ǔ":"U","Ǖ":"U","Ǘ":"U","Ǚ":"U","Ǜ":"U","ũ":"u","ŭ":"u","ű":"u","ų":"u","ư":"u","ǔ":"u","ǖ":"u","ǘ":"u","ǚ":"u","ǜ":"u","Ŵ":"W","ŵ":"w","Ŷ":"Y","ÿ":"y","ŷ":"y","ΑΥ":"AU","ΑΎ":"AU","Αυ":"Au","Αύ":"Au","ΕΊ":"I","ΕΙ":"I","Ει":"Ei","ΕΥ":"EF","ΕΎ":"EU","Εί":"I","Ευ":"Ef","Εύ":"Eu","ΟΙ":"I","ΟΊ":"I","ΟΥ":"U","ΟΎ":"OU","Οι":"Oi","Οί":"I","Ου":"Oy","Ού":"Ou","ΥΙ":"I","ΎΙ":"I","Υι":"Yi","Ύι":"I","ΥΊ":"I","Υί":"I","αυ":"au","αύ":"au","εί":"i","ει":"ei","ευ":"ef","εύ":"eu","οι":"oi","οί":"i","ου":"oy","ού":"ou","υι":"yi","ύι":"i","υί":"i","Α":"A","Ά":"A","Β":"B","Δ":"D","Ε":"E","Έ":"E","Φ":"F","Γ":"G","Η":"H","Ή":"I","Ι":"I","Ί":"I","Ϊ":"I","Κ":"K","Ξ":"Ks","Λ":"L","Μ":"M","Ν":"N","Π":"P","Ο":"O","Ό":"O","Ψ":"Ps","Ρ":"R","Σ":"S","Τ":"T","Θ":"Th","Ω":"O","Ώ":"W","Χ":"X","ϒ":"Y","Υ":"Y","Ύ":"Y","Ϋ":"Y","Ζ":"Z","α":"a","ά":"a","β":"v","δ":"d","ε":"e","έ":"e","φ":"f","γ":"gh","η":"i","ή":"i","ι":"i","ί":"i","ϊ":"i","ΐ":"i","κ":"k","ξ":"ks","λ":"l","μ":"m","ν":"n","ο":"o","ό":"o","π":"p","ψ":"ps","ρ":"r","σ":"s","ς":"s","τ":"t","ϑ":"th","θ":"th","ϐ":"v","ω":"o","ώ":"w","χ":"kh","υ":"i","ύ":"y","ΰ":"y","ϋ":"y","ζ":"z","अ":"a","आ":"aa","ए":"e","ई":"ii","ऍ":"ei","ऎ":"ae","ऐ":"ai","इ":"i","ओ":"o","ऑ":"oi","ऒ":"oii","ऊ":"uu","औ":"ou","उ":"u","ब":"B","भ":"Bha","च":"Ca","छ":"Chha","ड":"Da","ढ":"Dha","फ":"Fa","फ़":"Fi","ग":"Ga","घ":"Gha","ग़":"Ghi","ह":"Ha","ज":"Ja","झ":"Jha","क":"Ka","ख":"Kha","ख़":"Khi","ल":"L","ळ":"Li","ऌ":"Li","ऴ":"Lii","ॡ":"Lii","म":"Ma","न":"Na","ङ":"Na","ञ":"Nia","ण":"Nae","ऩ":"Ni","ॐ":"oms","प":"Pa","क़":"Qi","र":"Ra","ऋ":"Ri","ॠ":"Ri","ऱ":"Ri","स":"Sa","श":"Sha","ष":"Shha","ट":"Ta","त":"Ta","ठ":"Tha","द":"Tha","थ":"Tha","ध":"Thha","ड़":"ugDha","ढ़":"ugDhha","व":"Va","य":"Ya","य़":"Yi","ज़":"Za","Ա":"A","Բ":"B","Գ":"G","Դ":"D","Ե":"E","Զ":"Z","Է":"E","Ը":"Y","Թ":"Th","Ժ":"Zh","Ի":"I","Լ":"L","Խ":"Kh","Ծ":"Ts","Կ":"K","Հ":"H","Ձ":"Dz","Ղ":"Gh","Ճ":"Tch","Մ":"M","Յ":"Y","Ն":"N","Շ":"Sh","Ո":"Vo","Չ":"Ch","Պ":"P","Ջ":"J","Ռ":"R","Ս":"S","Վ":"V","Տ":"T","Ր":"R","Ց":"C","Ւ":"u","Փ":"Ph","Ք":"Q","և":"ev","Օ":"O","Ֆ":"F","ա":"a","բ":"b","գ":"g","դ":"d","ե":"e","զ":"z","է":"e","ը":"y","թ":"th","ժ":"zh","ի":"i","լ":"l","խ":"kh","ծ":"ts","կ":"k","հ":"h","ձ":"dz","ղ":"gh","ճ":"tch","մ":"m","յ":"y","ն":"n","շ":"sh","ո":"vo","չ":"ch","պ":"p","ջ":"j","ռ":"r","ս":"s","վ":"v","տ":"t","ր":"r","ց":"c","ւ":"u","փ":"ph","ք":"q","օ":"o","ֆ":"f","Ž":"Z","Ň":"N","Ş":"S","ž":"z","ň":"n","ş":"s","ı":"i","İ":"I","ğ":"g","Ğ":"G","ьо":"yo","Й":"i","Щ":"Shh","Ъ":"Ie","Ь":"","Ю":"Iu","Я":"Ia","й":"i","щ":"shh","ъ":"ie","ь":"","ю":"iu","я":"ia","Ē":"E","ē":"e","န်ုပ်":"nub","ောင်":"aung","ိုက်":"aik","ိုဒ်":"ok","ိုင်":"aing","ိုလ်":"ol","ေါင်":"aung","သြော":"aw","ောက်":"auk","ိတ်":"eik","ုတ်":"ok","ုန်":"on","ေတ်":"it","ုဒ်":"ait","ာန်":"an","ိန်":"ein","ွတ်":"ut","ေါ်":"aw","ွန်":"un","ိပ်":"eik","ုပ်":"ok","ွပ်":"ut","ိမ်":"ein","ုမ်":"on","ော်":"aw","ွမ်":"un","က်":"et","ေါ":"aw","ော":"aw","ျွ":"ywa","ြွ":"yw","ို":"o","ုံ":"on","တ်":"at","င်":"in","ည်":"i","ဒ်":"d","န်":"an","ပ်":"at","မ်":"an","စျ":"za","ယ်":"e","ဉ်":"in","စ်":"it","ိံ":"ein","ဲ":"e","း":"","ာ":"a","ါ":"a","ေ":"e","ံ":"an","ိ":"i","ီ":"i","ု":"u","ူ":"u","်":"at","္":"","့":"","က":"k","၉":"9","တ":"t","ရ":"ya","ယ":"y","မ":"m","ဘ":"ba","ဗ":"b","ဖ":"pa","ပ":"p","န":"n","ဓ":"da","ဒ":"d","ထ":"ta","ဏ":"na","ဝ":"w","ဎ":"da","ဍ":"d","ဌ":"ta","ဋ":"t","ည":"ny","ဇ":"z","ဆ":"sa","စ":"s","င":"ng","ဃ":"ga","ဂ":"g","လ":"l","သ":"th","၈":"8","ဩ":"aw","ခ":"kh","၆":"6","၅":"5","၄":"4","၃":"3","၂":"2","၁":"1","၀":"0","၌":"hnaik","၍":"ywae","ဪ":"aw","ဦ":"-u","ဟ":"h","ဉ":"u","ဤ":"-i","ဣ":"i","၏":"-e","ဧ":"e","ှ":"h","ွ":"w","ျ":"ya","ြ":"y","အ":"a","ဠ":"la","၇":"7","DŽ":"DZ","Dž":"Dz","dž":"dz","Ǳ":"DZ","ǲ":"Dz","ǳ":"dz","Ǉ":"LJ","ǈ":"Lj","ǉ":"lj","Ǌ":"NJ","ǋ":"Nj","ǌ":"nj","č":"c","Č":"C","ć":"c","Ć":"C","š":"s","Š":"S","ა":"a","ბ":"b","გ":"g","დ":"d","ე":"e","ვ":"v","ზ":"z","თ":"t","ი":"i","კ":"k","ლ":"l","მ":"m","ნ":"n","ო":"o","პ":"p","ჟ":"zh","რ":"r","ს":"s","ტ":"t","უ":"u","ფ":"f","ქ":"q","ღ":"gh","ყ":"y","შ":"sh","ჩ":"ch","ც":"ts","ძ":"dz","წ":"ts","ჭ":"ch","ხ":"kh","ჯ":"j","ჰ":"h","Ё":"E","ё":"e","Ы":"Y","ы":"y","Э":"E","э":"e","І":"I","і":"i","Ѳ":"F","ѳ":"f","Ѣ":"E","ѣ":"e","Ѵ":"I","ѵ":"i","Є":"Je","є":"je","Ѥ":"Je","ѥ":"je","Ꙋ":"U","ꙋ":"u","Ѡ":"O","ѡ":"o","Ѿ":"Ot","ѿ":"ot","Ѫ":"U","ѫ":"u","Ѧ":"Ja","ѧ":"ja","Ѭ":"Ju","ѭ":"ju","Ѩ":"Ja","ѩ":"Ja","Ѯ":"Ks","ѯ":"ks","Ѱ":"Ps","ѱ":"ps","Ґ":"G","ґ":"g","Ї":"Yi","ї":"yi","Ә":"A","Ғ":"G","Қ":"Q","Ң":"N","Ө":"O","Ұ":"U","Ү":"U","Һ":"H","ә":"a","ғ":"g","қ":"q","ң":"n","ө":"o","ұ":"u","ү":"u","һ":"h","ď":"d","Ď":"D","ě":"e","Ě":"E","ř":"r","Ř":"R","ť":"t","Ť":"T","ů":"u","Ů":"U","ą":"a","ę":"e","ł":"l","ń":"n","ś":"s","ź":"z","ż":"z","Ą":"A","Ę":"E","Ł":"L","Ń":"N","Ś":"S","Ź":"Z","Ż":"Z","ā":"a","ģ":"g","ī":"i","ķ":"k","ļ":"l","ņ":"n","ū":"u","Ā":"A","Ģ":"G","Ī":"I","Ķ":"k","Ļ":"L","Ņ":"N","Ū":"U","Ả":"A","Ạ":"A","Ắ":"A","Ằ":"A","Ẳ":"A","Ẵ":"A","Ặ":"A","Ấ":"A","Ầ":"A","Ẩ":"A","Ẫ":"A","Ậ":"A","ả":"a","ạ":"a","ắ":"a","ằ":"a","ẳ":"a","ẵ":"a","ặ":"a","ấ":"a","ầ":"a","ẩ":"a","ẫ":"a","ậ":"a","Ẻ":"E","Ẽ":"E","Ẹ":"E","Ế":"E","Ề":"E","Ể":"E","Ễ":"E","Ệ":"E","ẻ":"e","ẽ":"e","ẹ":"e","ế":"e","ề":"e","ể":"e","ễ":"e","ệ":"e","Ỉ":"I","Ị":"I","ỉ":"i","ị":"i","Ỏ":"O","Ọ":"O","Ố":"O","Ồ":"O","Ổ":"O","Ỗ":"O","Ộ":"O","Ớ":"O","Ờ":"O","Ở":"O","Ỡ":"O","Ợ":"O","ỏ":"o","ọ":"o","ố":"o","ồ":"o","ổ":"o","ỗ":"o","ộ":"o","ớ":"o","ờ":"o","ở":"o","ỡ":"o","ợ":"o","Ủ":"U","Ụ":"U","Ứ":"U","Ừ":"U","Ử":"U","Ữ":"U","Ự":"U","ủ":"u","ụ":"u","ứ":"u","ừ":"u","ử":"u","ữ":"u","ự":"u","Ỳ":"Y","Ỷ":"Y","Ỹ":"Y","Ỵ":"Y","ỳ":"y","ỷ":"y","ỹ":"y","ỵ":"y","ا":"a","ب":"b","پ":"p","ت":"t","ث":"th","ج":"g","چ":"ch","ح":"h","خ":"kh","د":"d","ذ":"th","ر":"r","ز":"z","س":"s","ش":"sh","ص":"s","ض":"d","ط":"t","ظ":"th","ع":"aa","غ":"gh","ف":"f","ق":"k","ک":"k","گ":"g","ل":"l","ژ":"zh","ك":"k","م":"m","ن":"n","ه":"h","و":"o","ی":"y","آ":"a","٠":"0","١":"1","٢":"2","٣":"3","٤":"4","٥":"5","٦":"6","٧":"7","٨":"8","٩":"9","أ":"a","ي":"y","إ":"a","ؤ":"o","ئ":"y","ء":"aa","ђ":"dj","ћ":"c","Ђ":"Dj","Ћ":"C","ə":"e","Ə":"E","ß":"ss","ẞ":"SS","ভ্ল":"vl","পশ":"psh","ব্ধ":"bdh","ব্জ":"bj","ব্দ":"bd","ব্ব":"bb","ব্ল":"bl","ভ":"v","ব":"b","চ্ঞ":"cNG","চ্ছ":"cch","চ্চ":"cc","ছ":"ch","চ":"c","ধ্ন":"dhn","ধ্ম":"dhm","দ্ঘ":"dgh","দ্ধ":"ddh","দ্ভ":"dv","দ্ম":"dm","ড্ড":"DD","ঢ":"Dh","ধ":"dh","দ্গ":"dg","দ্দ":"dd","ড":"D","দ":"d","।":".","ঘ্ন":"Ghn","গ্ধ":"Gdh","গ্ণ":"GN","গ্ন":"Gn","গ্ম":"Gm","গ্ল":"Gl","জ্ঞ":"jNG","ঘ":"Gh","গ":"g","হ্ণ":"hN","হ্ন":"hn","হ্ম":"hm","হ্ল":"hl","হ":"h","জ্ঝ":"jjh","ঝ":"jh","জ্জ":"jj","জ":"j","ক্ষ্ণ":"kxN","ক্ষ্ম":"kxm","ক্ষ":"ksh","কশ":"ksh","ক্ক":"kk","ক্ট":"kT","ক্ত":"kt","ক্ল":"kl","ক্স":"ks","খ":"kh","ক":"k","ল্ভ":"lv","ল্ধ":"ldh","লখ":"lkh","লঘ":"lgh","লফ":"lph","ল্ক":"lk","ল্গ":"lg","ল্ট":"lT","ল্ড":"lD","ল্প":"lp","ল্ম":"lm","ল্ল":"ll","ল্ব":"lb","ল":"l","ম্থ":"mth","ম্ফ":"mf","ম্ভ":"mv","মপ্ল":"mpl","ম্ন":"mn","ম্প":"mp","ম্ম":"mm","ম্ল":"ml","ম্ব":"mb","ম":"m","০":"0","১":"1","২":"2","৩":"3","৪":"4","৫":"5","৬":"6","৭":"7","৮":"8","৯":"9","ঙ্ক্ষ":"Ngkx","ঞ্ছ":"nch","ঙ্ঘ":"ngh","ঙ্খ":"nkh","ঞ্ঝ":"njh","ঙ্গৌ":"ngOU","ঙ্গৈ":"ngOI","ঞ্চ":"nc","ঙ্ক":"nk","ঙ্ষ":"Ngx","ঙ্গ":"ngo","ঙ্ম":"Ngm","ঞ্জ":"nj","ন্ধ":"ndh","ন্ঠ":"nTh","ণ্ঠ":"NTh","ন্থ":"nth","ঙ্গা":"nga","ঙ্গি":"ngi","ঙ্গী":"ngI","ঙ্গু":"ngu","ঙ্গূ":"ngU","ঙ্গে":"nge","ঙ্গো":"ngO","ণ্ঢ":"NDh","নশ":"nsh","ঙর":"Ngr","ঞর":"NGr","ংর":"ngr","ঙ":"Ng","ঞ":"NG","ং":"ng","ন্ন":"nn","ণ্ণ":"NN","ণ্ন":"Nn","ন্ম":"nm","ণ্ম":"Nm","ন্দ":"nd","ন্ট":"nT","ণ্ট":"NT","ন্ড":"nD","ণ্ড":"ND","ন্ত":"nt","ন্স":"ns","ন":"n","ণ":"N","ৈ":"OI","ৌ":"OU","ো":"O","ঐ":"OI","ঔ":"OU","অ":"o","ও":"oo","ফ্ল":"fl","প্ট":"pT","প্ত":"pt","প্ন":"pn","প্প":"pp","প্ল":"pl","প্স":"ps","ফ":"f","প":"p","ৃ":"rri","ঋ":"rri","রর‍্য":"rry","্র্য":"ry","্রর":"rr","ড়্গ":"Rg","ঢ়":"Rh","ড়":"R","র":"r","্র":"r","শ্ছ":"Sch","ষ্ঠ":"ShTh","ষ্ফ":"Shf","স্ক্ল":"skl","স্খ":"skh","স্থ":"sth","স্ফ":"sf","শ্চ":"Sc","শ্ত":"St","শ্ন":"Sn","শ্ম":"Sm","শ্ল":"Sl","ষ্ক":"Shk","ষ্ট":"ShT","ষ্ণ":"ShN","ষ্প":"Shp","ষ্ম":"Shm","স্প্ল":"spl","স্ক":"sk","স্ট":"sT","স্ত":"st","স্ন":"sn","স্প":"sp","স্ম":"sm","স্ল":"sl","শ":"S","ষ":"Sh","স":"s","ু":"u","উ":"u","অ্য":"oZ","ত্থ":"tth","ৎ":"tt","ট্ট":"TT","ট্ম":"Tm","ঠ":"Th","ত্ন":"tn","ত্ম":"tm","থ":"th","ত্ত":"tt","ট":"T","ত":"t","অ্যা":"AZ","া":"a","আ":"a","য়া":"ya","য়":"y","ি":"i","ই":"i","ী":"ee","ঈ":"ee","ূ":"uu","ঊ":"uu","ে":"e","এ":"e","য":"z","্য":"Z","ইয়":"y","ওয়":"w","্ব":"w","এক্স":"x","ঃ":":","ঁ":"nn","্‌":"","˚":"0","¹":"1","²":"2","³":"3","⁴":"4","⁵":"5","⁶":"6","⁷":"7","⁸":"8","⁹":"9","₀":"0","₁":"1","₂":"2","₃":"3","₄":"4","₅":"5","₆":"6","₇":"7","₈":"8","₉":"9","௦":"0","௧":"1","௨":"2","௩":"3","௪":"4","௫":"5","௬":"6","௭":"7","௮":"8","௯":"9","௰":"10","௱":"100","௲":"1000","Ꜳ":"AA","ꜳ":"aa","Ꜵ":"AO","ꜵ":"ao","Ꜷ":"AU","ꜷ":"au","Ꜹ":"AV","ꜹ":"av","Ꜻ":"av","ꜻ":"av","Ꜽ":"AY","ꜽ":"ay","ȸ":"db","ʣ":"dz","ʥ":"dz","ʤ":"dezh","🙰":"et","ﬀ":"ff","ﬃ":"ffi","ﬄ":"ffl","ﬁ":"fi","ﬂ":"fl","ʩ":"feng","ʪ":"ls","ʫ":"lz","ɮ":"lezh","ȹ":"qp","ʨ":"tc","ʦ":"ts","ʧ":"tesh","Ꝏ":"OO","ꝏ":"oo","ﬆ":"st","ﬅ":"st","Ꜩ":"TZ","ꜩ":"tz","ᵫ":"ue","Aι":"Ai","αι":"ai","ἀ":"a","ἁ":"a","ἂ":"a","ἃ":"a","ἄ":"a","ἅ":"a","ἆ":"a","ἇ":"a","Ἀ":"A","Ἁ":"A","Ἂ":"A","Ἃ":"A","Ἄ":"A","Ἅ":"A","Ἆ":"A","Ἇ":"A","ᾰ":"a","ᾱ":"a","ᾲ":"a","ᾳ":"a","ᾴ":"a","ᾶ":"a","ᾷ":"a","Ᾰ":"A","Ᾱ":"A","Ὰ":"A","Ά":"A","ᾼ":"A","A̧":"A","a̧":"a","Ⱥ":"A","ⱥ":"a","Ȧ":"A","ȧ":"a","Ɓ":"B","C̈":"C","c̈":"c","C̨":"C","c̨":"c","Ȼ":"C","ȼ":"c","C̀":"C","c̀":"c","C̣":"C","c̣":"c","C̄":"C","c̄":"c","C̃":"C","c̃":"c","Ȩ":"E","ȩ":"e","Ɇ":"E","ɇ":"e","I̧":"I","i̧":"i","Ɨ":"I","ɨ":"i","i":"i","J́́":"J","j́":"j","J̀̀":"J","j̀":"j","J̈":"J","j̈":"j","J̧":"J","j̧":"j","J̨":"J","j̨":"j","Ɉ":"J","ɉ":"j","J̌":"J","ǰ":"j","J̇":"J","j":"j","J̣":"J","j̣":"j","J̄":"J","j̄":"j","J̃":"J","j̃":"j","ĸ":"k","L̀":"L","l̀":"l","L̂":"L","l̂":"l","L̈":"L","l̈":"l","L̨":"L","l̨":"l","Ƚ":"L","ƚ":"l","L̇":"L","l̇":"l","Ḷ":"L","ḷ":"l","L̄":"L","l̄":"l","L̃":"L","l̃":"l","Ŋ":"N","ŋ":"n","Ǹ":"N","ǹ":"n","N̂":"N","n̂":"n","N̈":"N","n̈":"n","N̨":"N","n̨":"n","Ꞥ":"N","ꞥ":"n","Ṅ":"N","ṅ":"n","Ṇ":"N","ṇ":"n","N̄":"N","n̄":"n","O̧":"O","o̧":"o","Ǫ":"O","ǫ":"o","Ɵ":"O","ɵ":"o","Ȯ":"O","ȯ":"o","S̀":"S","s̀":"s","Ŝ̀":"S","S̈":"S","s̈":"s","S̨":"S","s̨":"s","Ꞩ":"S","ꞩ":"s","Ṡ":"S","ṡ":"s","Ṣ":"S","ṣ":"s","S̄":"S","s̄":"s","S̃":"S","s̃":"s","T́":"T","t́":"t","T̀":"T","t̀":"t","T̂":"T","t̂":"t","T̈":"T","ẗ":"t","T̨":"T","t̨":"t","Ⱦ":"T","ⱦ":"t","Ṫ":"T","ṫ":"t","Ṭ":"T","ṭ":"t","T̄":"T","t̄":"t","T̃":"T","t̃":"t","U̧":"U","u̧":"u","Ʉ":"U","ʉ":"u","U̇":"U","u̇":"u","Ʊ":"U","ʊ":"u","Ẁ":"W","ẁ":"w","Ẃ":"W","ẃ":"w","Ẅ":"W","ẅ":"w","Ꙗ":"Ja","ꙗ":"ja","Y̧":"Y","y̧":"y","Y̨":"Y","y̨":"y","Ɏ":"Y","ɏ":"y","Y̌":"Y","y̌":"y","Ẏ":"Y","ẏ":"y","Ȳ":"Y","ȳ":"y","Z̀":"Z","z̀":"z","Ẑ":"Z","ẑ":"z","Z̈":"Z","z̈":"z","Z̧":"Z","z̧":"z","Z̨":"Z","z̨":"z","Ƶ":"Z","ƶ":"z","Ẓ":"Z","ẓ":"z","Z̄":"Z","z̄":"z","Z̃":"Z","z̃":"z"," ":" "," ":" "," ":" "," ":" "," ":" "," ":" "," ":" "," ":" "," ":" "," ":" "," ":" "," ":" "," ":" ","\u2028":" ","\u2029":" ","​":" "," ":" "," ":" ","　":" ","ﾠ":" ","«":"<<","»":">>","‘":"'","’":"'","‚":"'","‛":"'","“":"\"","”":"\"","„":"\"","‟":"\"","‹":"'","›":"'","–":"-","—":"-","…":"...","€":"EUR","$":"$","₢":"Cr","₣":"Fr.","£":"PS","₤":"L.","ℳ":"M","₥":"mil","₦":"N","₧":"Pts","₨":"Rs","රු":"LKR","ரூ":"LKR","௹":"Rs","रू":"NPR","₹":"Rs","૱":"Rs","₩":"W","₪":"NS","₸":"KZT","₫":"D","֏":"AMD","₭":"K","₺":"TL","₼":"AZN","₮":"T","₯":"Dr","₲":"PYG","₾":"GEL","₳":"ARA","₴":"UAH","₽":"RUB","₵":"GHS","₡":"CL","¢":"c","¥":"YEN","円":"JPY","৳":"BDT","元":"CNY","﷼":"SAR","៛":"KR","₠":"ECU","¤":"$?","฿":"THB","؋":"AFN"},"baseApiUrl":"https:\/\/api.craftcms.com\/v1\/","baseCpUrl":"https:\/\/www.biodigital.com\/admin","baseSiteUrl":"https:\/\/www.biodigital.com","baseUrl":"https:\/\/www.biodigital.com","clientOs":"Other","cpTrigger":"admin","datepickerOptions":{"constrainInput":false,"dateFormat":"m\/d\/yy","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesMin":["S","M","T","W","T","F","S"],"dayNamesShort":["Su","Mo","Tu","We","Th","Fr","Sa"],"firstDay":1,"monthNames":["January","February","March","April","May","June","July","August","September","October","N
-fetched 2 url(s)
+fetched 1 url(s)
