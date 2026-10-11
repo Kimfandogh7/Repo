@@ -10,6 +10,8 @@
   * open-slide v2.1.0 نصب و تست شد: build موفق، خروجی PPTX/PDF دارد اما PPTX فقط در مرورگر (کلیک دستی)
   * نکته فنی: Vite در open-slide هاستِ پیش‌نمایش را 403 می‌کند مگر اینکه open-slide.config.ts را با allowedHosts:true تنظیم کنی
   * دکِ نمونه ساخته شد: slides/forgetting-curve — ۶ صفحه، RTL فارسی، انیمیشن SVG، متن گوینده
+  * مسیرِ واقعیِ اسلاید در open-slide: /s/<slide-id> — نه /slides/... که ۴۰۴ می‌دهد (وقتی عکس‌ها یک‌اندازه شدند یعنی همان صفحه است)
+  * export در open-slide فقط در مرورگر است، CLI ندارد. راه‌حل: Playwright در Actions عکس بگیرد، Pillow ادغام کند -> PDF
 
 ## meta
   * سیستم حافظه در memory/ راه‌اندازی شد؛ AGENTS.md در ریشه می‌گوید اول آن را بخوان
