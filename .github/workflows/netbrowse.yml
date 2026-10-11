@@ -1,0 +1,32 @@
+name: netbrowse
+on:
+  push:
+    paths: ['fetches/browse.js']
+permissions:
+  contents: write
+jobs:
+  browse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/758efc2d-repo
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: install playwright + chromium
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm i playwright@1.48.0 --silent
+          npx playwright install chromium
+          npx playwright install-deps chromium 2>/dev/null || true
+      - name: run browse script
+        run: node fetches/browse.js > fetches/browse-out.txt 2>&1 || echo "SCRIPT_FAILED" >> fetches/browse-out.txt
+      - name: commit
+        run: |
+          git config user.name "netbrowse-bot"
+          git config user.email "netbrowse-bot@users.noreply.github.com"
+          git add fetches/browse-out.txt
+          git diff --cached --quiet && echo "no change" || git commit -m "netbrowse: output"
+          git push origin HEAD:arena/758efc2d-repo
