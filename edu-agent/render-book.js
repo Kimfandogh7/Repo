@@ -55,7 +55,39 @@ const SHOTS = [
     const f = path.join(OUT, `beat-${String(n).padStart(2, '0')}.png`);
     await page.screenshot({ path: f });
     const sz = fs.statSync(f).size;
-    console.log(`beat ${n} @${t}s -> ${path.basename(f)} ${sz}b`);
+
+    // تأییدِ برنامه‌ای: چون عکس‌ها را نمی‌بینم، متن را اندازه می‌گیرم.
+    // ۱) آیا فارسی واقعاً شکل‌دهی شده یا شده جعبه (tofu)؟
+    //    فارسیِ واقعی پهنایِ متنوع دارد؛ tofu همه هم‌عرض‌اند.
+    // ۲) آیا متن از کادرِ ۱۶۰۰×۹۰۰ بیرون زده؟
+    const audit = await page.evaluate(() => {
+      const els = [...document.querySelectorAll('#scene text')];
+      const out = [];
+      let offscreen = 0, tofuish = 0;
+      for (const e of els) {
+        const txt = (e.textContent || '').trim();
+        if (!txt) continue;
+        let bb; try { bb = e.getBBox(); } catch { continue; }
+        const fa = /[\u0600-\u06FF]/.test(txt);
+        // پهنایِ هر کاراکتر: اگر خیلی یکنواخت باشد، احتمالاً tofu است
+        const per = txt.length ? bb.width / txt.length : 0;
+        const outside = bb.x < -5 || bb.y < -5 || bb.x + bb.width > 1605 || bb.y + bb.height > 905;
+        if (outside) offscreen++;
+        if (fa) {
+          // فارسیِ واقعی: نسبتِ پهنا به اندازه‌ی قلم باید در بازه‌ی معقول باشد
+          const fs = parseFloat(getComputedStyle(e).fontSize) || 30;
+          const ratio = per / (fs * 0.55);
+          if (ratio < 0.15 || ratio > 1.6) tofuish++;
+        }
+        out.push({ t: txt.slice(0, 28), fa, x: Math.round(bb.x), y: Math.round(bb.y),
+                   w: Math.round(bb.width), outside });
+      }
+      return { n: els.length, offscreen, tofuish, items: out.slice(0, 12) };
+    });
+    console.log(`beat ${n} @${t}s -> ${path.basename(f)} ${sz}b  text=${audit.n} بیرون‌زده=${audit.offscreen} مشکوک‌به‌توفو=${audit.tofuish}`);
+    for (const it of audit.items) {
+      console.log(`   [${it.fa ? 'فا' : 'لا'}] x=${String(it.x).padStart(4)} y=${String(it.y).padStart(3)} w=${String(it.w).padStart(4)}${it.outside ? '  ⚠ بیرون از کادر' : ''}  «${it.t}»`);
+    }
   }
 
   if (errors.length) console.log('ERRORS:\n' + errors.slice(0, 20).join('\n'));
