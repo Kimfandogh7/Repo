@@ -68,7 +68,7 @@ jobs:
             echo "=== خروجی ==="
             ls -la . 2>&1
             find . -name '*.mp4' -o -name '*.png' | head -20
-          } > ../../../edu-agent/videos/chain-rule/render.log 2>&1
+          } > render.log 2>&1
           cat edu-agent/videos/chain-rule/render.log
 
       - name: Commit video
