@@ -1,0 +1,97 @@
+name: fetch-refs
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ arena/758efc2d-repo ]
+    paths: [ '.github/workflows/fetch-refs.yml' ]
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/758efc2d-repo
+
+      - name: Fetch metadata + video via mirror
+        run: |
+          mkdir -p refs
+          for pair in "placeplate:7682752652958092552" "yerra:7649800958217620769"; do
+            name="${pair%%:*}"; id="${pair##*:}"
+            echo "--- $name ($id) ---"
+            curl -sL --max-time 45 \
+              "https://www.tikwm.com/api/?url=https://www.tiktok.com/@x/video/$id" \
+              -o "refs/$name.json" || echo "metadata failed for $name"
+            head -c 200 "refs/$name.json"; echo
+          done
+
+      - name: Extract video URLs
+        id: urls
+        run: |
+          for n in placeplate yerra; do
+            u=$(python3 -c "
+import json,sys
+try:
+    d=json.load(open('refs/$n.json'))
+    print(d.get('data',{}).get('play',''))
+except Exception as e:
+    print('')
+")
+            echo "$n=$u" >> "$GITHUB_OUTPUT"
+            echo "$n -> ${u:0:60}"
+          done
+
+      - name: Download videos
+        run: |
+          for n in placeplate yerra; do
+            u=$(grep "^$n=" "$GITHUB_OUTPUT" | cut -d= -f2- || true)
+          done
+          python3 - <<'PY'
+import json, os, urllib.request
+for n in ['placeplate','yerra']:
+    try:
+        d=json.load(open(f'refs/{n}.json'))
+        data=d.get('data') or {}
+        url=data.get('play')
+        if not url:
+            print(n,'no play url'); continue
+        req=urllib.request.Request(url, headers={'User-Agent':'Mozilla/5.0'})
+        raw=urllib.request.urlopen(req, timeout=120).read()
+        open(f'refs/{n}.mp4','wb').write(raw)
+        print(n,'downloaded', len(raw)//1024,'KB')
+    except Exception as e:
+        print(n,'FAILED', type(e).__name__, str(e)[:120])
+PY
+
+      - name: Extract frames + contact sheet
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          for n in placeplate yerra; do
+            [ -f refs/$n.mp4 ] || continue
+            mkdir -p refs/$n
+            # یک فریم در ثانیه
+            ffmpeg -v error -i refs/$n.mp4 -vf "fps=1,scale=480:-1" refs/$n/f-%03d.png
+            # شیت تماس: همه فریم‌ها در یک تصویر
+            ffmpeg -v error -i refs/$n.mp4 -vf "fps=1/2,scale=320:-1,tile=5x6" -frames:v 1 refs/$n-sheet.png
+            echo "$n: $(ls refs/$n | wc -l) فریم"
+          done
+
+      - name: Probe video
+        run: |
+          for n in placeplate yerra; do
+            [ -f refs/$n.mp4 ] || continue
+            echo "=== $n ==="
+            ffprobe -v error -show_entries format=duration,size -show_entries stream=width,height,r_frame_rate,nb_frames -of default=noprint_wrappers=1 refs/$n.mp4 || true
+          done
+
+      - name: Commit results
+        run: |
+          git config user.name "arena-bot"
+          git config user.email "bot@arena.local"
+          git add -A refs/ || true
+          git commit -m "refs: فریم‌های ویدیوهای مرجع" || echo "nothing to commit"
+          git push origin HEAD:arena/758efc2d-repo || echo "push failed"
