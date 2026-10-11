@@ -7,26 +7,38 @@ permissions:
 jobs:
   browse:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
           ref: arena/758efc2d-repo
+
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: install playwright + chromium
+
+      - name: setup + install chromium
+        continue-on-error: true
         run: |
-          npm init -y >/dev/null 2>&1
-          npm i playwright@1.48.0 --silent
-          npx playwright install chromium
-          npx playwright install-deps chromium 2>/dev/null || true
+          { echo "=== node: $(node -v)"; echo "=== npm: $(npm -v)"
+            npm init -y
+            npm i playwright@1.48.0
+            echo "=== playwright installed"
+            npx playwright install --with-deps chromium
+            echo "=== chromium installed"
+          } > fetches/setup.log 2>&1
+
       - name: run browse script
-        run: node fetches/browse.js > fetches/browse-out.txt 2>&1 || echo "SCRIPT_FAILED" >> fetches/browse-out.txt
-      - name: commit
+        continue-on-error: true
+        run: |
+          node fetches/browse.js > fetches/browse-out.txt 2>&1 \
+            || echo "SCRIPT_FAILED" >> fetches/browse-out.txt
+
+      - name: commit everything
+        if: always()
         run: |
           git config user.name "netbrowse-bot"
           git config user.email "netbrowse-bot@users.noreply.github.com"
-          git add fetches/browse-out.txt
+          git add fetches/ || true
           git diff --cached --quiet && echo "no change" || git commit -m "netbrowse: output"
           git push origin HEAD:arena/758efc2d-repo
