@@ -64,12 +64,19 @@ const SHOTS = [
       const els = [...document.querySelectorAll('#scene text')];
       const out = [];
       let offscreen = 0, tofuish = 0;
+      // مختصاتِ واقعیِ صفحه، نه دستگاهِ محلیِ g/هایِ تو‌در‌تو
+      const stage = document.querySelector('svg') || document.body;
+      const R = stage.getBoundingClientRect();
+      const sx = 1600 / (R.width || 1600), sy = 900 / (R.height || 900);
       for (const e of els) {
         const txt = (e.textContent || '').trim();
         if (!txt) continue;
-        let bb; try { bb = e.getBBox(); } catch { continue; }
+        const r = e.getBoundingClientRect();
+        if (!r.width && !r.height) continue;               // پنهان یا سایز صفر
         const fa = /[\u0600-\u06FF]/.test(txt);
-        // پهنایِ هر کاراکتر: اگر خیلی یکنواخت باشد، احتمالاً tofu است
+        // به مختصاتِ ۱۶۰۰×۹۰۰ برمی‌گردانیم
+        const bb = { x: (r.left - R.left) * sx, y: (r.top - R.top) * sy,
+                     width: r.width * sx, height: r.height * sy };
         const per = txt.length ? bb.width / txt.length : 0;
         const outside = bb.x < -5 || bb.y < -5 || bb.x + bb.width > 1605 || bb.y + bb.height > 905;
         if (outside) offscreen++;
