@@ -24,3 +24,15 @@
 ## 2026-10-11T03:03:30Z
 
 * شکست در نصب: context-mode و token-optimizer-mcp (build بومی better-sqlite3 شکست می‌خورد)
+
+## 2026-10-11T11:59:34Z
+
+* دستور timeout در این سندباکس باعث خطای shell می‌شود — از پارامترِ timeoutِ ابزار استفاده کن، نه دستورِ timeout
+
+## 2026-10-11T11:59:34Z
+
+* Actions: workflow باید permissions: contents: write داشته باشد وگرنه git push با ۴۰۳ رد می‌شود؛ فیلترِ paths شامل خودِ فایلِ workflow نیست
+
+## 2026-10-11T11:59:34Z
+
+* تله: git reset --mixed فایل‌های جدید را در working tree نمی‌سازد و بعدش git add -A آن‌ها را به عنوان «حذف» ثبت می‌کند. از git show origin/branch:path استفاده کن

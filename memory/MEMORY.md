@@ -20,6 +20,8 @@
   * شبکه سندباکس در لایه ۷/SNI فیلتر می‌شود: TCP برای هاست‌های مسدود هم باز است (bash /dev/tcp) اما دست‌تکانی TLS می‌میرد
   * هاست‌های مجاز: github.com, api.github.com, codeload.github.com, registry.npmjs.org, pypi.org, files.pythonhosted.org
   * مسدود: raw.githubusercontent.com, example.com, google.com, huggingface.co, cdn.playwright.dev, objects.githubusercontent.com
+  * کشفِ مهم: سندباکس دسترسیِ مستقیم به github.com، registry.npmjs.org و pypi.org دارد — git clone و npm install و pip install مستقیم کار می‌کنند، نیازی به relay نیست
+  * pip محلی به --break-system-packages نیاز دارد (PEP 668)؛ python3 -m venv --without-pip کار می‌کند ولی venv معمولی نه
 
 ## research
   * موتورهای حافظه شکست خوردند: mem0 (کلید OpenAI)، cognee/memori (کلید ابری)، agentmemory (دانلود مدل از HuggingFace مسدود)
@@ -29,6 +31,7 @@
   * git push به برنچ محدود است و باتِ workflow هم روی همان برنچ کامیت می‌زند -> قبل از هر push باید git pull --rebase کرد
   * توکن گیت‌هاب integration است: ساخت Gist و workflow_dispatch هر دو ۴۰۳ می‌دهند
   * مهم: سندباکس واقعاً ریست می‌شود — تاریخچه‌ی git محلی به initial commit برگشت. همیشه قبل از کار: git fetch و مقایسه با remote
+  * مرورگر در سندباکس غیرممکن: CDNِ Playwright مسدود است (ECONNRESET). هر رندر باید در Actions انجام شود
 
 ## tools
   * entroly: حتی با بودجه ۹۴٪ هیچ chunk ای برنمی‌گرداند (Selected: 0) — استفاده نشود
@@ -37,6 +40,8 @@
   * ابزارهایی که کار می‌کنند: uv, ast-grep, promptfoo, DeepEval, DSPy, litellm, firecrawl-mcp, tavily-mcp
   * شکست‌ها: entroly (۰ chunk در بودجه بالا)، headroom-ai (۰٪ فشرده‌سازی)، Serena (basedpyright)، mcpm (ImportError)، sqz/rtk (باینری مسدود)
   * شکست در نصب: context-mode و token-optimizer-mcp (build بومی better-sqlite3 شکست می‌خورد)
+  * دستور timeout در این سندباکس باعث خطای shell می‌شود — از پارامترِ timeoutِ ابزار استفاده کن، نه دستورِ timeout
+  * Actions: workflow باید permissions: contents: write داشته باشد وگرنه git push با ۴۰۳ رد می‌شود؛ فیلترِ paths شامل خودِ فایلِ workflow نیست
 
 ## webget
   * رله‌ی GitHub Actions کار می‌کند: هر URL را از طریق push به fetches/request.txt بگیر

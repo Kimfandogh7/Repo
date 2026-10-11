@@ -52,3 +52,11 @@
 ## 2026-10-11T10:48:20Z
 
 * تشخیصِ مفهومی از تخمینِ توانایی خیلی سخت‌تر است: دقتِ top-1 حدود ۵۱٪ با ۱۷ سؤال (در برابر خطای ۰.۵۶ برای توانایی)
+
+## 2026-10-11T11:59:34Z
+
+* Edge TTS فارسی دارد: fa-IR-DilaraNeural و fa-IR-FaridNeural — رایگان، بدون کلید، در Actions
+
+## 2026-10-11T11:59:34Z
+
+* papermorph چندزبانه نبود؛ وصله‌ی RTL در edu-agent/books/moshkel/lib/engine.js (فونت FA، پرچمِ CHAPTER.rtl، rx() آینه‌ای، T() با direction:rtl)
