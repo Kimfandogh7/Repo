@@ -1,55 +1,11 @@
-RUN_ID: 1791690065
-HOME url: http://127.0.0.1:4173/
-HOME title: open-slide
---- HOME links ---
-/s/forgetting-curve
-/s/forgetting-curve
-/s/getting-started
-/s/getting-started
---- HOME text (800) ---
-open-slide
-Search
-Ctrl K
-Slides
-02
-Themes
-00
-FOLDERS
-Draft
-02
-v2.1.0
-Slides
-02
-Newest
-منحنیِ فراموشی · ابینگهاوس ۱۸۸۵
-چرا هرچه می‌خوانی فراموش می‌کنی؟
-
-و سه کاری که از امروز می‌توانی درباره‌اش انجام بدهی
-
-منحنی فراموشی
-Getting started
-The slide framework
-built for agents.
-
-Every page is a React component on a 1920 × 1080 canvas. This deck walks the loop: init, prompt, edit, comment, present.
-
-Press
-to begin
-$
-npx @open-slide/cli init
-OPEN-SLIDE · GETTING STARTED
-01 / 18
-Getting started
---- goto: http://127.0.0.1:4173/slides/forgetting-curve
-status: 200 | url: http://127.0.0.1:4173/slides/forgetting-curve
---- SLIDE text (1200) ---
-404 · not found
-
-Page not found
---- BIG ELEMENTS ---
-HTML.light [1920x1080]
-BODY. [1920x1080]
-DIV. [1920x1080]
-DIV.grid h-screen place-items-center bg-back [1920x1080]
-debug screenshot written
+RUN_ID: 1791690179
+goto: http://127.0.0.1:4173/s/forgetting-curve
+status: 200
+USING: full page (fallback)
+  page-1.png  92461 bytes
+  page-2.png  83819 bytes
+  page-3.png  108053 bytes
+  page-4.png  83255 bytes
+  page-5.png  96703 bytes
+  page-6.png  90235 bytes
 DONE
