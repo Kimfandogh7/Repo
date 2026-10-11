@@ -1,3 +1,2 @@
-# job 1791685125-8767
-https://api.duckduckgo.com/?q=python+programming&format=json&no_html=1
-https://hn.algolia.com/api/v1/search?query=playwright&hitsPerPage=2
+# job 1791685145-8812
+https://r.jina.ai/https://en.wikipedia.org/wiki/Agent_harness
