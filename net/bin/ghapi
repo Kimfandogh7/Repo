@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# ghapi — خواندن یک فایل کوچک (<1MB) از ریپو با Contents API (base64). سریع‌تر از ghget برای تک‌فایل.
+# استفاده: ghapi <owner>/<repo>/<path> [ref]
+# نمونه:   ghapi openai/tiktoken/README.md main
+set -euo pipefail
+SLUGPATH=${1:?needs owner/repo/path}
+OWNER=$(echo "$SLUGPATH"|cut -d/ -f1); REPO=$(echo "$SLUGPATH"|cut -d/ -f2); P=${SLUGPATH#*/}; P=${P#*/}; REF=${2:-}
+Q="repos/$OWNER/$REPO/contents/$P"; [ "$REF" ] && Q="$Q?ref=$REF"
+gh api "$Q" --jq .content | base64 -d

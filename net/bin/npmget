@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# npmget — دانلود tarball هر نسخه‌ی هر پکیج npm (باینری هم می‌تواند باشد).
+# استفاده: npmget <package> [version] [مقصد]
+set -euo pipefail
+P=${1:?needs package}; V=${2:-}; DEST=${3:-.}
+[ "$V" ] || V=$(curl -fsSL --max-time 60 "https://registry.npmjs.org/$P" | python3 -c 'import sys,json;print(json.load(sys.stdin)["dist-tags"]["latest"])')
+echo ">> npm $P@$V" >&2
+OUT="$DEST/$(basename "$P")-$V.tgz"
+curl -fsSL --max-time 600 -o "$OUT" "https://registry.npmjs.org/$P/-/$(basename "$P")-$V.tgz"
+ls -la "$OUT" | awk '{print ">> saved",$5,"bytes"}'

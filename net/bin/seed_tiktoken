@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# seed_tiktoken — رفع شکستِ "needs internet" ابزارهایی که o200k_base را از openaipublic می‌خواهند.
+# فایل را از پکیج npm gpt-tokenizer می‌گیرد (مجاز) و در کش tiktoken می‌گذارد.
+# استفاده: source <(seed_tiktoken)   یا   export TIKTOKEN_CACHE_DIR=$(seed_tiktoken)
+set -euo pipefail
+CACHE=${TIKTOKEN_CACHE_DIR:-/tmp/tiktoken-cache}
+BLOB="https://openaipublic.blob.core.windows.net/encodings/o200k_base.tiktoken"
+KEY=$(python3 -c "import hashlib,sys;print(hashlib.sha1(sys.argv[1].encode()).hexdigest())" "$BLOB")
+[ -s "$CACHE/$KEY" ] || {
+  mkdir -p "$CACHE"; tmp=$(mktemp -d)
+  curl -fsSL --max-time 300 -o "$tmp/p.tgz" \
+    "https://registry.npmjs.org/gpt-tokenizer/-/gpt-tokenizer-3.4.0.tgz"
+  tar xzf "$tmp/p.tgz" -C "$tmp" package/data/o200k_base.tiktoken
+  cp "$tmp/package/data/o200k_base.tiktoken" "$CACHE/$KEY"; rm -rf "$tmp"
+}
+echo "$CACHE"

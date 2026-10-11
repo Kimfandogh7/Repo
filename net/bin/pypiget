@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# pypiget — دانلود wheel/sdist هر نسخه‌ی هر پکیج PyPI از files.pythonhosted.org.
+# استفاده: pypiget <package> [version] [مقصد]
+set -euo pipefail
+P=${1:?needs package}; V=${2:-}; DEST=${3:-.}
+[ "$V" ] || V=$(curl -fsSL --max-time 60 "https://pypi.org/pypi/$P/json" | python3 -c 'import sys,json;print(json.load(sys.stdin)["info"]["version"])')
+echo ">> pypi $P==$V" >&2
+URL=$(curl -fsSL --max-time 60 "https://pypi.org/pypi/$P/$V/json" | python3 -c '
+import sys,json
+for u in json.load(sys.stdin)["urls"]:
+    if u["packagetype"] in ("bdist_wheel","sdist"): print(u["url"]); break')
+curl -fsSL --max-time 600 -o "$DEST/$(basename "$URL")" "$URL"
+ls -la "$DEST/$(basename "$URL")" | awk '{print ">> saved",$5,"bytes"}'

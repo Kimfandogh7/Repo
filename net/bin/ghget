@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# ghget — گرفتن هر فایل/دایرکتوری از هر ریپوی عمومیِ گیت‌هاب (بدون raw.githubusercontent).
+# استفاده: ghget <owner>/<repo> [ref] [مسیر-درون-ریپو] [مقصد]
+# نمونه:   ghget openai/tiktoken main README.md .
+set -euo pipefail
+SLUG=${1:?needs owner/repo}; REF=${2:-HEAD}; SUB=${3:-}; DEST=${4:-.}
+[ "$SUB" ] || SUB=""
+work=$(mktemp -d); trap 'rm -rf "$work"' EXIT
+echo ">> fetching $SLUG@$REF ..." >&2
+curl -fsSL --max-time 300 -o "$work/r.tar.gz" "https://codeload.github.com/$SLUG/tar.gz/$REF"
+_list=$(tar tzf "$work/r.tar.gz"); root=${_list%%/*}
+tar xzf "$work/r.tar.gz" -C "$work"
+mkdir -p "$DEST"
+if [ -d "$work/$root/$SUB" ]; then cp -r "$work/$root/$SUB" "$DEST/"
+else mkdir -p "$DEST/$(dirname "$SUB")"; cp "$work/$root/$SUB" "$DEST/$SUB"; fi
+echo ">> saved to $DEST/$SUB" >&2

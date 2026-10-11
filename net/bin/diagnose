@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# diagnose — نقشه‌برداری از وضعیت شبکه‌ی سندباکس.
+# بدون آرگومان. خروجی: جدول وضعیت هر هاست + علت بلاک (DNS / TCP / TLS).
+set -uo pipefail
+HOSTS="${*:-github.com api.github.com codeload.github.com registry.npmjs.org pypi.org files.pythonhosted.org raw.githubusercontent.com example.com google.com huggingface.co}"
+printf '%-34s %-7s %-6s %-6s %s\n' HOST DNS TCP HTTPS VERDICT
+printf '%-34s %-7s %-6s %-6s %s\n' ---- --- --- ----- -------
+for h in $HOSTS; do
+  dns=FAIL; getent hosts "$h" >/dev/null 2>&1 && dns=OK
+  tcp=FAIL; (exec 3<>/dev/tcp/"$h"/443) 2>/dev/null && { tcp=OK; exec 3<&- 3>&-; }
+  code=$(timeout 12 curl -s -o /dev/null -w '%{http_code}' --max-time 10 "https://$h/" 2>/dev/null); [ -n "$code" ] || code=000
+  if   [ "$code" != "000" ]; then v="ALLOWED (HTTP $code)"
+  elif [ "$tcp" = "OK" ];    then v="L7/SNI filtered"
+  elif [ "$dns" = "OK" ];    then v="TCP reset"
+  else                            v="DNS blocked"; fi
+  printf '%-34s %-7s %-6s %-6s %s\n' "$h" "$dns" "$tcp" "$code" "$v"
+done
+echo
+echo "proxy env : $(env | grep -ciE '^(http|https|all)_proxy' ) متغیر"
+echo "resolver  : $(grep -m1 nameserver /etc/resolv.conf 2>/dev/null || echo '?')"
