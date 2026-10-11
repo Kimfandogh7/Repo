@@ -2,6 +2,11 @@ name: vision
 
 on:
   workflow_dispatch:
+  push:
+    branches: [ arena/758efc2d-repo ]
+    paths:
+      - '.github/workflows/vision.yml'
+      - 'refs/_trigger.txt'
 
 permissions:
   contents: write
