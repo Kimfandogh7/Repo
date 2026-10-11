@@ -12,9 +12,9 @@ permissions:
   contents: write
 
 jobs:
-  probe:
+  describe:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
@@ -24,58 +24,72 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Probe environment
+      - name: Install (torch + torchvision from same index)
         run: |
-          {
-            echo "date: $(date -u)"
-            echo "shell: $0"
-            echo "pwd: $(pwd)"
-            echo "--- python ---"
-            python -V
-            echo "--- pip ---"
-            pip -V
-            echo "--- disk ---"
-            df -h / | tail -1
-            echo "--- refs ---"
-            ls refs/ 2>&1 | head
-            echo "--- net test: pypi ---"
-            curl -s -o /dev/null -w '%{http_code}\n' --max-time 15 https://pypi.org/simple/ || echo "pypi FAIL"
-            echo "--- net test: huggingface ---"
-            curl -s -o /dev/null -w '%{http_code}\n' --max-time 15 https://huggingface.co/ || echo "hf FAIL"
-            echo "--- net test: download.pytorch ---"
-            curl -s -o /dev/null -w '%{http_code}\n' --max-time 15 https://download.pytorch.org/whl/cpu/ || echo "pt FAIL"
-          } > refs/_probe.log 2>&1
-          cat refs/_probe.log
+          pip install --quiet torch torchvision numpy --index-url https://download.pytorch.org/whl/cpu
+          pip install --quiet transformers pillow
+          python -c "import torch, torchvision, transformers; print('ok', torch.__version__, torchvision.__version__, transformers.__version__)"
 
-      - name: Try installing torch (timed)
+      - name: Describe every frame
         run: |
-          {
-            echo "=== start $(date -u) ==="
-            time pip install torch --index-url https://download.pytorch.org/whl/cpu 2>&1 | tail -8
-            echo "=== after torch $(date -u) ==="
-            python -c "import torch; print('torch ok', torch.__version__)" 2>&1 | tail -3
-          } >> refs/_probe.log 2>&1
-          tail -5 refs/_probe.log
-
-      - name: Try loading Florence-2
-        run: |
-          pip install --quiet transformers pillow einops timm 2>&1 | tail -3 >> refs/_probe.log 2>&1 || true
-          {
-            echo "=== model load $(date -u) ==="
-            python - <<'PY' 2>&1 | tail -20
+          python - <<'PY'
+          import json, os, torch
+          from PIL import Image
           from transformers import AutoProcessor, AutoModelForCausalLM
-          m = AutoModelForCausalLM.from_pretrained("microsoft/Florence-2-base", trust_remote_code=True)
-          p = AutoProcessor.from_pretrained("microsoft/Florence-2-base", trust_remote_code=True)
-          print("FLORENCE OK")
-          PY
-          } >> refs/_probe.log 2>&1
-          tail -20 refs/_probe.log
 
-      - name: Commit probe log
+          MODEL = "microsoft/Florence-2-base"
+          model = AutoModelForCausalLM.from_pretrained(
+              MODEL, trust_remote_code=True).eval()
+          proc = AutoProcessor.from_pretrained(MODEL, trust_remote_code=True)
+          print("model ready", flush=True)
+
+          def ask(img, prompt):
+              inp = proc(text=prompt, images=img, return_tensors="pt")
+              with torch.no_grad():
+                  out = model.generate(
+                      input_ids=inp["input_ids"],
+                      pixel_values=inp["pixel_values"],
+                      max_new_tokens=400, num_beams=3, do_sample=False)
+              txt = proc.batch_decode(out, skip_special_tokens=False)[0]
+              return proc.post_process_generation(
+                  txt, task=prompt, image_size=(img.width, img.height))
+
+          result = {}
+          for vid in ["placeplate", "yerra"]:
+              d = f"refs/{vid}"
+              if not os.path.isdir(d):
+                  continue
+              files = sorted(f for f in os.listdir(d) if f.endswith(".png"))
+              result[vid] = []
+              print(f"=== {vid}: {len(files)} فریم ===", flush=True)
+              for f in files:
+                  img = Image.open(os.path.join(d, f)).convert("RGB")
+                  e = {"frame": f}
+                  for tag, prompt in [
+                          ("caption", "<MORE_DETAILED_CAPTION>"),
+                          ("ocr", "<OCR>"),
+                          ("objects", "<OD>"),
+                  ]:
+                      try:
+                          e[tag] = ask(img, prompt)
+                      except Exception as ex:
+                          e[tag] = f"ERR {type(ex).__name__}"
+                  result[vid].append(e)
+                  c = e.get("caption")
+                  if isinstance(c, dict):
+                      c = c.get("<MORE_DETAILED_CAPTION>", "")
+                  print(f"{f}: {str(c)[:150]}", flush=True)
+
+          json.dump(result, open("refs/descriptions.json", "w"),
+                    indent=2, ensure_ascii=False)
+          print("SAVED")
+          PY
+
+      - name: Commit
         if: always()
         run: |
           git config user.name "arena-bot"
           git config user.email "bot@arena.local"
-          git add -f refs/_probe.log
-          git commit -m "vision: probe" || echo "nothing"
+          git add -f refs/descriptions.json
+          git commit -m "vision: توصیف همه فریم‌ها" || echo "nothing"
           git push origin HEAD:arena/758efc2d-repo || echo "push failed"
