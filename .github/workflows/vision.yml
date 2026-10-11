@@ -36,7 +36,7 @@ jobs:
           pip install torch torchvision numpy --index-url https://download.pytorch.org/whl/cpu >> $LOGF 2>&1
           echo "exit=$?" >> $LOGF
           echo "--- نصب transformers ---" >> $LOGF
-          pip install "transformers==4.49.0" pillow >> $LOGF 2>&1
+          pip install "transformers==4.49.0" pillow einops timm >> $LOGF 2>&1
           echo "exit=$?" >> $LOGF
           echo "--- بررسی import ---" >> $LOGF
           python -c "import torch,torchvision,transformers;print('ok',torch.__version__,torchvision.__version__,transformers.__version__)" >> $LOGF 2>&1
