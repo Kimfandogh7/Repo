@@ -1,202 +1,260 @@
-=============== #1  https://www.mojeek.com/search?q=agent+harness+engineering+open+source
+=============== #1  http://export.arxiv.org/api/query?search_query=all:%22agent+harness%22&max_results=3
 
-HTTP_CODE:403
-SIZE:358
-IP:5.102.173.68
-<!DOCTYPE html><html><head><title>403 - Forbidden</title></head><body><h1>403 - Forbidden</h1><h2>Sorry your network appears to be sending automated queries so we can't process your search at this time.</h2><h3>If you are seeing this in error please <a href="/about/contact?refr=403&q=agent harness engineering open source">contact us</a>.</h3></body></html>---BODY (max 20KB)---
-<!DOCTYPE html><html><head><title>403 - Forbidden</title></head><body><h1>403 - Forbidden</h1><h2>Sorry your network appears to be sending automated queries so we can't process your search at this time.</h2><h3>If you are seeing this in error please <a href="/about/contact?refr=403&q=agent harness engineering open source">contact us</a>.</h3></body></html>
-=============== #2  https://search.marcia.dev/
-curl: (6) Could not resolve host: search.marcia.dev
-
-HTTP_CODE:000
-SIZE:0
-IP:
-FETCH_FAILED exit=6
-
-=============== #3  https://html.duckduckgo.com/html/?q=test
-
-HTTP_CODE:202
-SIZE:14200
-IP:52.250.42.157
-</body>
-
-</html>
+HTTP_CODE:200
+SIZE:10603
+IP:151.101.75.42
+    </author>
+  </entry>
+</feed>
 ---BODY (max 20KB)---
-<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> -->
-<!DOCTYPE html>
-<html lang="en">
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/g5sC+jbuGlmh++nB3jj8fIAkwtc</id>
+  <title>arXiv Query: search_query=all:"agent harness"&amp;id_list=&amp;start=0&amp;max_results=3</title>
+  <updated>2026-10-11T02:03:19Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:%22agent+harness%22&amp;start=0&amp;max_results=3&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>3</opensearch:itemsPerPage>
+  <opensearch:totalResults>415</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2605.18747v1</id>
+    <title>Code as Agent Harness</title>
+    <updated>2026-05-18T17:59:03Z</updated>
+    <link href="https://arxiv.org/abs/2605.18747v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.18747v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent large language models (LLMs) have demonstrated strong capabilities in understanding and generating code, from competitive programming to repository-level software engineering. In emerging agentic systems, code is no longer only a target output. It increasingly serves as an operational substrate for agent reasoning, acting, environment modeling, and execution-based verification. We frame this shift through the lens of agent harnesses and introduce code as agent harness: a unified view that centers code as the basis for agent infrastructure. To systematically study this perspective, we organize the survey around three connected layers. First, we study the harness interface, where code connects agents to reasoning, action, and environment modeling. Second, we examine harness mechanisms: planning, memory, and tool use for long-horizon execution, together with feedback-driven control and optimization that make harness reliable and adaptive. Third, we discuss scaling the harness from single-agent systems to multi-agent settings, where shared code artifacts support multi-agent coordination, review, and verification. Across these layers, we summarize representative methods and practical applications of code as agent harness, spanning coding assistants, GUI/OS automation, embodied agents, scientific discovery, personalization and recommendation, DevOps, and enterprise workflows. We further outline open challenges for harness engineering, including evaluation beyond final task success, verification under incomplete feedback, regression-free harness improvement, consistent shared state across multiple agents, human oversight for safety-critical actions, and extensions to multimodal environments. By centering code as the harness of agentic AI, this survey provides a unified roadmap toward executable, verifiable, and stateful AI agent systems.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-18T17:59:03Z</published>
+    <arxiv:comment>GitHub: https://github.com/YennNing/Awesome-Code-as-Agent-Harness-Papers</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Xuying Ning</name>
+    </author>
+    <author>
+      <name>Katherine Tieu</name>
+    </author>
+    <author>
+      <name>Dongqi Fu</name>
+    </author>
+    <author>
+      <name>Tianxin Wei</name>
+    </author>
+    <author>
+      <name>Zihao Li</name>
+    </author>
+    <author>
+      <name>Yuanchen Bei</name>
+    </author>
+    <author>
+      <name>Jiaru Zou</name>
+    </author>
+    <author>
+      <name>Mengting Ai</name>
+    </author>
+    <author>
+      <name>Zhining Liu</name>
+    </author>
+    <author>
+      <name>Ting-Wei Li</name>
+    </author>
+    <author>
+      <name>Lingjie Chen</name>
+    </author>
+    <author>
+      <name>Yanjun Zhao</name>
+    </author>
+    <author>
+      <name>Ke Yang</name>
+    </author>
+    <author>
+      <name>Bingxuan Li</name>
+    </author>
+    <author>
+      <name>Cheng Qian</name>
+    </author>
+    <author>
+      <name>Gaotang Li</name>
+    </author>
+    <author>
+      <name>Xiao Lin</name>
+    </author>
+    <author>
+      <name>Zhichen Zeng</name>
+    </author>
+    <author>
+      <name>Ruizhong Qiu</name>
+    </author>
+    <author>
+      <name>Sirui Chen</name>
+    </author>
+    <author>
+      <name>Yifan Sun</name>
+    </author>
+    <author>
+      <name>Xiyuan Yang</name>
+    </author>
+    <author>
+      <name>Ruida Wang</name>
+    </author>
+    <author>
+      <name>Rui Pan</name>
+    </author>
+    <author>
+      <name>Chenyuan Yang</name>
+    </author>
+    <author>
+      <name>Dylan Zhang</name>
+    </author>
+    <author>
+      <name>Liri Fang</name>
+    </author>
+    <author>
+      <name>Zikun Cui</name>
+    </author>
+    <author>
+      <name>Yang Cao</name>
+    </author>
+    <author>
+      <name>Pan Chen</name>
+    </author>
+    <author>
+      <name>Dorothy Sun</name>
+    </author>
+    <author>
+      <name>Ren Chen</name>
+    </author>
+    <author>
+      <name>Mahesh Srinivasan</name>
+    </author>
+    <author>
+      <name>Nipun Mathur</name>
+    </author>
+    <author>
+      <name>Yinglong Xia</name>
+    </author>
+    <author>
+      <name>Hong Li</name>
+    </author>
+    <author>
+      <name>Hong Yan</name>
+    </author>
+    <author>
+      <name>Pan Lu</name>
+    </author>
+    <author>
+      <name>Lingming Zhang</name>
+    </author>
+    <author>
+      <name>Tong Zhang</name>
+    </author>
+    <author>
+      <name>Hanghang Tong</name>
+    </author>
+    <author>
+      <name>Jingrui He</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.08432v1</id>
+    <title>EMHO: EMbodied Agent Harness Optimization via Experience Traces</title>
+    <updated>2026-10-06T14:30:42Z</updated>
+    <link href="https://arxiv.org/abs/2610.08432v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.08432v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Improving embodied agents often focuses on optimizing the underlying model through training, while the surrounding agent harness that controls planning, context, and tool use is typically engineered. We ask whether this harness can instead improve itself directly from experience traces under sparse environmental feedback. We propose EMbodied Agent Harness Optimization (EMHO), a self-evolving framework that keeps the embodied model frozen and iteratively revises its harness by analyzing execution trajectories and prior harness history. EMHO optimizes beyond skills or recovery prompts, modifying how the agent monitors progress, uses vision tools, grounds observations, and responds to failures. To support multiple subtasks with a single harness, we introduce EMHO-Merge, which addresses trade-offs in jointly optimizing a single shared harness across subtasks by using episode-level gains and losses to guide evidence-supported refinement of when and how revised behaviors are applied. We evaluate EMHO on EmbodiedBench across navigation and manipulation tasks, and EMHO consistently improves task success for both Qwen 9B and 27B models. Qualitative analysis shows that EMHO goes beyond recovering from failures and unproductive actions to reshape how the embodied agent interprets and interacts with its environment.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-06T14:30:42Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Hyun Jung Lee</name>
+    </author>
+    <author>
+      <name>Jungtaek Kim</name>
+    </author>
+    <author>
+      <name>Jongwon Jeong</name>
+    </author>
+    <author>
+      <name>Tae-Eui Kam</name>
+    </author>
+    <author>
+      <name>Donghyun Kim</name>
+    </author>
+    <author>
+      <name>Yong Jae Lee</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.03691v2</id>
+    <title>Don't Blame the Large Language Model: How Agent Harness Evolution Shapes Coding Agent Quality</title>
+    <updated>2026-07-20T18:11:41Z</updated>
+    <link href="https://arxiv.org/abs/2607.03691v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.03691v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Coding agents, autonomous systems that use large language models (LLMs) to resolve software engineering tasks, rely on agent harness: a middleware layer in between a developer and a large language model that orchestrates system prompts, tool execution, context management, and iterative reasoning loops. While these agent harnesses evolve at extreme velocities, no study has examined how this evolution affects agent quality (i.e., effectiveness and efficiency) over time. Practitioners regularly report quality regressions after agent harness updates, yet consistently attribute them to the underlying model rather than the harness itself. In this paper, we address this gap by conducting the first controlled longitudinal study that isolates the agent harness contribution. Unlike prior work that fixes the agent harness and varies the model, we fix the model and vary only the agent harness, evaluating 35 sequential releases to measure their impact on agent effectiveness and efficiency. We first empirically study the development and release evolution of five major open-source agent harnesses (i.e., Codex, Qwen Code, Gemini, OpenCode, and OpenHands), revealing extreme release velocities exceeding two releases per day and thousands of issues within months. We then perform a controlled deep dive into 35 sequential releases of the Qwen Code CLI, evaluating each against 50 stratified SWE-bench Verified tasks while holding the underlying LLM constant. We trace the resulting quality fluctuations to specific development patterns and architectural components, and illustrate our findings with concrete qualitative evidence linking individual pull requests to measured quality shifts.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-04T03:55:25Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Oussama Ben Sghaier</name>
+    </author>
+    <author>
+      <name>Hao Li</name>
+    </author>
+    <author>
+      <name>Bram Adams</name>
+    </author>
+    <author>
+      <name>Ahmed E. Hassan</name>
+    </author>
+  </entry>
+</feed>
 
-<head>
-    <link rel="canonical" href="https://duckduckgo.com/">
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=1">
-    <meta name="referrer" content="origin">
-    <title>
-        DuckDuckGo
-    </title>
-    <link rel="preload" href="/font/ProximaNova-Reg-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="/font/ProximaNova-Sbold-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link title="DuckDuckGo (Lite)" type="application/opensearchdescription+xml" rel="search" href="//duckduckgo.com/opensearch_lite_v2.xml">
-    <link rel="icon" href="//duckduckgo.com/favicon.ico" type="image/x-icon"/>
-    <link id="icon60" rel="apple-touch-icon" href="//duckduckgo.com/assets/icons/meta/DDG-iOS-icon_60x60.png?v=2"/>
-    <link id="icon76" rel="apple-touch-icon" sizes="76x76" href="//duckduckgo.com/assets/icons/meta/DDG-iOS-icon_76x76.png?v=2"/>
-    <link id="icon120" rel="apple-touch-icon" sizes="120x120" href="//duckduckgo.com/assets/icons/meta/DDG-iOS-icon_120x120.png?v=2"/>
-    <link id="icon152" rel="apple-touch-icon" sizes="152x152" href="//duckduckgo.com/assets/icons/meta/DDG-iOS-icon_152x152.png?v=2"/>
-    <link rel="image_src" href="//duckduckgo.com/assets/icons/meta/DDG-icon_256x256.png">
-    <link rel="stylesheet" media="handheld, all" href="//duckduckgo.com/dist/l.304bf63bbd053ee46b28.css" type="text/css"/>
-    <link rel="stylesheet" media="handheld, all" href="//duckduckgo.com/dist/lc.844e8ff9baa78da64b59.css" type="text/css"/>
-</head>
+=============== #2  https://hn.algolia.com/api/v1/search?query=agent+harness&hitsPerPage=3
 
-<body>
-    <a name="top"></a>
-    <center id="lite_wrapper">
-        <br>
-        <a class="header-url" href="/html/">
-            <span class="header">DuckDuckGo</span>
-        </a>
-        <br><br>
+HTTP_CODE:200
+SIZE:3928
+IP:34.160.168.181
+{"exhaustive":{"nbHits":false,"typo":false},"exhaustiveNbHits":false,"exhaustiveTypo":false,"hits":[{"_highlightResult":{"author":{"matchLevel":"none","matchedWords":[],"value":"tosh"},"title":{"fullyHighlighted":false,"matchLevel":"full","matchedWords":["agent","harness"],"value":"qm \u2013 Multiplayer <em>agent</em> <em>harness</em> for work"},"url":{"matchLevel":"none","matchedWords":[],"value":"https://github.com/yc-software/qm"}},"_tags":["story","author_tosh","story_49126604"],"author":"tosh","children":[49126830,49126928,49126933,49127245,49127268,49127293,49127384,49127537,49127622,49127875,49127925,49128067,49128298,49128344,49128345,49128601,49128629,49128712,49129444,49129636,49129947,49129948,49130046,49130140,49130348,49130390,49130564,49130619,49131148,49131878,49132589,49132889,49132929,49133382,49134190,49134237,49134285,49134567,49134708,49134789,49134902,49135561,49136949,49137048,49137288,49138945,49139988,49142476,49145893,49150270,49158585,49209691],"created_at":"2026-07-31T18:04:58Z","created_at_i":1785521098,"num_comments":163,"objectID":"49126604","points":682,"story_id":49126604,"title":"qm \u2013 Multiplayer agent harness for work","updated_at":"2026-10-04T03:27:39Z","url":"https://github.com/yc-software/qm"},{"_highlightResult":{"author":{"matchLevel":"none","matchedWords":[],"value":"simonpure"},"title":{"fullyHighlighted":false,"matchLevel":"full","matchedWords":["agent","harness"],"value":"Munder Difflin \u2013 <em>Agent</em> <em>harness</em> to run an office of your clones"},"url":{"matchLevel":"none","matchedWords":[],"value":"https://munderdiffl.in/"}},"_tags":["story","author_simonpure","story_49398152"],"author":"simonpure","children":[49398628,49398677,49398695,49398753,49398820,49399015,49399018,49399264,49399331,49399441,49399474,49399504,49399533,49399845,49400352,49400442,49400485,49400755,49400941,49401074,49401224,49401407,49401411,49401580,49402083,49402404,49402526,49402713,49402827,49404779,49405597,49406205,49408351,49412821,49539283],"created_at":"2026-08-22T09:49:14Z","created_at_i":1787392154,"num_comments":145,"objectID":"49398152","points":312,"story_id":49398152,"title":"Munder Difflin \u2013 Agent harness to run an office of your clones","updated_at":"2026-10-10T00:38:29Z","url":"https://munderdiffl.in/"},{"_highlightResult":{"author":{"matchLevel":"none","matchedWords":[],"value":"shad42"},"title":{"fullyHighlighted":false,"matchLevel":"full","matchedWords":["agent","harness"],"value":"The <em>agent</em> <em>harness</em> belongs outside the sandbox"},"url":{"fullyHighlighted":false,"matchLevel":"full","matchedWords":["agent","harness"],"value":"https://www.mendral.com/blog/<em>agent</em>-<em>harness</em>-belongs-outside-sandbox"}},"_tags":["story","author_shad42","story_47990675"],"author":"shad42","children":[47990998,47991000,47991058,47991108,47991128,47991142,47991147,47991208,47991214,47991347,47991419,47991477,47991481,47991486,47991503,47991669,47991683,47991796,47991871,47991972,47992009,47992077,47992502,47992777,47992814,47993129,47993142,47993353,47993487,47993579,47993677,47993958,47994031,47994647,47994866,47994979,47995564,47995623,47995867,47996350,47996437,47997498,47997618,47997631,47997993,47998078,47998321,47999058,48001088,48001671,48002289,48159555],"created_at":"2026-05-02T21:21:27Z","created_at_i":1777756887,"num_comments":121,"objectID":"47990675","points":182,"story_id":47990675,"title":"The agent harness belongs outside the sandbox","updated_at":"2026-09-10T05:23:36Z","url":"https://www.mendral.com/blog/agent-harness-belongs-outside-sandbox"}],"hitsPerPage":3,"nbHits":5132,"nbPages":334,"page":0,"params":"query=agent+harness&hitsPerPage=3&advancedSyntax=true&analyticsTags=backend","processingTimeMS":35,"processingTimingsMS":{"_request":{"queue":174,"roundTrip":20},"fetch":{"query":16,"scanning":15,"total":32},"getCache":1,"total":35},"query":"agent harness","serverTimeMS":210}
+---BODY (max 20KB)---
+{"exhaustive":{"nbHits":false,"typo":false},"exhaustiveNbHits":false,"exhaustiveTypo":false,"hits":[{"_highlightResult":{"author":{"matchLevel":"none","matchedWords":[],"value":"tosh"},"title":{"fullyHighlighted":false,"matchLevel":"full","matchedWords":["agent","harness"],"value":"qm \u2013 Multiplayer <em>agent</em> <em>harness</em> for work"},"url":{"matchLevel":"none","matchedWords":[],"value":"https://github.com/yc-software/qm"}},"_tags":["story","author_tosh","story_49126604"],"author":"tosh","children":[49126830,49126928,49126933,49127245,49127268,49127293,49127384,49127537,49127622,49127875,49127925,49128067,49128298,49128344,49128345,49128601,49128629,49128712,49129444,49129636,49129947,49129948,49130046,49130140,49130348,49130390,49130564,49130619,49131148,49131878,49132589,49132889,49132929,49133382,49134190,49134237,49134285,49134567,49134708,49134789,49134902,49135561,49136949,49137048,49137288,49138945,49139988,49142476,49145893,49150270,49158585,49209691],"created_at":"2026-07-31T18:04:58Z","created_at_i":1785521098,"num_comments":163,"objectID":"49126604","points":682,"story_id":49126604,"title":"qm \u2013 Multiplayer agent harness for work","updated_at":"2026-10-04T03:27:39Z","url":"https://github.com/yc-software/qm"},{"_highlightResult":{"author":{"matchLevel":"none","matchedWords":[],"value":"simonpure"},"title":{"fullyHighlighted":false,"matchLevel":"full","matchedWords":["agent","harness"],"value":"Munder Difflin \u2013 <em>Agent</em> <em>harness</em> to run an office of your clones"},"url":{"matchLevel":"none","matchedWords":[],"value":"https://munderdiffl.in/"}},"_tags":["story","author_simonpure","story_49398152"],"author":"simonpure","children":[49398628,49398677,49398695,49398753,49398820,49399015,49399018,49399264,49399331,49399441,49399474,49399504,49399533,49399845,49400352,49400442,49400485,49400755,49400941,49401074,49401224,49401407,49401411,49401580,49402083,49402404,49402526,49402713,49402827,49404779,49405597,49406205,49408351,49412821,49539283],"created_at":"2026-08-22T09:49:14Z","created_at_i":1787392154,"num_comments":145,"objectID":"49398152","points":312,"story_id":49398152,"title":"Munder Difflin \u2013 Agent harness to run an office of your clones","updated_at":"2026-10-10T00:38:29Z","url":"https://munderdiffl.in/"},{"_highlightResult":{"author":{"matchLevel":"none","matchedWords":[],"value":"shad42"},"title":{"fullyHighlighted":false,"matchLevel":"full","matchedWords":["agent","harness"],"value":"The <em>agent</em> <em>harness</em> belongs outside the sandbox"},"url":{"fullyHighlighted":false,"matchLevel":"full","matchedWords":["agent","harness"],"value":"https://www.mendral.com/blog/<em>agent</em>-<em>harness</em>-belongs-outside-sandbox"}},"_tags":["story","author_shad42","story_47990675"],"author":"shad42","children":[47990998,47991000,47991058,47991108,47991128,47991142,47991147,47991208,47991214,47991347,47991419,47991477,47991481,47991486,47991503,47991669,47991683,47991796,47991871,47991972,47992009,47992077,47992502,47992777,47992814,47993129,47993142,47993353,47993487,47993579,47993677,47993958,47994031,47994647,47994866,47994979,47995564,47995623,47995867,47996350,47996437,47997498,47997618,47997631,47997993,47998078,47998321,47999058,48001088,48001671,48002289,48159555],"created_at":"2026-05-02T21:21:27Z","created_at_i":1777756887,"num_comments":121,"objectID":"47990675","points":182,"story_id":47990675,"title":"The agent harness belongs outside the sandbox","updated_at":"2026-09-10T05:23:36Z","url":"https://www.mendral.com/blog/agent-harness-belongs-outside-sandbox"}],"hitsPerPage":3,"nbHits":5132,"nbPages":334,"page":0,"params":"query=agent+harness&hitsPerPage=3&advancedSyntax=true&analyticsTags=backend","processingTimeMS":35,"processingTimingsMS":{"_request":{"queue":174,"roundTrip":20},"fetch":{"query":16,"scanning":15,"total":32},"getCache":1,"total":35},"query":"agent harness","serverTimeMS":210}
 
-        
-        <iframe name="ifr" width="0" height="0" border="0" class="hidden"></iframe>
-        <form id="img-form" action="//duckduckgo.com/anomaly.js?sv=html&cc=sre&ti=1791684169&gk=d4cd0dabcf4caa22ad92fab40844c786&p=9769fb96a15eee6c41d8de84226daae6-cd833992022f1f8a47f3c9ed7500af55-acf5c2ec81d18325e39efc6f36b6d8c3-c50431538d8e386decb93c02558b3a15-0d021d713870dfad63c09146dba44040-aa52aad2350de4e6b8be3b60fbc0941f-d6768abce2d9becba4584f0ea40fe9bc-6c7dc479ed28087f7fd078315bd86879-04beb9b54ced3d00789bf0afebf73dd5&q=test&o=ZHRXwGGCB%2BoKlN19GkFpFYF1fF%2F8mA3WwuzFr9JRuaL6nzbvAnDspa7tk6%2BjfGl%2F%0A&r=usw" target="ifr" method="POST"></form>
-        <form id="challenge-form" action="//duckduckgo.com/anomaly.js?sv=html&cc=sre&st=1791684169&gk=d4cd0dabcf4caa22ad92fab40844c786&p=9769fb96a15eee6c41d8de84226daae6-cd833992022f1f8a47f3c9ed7500af55-acf5c2ec81d18325e39efc6f36b6d8c3-c50431538d8e386decb93c02558b3a15-0d021d713870dfad63c09146dba44040-aa52aad2350de4e6b8be3b60fbc0941f-d6768abce2d9becba4584f0ea40fe9bc-6c7dc479ed28087f7fd078315bd86879-04beb9b54ced3d00789bf0afebf73dd5&q=test&o=ZHRXwGGCB%2BoKlN19GkFpFYF1fF%2F8mA3WwuzFr9JRuaL6nzbvAnDspa7tk6%2BjfGl%2F%0A&r=usw" method="POST">
-            <div class="anomaly-modal__mask">
-                <div class="anomaly-modal__modal  is-ie" data-testid="anomaly-modal">
-                    <div class="anomaly-modal__title">Unfortunately, bots use DuckDuckGo too.</div>
-                    <div class="anomaly-modal__description">Please complete the following challenge to confirm this search was made by a human.</div>
-                    <div class="anomaly-modal__instructions">Select all squares containing a duck:</div>
-                    <div class="anomaly-modal__puzzle-margins">
-                        <div class="anomaly-modal__puzzle">
-                            
-                                <div class="anomaly-modal__box" data-index="0">
-                                    
-                                    
-                                        <label class="" for="image-check_9769fb96a15eee6c41d8de84226daae6" data-testid="anomaly-modal-tile-0">
-                                            <input type="checkbox" class="anomaly-modal__check" name="image-check_9769fb96a15eee6c41d8de84226daae6" id="image-check_9769fb96a15eee6c41d8de84226daae6">
-                                            <img class="anomaly-modal__image" alt=" " id="image-9769fb96a15eee6c41d8de84226daae6" src="../assets/anomaly/images/challenge/9769fb96a15eee6c41d8de84226daae6.jpg" data-id="9769fb96a15eee6c41d8de84226daae6.jpg" data-testid="anomaly-modal-image-0"></img>
-                                        </label>
-                                    
-                                </div>
-                            
-                                <div class="anomaly-modal__box" data-index="1">
-                                    
-                                    
-                                        <label class="" for="image-check_cd833992022f1f8a47f3c9ed7500af55" data-testid="anomaly-modal-tile-1">
-                                            <input type="checkbox" class="anomaly-modal__check" name="image-check_cd833992022f1f8a47f3c9ed7500af55" id="image-check_cd833992022f1f8a47f3c9ed7500af55">
-                                            <img class="anomaly-modal__image" alt=" " id="image-cd833992022f1f8a47f3c9ed7500af55" src="../assets/anomaly/images/challenge/cd833992022f1f8a47f3c9ed7500af55.jpg" data-id="cd833992022f1f8a47f3c9ed7500af55.jpg" data-testid="anomaly-modal-image-1"></img>
-                                        </label>
-                                    
-                                </div>
-                            
-                                <div class="anomaly-modal__box" data-index="2">
-                                    
-                                    
-                                        <label class="" for="image-check_acf5c2ec81d18325e39efc6f36b6d8c3" data-testid="anomaly-modal-tile-2">
-                                            <input type="checkbox" class="anomaly-modal__check" name="image-check_acf5c2ec81d18325e39efc6f36b6d8c3" id="image-check_acf5c2ec81d18325e39efc6f36b6d8c3">
-                                            <img class="anomaly-modal__image" alt=" " id="image-acf5c2ec81d18325e39efc6f36b6d8c3" src="../assets/anomaly/images/challenge/acf5c2ec81d18325e39efc6f36b6d8c3.jpg" data-id="acf5c2ec81d18325e39efc6f36b6d8c3.jpg" data-testid="anomaly-modal-image-2"></img>
-                                        </label>
-                                    
-                                </div>
-                            
-                                <div class="anomaly-modal__box" data-index="3">
-                                    
-                                    
-                                        <label class="" for="image-check_c50431538d8e386decb93c02558b3a15" data-testid="anomaly-modal-tile-3">
-                                            <input type="checkbox" class="anomaly-modal__check" name="image-check_c50431538d8e386decb93c02558b3a15" id="image-check_c50431538d8e386decb93c02558b3a15">
-                                            <img class="anomaly-modal__image" alt=" " id="image-c50431538d8e386decb93c02558b3a15" src="../assets/anomaly/images/challenge/c50431538d8e386decb93c02558b3a15.jpg" data-id="c50431538d8e386decb93c02558b3a15.jpg" data-testid="anomaly-modal-image-3"></img>
-                                        </label>
-                                    
-                                </div>
-                            
-                                <div class="anomaly-modal__box" data-index="4">
-                                    
-                                    
-                                        <label class="" for="image-check_0d021d713870dfad63c09146dba44040" data-testid="anomaly-modal-tile-4">
-                                            <input type="checkbox" class="anomaly-modal__check" name="image-check_0d021d713870dfad63c09146dba44040" id="image-check_0d021d713870dfad63c09146dba44040">
-                                            <img class="anomaly-modal__image" alt=" " id="image-0d021d713870dfad63c09146dba44040" src="../assets/anomaly/images/challenge/0d021d713870dfad63c09146dba44040.jpg" data-id="0d021d713870dfad63c09146dba44040.jpg" data-testid="anomaly-modal-image-4"></img>
-                                        </label>
-                                    
-                                </div>
-                            
-                                <div class="anomaly-modal__box" data-index="5">
-                                    
-                                    
-                                        <label class="" for="image-check_aa52aad2350de4e6b8be3b60fbc0941f" data-testid="anomaly-modal-tile-5">
-                                            <input type="checkbox" class="anomaly-modal__check" name="image-check_aa52aad2350de4e6b8be3b60fbc0941f" id="image-check_aa52aad2350de4e6b8be3b60fbc0941f">
-                                            <img class="anomaly-modal__image" alt=" " id="image-aa52aad2350de4e6b8be3b60fbc0941f" src="../assets/anomaly/images/challenge/aa52aad2350de4e6b8be3b60fbc0941f.jpg" data-id="aa52aad2350de4e6b8be3b60fbc0941f.jpg" data-testid="anomaly-modal-image-5"></img>
-                                        </label>
-                                    
-                                </div>
-                            
-                                <div class="anomaly-modal__box" data-index="6">
-                                    
-                                    
-                                        <label class="" for="image-check_d6768abce2d9becba4584f0ea40fe9bc" data-testid="anomaly-modal-tile-6">
-                                            <input type="checkbox" class="anomaly-modal__check" name="image-check_d6768abce2d9becba4584f0ea40fe9bc" id="image-check_d6768abce2d9becba4584f0ea40fe9bc">
-                                            <img class="anomaly-modal__image" alt=" " id="image-d6768abce2d9becba4584f0ea40fe9bc" src="../assets/anomaly/images/challenge/d6768abce2d9becba4584f0ea40fe9bc.jpg" data-id="d6768abce2d9becba4584f0ea40fe9bc.jpg" data-testid="anomaly-modal-image-6"></img>
-                                        </label>
-                                    
-                                </div>
-                            
-                                <div class="anomaly-modal__box" data-index="7">
-                                    
-                                    
-                                        <label class="" for="image-check_6c7dc479ed28087f7fd078315bd86879" data-testid="anomaly-modal-tile-7">
-                                            <input type="checkbox" class="anomaly-modal__check" name="image-check_6c7dc479ed28087f7fd078315bd86879" id="image-check_6c7dc479ed28087f7fd078315bd86879">
-                                            <img class="anomaly-modal__image" alt=" " id="image-6c7dc479ed28087f7fd078315bd86879" src="../assets/anomaly/images/challenge/6c7dc479ed28087f7fd078315bd86879.jpg" data-id="6c7dc479ed28087f7fd078315bd86879.jpg" data-testid="anomaly-modal-image-7"></img>
-                                        </label>
-                                    
-                                </div>
-                            
-                                <div class="anomaly-modal__box" data-index="8">
-                                    
-                                    
-                                        <label class="" for="image-check_04beb9b54ced3d00789bf0afebf73dd5" data-testid="anomaly-modal-tile-8">
-                                            <input type="checkbox" class="anomaly-modal__check" name="image-check_04beb9b54ced3d00789bf0afebf73dd5" id="image-check_04beb9b54ced3d00789bf0afebf73dd5">
-                                            <img class="anomaly-modal__image" alt=" " id="image-04beb9b54ced3d00789bf0afebf73dd5" src="../assets/anomaly/images/challenge/04beb9b54ced3d00789bf0afebf73dd5.jpg" data-id="04beb9b54ced3d00789bf0afebf73dd5.jpg" data-testid="anomaly-modal-image-8"></img>
-                                        </label>
-                                    
-                                </div>
-                            
-                        </div>
-                    </div>
-                    <div class="anomaly-modal__controls">
-                        <button name="challenge-submit" class="btn btn--primary anomaly-modal__submit js-anomaly-modal-submit" form="challenge-form" value="d4cd0dabcf4caa22ad92fab40844c786" >Submit</button>
-                        <p></p>
-                        <input class="feedback-toggle" type="checkbox" id="feedback" unchecked />
-                        <label for="feedback" class="feedback-text">Images not loading?</label>
-                        <div class="feedback-content">
-                            <label class="feedback-instructions">Please email the following code to:</label>
-                            <p class="feedback-instructions">error-lite+410b@duckduckgo.com</p>
-                            <p><label class="feedback-instructions">Code: 410b</label></p>
-                        </div>
-                    </div>
-            </div>
-        </form>
-        
+=============== #3  https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=reinforcement%20learning&format=json&srlimit=3
 
-        
+HTTP_CODE:200
+SIZE:1307
+IP:198.35.26.224
+{"batchcomplete":"","continue":{"sroffset":3,"continue":"-||"},"query":{"searchinfo":{"totalhits":2530},"search":[{"ns":0,"title":"Reinforcement learning","pageid":66294,"size":79844,"wordcount":8980,"snippet":"In machine <span class=\"searchmatch\">learning</span> and optimal control, <span class=\"searchmatch\">reinforcement</span> <span class=\"searchmatch\">learning</span> (RL) (also known as approximate dynamic programming) is concerned with how an intelligent","timestamp":"2026-09-05T22:02:46Z"},{"ns":0,"title":"Reinforcement learning from human feedback","pageid":73200355,"size":59746,"wordcount":7659,"snippet":"In machine <span class=\"searchmatch\">learning</span>, <span class=\"searchmatch\">reinforcement</span> <span class=\"searchmatch\">learning</span> from human feedback (RLHF) is a technique to align an intelligent agent with human preferences. It involves","timestamp":"2026-09-22T23:27:23Z"},{"ns":0,"title":"Jev (AI model)","pageid":84271113,"size":10539,"wordcount":1178,"snippet":"<span class=\"searchmatch\">reinforcement</span> <span class=\"searchmatch\">learning</span> from human feedback (RLHF), InstructGPT, ChatGPT and GPT-4 before leaving in 2024. The System One model works on <span class=\"searchmatch\">Reinforcement</span>","timestamp":"2026-10-06T17:16:17Z"}]}}---BODY (max 20KB)---
+{"batchcomplete":"","continue":{"sroffset":3,"continue":"-||"},"query":{"searchinfo":{"totalhits":2530},"search":[{"ns":0,"title":"Reinforcement learning","pageid":66294,"size":79844,"wordcount":8980,"snippet":"In machine <span class=\"searchmatch\">learning</span> and optimal control, <span class=\"searchmatch\">reinforcement</span> <span class=\"searchmatch\">learning</span> (RL) (also known as approximate dynamic programming) is concerned with how an intelligent","timestamp":"2026-09-05T22:02:46Z"},{"ns":0,"title":"Reinforcement learning from human feedback","pageid":73200355,"size":59746,"wordcount":7659,"snippet":"In machine <span class=\"searchmatch\">learning</span>, <span class=\"searchmatch\">reinforcement</span> <span class=\"searchmatch\">learning</span> from human feedback (RLHF) is a technique to align an intelligent agent with human preferences. It involves","timestamp":"2026-09-22T23:27:23Z"},{"ns":0,"title":"Jev (AI model)","pageid":84271113,"size":10539,"wordcount":1178,"snippet":"<span class=\"searchmatch\">reinforcement</span> <span class=\"searchmatch\">learning</span> from human feedback (RLHF), InstructGPT, ChatGPT and GPT-4 before leaving in 2024. The System One model works on <span class=\"searchmatch\">Reinforcement</span>","timestamp":"2026-10-06T17:16:17Z"}]}}
+=============== #4  https://r.jina.ai/https://example.com
 
-        
+HTTP_CODE:200
+SIZE:1465
+IP:172.67.70.54
+Este dominio está destinado al uso en ejemplos de documentación sin necesidad de permiso. Esto no es un servicio; evitar utilizarlo para realizar pruebas o monitoreos.
 
-        
+[Learn more](https://iana.org/help/example-domains)
+---BODY (max 20KB)---
+Title: Example Domain
 
+URL Source: https://example.com/
 
-        <br>
-        <p class='html-only'>
-            <!--    This is the Lite version. Get the full-JS version <a href="https://duckduckgo.com/">here</a>. //-->
-        </p>
-    </center>
-    
-        <img src="//duckduckgo.com/t/tqadb?3384442&amp;s=lite&amp;p=9769fb96a15eee6c41d8de84226daae6-cd833992022f1f8a47f3c9ed7500af55-acf5c2ec81d18325e39efc6f36b6d8c3-c50431538d8e386decb93c02558b3a15-0d021d713870dfad63c09146dba44040-aa52aad2350de4e6b8be3b60fbc0941f-d6768abce2d9becba4584f0ea40fe9bc-6c7dc479ed28087f7fd078315bd86879-04beb9b54ced3d00789bf0afebf73dd5&amp;e=0&amp;iadb=0&amp;i=-1&amp;c=dadb&amp;gk=d4cd0dabcf4caa22ad92fab40844c786&amp;sc=1&amp;cc=sre&amp;r=usw&amp;o=ZHRXwGGCB%2BoKlN19GkFpFYF1fF%2F8mA3WwuzFr9JRuaL6nzbvAnDspa7tk6%2BjfGl%2F%0A"/>
-    
-    
-    
-    
-    
+Published Time: Fri, 09 Oct 2026 20:18:28 GMT
 
-</body>
+Markdown Content:
+This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.
 
-</html>
+هذا النطاق مُخصص للاستخدام في أمثلة التوثيق دون الحاجة إلى إذن. هذه ليست خدمة، يُرجى تجنب الاعتماد عليها لأغراض الاختبار والمراقبة.
 
-fetched 3 url(s)
+该域名仅用于文档示例，无需获得许可。这并非一项服务，请勿将其用于测试和监控目的。
+
+L’usage de ce domaine est réservé à des exemples de documentation, sans autorisation préalable. Il ne s’agit pas d’un service ; son utilisation à des fins de test ou de surveillance est à éviter.
+
+Данный домен предназначен для использования в примерах документации без необходимости получения предварительного разрешения. Это не сервис; не рекомендуется его использование для тестирования и мониторинга.
+
+Este dominio está destinado al uso en ejemplos de documentación sin necesidad de permiso. Esto no es un servicio; evitar utilizarlo para realizar pruebas o monitoreos.
+
+[Learn more](https://iana.org/help/example-domains)
+
+fetched 4 url(s)
