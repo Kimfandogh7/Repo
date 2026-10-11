@@ -30,13 +30,34 @@ jobs:
           ffprobe -version | head -1
 
       - name: Generate Persian narration (Edge TTS)
+        id: tts
+        continue-on-error: true
         run: |
-          export PATH="$HOME/.cargo/bin:$PATH"
-          cd edu-agent
-          SK=vendor/papermorph/.claude/skills/papermorph
-          uv run --with edge-tts python $SK/scripts/tts.py \
-            content/moshkel/ch01/narration.fa.json \
-            books/moshkel/ch01/audio/fa
+          mkdir -p edu-agent/out
+          {
+            echo "RUN_ID=${RUN_ID}"
+            echo "=== edge-tts version ==="
+            export PATH="$HOME/.cargo/bin:$PATH"
+            uv run --with edge-tts python -c "import edge_tts,inspect;print(edge_tts.__version__ if hasattr(edge_tts,'__version__') else 'n/a');print(inspect.getsourcefile(edge_tts))" 2>&1
+            echo "=== فارسی پشتیبانی می‌شود؟ ==="
+            uv run --with edge-tts python -c "
+          import asyncio, edge_tts
+          async def m():
+              vs = await edge_tts.list_voices()
+              fa = [v['ShortName'] for v in vs if v['Locale'].startswith('fa')]
+              print('fa voices:', fa)
+              print('total voices:', len(vs))
+          asyncio.run(m())" 2>&1
+            echo "=== اجرای tts.py ==="
+            cd edu-agent
+            SK=vendor/papermorph/.claude/skills/papermorph
+            uv run --with edge-tts python $SK/scripts/tts.py \
+              content/moshkel/ch01/narration.fa.json \
+              books/moshkel/ch01/audio/fa 2>&1
+            echo "exit=$?"
+            echo "=== خروجی ==="
+            ls -la books/moshkel/ch01/audio/fa/ 2>&1
+          } 2>&1 | tee edu-agent/out/tts.log
         env:
           RUN_ID: ${{ github.run_id }}
 
@@ -44,12 +65,14 @@ jobs:
         run: ls -la edu-agent/books/moshkel/ch01/audio/fa/ || echo "NO AUDIO"
 
       - name: Install Playwright + Chromium
+        continue-on-error: true
         run: |
           cd edu-agent
           npm i playwright@1.48.0
           npx playwright install --with-deps chromium
 
       - name: Serve and render
+        continue-on-error: true
         run: |
           cd edu-agent/books
           python3 -m http.server 8765 --bind 127.0.0.1 &
