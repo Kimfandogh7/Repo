@@ -1,4 +1,2 @@
-https://www.google.com
-https://news.ycombinator.com
+https://lite.duckduckgo.com/lite/?q=best+open+source+agent+harness+2026
 https://api.ipify.org?format=json
-https://ar5iv.labs.arxiv.org/html/2511.09030
