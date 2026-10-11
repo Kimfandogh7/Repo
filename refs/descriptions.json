@@ -1,0 +1,1461 @@
+{
+  "placeplate": [
+    {
+      "frame": "f-001.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a laptop on a wooden table with a person's hand on the keyboard. The laptop screen displays a website with a red and black color scheme. On the left side of the screen, there is a photo of a group of people wearing racing suits and helmets, with the text \"The Show That Saved Formula 1\" above them. The website appears to be a PowerPoint presentation, as indicated by the title \"Need a better PowerPoint?\" at the top of the image."
+      },
+      "ocr": {
+        "<OCR>": "Need a better PowerPoint ?-The ShowThe ShowTOMS BAY OFF1: CASE STUDYThe ShowThat SavedFormula 1.Can Nurtis laton, Fear gers.CODM - 1-3 Bison Road.Lando Norr"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              103.41000366210938,
+              596.6400146484375,
+              539.1900024414062,
+              679.2000122070312
+            ],
+            [
+              0.27000001072883606,
+              214.55999755859375,
+              539.1900024414062,
+              780.9599609375
+            ],
+            [
+              366.9300231933594,
+              529.4400024414062,
+              539.1900024414062,
+              694.5599975585938
+            ],
+            [
+              95.31000518798828,
+              470.8799743652344,
+              147.69000244140625,
+              548.6400146484375
+            ],
+            [
+              146.61000061035156,
+              468.9599914550781,
+              196.29000854492188,
+              545.760009765625
+            ],
+            [
+              49.410003662109375,
+              474.7200012207031,
+              95.31000518798828,
+              553.4400024414062
+            ],
+            [
+              133.65000915527344,
+              561.1199951171875,
+              163.88999938964844,
+              591.8399658203125
+            ],
+            [
+              178.47000122070312,
+              557.2799682617188,
+              200.07000732421875,
+              587.0399780273438
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop",
+            "person",
+            "person",
+            "person",
+            "person",
+            "person",
+            "person"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-002.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a laptop on a wooden table with a person's hand resting on the keyboard. The laptop screen displays a website with a red and black color scheme. The website appears to be a PowerPoint presentation, as indicated by the text on the screen. The text reads \"Need a better PowerPoint? The Show, That Saved Formula 1.\""
+      },
+      "ocr": {
+        "<OCR>": "Need a better PowerPoint ?F1: CASE STUDYThe Show,That SavedFormula 1.The ShowThe Show.Cou Nurtis latin, Fear gers.CODM - 1-0 Luton, Houd.Formula I."
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              102.87000274658203,
+              598.5599975585938,
+              424.71002197265625,
+              679.2000122070312
+            ],
+            [
+              0.27000001072883606,
+              213.59999084472656,
+              539.1900024414062,
+              783.8399658203125
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-003.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a laptop on a wooden table with a person's hand on the right side of the screen. The laptop is open and the screen is displaying a webpage with a red and black color scheme. The webpage appears to be a PowerPoint presentation, as there is a title at the top that reads \"Need a better PowerPoint?\" Below the title, there is an image of a PowerPoint logo. The background is a beige wall."
+      },
+      "ocr": {
+        "<OCR>": "Need a better PowerPoint ?The ShowThat SeedFormula 1"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              102.87000274658203,
+              588.9599609375,
+              539.1900024414062,
+              679.2000122070312
+            ],
+            [
+              0.27000001072883606,
+              212.63999938964844,
+              539.1900024414062,
+              783.8399658203125
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-004.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a laptop on a wooden table with a person's hand on the right side of the screen. The laptop is open and the screen is displaying a webpage with a red and black color scheme. The webpage appears to be a PowerPoint presentation with the title \"Need a better PowerPoint?\" at the top. The background is a beige wall."
+      },
+      "ocr": {
+        "<OCR>": "Need a better PowerPoint ?The ShowThat Seat 1Formula 1"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              101.79000091552734,
+              598.5599975585938,
+              481.95001220703125,
+              678.239990234375
+            ],
+            [
+              0.27000001072883606,
+              212.63999938964844,
+              539.1900024414062,
+              783.8399658203125
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-005.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a black laptop computer sitting on a wooden table. The laptop is open and the screen is blank, with a white background. On the laptop screen, there is a silver logo of the brand \"ASUS\" in the center. The logo is a stylized letter \"F\" with a curved line running through it. The background is a beige wall with a textured pattern."
+      },
+      "ocr": {
+        "<OCR>": "0/Q&B:00"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              107.7300033569336,
+              586.0800170898438,
+              539.1900024414062,
+              678.239990234375
+            ],
+            [
+              0.27000001072883606,
+              210.72000122070312,
+              539.1900024414062,
+              782.8800048828125
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-006.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a laptop computer sitting on a wooden table. The laptop is black in color and has a white screen. On the screen, there is a silver logo of a letter \"F\" in the center. The background is blurred, but it appears to be a room with a beige wall and a plant."
+      },
+      "ocr": {
+        "<OCR>": "0"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              106.6500015258789,
+              586.0800170898438,
+              539.1900024414062,
+              678.239990234375
+            ],
+            [
+              0.27000001072883606,
+              210.72000122070312,
+              539.1900024414062,
+              783.8399658203125
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-007.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a black laptop with a red and black logo on the screen. The logo is a stylized letter \"F\" with a diagonal line running horizontally across it. The laptop is placed on a wooden table with a beige wall in the background. The screen is turned on and the laptop appears to be in good condition."
+      },
+      "ocr": {
+        "<OCR>": "TM"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              106.6500015258789,
+              587.0399780273438,
+              539.1900024414062,
+              677.2799682617188
+            ],
+            [
+              0.27000001072883606,
+              212.63999938964844,
+              539.1900024414062,
+              782.8800048828125
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-008.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a black laptop with a red and black logo on the screen. The logo is a stylized letter \"F\" with a curved line running through it. The laptop is placed on a wooden table with a beige wall in the background. On the right side of the laptop, there is a text that reads \"ThTh Fo\" in white letters. The text is in a modern sans-serif font and is centered on the laptop's screen."
+      },
+      "ocr": {
+        "<OCR>": "F1 CASThThTMFoOne Nettra-sedion-Fok-tape.400M4 1D (01:01:00)chapras."
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              106.6500015258789,
+              586.0800170898438,
+              539.1900024414062,
+              677.2799682617188
+            ],
+            [
+              0.27000001072883606,
+              211.67999267578125,
+              539.1900024414062,
+              782.8800048828125
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-009.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a laptop computer sitting on a wooden table. The laptop screen displays a red and black logo with the text \"F1 Case Study: The Show, That Saved Formula 1\". The logo is a stylized letter \"F\" with a curved line running through it. The text is written in white and is centered on the screen. The background of the screen is black."
+      },
+      "ocr": {
+        "<OCR>": "F1 . CASE STUDYThe Show,That SavedTMFormula 1.One Netflix series. Four years.400M - 13 billion viewers."
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              98.01000213623047,
+              586.0800170898438,
+              539.1900024414062,
+              679.2000122070312
+            ],
+            [
+              0.27000001072883606,
+              212.63999938964844,
+              539.1900024414062,
+              782.8800048828125
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-010.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a black laptop computer sitting on a wooden table. The laptop is open and the screen is turned on. On the screen, there is a large image of a race track with cars and spectators in the stands. The track appears to be in motion, as there are buildings and trees visible in the background. The image is taken from a low angle, looking up at the laptop screen. The background is a beige wall."
+      },
+      "ocr": {
+        "<OCR>": "Rehnoker * 00"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              98.01000213623047,
+              586.0800170898438,
+              539.1900024414062,
+              679.2000122070312
+            ],
+            [
+              0.27000001072883606,
+              214.55999755859375,
+              539.1900024414062,
+              777.1199951171875
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-011.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a black laptop computer sitting on a wooden table. The laptop has a red stripe on the top and bottom of the screen. On the screen, there is an aerial view of a race track with cars and spectators in the stands. The track appears to be in motion, as there are buildings and trees visible in the background. The image is taken from a low angle, looking up at the laptop screen."
+      },
+      "ocr": {
+        "<OCR>": "-"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              97.47000122070312,
+              586.0800170898438,
+              539.1900024414062,
+              678.239990234375
+            ],
+            [
+              0.27000001072883606,
+              213.59999084472656,
+              539.1900024414062,
+              776.1599731445312
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-012.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a black laptop with a red triangle on the screen. The laptop is placed on a wooden table with a beige wall in the background. The screen is turned on and the laptop appears to be in good condition. The red triangle is slightly tilted to the right, creating a sense of depth and dimension."
+      },
+      "ocr": {
+        "<OCR>": "-"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              108.81000518798828,
+              587.0399780273438,
+              539.1900024414062,
+              676.3200073242188
+            ],
+            [
+              0.27000001072883606,
+              211.67999267578125,
+              539.1900024414062,
+              778.0799560546875
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-013.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a laptop on a wooden table with a red background. On the laptop screen, there are three images of three men wearing yellow racing suits with the Oracle logo on them. The men are smiling and looking directly at the camera. Above the images, there is a text that reads \"Get the template Link in bio\"."
+      },
+      "ocr": {
+        "<OCR>": "Get the templateLink in bioSCHOOLSCHOLSBYBITCHONDAORACLE"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              100.71000671386719,
+              320.1600036621094,
+              166.5900115966797,
+              399.8399963378906
+            ],
+            [
+              256.77001953125,
+              321.1199951171875,
+              321.0299987792969,
+              401.7599792480469
+            ],
+            [
+              420.9300231933594,
+              316.32000732421875,
+              474.9300231933594,
+              398.8800048828125
+            ],
+            [
+              0.27000001072883606,
+              215.51998901367188,
+              539.1900024414062,
+              779.0399780273438
+            ],
+            [
+              68.31000518798828,
+              293.2799987792969,
+              227.61001586914062,
+              587.0399780273438
+            ],
+            [
+              233.5500030517578,
+              294.239990234375,
+              397.1700134277344,
+              571.6799926757812
+            ],
+            [
+              400.4100036621094,
+              301.91998291015625,
+              533.25,
+              557.2799682617188
+            ],
+            [
+              68.31000518798828,
+              394.0799865722656,
+              227.07000732421875,
+              587.0399780273438
+            ],
+            [
+              234.0900115966797,
+              384.47998046875,
+              397.1700134277344,
+              571.6799926757812
+            ],
+            [
+              401.4900207519531,
+              392.1600036621094,
+              533.25,
+              557.2799682617188
+            ]
+          ],
+          "labels": [
+            "human face",
+            "human face",
+            "human face",
+            "laptop",
+            "person",
+            "person",
+            "person",
+            "sports uniform",
+            "sports uniform",
+            "sports uniform"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-014.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a laptop on a wooden table with a red background. On the laptop screen, there is a photo of two men, one wearing a yellow racing suit and the other wearing a black racing suit. The man in the yellow suit is smiling and looking directly at the camera. The background of the photo is red with a black and white image of a race car. Above the photo, there are white text that reads \"Get the template Link in bio\"."
+      },
+      "ocr": {
+        "<OCR>": "Get the templateLink in bioLONEEBYBITFRONZDACORACILE"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              372.33001708984375,
+              321.1199951171875,
+              431.19000244140625,
+              397.91998291015625
+            ],
+            [
+              237.3300018310547,
+              322.0799865722656,
+              294.57000732421875,
+              396.9599914550781
+            ],
+            [
+              0.27000001072883606,
+              214.55999755859375,
+              539.1900024414062,
+              778.0799560546875
+            ],
+            [
+              350.19000244140625,
+              295.1999816894531,
+              504.6300048828125,
+              560.1599731445312
+            ],
+            [
+              206.010009765625,
+              296.1600036621094,
+              350.7300109863281,
+              572.6400146484375
+            ]
+          ],
+          "labels": [
+            "human face",
+            "human face",
+            "laptop",
+            "person",
+            "person"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-015.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a laptop on a wooden desk with a red background. On the laptop screen, there is an image of two men, one wearing a yellow racing suit and the other wearing a black racing suit. The man in the yellow suit is standing in front of a red race car with the words \"Lando Norris\" and \"Oracle\" written on it. Above the image, there are two text boxes that read \"Get the template Link in bio\"."
+      },
+      "ocr": {
+        "<OCR>": "Get the templateLink in bioLando NorrMcLaren . World Champion423 PTS 2 WINSSYB3HORACLE"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              459.27001953125,
+              322.0799865722656,
+              513.8099975585938,
+              396.0
+            ],
+            [
+              335.07000732421875,
+              323.03997802734375,
+              389.07000732421875,
+              395.03997802734375
+            ],
+            [
+              1.8900001049041748,
+              214.55999755859375,
+              539.1900024414062,
+              778.0799560546875
+            ],
+            [
+              311.8500061035156,
+              298.0799865722656,
+              439.83001708984375,
+              563.0399780273438
+            ],
+            [
+              441.45001220703125,
+              297.1199951171875,
+              534.8699951171875,
+              553.4400024414062
+            ]
+          ],
+          "labels": [
+            "human face",
+            "human face",
+            "laptop",
+            "person",
+            "person"
+          ]
+        }
+      }
+    }
+  ],
+  "yerra": [
+    {
+      "frame": "f-001.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a laptop with a PowerPoint presentation open on the screen. The laptop is black and the keyboard is visible in the foreground. The background is completely black, making the laptop and the presentation stand out. On the top right corner of the screen, there is a text that reads \"Powerpoint Presentation\" in white letters. Below the text, there are several tabs open, including a search bar, a menu bar, and a toolbar. The tabs are arranged in a grid-like pattern, with each tab having a different color and design. The overall design of the laptop is modern and minimalistic."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentation---FEBRANTFERBARACOLA to add.com-0.0.00.0-1.00-2.00--1.0--2.0 -1.5-1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18-19-20-21-22-23-24-25-26-27-28-29-30-31-32-33-34-35-36-37-38-39-40-41-42-43-44-45-46-47-48-50-51-52-53-54-55-56-57-58-59-60-61-62-63-64-65-66-67-68-69-70-71-72-73-74-75-76-77-78-79-80-81-82-83-84-85-86-87-88-89-90-91-92-93-94-95-96-97-98-99-100-102-104-105-106-107-112-113-114-115-116-117-118-129-130-131-132-133-134-135-136-137-138-139-140"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              0.27000001072883606,
+              673.4400024414062,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              0.27000001072883606,
+              276.9599914550781,
+              539.1900024414062,
+              958.5599975585938
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-002.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a person's hand typing on a laptop keyboard. The laptop screen is turned on and the background is black. On the screen, there is a white rectangle with the word \"Powerpoint Presentation\" written in red and orange flames above it. Below the rectangle, there are several tabs open, including a search bar, a menu bar, and a toolbar. The person's fingers are visible on the keyboard, and they appear to be typing away. The overall mood of the image is dark and mysterious."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentationFERBAARFERBAARCAS to add adesCAS TO add adeCASTo add adessCAS To add adenCASTOADESKWUYDFBXCVXCM"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              0.27000001072883606,
+              673.4400024414062,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              0.27000001072883606,
+              697.4400024414062,
+              198.99000549316406,
+              958.5599975585938
+            ],
+            [
+              0.27000001072883606,
+              284.6399841308594,
+              539.1900024414062,
+              958.5599975585938
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-003.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a black laptop with a white screen. The laptop is open and the keyboard is visible. The screen is blank, with no text or images on it. Above the screen, there is a text that reads \"Powerpoint Presentation\" in red and orange flames. The background is black, making the laptop stand out."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentationEKGHJOKLXDBABNMTXCNMAltAlt"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              0.27000001072883606,
+              671.5199584960938,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              0.27000001072883606,
+              0.47999998927116394,
+              539.1900024414062,
+              958.5599975585938
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-004.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a black laptop with a white screen. The laptop is open and the keyboard is visible. The screen is blank, with no text or images on it. Above the screen, there is a text that reads \"Powerpoint Presentation\" in red and orange flames. The background is black, making the laptop stand out."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentationFGHJOKNXCVNMAlt"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              0.27000001072883606,
+              670.5599975585938,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              0.27000001072883606,
+              0.47999998927116394,
+              539.1900024414062,
+              958.5599975585938
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-005.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a close-up of a laptop screen with a black keyboard. On the screen, there is a white background with the words \"Powerpoint Presentation\" written in bold red letters at the top. Below the text, there are two orange flames, one on the left side of the screen and the other on the right side. In the center of the image, there appears to be a red pen with a silver cap. The pen is positioned on the keyboard, with the keys facing towards the screen. The background is black, making the red pen stand out."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentationEKGHJOKLXFABBNMXCVNMAlt"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              0.27000001072883606,
+              670.5599975585938,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              0.27000001072883606,
+              0.47999998927116394,
+              539.1900024414062,
+              958.5599975585938
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-006.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a screenshot of a PowerPoint presentation on a laptop screen. The background of the screen is red with the word \"Ferrari\" written in white capital letters at the top. Below the word, there is an image of a red Ferrari Formula One car with the Ferrari logo on the side. The car is shown from the front three-quarter angle, with the wheels facing towards the left side of the image. The laptop screen has a black keyboard with white keys. The overall design of the presentation is sleek and modern."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentationFERRARIarlboreFAMERRKGHJKLXFABNNMXCVNMAltAllAll"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              0.27000001072883606,
+              442.0799865722656,
+              492.7500305175781,
+              567.8399658203125
+            ],
+            [
+              0.27000001072883606,
+              671.5199584960938,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              0.27000001072883606,
+              493.91998291015625,
+              82.89000701904297,
+              567.8399658203125
+            ],
+            [
+              369.09002685546875,
+              490.0799865722656,
+              434.97003173828125,
+              555.3599853515625
+            ]
+          ],
+          "labels": [
+            "car",
+            "computer keyboard",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-007.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a screenshot of a PowerPoint presentation on a laptop screen. The background of the screen is red with the word \"Ferrari\" written in bold white letters at the top. Below the word, there is an image of a red Ferrari Formula One car with the Ferrari logo on the side. The car is shown from the front three-quarter angle, with the wheels facing towards the right side of the image. The laptop screen is black and has a white keyboard at the bottom. The text on the screen reads \"Powerpoint Presentation\" in white letters."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentationFERRARIMarlboreAMDAIMARLONO2EYKGHJOKLXDBABNM6XCVNMAlChi"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              14.850000381469727,
+              441.1199951171875,
+              510.030029296875,
+              567.8399658203125
+            ],
+            [
+              0.27000001072883606,
+              672.47998046875,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              22.410001754760742,
+              493.91998291015625,
+              105.57000732421875,
+              566.8800048828125
+            ],
+            [
+              389.6100158691406,
+              489.1199951171875,
+              455.4900207519531,
+              555.3599853515625
+            ]
+          ],
+          "labels": [
+            "car",
+            "computer keyboard",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-008.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a close-up of a laptop screen with the word \"Ferrari\" written in bold red letters at the top. Below the word, there is an image of a red Ferrari Formula One car with the Ferrari logo on it. The car is shown from the front, with the wheels facing towards the right side of the screen. The background is white, and the laptop is black with a silver keyboard. The image appears to be taken from a top-down perspective, looking down on the car."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentationFERRARKGHJKLXDBABNM6XCNMAlt"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              0.27000001072883606,
+              671.5199584960938,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              75.87000274658203,
+              416.1600036621094,
+              493.2900085449219,
+              608.1599731445312
+            ],
+            [
+              432.27001953125,
+              457.44000244140625,
+              480.33001708984375,
+              511.1999816894531
+            ],
+            [
+              188.19000244140625,
+              571.6799926757812,
+              263.25,
+              604.3200073242188
+            ],
+            [
+              319.95001220703125,
+              535.2000122070312,
+              361.530029296875,
+              575.5199584960938
+            ],
+            [
+              342.6300048828125,
+              449.7599792480469,
+              384.7500305175781,
+              479.5199890136719
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "land vehicle",
+            "wheel",
+            "wheel",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-009.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a screenshot of a PowerPoint presentation on a laptop screen. The presentation is titled \"Ferrari\" and has a red background with white text. On the right side of the screen, there is an image of a red Ferrari Formula One car with the Ferrari logo on it. The car is shown from the front, with the wheels facing towards the left side. The text on the screen reads \"Powerpoint Presentation\" in bold white letters. Below the car, there are two orange flames, one on top of the other, representing the powerpoint presentation. The laptop screen is black with white keys."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentationFERRARIThe Ferrari F2004 is one of the mostdominant, successful, and iconic carstechnical team created by Roy Byrne, RossBrown, and Algo Costa, this car markedthe secured Michael Schumacher hisseventh (and final) championship title.2EYKHJKKLxDBABNMXCVNMAlt"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              0.27000001072883606,
+              671.5199584960938,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              0.27000001072883606,
+              0.47999998927116394,
+              539.1900024414062,
+              958.5599975585938
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-010.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a screenshot of a PowerPoint presentation on a laptop screen. The presentation is titled \"Ferrari\" and has a red background with white text. On the right side of the screen, there is an image of a red Ferrari Formula One car with the Ferrari logo on it. The car is shown from the front, with the wheels facing towards the left side. The text on the screen reads \"Powerpoint Presentation\" in bold white letters. Below the car, there are two orange flames, one on top of the other, representing the powerpoint presentation. The laptop screen is black with white keys."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentationFERRARIThe Ferrari F2004 is one of the mostdominant, successful, and iconic carstechnical named by Rory Byrne, RossBrawn, and Aldo Costa, this car markedSecured Michael Schumacher hisseventh (and final championship title.2EYKHJKKXDBABNMVMTB6XCNMAlt"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              0.27000001072883606,
+              671.5199584960938,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              327.510009765625,
+              306.7200012207031,
+              489.510009765625,
+              597.5999755859375
+            ],
+            [
+              329.1300048828125,
+              342.239990234375,
+              361.530029296875,
+              400.79998779296875
+            ],
+            [
+              456.030029296875,
+              346.0799865722656,
+              487.3500061035156,
+              401.7599792480469
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "land vehicle",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-011.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a close-up of a laptop screen with a presentation slide on it. The slide has a red background with the word \"FERRARI\" written in bold white letters at the top. Below the slide, there is an image of a red Ferrari logo and the words \"Powerpoint Presentation\" in smaller white letters. The laptop screen is black and the keyboard is visible in the bottom right corner. The image appears to be taken from a top-down perspective."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentationFERRARIari FZ2004 is one of the mostnt, successful, and iconic carsal teamed by Roy Byrne, Rossand Aldo Costa, this can marked2 Michael Schumacher hisand Final Championship title.2EYKHJKLXDBABNM"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              0.27000001072883606,
+              672.47998046875,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              0.27000001072883606,
+              0.47999998927116394,
+              539.1900024414062,
+              958.5599975585938
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-012.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a laptop screen with a PowerPoint presentation on it. The presentation is titled \"Powerpoint Presentation F2004\" and has a red background with white text. On the right side of the screen, there is an image of a red race car with a white stripe on the side. The car appears to be in motion, with the driver in the driver's seat and the car in the background. The keyboard of the laptop is black with white keys. The laptop is open and the screen is turned on."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentationF2004DBAVNM"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              0.27000001072883606,
+              672.47998046875,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              257.30999755859375,
+              383.5199890136719,
+              526.77001953125,
+              602.3999633789062
+            ],
+            [
+              377.19000244140625,
+              401.7599792480469,
+              470.07000732421875,
+              526.5599975585938
+            ],
+            [
+              396.09002685546875,
+              538.0800170898438,
+              479.7900085449219,
+              596.6400146484375
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "land vehicle",
+            "person",
+            "wheel"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-013.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a laptop screen with a presentation slide on it. The slide has a red background with white text that reads \"Powerpoint Presentation F2004\". Below the text, there is an image of a red Ferrari Formula One car with the number F2004 on the side. The car is shown from the front, with the wheels facing towards the right side of the screen. The keyboard of the laptop is visible in the bottom right corner of the image."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentationF2004The Feral F2004 was an evolution ofThe previous success of F2005-GAmodel, but virtually every componentwas redesigned to reduce weight andimprove growth and theCenter of gravity.FerrariF2EYKGHJKLXDBABNM5XCVNMAlt"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              112.05000305175781,
+              419.03997802734375,
+              527.3099975585938,
+              604.3200073242188
+            ],
+            [
+              0.27000001072883606,
+              672.47998046875,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              299.4300231933594,
+              506.3999938964844,
+              400.4100036621094,
+              599.5199584960938
+            ],
+            [
+              193.0500030517578,
+              490.0799865722656,
+              274.0500183105469,
+              573.5999755859375
+            ],
+            [
+              193.0500030517578,
+              490.0799865722656,
+              272.9700012207031,
+              532.3200073242188
+            ]
+          ],
+          "labels": [
+            "car",
+            "computer keyboard",
+            "wheel",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-014.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a laptop screen with a presentation slide on it. The slide has a red background with white text that reads \"Powerpoint Presentation F2004\". Below the text, there is an image of a red Ferrari Formula One car with the number F2004 on the side. The car is shown from the front, with the wheels facing towards the right side of the screen. The keyboard of the laptop is black with white keys."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentationF2004The Formula F2004 was an evolution ofthe previous success was at 2000s-Gonmodel, but virtually every componentwas redesigned to reduce weight andimproved growthanics and thecenter of gravity.O2EYKGHJKLXDBABNM5XCVNMAlt"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              105.0300064086914,
+              415.1999816894531,
+              527.8500366210938,
+              604.3200073242188
+            ],
+            [
+              0.27000001072883606,
+              672.47998046875,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              295.1100158691406,
+              504.47998046875,
+              396.6300048828125,
+              598.5599975585938
+            ],
+            [
+              183.87001037597656,
+              487.1999816894531,
+              265.95001220703125,
+              572.6400146484375
+            ],
+            [
+              183.87001037597656,
+              487.1999816894531,
+              264.8700256347656,
+              532.3200073242188
+            ]
+          ],
+          "labels": [
+            "car",
+            "computer keyboard",
+            "wheel",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-015.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a laptop screen with a presentation slide on it. The slide has a red and white background with a black and white image of a robot in the center. The robot is wearing a helmet and has its arms raised in the air, as if it is cheering or celebrating. The text on the slide reads \"Powerpoint Presentation\" in bold white letters. Below the robot, there is a black keyboard with white letters and numbers. The laptop is placed on a black surface."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentationYHUWYKGHJOKLXDBABNM5XCVNMAlt"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              0.27000001072883606,
+              672.47998046875,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              0.27000001072883606,
+              0.47999998927116394,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              238.95001220703125,
+              413.2799987792969,
+              376.6500244140625,
+              606.239990234375
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop",
+            "person"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-016.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a laptop screen with a PowerPoint presentation on it. The presentation is titled \"Powerpoint Presentation\" and has a red and white color scheme. On the screen, there is an image of a person wearing a racing suit and helmet, with their arms raised in the air. The person appears to be in mid-air, with a determined expression on their face. The background of the screen is white with a red stripe running horizontally across it. At the top of the image, there are two orange flames, one on each side, representing the powerpoint presentation."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentationA Dutch race car driver, amember of the Red BullRacing team, and off of themost formula history.As of the 2026 season,he is a four-time worldchampion.MAXVERSTAPENYHJKWLDFGHPJKNXCVBNM1M6AII"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              0.27000001072883606,
+              672.47998046875,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              238.95001220703125,
+              366.239990234375,
+              327.510009765625,
+              460.3199768066406
+            ],
+            [
+              0.27000001072883606,
+              0.47999998927116394,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              233.010009765625,
+              319.1999816894531,
+              372.33001708984375,
+              607.2000122070312
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "helmet",
+            "laptop",
+            "person"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-017.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a laptop screen with a PowerPoint presentation on it. The presentation is titled \"Powerpoint Presentation\" and has a red and white color scheme. On the screen, there is an image of a person wearing a racing suit and helmet, with their arms raised in the air. The person appears to be in mid-air, with a determined expression on their face. The background of the screen is white with a red stripe running horizontally across it. At the top of the image, there are two orange flames, one on each side, representing the powerpoint presentation."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentationA Dutch race car driver, amember of the Red BullRacing team, and one of themost formula history.As of the 2026 season,he is a four-time worldchampion.MAXVERSTAPPENWLYKHJKLXDBABNM5XCVNMAlt"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              0.27000001072883606,
+              673.4400024414062,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              239.49000549316406,
+              366.239990234375,
+              327.510009765625,
+              460.3199768066406
+            ],
+            [
+              0.27000001072883606,
+              0.47999998927116394,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              234.0900115966797,
+              320.1600036621094,
+              372.8700256347656,
+              608.1599731445312
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "helmet",
+            "laptop",
+            "person"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-018.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image shows a laptop screen with the words \"Powerpoint Presentation\" written in bold white letters at the top. Below the text, there is an image of a red box with a white background. The laptop is open and the keyboard is visible in the foreground. The image appears to be taken from a top-down perspective, looking down on the laptop screen."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentation123EYKGHJOKLXDBABNM5XCVNMAlt"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              0.27000001072883606,
+              671.5199584960938,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              0.27000001072883606,
+              0.47999998927116394,
+              539.1900024414062,
+              958.5599975585938
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-019.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a close-up of a laptop screen with a red and white Ferrari logo on it. The logo is rectangular in shape and has the word \"FERRARI\" written in bold white letters in the center. Below the logo, there is a text that reads \"Powerpoint Presentation\" in smaller white letters. The laptop screen is black and the keyboard is visible in the bottom right corner. The background is dark, making the logo stand out."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentationFERRARIF2004EYKGHJOKLXDBAVBNMXCMCMNMAlt"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              0.27000001072883606,
+              671.5199584960938,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              0.27000001072883606,
+              0.47999998927116394,
+              539.1900024414062,
+              958.5599975585938
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-020.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a close-up of a laptop screen with the Ferrari F2004 logo on it. The logo is red and white with the word \"Ferrari\" written in bold, capital letters. Below the logo, there is a text that reads \"Powerpoint Presentation\" in smaller, white letters. The background of the screen is black, and the laptop keyboard is visible in the bottom right corner. The image appears to be taken from a top-down perspective, looking down on the laptop."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentationFERRARIThe benchmark of what weF2004Powered by dreamsknow to be possible.Driven by Futur.0-2-3-4-5-6-7-8-9-9W-E-Y-H-U-W-YK-G-HJ-K-L-X-D-B-A-N-M-XC-VVNM-T-E"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              0.27000001072883606,
+              672.47998046875,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              0.27000001072883606,
+              0.47999998927116394,
+              539.1900024414062,
+              958.5599975585938
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-021.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a close-up of a laptop screen with a PowerPoint presentation on it. The presentation is titled \"Ferrari F2004\" and has a red background with white text. The title of the presentation is written in large, bold letters at the top of the screen. Below the title, there is a smaller text that reads \"Powerpoint Presentation\" in smaller, white letters. The laptop screen is black and has the Ferrari logo in the center. The keyboard of the laptop is visible in the bottom right corner of the image."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentationFERRARIThe benchmark of what weF2004Powered by dreams.know to be possible.Driven by Futures.3EYKGHJOKLXDBABNM6XCVNMAlt"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              0.27000001072883606,
+              672.47998046875,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              0.27000001072883606,
+              0.47999998927116394,
+              539.1900024414062,
+              958.5599975585938
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "f-022.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a close-up of a laptop screen with the Ferrari F2004 logo on it. The logo is red and white with the word \"FERRARI\" written in bold, capital letters. Below the logo, there is a text that reads \"Powerpoint Presentation\" in smaller, white letters. The background of the screen is black, and the laptop keyboard is visible in the bottom right corner. The image appears to be taken from a top-down perspective, looking down on the laptop."
+      },
+      "ocr": {
+        "<OCR>": "PowerpointPresentationFERRARIThe benchmark of what weF2004Powered by dreamsknow To be possible.Orion by Futures.0-2-3-4-5-6-7-8-9-8W-E-Y-H-U-W-YK-G-HJ-K-L-X-D-B-A-N-M-XC-VVNM-T-B5-C-M"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              0.27000001072883606,
+              672.47998046875,
+              539.1900024414062,
+              958.5599975585938
+            ],
+            [
+              0.27000001072883606,
+              0.47999998927116394,
+              539.1900024414062,
+              958.5599975585938
+            ]
+          ],
+          "labels": [
+            "computer keyboard",
+            "laptop"
+          ]
+        }
+      }
+    }
+  ]
+}
