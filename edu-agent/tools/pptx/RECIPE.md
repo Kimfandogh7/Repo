@@ -23,6 +23,45 @@ python3 skills/ppt-master/scripts/project_manager.py scaffold-lock $P
 هر لایه‌ی منطقی را در یک `<g id="..." data-pptx-bounds="x y w h">` ببند —
 بدون این گروه‌ها، انیمیشنِ جداگانه روی آن‌ها ممکن نیست.
 
+## ۳-ب. مورفِ پیوسته (همان چیزی که در ویدیوهای حرفه‌ای می‌بینی)
+
+نکته‌ی کلیدی از مستندات خود ابزار:
+
+> «هیچ خطِ زمانی‌ای در کار نیست — **تفاوتِ دو اسلایدِ قابل‌ویرایش، خودِ انیمیشن است**.
+> `-t morph` بدون جفت، تطبیق را به حدسِ پاورپوینت می‌سپارد.»
+
+یعنی فقط نوشتنِ `effect: morph` کافی نیست. باید **دو سرِ یک حرکت را طراحی کنی**
+و جفت بودنشان را اعلام کنی:
+
+```json
+"slides": {
+  "02_underline": {
+    "transition": { "effect": "morph", "effect_options": { "morph_by": "object" },
+                    "duration": 1.0 },
+    "morph": { "from": "01_intro",
+               "pairs": { "accent": { "from": "acc-1", "to": "acc-2" },
+                          "title":  { "from": "t1",    "to": "t2" } } },
+    "groups": { "s2-body": { "effect": "entrance_fade", "duration": 0.7 } }
+  }
+}
+```
+
+قواعد:
+- `morph` متعلق به **اسلایدِ مقصد** است؛ `from` اسلایدِ قبلی
+- دو سر باید `<g>` سطح‌بالا با `id` یکتا باشند
+- یک کلید می‌تواند از اسلایدی به اسلایدِ بعد **زنجیره شود**
+- ابزار هر جفت را بررسی می‌کند و به‌جای سقوط، **خطا می‌دهد**
+
+نشانه‌ی اینکه واقعاً اِعمال شده (داخل فایلِ pptx):
+
+```xml
+<p:transition p14:dur="1000">
+  <p159:morph option="byObject" />
+</p:transition>
+```
+
+و نامِ اشیاء روی هر دو اسلاید `!!accent` / `!!title` می‌شود.
+
 ## ۳. انیمیشن
 
 ```bash
@@ -79,6 +118,11 @@ python3 skills/ppt-master/scripts/svg_to_pptx.py -o out.pptx -f ppt169 $P
 | `unresolved href` | مسیرِ تصویر اشتباه است | تصویر را کنارِ SVG بگذار و با نامِ فایل ارجاع بده |
 | `data-pptx-bounds overlaps … by Npx` | دو گروه روی هم افتاده‌اند | مرز یکی را جمع کن تا با دیگری برخورد نکند (حدِ تحمل ۱ پیکسل) |
 | `exceeds <g id="..."> data-pptx-bounds … vertical 11%` | متن از مرزِ گروه بیرون زده | مرز را بزرگ کن، یا متن را جابه‌جا کن — **مرز را بزرگ نکن اگر با گروهِ مجاور تداخل پیدا می‌کند**؛ متن را بالا ببر |
+| `clipPath … circle geometry must cover the complete frame of <image>` | برشِ دایره‌ایِ عکس با `<circle>` | از `<path d="M x,y a r,r 0 1,0 …">` استفاده کن؛ `<circle>` فقط وقتی کادر را کامل بپوشاند مجاز است |
+| `data-pptx-bounds overlaps … keep … disjoint` | دو گروه روی هم افتاده‌اند | در حالتِ `flat` لایه‌بندی ممنوع است، پس **ترکیب‌بندی را عوض کن** — مثلاً حلقه را به جای دورِ عکس، در سمتِ دیگر بگذار |
+| `spec_lock typography sizes must be positive finite unitless px` | `body`/`title` هنوز `[fill]` است | مقادیر واقعی بده؛ هر اندازه‌ی پرتکرار را هم با نام اعلام کن |
+| `spec_lock … theme contract is missing: colors` | بخشِ رنگ‌ها پر نشده | `bg`, `primary`, `accent`, `text` را با هگز بنویس |
+| `communication.primary_language is invalid` | زبان پر نشده | یک برچسبِ BCP-47، مثلاً `en-US` یا `fa-IR` |
 
 > نکته: خطاها را یکی‌یکی نخوان؛ بعد از هر بار اصلاح، کلِ چِکر را دوباره اجرا کن.
 > در تستِ ۵ اسلایدی، سه دور رفت‌وبرگشت لازم شد (مرزها ← تایپوگرافی ← متنِ بیرون‌زده).
