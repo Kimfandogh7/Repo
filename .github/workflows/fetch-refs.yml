@@ -17,81 +17,118 @@ jobs:
         with:
           ref: arena/758efc2d-repo
 
-      - name: Fetch metadata + video via mirror
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg tesseract-ocr
+          pip install --quiet pillow
+
+      - name: Download videos and extract frames
         run: |
           mkdir -p refs
-          for pair in "placeplate:7682752652958092552" "yerra:7649800958217620769"; do
-            name="${pair%%:*}"; id="${pair##*:}"
-            echo "--- $name ($id) ---"
-            curl -sL --max-time 45 \
-              "https://www.tikwm.com/api/?url=https://www.tiktok.com/@x/video/$id" \
-              -o "refs/$name.json" || echo "metadata failed for $name"
-            head -c 200 "refs/$name.json"; echo
-          done
-
-      - name: Extract video URLs
-        id: urls
-        run: |
-          for n in placeplate yerra; do
-            u=$(python3 -c "
-import json,sys
-try:
-    d=json.load(open('refs/$n.json'))
-    print(d.get('data',{}).get('play',''))
-except Exception as e:
-    print('')
-")
-            echo "$n=$u" >> "$GITHUB_OUTPUT"
-            echo "$n -> ${u:0:60}"
-          done
-
-      - name: Download videos
-        run: |
-          for n in placeplate yerra; do
-            u=$(grep "^$n=" "$GITHUB_OUTPUT" | cut -d= -f2- || true)
-          done
           python3 - <<'PY'
-import json, os, urllib.request
-for n in ['placeplate','yerra']:
-    try:
-        d=json.load(open(f'refs/{n}.json'))
-        data=d.get('data') or {}
-        url=data.get('play')
-        if not url:
-            print(n,'no play url'); continue
-        req=urllib.request.Request(url, headers={'User-Agent':'Mozilla/5.0'})
-        raw=urllib.request.urlopen(req, timeout=120).read()
-        open(f'refs/{n}.mp4','wb').write(raw)
-        print(n,'downloaded', len(raw)//1024,'KB')
-    except Exception as e:
-        print(n,'FAILED', type(e).__name__, str(e)[:120])
-PY
+          import json, os, urllib.request
+          VIDEOS = {
+            "placeplate": "7682752652958092552",
+            "yerra":      "7649800958217620769",
+          }
+          os.makedirs("refs", exist_ok=True)
+          report = {}
+          for name, vid in VIDEOS.items():
+              entry = {"id": vid, "ok": False}
+              try:
+                  api = f"https://www.tikwm.com/api/?url=https://www.tiktok.com/@x/video/{vid}"
+                  req = urllib.request.Request(api, headers={"User-Agent": "Mozilla/5.0"})
+                  meta = json.load(urllib.request.urlopen(req, timeout=60))
+                  data = meta.get("data") or {}
+                  entry["title"] = data.get("title", "")
+                  entry["duration"] = data.get("duration")
+                  entry["plays"] = data.get("play_count")
+                  entry["likes"] = data.get("digg_count")
+                  url = data.get("play")
+                  if url:
+                      r2 = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+                      raw = urllib.request.urlopen(r2, timeout=180).read()
+                      open(f"refs/{name}.mp4", "wb").write(raw)
+                      entry["bytes"] = len(raw)
+                      entry["ok"] = True
+                  else:
+                      entry["error"] = "no play url"
+              except Exception as e:
+                  entry["error"] = f"{type(e).__name__}: {str(e)[:150]}"
+              report[name] = entry
+              print(name, "->", entry.get("ok"), entry.get("bytes", 0), entry.get("error", ""))
+          json.dump(report, open("refs/meta.json", "w"), indent=2)
+          PY
 
-      - name: Extract frames + contact sheet
+      - name: Extract frames
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
           for n in placeplate yerra; do
             [ -f refs/$n.mp4 ] || continue
             mkdir -p refs/$n
-            # یک فریم در ثانیه
-            ffmpeg -v error -i refs/$n.mp4 -vf "fps=1,scale=480:-1" refs/$n/f-%03d.png
-            # شیت تماس: همه فریم‌ها در یک تصویر
-            ffmpeg -v error -i refs/$n.mp4 -vf "fps=1/2,scale=320:-1,tile=5x6" -frames:v 1 refs/$n-sheet.png
-            echo "$n: $(ls refs/$n | wc -l) فریم"
+            ffmpeg -v error -i refs/$n.mp4 -vf "fps=1,scale=540:-1" refs/$n/f-%03d.png
+            ffmpeg -v error -i refs/$n.mp4 -vf "fps=1/2,scale=300:-1,tile=6x8" -frames:v 1 refs/$n-sheet.png
+            echo "$n frames: $(ls refs/$n | wc -l)"
           done
 
-      - name: Probe video
+      - name: Analyse frames (motion, palette, OCR)
         run: |
-          for n in placeplate yerra; do
-            [ -f refs/$n.mp4 ] || continue
-            echo "=== $n ==="
-            ffprobe -v error -show_entries format=duration,size -show_entries stream=width,height,r_frame_rate,nb_frames -of default=noprint_wrappers=1 refs/$n.mp4 || true
-          done
+          python3 - <<'PY'
+          import json, os, subprocess, colorsys
+          from PIL import Image, ImageChops
+          out = {}
+          for n in ["placeplate", "yerra"]:
+              d = f"refs/{n}"
+              if not os.path.isdir(d): continue
+              files = sorted(f for f in os.listdir(d) if f.endswith(".png"))
+              info = {"frames": len(files), "motion": [], "palette": {}, "ocr": []}
+              prev = None
+              motion_vals = []
+              for f in files:
+                  im = Image.open(os.path.join(d, f)).convert("RGB")
+                  small = im.resize((160, 160))
+                  if prev is not None:
+                      diff = ImageChops.difference(small, prev)
+                      px = list(diff.getdata())
+                      changed = sum(1 for p in px if sum(p) > 40)
+                      motion_vals.append(round(100 * changed / len(px), 1))
+                  prev = small
+                  # پالت: میانگین رنگ‌های غالب
+                  q = im.resize((80, 80)).quantize(colors=8)
+                  pal = q.getpalette()[:24]
+                  cols = [tuple(pal[i:i+3]) for i in range(0, 24, 3)]
+                  cnt = sorted(q.getcolors(), reverse=True)[:5]
+                  info["palette"][f] = [
+                      {"rgb": cols[i], "pct": round(100 * c / 6400, 1)}
+                      for c, i in cnt
+                  ]
+              info["motion"] = motion_vals
+              if motion_vals:
+                  info["motion_avg"] = round(sum(motion_vals) / len(motion_vals), 1)
+                  info["motion_max"] = max(motion_vals)
+                  info["static_frames"] = sum(1 for m in motion_vals if m < 2)
+              # OCR روی چند فریم
+              for f in files[::max(1, len(files) // 6)][:6]:
+                  try:
+                      r = subprocess.run(
+                          ["tesseract", os.path.join(d, f), "stdout"],
+                          capture_output=True, text=True, timeout=60)
+                      txt = " ".join(r.stdout.split())
+                      if txt:
+                          info["ocr"].append({"frame": f, "text": txt[:300]})
+                  except Exception as e:
+                      pass
+              out[n] = info
+          json.dump(out, open("refs/analysis.json", "w"), indent=2, ensure_ascii=False)
+          print(json.dumps({k: {"frames": v["frames"], "motion_avg": v.get("motion_avg"),
+                                "motion_max": v.get("motion_max")} for k, v in out.items()}, indent=2))
+          PY
 
       - name: Commit results
         run: |
           git config user.name "arena-bot"
           git config user.email "bot@arena.local"
-          git add -A refs/ || true
-          git commit -m "refs: فریم‌های ویدیوهای مرجع" || echo "nothing to commit"
+          git add -A refs/
+          git add -f refs/*.mp4 2>/dev/null || true
+          git commit -m "refs: ویدیوها، فریم‌ها و تحلیل" || echo "nothing to commit"
           git push origin HEAD:arena/758efc2d-repo || echo "push failed"
