@@ -1,0 +1,64 @@
+date: Sun Oct 11 20:17:17 UTC 2026
+shell: /home/runner/work/_temp/1eda3033-b135-409b-9f66-9bceef114c69.sh
+pwd: /home/runner/work/Repo/Repo
+--- python ---
+Python 3.11.17
+--- pip ---
+pip 26.2.1 from /opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pip (python 3.11)
+--- disk ---
+/dev/root        72G   59G   14G  82% /
+--- refs ---
+_probe.log
+_trigger.txt
+analysis.json
+meta.json
+placeplate
+placeplate-sheet.png
+placeplate.mp4
+yerra
+yerra-sheet.png
+yerra.mp4
+--- net test: pypi ---
+200
+--- net test: huggingface ---
+200
+--- net test: download.pytorch ---
+200
+=== start Sun Oct 11 20:17:18 UTC 2026 ===
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 566.4 kB/s  0:00:00
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading filelock-3.32.3-py3-none-any.whl (98 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Installing collected packages: mpmath, typing-extensions, sympy, networkx, MarkupSafe, fsspec, filelock, jinja2, torch
+
+Successfully installed MarkupSafe-3.0.3 filelock-3.32.3 fsspec-2026.7.0 jinja2-3.1.6 mpmath-1.3.0 networkx-3.6.1 sympy-1.14.0 torch-2.14.1+cpu typing-extensions-4.16.0
+
+real	0m24.490s
+user	0m17.452s
+sys	0m2.214s
+=== after torch Sun Oct 11 20:17:42 UTC 2026 ===
+/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/torch/_subclasses/functional_tensor.py:368: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+torch ok 2.14.1+cpu
+=== model load Sun Oct 11 20:18:02 UTC 2026 ===
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/torch/library.py", line 1271, in register
+    use_lib._register_fake(
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/torch/library.py", line 354, in _register_fake
+    handle = entry.fake_impl.register(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/torch/_library/fake_impl.py", line 87, in register
+    lib.impl(self.qualname, meta_kernel, "Meta", allow_override=allow_override)
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/torch/library.py", line 496, in impl
+    if torch._C._dispatch_has_kernel_for_dispatch_key(
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: operator torchvision::nms does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2677, in __getattr__
+    raise ModuleNotFoundError(import_error_message) from e
+ModuleNotFoundError: Could not import module 'AutoProcessor'. Are this object's requirements defined correctly? Set the logging verbosity to DEBUG for the original import error.
