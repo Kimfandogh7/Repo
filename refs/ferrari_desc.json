@@ -79,23 +79,37 @@
     {
       "frame": "03_machine.png",
       "caption": {
-        "<MORE_DETAILED_CAPTION>": "The image shows a red race car on a race track with a crowd of spectators in the background. The car is moving at a high speed, with smoke trailing behind it. The sky is blue and the sun is setting, casting a warm glow over the scene. The text on the image reads \"Built to be unfollowable. A V10 that screamed to 19,000 rpm in an era of no substitutions.\""
+        "<MORE_DETAILED_CAPTION>": "The image shows a red Formula One racing car on a race track. The car is in motion, with the background blurred to emphasize the car's speed. The text on the image reads \"Built to be unfollowable. A V10 that screamed to 19,000 rpm in an era of no substitutions.\" The text is in white and is positioned at the bottom of the image."
       },
       "ocr": {
-        "<OCR>": "SPORT55SPORTThe MACHINEBuilt to beunfollowable.A V10 that screamed to 19,000 rpmin an era of no substitutions."
+        "<OCR>": "THE MACHINEBuilt to beunfollowable.A V10 that screamed to 19,000 rpmin an era of no substitutions."
       },
       "objects": {
         "<OD>": {
           "bboxes": [
             [
-              249.1475067138672,
-              261.25,
-              534.5065307617188,
-              336.0500183105469
+              0.3095000088214874,
+              121.55000305175781,
+              595.1685180664062,
+              337.1499938964844
+            ],
+            [
+              431.75250244140625,
+              212.85000610351562,
+              539.45849609375,
+              332.75
+            ],
+            [
+              229.95851135253906,
+              175.4499969482422,
+              295.572509765625,
+              219.45001220703125
             ]
           ],
           "labels": [
-            "land vehicle"
+            "car",
+            "wheel",
+            "wheel"
           ]
         }
       }
