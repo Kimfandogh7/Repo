@@ -1,3 +1,3 @@
-https://s.jina.ai/agent+harness+engineering+open+source
-https://r.jina.ai/https://www.google.com/search?q=agent+harness
-# run 1791684767
+https://api.duckduckgo.com/?q=agent+harness&format=json&no_html=1
+https://searx.be/search?q=agent+harness&format=json
+https://search.brave.com/search?q=test
