@@ -16,7 +16,9 @@ jobs:
         run: |
           set -u
           mkdir -p fetches
+          MARKER=$(grep -m1 '^# job' fetches/request.txt || echo "# job none")
           : > fetches/result.txt
+          echo "$MARKER" >> fetches/result.txt
           n=0
           while IFS= read -r URL; do
             URL=$(echo "$URL" | tr -d '\r' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')

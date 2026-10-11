@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# webget — گرفتن هر URL از اینترنت آزاد، از طریق رله‌ی GitHub Actions.
+# کاربرد: webget <url> [url2 ...]      (از jina reader برای متن تمیز استفاده کن: webget -j <url>)
+# نیاز:   ریپوی کلون‌شده با remote و workflow .github/workflows/netfetch.yml
+set -uo pipefail
+REPO=$(git rev-parse --show-toplevel 2>/dev/null) || { echo "not in a git repo" >&2; exit 1; }
+JINA=0; [ "${1:-}" = "-j" ] && { JINA=1; shift; }
+[ $# -ge 1 ] || { echo "usage: webget [-j] <url> [url2...]" >&2; exit 1; }
+JOB="# job $(date +%s)-$$"
+cd "$REPO" || exit 1
+git pull --rebase -q origin "$(git branch --show-current)" 2>/dev/null
+{ echo "$JOB"; for u in "$@"; do
+    if [ "$JINA" = 1 ]; then echo "https://r.jina.ai/$u"; else echo "$u"; fi
+  done; } > fetches/request.txt
+git add fetches/request.txt
+git commit -q -m "webget: $*" 2>/dev/null
+for try in 1 2 3; do
+  git push -q origin "$(git branch --show-current)" 2>/dev/null && break
+  git pull --rebase -q origin "$(git branch --show-current)" 2>/dev/null
+done
+echo ">> در صف Actions ($(echo $JOB)) ..." >&2
+BR=$(git branch --show-current)
+for i in $(seq 1 30); do
+  sleep 8
+  R=$(timeout 60 curl -s "https://api.github.com/repos/Kimfandogh7/Repo/contents/fetches/result.txt?ref=$BR" \
+      | python3 -c "import sys,json,base64
+try:
+  print(base64.b64decode(json.load(sys.stdin)['content']).decode('utf8','replace'))
+except Exception: pass" 2>/dev/null)
+  [ "$(printf '%s' "$R" | head -1)" = "$JOB" ] && { printf '%s\n' "$R"; exit 0; }
+done
+echo "!! زمان انتظار تمام شد (آخرین نتیجه‌ی موجود:)" >&2; printf '%s\n' "$R"
