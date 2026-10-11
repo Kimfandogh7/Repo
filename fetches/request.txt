@@ -1,1 +1,4 @@
-https://example.com
+https://www.google.com
+https://news.ycombinator.com
+https://api.ipify.org?format=json
+https://ar5iv.labs.arxiv.org/html/2511.09030

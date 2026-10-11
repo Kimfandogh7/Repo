@@ -1,12 +1,9 @@
 name: netfetch
-# فقط وقتی فایل درخواست عوض شود اجرا می‌شود (جلوی حلقه‌ی بی‌انت‌ها را می‌گیرد)
 on:
   push:
     paths: ['fetches/request.txt']
-
 permissions:
   contents: write
-
 jobs:
   fetch:
     runs-on: ubuntu-latest
@@ -15,33 +12,36 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: arena/758efc2d-repo
-
-      - name: fetch url
+      - name: fetch each requested url
         run: |
           set -u
-          URL=$(head -1 fetches/request.txt | tr -d '\r')
-          echo "fetching: $URL"
           mkdir -p fetches
           : > fetches/result.txt
-          {
-            echo "URL: $URL"
-            echo "DATE: $(date -u +%FT%TZ)"
-            echo "-----BODY-----"
-          } > fetches/result.txt
-          if curl -sSL --max-time 40 -A "Mozilla/5.0 (compatible; netfetch)" \
-               -D /tmp/hdr -o /tmp/body "$URL"; then
-            echo "HTTP_STATUS: $(head -1 /tmp/hdr)" >> fetches/result.txt
-            head -c 60000 /tmp/body >> fetches/result.txt
-          else
-            echo "FETCH_FAILED exit=$?" >> fetches/result.txt
-          fi
-          wc -c fetches/result.txt
-
+          n=0
+          while IFS= read -r URL; do
+            URL=$(echo "$URL" | tr -d '\r' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+            [ -z "$URL" ] && continue
+            n=$((n+1))
+            {
+              echo "=============== #$n  $URL"
+              if curl -sSL --max-time 40 -A "Mozilla/5.0 (compatible; netfetch)" \
+                   -w '\nHTTP_CODE:%{http_code}\nSIZE:%{size_download}\nIP:%{remote_ip}\n' \
+                   -o /tmp/body "$URL"; then
+                sed -n '1p;/^HTTP_CODE/p;/^SIZE/p;/^IP/p' /tmp/body > /dev/null
+                tail -3 /tmp/body
+                echo "---BODY (max 20KB)---"
+                head -c 20000 /tmp/body
+              else
+                echo "FETCH_FAILED exit=$?"
+              fi
+              echo
+            } >> fetches/result.txt 2>&1
+          done < fetches/request.txt
+          echo "fetched $n url(s)" >> fetches/result.txt
       - name: commit result
         run: |
           git config user.name "netfetch-bot"
           git config user.email "netfetch-bot@users.noreply.github.com"
           git add fetches/result.txt
-          git diff --cached --quiet && echo "no change" || \
-            git commit -m "netfetch: result"
+          git diff --cached --quiet && echo "no change" || git commit -m "netfetch: result"
           git push origin HEAD:arena/758efc2d-repo
