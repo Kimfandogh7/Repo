@@ -1,0 +1,56 @@
+=== pwd: /home/runner/work/Repo/Repo/edu-agent/videos/chain-rule ===
+=== check ===
+قاعده‌ی زنجیره‌ای  1920x1080 @ 30 fps, 22.00s
+  PASS  page, determinism, no Math.random, contrast
+  FAIL  clip_timing x3 (), e.g. why: data-start="#hook" no element with id #hook
+        fix: use seconds (2.5), "+1" (relative to the parent clip) or "#id" / "#id+0.5" (after another clip ends)
+  WARN  the page font is loaded, but 58 glyph(s) in text such as "مشتقِ این تابع چیست؟" fall back to the system font "DejaVu Sans": the page's fonts have no م (U+0645), ش (U+0634), ت (U+062A), ق (U+0642), ِ (U+0650), ا (U+0627), ی (U+06CC), ن (U+0646), ب (U+0628), ع (U+0639), چ (U+0686), س (U+0633)
+        fix: add a font that has م ش ت ق ِ ا ی ن ب ع چ س for just those characters, e.g. `showtime assets font "Noto Sans Symbols 2" --subsets symbols --copy-to <project>/fonts` (OFL; most symbols and dingbats), then @font-face { font-family: 'Glyph Fallback'; src: url('fonts/noto-sans-symbols-2/noto-sans-symbols-2-symbols-400-normal.woff2'); unicode-range: U+0645, U+0634, U+062A, U+0642, U+0650, U+0627, U+06CC, U+0646, U+0628, U+0639, U+0686, U+0633 } and font-family: Inter, 'Glyph Fallback', sans-serif (Inter stays in charge of every other character); run check again to confirm the font has them
+  WARN  text such as "(3x + 1)2" is drawn with the system font "Liberation Serif", which differs between Mac, Windows and Linux
+        fix: load a font file with @font-face, e.g. <link rel="stylesheet" href="/_lib/@fontsource-variable/inter/index.css"> and font-family: 'Inter Variable' (the CSS asked for: "STIX Two Text", "Cambria Math", Georgia, serif)
+  WARN  data-transition on the first scene has nothing to transition from JSHandle@node
+        fix: see the component's options in references/components.md
+  WARN  short_text x3 (0:00.13, 0:00.27, 0:00.40), e.g. "داخلِ پرانتز فقط ایکس نیست" is readable for only ~0.3s (from 0:00.13); 26 characters need ~2.0s at 17 characters/s or 3 words/s (fa)
+        fix: hold it longer, shorten it, or mark it data-caption if it is read along with the voice
+  WARN  the last 19.1s are a still hold (from 0:03.00); qa warns above 4s
+        fix: shorten the end hold (showtime retime) or add subtle motion to the end card
+  3 note(s) in report.txt
+  look    showtime look .   (one small image of the key frames; sheet.jpg is for reviewers)
+  report  /home/runner/work/Repo/Repo/edu-agent/videos/chain-rule/work/check/report.txt (full), report.json
+  estimate: full render ~1m29s
+  WARN  phone check: FAIL - reading "داخلِ پرانتز فقط ایکس نیست" 0.27s of 1.97s at 0:00.1; reading "دو لایه، دو مشتق" 0.54s of 1.63s at 0:00.3; reading "قاعده‌ی زنجیره‌ای" 0.4s of 1.3s at 0:00.4
+result: FAIL (3 error(s), 7 warning(s), 3 note(s)) in 19.3s
+=== render ===
+showtime render /home/runner/work/Repo/Repo/edu-agent/videos/chain-rule
+  1920x1080 @ 30 fps, 22.00s, 660 frames, 1 worker, chrome 154.0.8037.97, jpeg
+  workers: no GPU (SwiftShader): one browser per 8 of 2 CPU threads, at least 3, at most 8
+  estimated 2m06s left for frames
+  frames 159/660  24%  6.7/s  ETA 1m15s
+  frames 165/660  25%  6.8/s  ETA 1m13s
+  frames 330/660  50%  8.4/s  ETA 39.1s
+showtime: render still running (45 s)
+  frames 495/660  75%  9.5/s  ETA 17.3s
+  frames 660/660 100%  10.1/s  ETA 0.0s
+  captured 660 frames in 1m05s (10.1 fps; seek 17 ms + shot 82 ms per frame per worker)
+  encode 644/660  97%  0.0/s  ETA ?
+  encode 660/660 100%  0.0/s  ETA ?
+  encoded in 0.2s after the capture (the encoder ran during it) (x264 veryfast crf 16)
+done final.mp4  1920x1080 30fps 22.00s, 660 frames, audio mix at -14.0 LUFS
+  output  /home/runner/work/Repo/Repo/edu-agent/videos/chain-rule/final.mp4 (2.9 MB, 1.1 Mb/s)
+  poster  /home/runner/work/Repo/Repo/edu-agent/videos/chain-rule/poster.jpg (1.5s baked into frame 0)
+  report  /home/runner/work/Repo/Repo/edu-agent/videos/chain-rule/final.work/render.json
+render rc=0
+=== محتویات ===
+total 2992
+drwxr-xr-x 6 runner runner    4096 Oct 11 14:45 .
+drwxr-xr-x 3 runner runner    4096 Oct 11 14:43 ..
+drwxr-xr-x 2 runner runner    4096 Oct 11 14:43 audio
+-rw-r--r-- 1 runner runner 2942404 Oct 11 14:45 final.mp4
+drwxr-xr-x 4 runner runner    4096 Oct 11 14:45 final.work
+drwxr-xr-x 2 runner runner    4096 Oct 11 14:43 fonts
+-rw-r--r-- 1 runner runner    6244 Oct 11 14:43 index.html
+-rw-r--r-- 1 runner runner   74662 Oct 11 14:44 poster.jpg
+-rw-r--r-- 1 runner runner    4068 Oct 11 14:45 render.log
+-rw-r--r-- 1 runner runner     375 Oct 11 14:43 showtime.json
+drwxr-xr-x 3 runner runner    4096 Oct 11 14:44 work
+/home/runner/work/Repo/Repo/edu-agent/videos/chain-rule/final.mp4

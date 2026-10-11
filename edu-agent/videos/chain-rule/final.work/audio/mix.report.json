@@ -1,0 +1,427 @@
+{
+  "schema": "showtime.mix.report/1",
+  "output": "mix.wav",
+  "duration": 22.0,
+  "sample_rate": 48000,
+  "master": {
+    "target_lufs": -14.0,
+    "target_true_peak": -1.0,
+    "engine": "st",
+    "input_lufs": -20.57,
+    "gain_db": 6.66,
+    "limiting_db": 4.63,
+    "output_lufs": -14.0,
+    "output_tp": -1.1
+  },
+  "integrated_lufs": -14.0,
+  "true_peak_dbtp": -1.1,
+  "lra": 3.95,
+  "short_term_max_lufs": -12.27,
+  "sample_peak_dbfs": -1.11,
+  "premaster": {
+    "integrated_lufs": -20.57,
+    "true_peak_dbtp": -3.13
+  },
+  "voice_to_music_db": null,
+  "speaker": {
+    "on": true,
+    "highpass_hz": 40.0,
+    "gap_300_lu_before": 1.52,
+    "shelf_db": 0.0,
+    "set_by": "default",
+    "integrated_lufs": -14.0,
+    "above_300_lufs": -15.45,
+    "gap_300_lu": 1.45,
+    "above_1k_lufs": -18.38,
+    "gap_1k_lu": 4.38
+  },
+  "sections": [
+    {
+      "name": "intro",
+      "start": 0.0,
+      "end": 5.0,
+      "rms_dbfs": -19.63,
+      "peak_dbfs": -1.77,
+      "lufs": -15.7,
+      "buses_rms_dbfs": {
+        "music": -20.1,
+        "sfx": -29.7
+      }
+    },
+    {
+      "name": "build",
+      "start": 5.0,
+      "end": 10.5,
+      "rms_dbfs": -18.2,
+      "peak_dbfs": -2.61,
+      "lufs": -15.52,
+      "buses_rms_dbfs": {
+        "music": -18.4,
+        "sfx": -32.0
+      }
+    },
+    {
+      "name": "drop",
+      "start": 10.5,
+      "end": 17.0,
+      "rms_dbfs": -15.74,
+      "peak_dbfs": -1.11,
+      "lufs": -12.97,
+      "buses_rms_dbfs": {
+        "music": -15.9,
+        "sfx": -25.3
+      }
+    },
+    {
+      "name": "outro",
+      "start": 17.0,
+      "end": 18.26,
+      "rms_dbfs": -17.57,
+      "peak_dbfs": -2.57,
+      "lufs": -14.82,
+      "buses_rms_dbfs": {
+        "music": -18.2,
+        "sfx": -26.7
+      }
+    },
+    {
+      "name": "ending",
+      "start": 18.26,
+      "end": 22.0,
+      "rms_dbfs": -16.23,
+      "peak_dbfs": -1.35,
+      "lufs": -13.07,
+      "buses_rms_dbfs": {
+        "music": -17.0,
+        "sfx": -24.8
+      }
+    }
+  ],
+  "tracks": [
+    {
+      "id": "bed",
+      "index": 0,
+      "kind": "music",
+      "source": "compose",
+      "path": "showtime-home:cache/audio/compose-456aebe1f299e815/music.wav",
+      "gain_db": -6.98,
+      "level": {
+        "reference": "-20 LUFS integrated",
+        "measured": -14.02
+      },
+      "start": 0.0,
+      "end": 22.0,
+      "license": "generated",
+      "compose": {
+        "style": "underscore",
+        "duration": 22.0,
+        "bpm": 96,
+        "key": "Em",
+        "sections": "0.0:intro,5.0:build,10.5:drop,17.0:outro",
+        "seed": 12322262,
+        "backend": "auto",
+        "soundfont": null,
+        "backend_used": "sf",
+        "soundfont_file": "FluidR3Mono_GM.sf3"
+      },
+      "beats_file": "showtime-home:cache/audio/compose-456aebe1f299e815/music.beats.json",
+      "end_hit": 18.26,
+      "music_sections": [
+        {
+          "name": "intro",
+          "start": 0.0,
+          "end": 5.0
+        },
+        {
+          "name": "build",
+          "start": 5.0,
+          "end": 10.5
+        },
+        {
+          "name": "drop",
+          "start": 10.5,
+          "end": 17.0
+        },
+        {
+          "name": "outro",
+          "start": 17.0,
+          "end": 18.26
+        }
+      ],
+      "downbeats": [
+        0.0,
+        2.5,
+        5.0,
+        7.444,
+        9.889,
+        10.5,
+        13.1,
+        15.7,
+        17.0
+      ]
+    },
+    {
+      "id": "sfx1",
+      "index": 1,
+      "kind": "sfx",
+      "source": "synth",
+      "path": null,
+      "gain_db": -3.0,
+      "level": {
+        "reference": "sfx category (already levelled)",
+        "category": "transition"
+      },
+      "aligned": {
+        "at": 2.6,
+        "align": "hit",
+        "anchor": 0.568
+      },
+      "start": 2.032,
+      "end": 3.5636,
+      "license": "generated",
+      "synth": {
+        "type": "whoosh",
+        "hit": 0.568,
+        "category": "transition",
+        "duration": 1.5316
+      },
+      "speaker_gap_lu": 0.0,
+      "above_bed_db": 2.8
+    },
+    {
+      "id": "sfx2",
+      "index": 2,
+      "kind": "sfx",
+      "source": "synth",
+      "path": null,
+      "gain_db": -4.0,
+      "level": {
+        "reference": "sfx category (already levelled)",
+        "category": "transition"
+      },
+      "aligned": {
+        "at": 5.0,
+        "align": "hit",
+        "anchor": 0.524
+      },
+      "start": 4.476,
+      "end": 5.9841,
+      "license": "generated",
+      "synth": {
+        "type": "whoosh",
+        "hit": 0.524,
+        "category": "transition",
+        "duration": 1.5081
+      },
+      "speaker_gap_lu": 0.0,
+      "above_bed_db": 3.8
+    },
+    {
+      "id": "sfx3",
+      "index": 3,
+      "kind": "sfx",
+      "source": "synth",
+      "path": null,
+      "gain_db": -2.0,
+      "level": {
+        "reference": "sfx category (already levelled)",
+        "category": "ui"
+      },
+      "aligned": {
+        "at": 6.0,
+        "align": "hit",
+        "anchor": 0.0
+      },
+      "start": 6.0,
+      "end": 6.04,
+      "license": "generated",
+      "synth": {
+        "type": "click",
+        "hit": 0.0,
+        "category": "ui",
+        "duration": 0.04
+      },
+      "speaker_gap_lu": 0.0,
+      "above_bed_db": -13.0
+    },
+    {
+      "id": "sfx4",
+      "index": 4,
+      "kind": "sfx",
+      "source": "synth",
+      "path": null,
+      "gain_db": -2.0,
+      "level": {
+        "reference": "sfx category (already levelled)",
+        "category": "ui"
+      },
+      "aligned": {
+        "at": 6.9,
+        "align": "hit",
+        "anchor": 0.0
+      },
+      "start": 6.9,
+      "end": 6.94,
+      "license": "generated",
+      "synth": {
+        "type": "click",
+        "hit": 0.0,
+        "category": "ui",
+        "duration": 0.04
+      },
+      "speaker_gap_lu": 0.0,
+      "above_bed_db": -13.3
+    },
+    {
+      "id": "sfx5",
+      "index": 5,
+      "kind": "sfx",
+      "source": "synth",
+      "path": null,
+      "gain_db": -4.0,
+      "level": {
+        "reference": "sfx category (already levelled)",
+        "category": "transition"
+      },
+      "aligned": {
+        "at": 10.5,
+        "align": "hit",
+        "anchor": 0.61
+      },
+      "start": 9.89,
+      "end": 11.4716,
+      "license": "generated",
+      "synth": {
+        "type": "whoosh",
+        "hit": 0.61,
+        "category": "transition",
+        "duration": 1.5816
+      },
+      "speaker_gap_lu": 0.0,
+      "above_bed_db": -1.9
+    },
+    {
+      "id": "sfx6",
+      "index": 6,
+      "kind": "sfx",
+      "source": "synth",
+      "path": null,
+      "gain_db": -3.0,
+      "level": {
+        "reference": "sfx category (already levelled)",
+        "category": "impact"
+      },
+      "aligned": {
+        "at": 11.4,
+        "align": "hit",
+        "anchor": 0.0
+      },
+      "start": 11.4,
+      "end": 11.7,
+      "license": "generated",
+      "synth": {
+        "type": "thock",
+        "hit": 0.0,
+        "category": "impact",
+        "duration": 0.3
+      },
+      "speaker_gap_lu": 9.8,
+      "above_bed_db": 10.8
+    },
+    {
+      "id": "sfx7",
+      "index": 7,
+      "kind": "sfx",
+      "source": "synth",
+      "path": null,
+      "gain_db": -3.0,
+      "level": {
+        "reference": "sfx category (already levelled)",
+        "category": "impact"
+      },
+      "aligned": {
+        "at": 12.7,
+        "align": "hit",
+        "anchor": 0.0
+      },
+      "start": 12.7,
+      "end": 13.0,
+      "license": "generated",
+      "synth": {
+        "type": "thock",
+        "hit": 0.0,
+        "category": "impact",
+        "duration": 0.3
+      },
+      "speaker_gap_lu": 11.0,
+      "above_bed_db": 11.5
+    },
+    {
+      "id": "sfx8",
+      "index": 8,
+      "kind": "sfx",
+      "source": "synth",
+      "path": null,
+      "gain_db": -4.0,
+      "level": {
+        "reference": "sfx category (already levelled)",
+        "category": "transition"
+      },
+      "aligned": {
+        "at": 17.0,
+        "align": "hit",
+        "anchor": 0.68
+      },
+      "start": 16.32,
+      "end": 17.9319,
+      "license": "generated",
+      "synth": {
+        "type": "whoosh",
+        "hit": 0.68,
+        "category": "transition",
+        "duration": 1.6119
+      },
+      "speaker_gap_lu": 0.0,
+      "above_bed_db": -2.1
+    },
+    {
+      "id": "sfx9",
+      "index": 9,
+      "kind": "sfx",
+      "source": "synth",
+      "path": null,
+      "gain_db": -3.0,
+      "level": {
+        "reference": "sfx category (already levelled)",
+        "category": "musical"
+      },
+      "aligned": {
+        "at": 18.4,
+        "align": "hit",
+        "anchor": 0.28
+      },
+      "start": 18.12,
+      "end": 20.32,
+      "license": "generated",
+      "synth": {
+        "type": "logo-sting",
+        "hit": 0.28,
+        "category": "musical",
+        "duration": 2.2
+      },
+      "speaker_gap_lu": 0.7,
+      "above_bed_db": 7.7
+    }
+  ],
+  "library_items": [],
+  "credits": [],
+  "credit_items": [],
+  "catalog_items": [],
+  "credits_file": null,
+  "warnings": [
+    "track bed (compose): the tempo bends -3.8 % (drop at 92.3 bpm, asked 96) to land every section on a downbeat; build, drop have a 2-beat bar. No bpm near 96 puts every marker on whole bars; or keep 96 bpm with markers on whole bars: --sections 0:intro,5:build,10:drop,17.5:outro",
+    "sfx sfx3 .. sfx4 (2 of 2 \"synth:click\" tracks, 6.00-6.90s) are 13.0-13.3 dB under the rest of the mix (likely masked): raise their gain_db, duck the bed under them, or mark them \"texture\": true if they are meant to sit under",
+    "sfx sfx5 .. sfx8 (2 of 4 \"synth:whoosh\" tracks, 10.50-17.00s) are 1.9-2.1 dB under the rest of the mix (likely masked): raise their gain_db, duck the bed under them, or mark them \"texture\": true if they are meant to sit under"
+  ],
+  "voice_stem": null
+}

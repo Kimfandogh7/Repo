@@ -1,0 +1,31 @@
+قاعده‌ی زنجیره‌ای  1920x1080 @ 30 fps, 22.00s
+  PASS  page loads cleanly (ready in 1.3s, no errors, no network)
+  PASS  deterministic (4 frames match after 150 ms and when reached in another order)
+  PASS  no Math.random() during playback
+  PASS  contrast OK for 3 text element(s)
+  FAIL  why: data-start="#hook" no element with id #hook
+        fix: use seconds (2.5), "+1" (relative to the parent clip) or "#id" / "#id+0.5" (after another clip ends)
+  FAIL  rule: data-start="#why" #why has no end
+        fix: use seconds (2.5), "+1" (relative to the parent clip) or "#id" / "#id+0.5" (after another clip ends)
+  FAIL  close: data-start="#rule" #rule has no end
+        fix: use seconds (2.5), "+1" (relative to the parent clip) or "#id" / "#id+0.5" (after another clip ends)
+  WARN  the page font is loaded, but 58 glyph(s) in text such as "مشتقِ این تابع چیست؟" fall back to the system font "DejaVu Sans": the page's fonts have no م (U+0645), ش (U+0634), ت (U+062A), ق (U+0642), ِ (U+0650), ا (U+0627), ی (U+06CC), ن (U+0646), ب (U+0628), ع (U+0639), چ (U+0686), س (U+0633)
+        fix: add a font that has م ش ت ق ِ ا ی ن ب ع چ س for just those characters, e.g. `showtime assets font "Noto Sans Symbols 2" --subsets symbols --copy-to <project>/fonts` (OFL; most symbols and dingbats), then @font-face { font-family: 'Glyph Fallback'; src: url('fonts/noto-sans-symbols-2/noto-sans-symbols-2-symbols-400-normal.woff2'); unicode-range: U+0645, U+0634, U+062A, U+0642, U+0650, U+0627, U+06CC, U+0646, U+0628, U+0639, U+0686, U+0633 } and font-family: Inter, 'Glyph Fallback', sans-serif (Inter stays in charge of every other character); run check again to confirm the font has them
+  WARN  text such as "(3x + 1)2" is drawn with the system font "Liberation Serif", which differs between Mac, Windows and Linux
+        fix: load a font file with @font-face, e.g. <link rel="stylesheet" href="/_lib/@fontsource-variable/inter/index.css"> and font-family: 'Inter Variable' (the CSS asked for: "STIX Two Text", "Cambria Math", Georgia, serif)
+  WARN  data-transition on the first scene has nothing to transition from JSHandle@node
+        fix: see the component's options in references/components.md
+  WARN  "داخلِ پرانتز فقط ایکس نیست" is readable for only ~0.3s (from 0:00.13); 26 characters need ~2.0s at 17 characters/s or 3 words/s (fa)
+        fix: hold it longer, shorten it, or mark it data-caption if it is read along with the voice
+  WARN  "دو لایه، دو مشتق" is readable for only ~0.5s (from 0:00.27); 16 characters need ~1.6s at 17 characters/s or 3 words/s (fa)
+        fix: hold it longer, shorten it, or mark it data-caption if it is read along with the voice
+  WARN  "قاعده‌ی زنجیره‌ای" is readable for only ~0.4s (from 0:00.40); 17 characters need ~1.3s at 17 characters/s or 3 words/s (fa)
+        fix: hold it longer, shorten it, or mark it data-caption if it is read along with the voice
+  WARN  the last 19.1s are a still hold (from 0:03.00); qa warns above 4s
+        fix: shorten the end hold (showtime retime) or add subtle motion to the end card
+  info  contrast of 4 text block(s) could not be measured (drawn on a canvas, image or transition layer at the sampled times)
+  info  the background is one flat colour in most frames (93% of the picture within ~2 levels): it reads unlit and generic
+  info  "مشتقِ این تابع چیست؟" overlaps "دو لایه، دو مشتق" (81% of the smaller text's glyphs, 36px deep) at 0:00.67 (mid-transition: sdf-iris into #close; the settled frame at 0:00.87 is judged on its own)
+  sheet   /home/runner/work/Repo/Repo/edu-agent/videos/chain-rule/work/check/sheet.jpg
+  report  /home/runner/work/Repo/Repo/edu-agent/videos/chain-rule/work/check/report.json
+  estimate: a full render takes about 1m29s here (660 frames, ~91 ms/frame, 1 workers)
