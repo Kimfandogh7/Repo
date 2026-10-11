@@ -86,9 +86,25 @@ jobs:
       - name: Commit artifacts
         if: always()
         run: |
+          set -x
+          mkdir -p edu-agent/out
+          {
+            echo "RUN_ID=${RUN_ID}"
+            echo "=== pwd ==="; pwd
+            echo "=== درختِ خروجی ==="
+            find edu-agent/out -type f 2>&1 | head -40
+            echo "=== صداها ==="
+            find edu-agent/books -name '*.mp3' -o -name 'timings.js' 2>&1 | head -20
+            echo "=== gitignoreهای مؤثر ==="
+            git check-ignore -v edu-agent/out/book/moshkel/ch01/beat-00.png 2>&1 || echo "(not ignored)"
+            git check-ignore -v edu-agent/out/tts.log 2>&1 || echo "(tts.log not ignored)"
+          } 2>&1 | tee edu-agent/out/commit-diag.log
           git config user.name "arena-agent"
           git config user.email "agent@arena.local"
-          git add -f edu-agent/out edu-agent/books/moshkel/ch01/audio 2>/dev/null || true
-          git diff --cached --quiet && echo "nothing to commit" || \
+          git add -f edu-agent/out edu-agent/books/moshkel/ch01/audio
+          echo "--- staged ---"
+          git diff --cached --name-only | head -30
+          git diff --cached --quiet && echo "NOTHING STAGED" || \
             git commit -m "book: Persian chapter render (run ${{ github.run_id }})"
-          git push origin HEAD:arena/758efc2d-repo || echo "push skipped"
+          # هیچ خروجی‌ای پنهان نشود: اگر push شکست بخورد، مرحله شکست می‌خورد
+          git push origin HEAD:arena/758efc2d-repo
