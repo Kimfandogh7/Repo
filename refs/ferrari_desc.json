@@ -3,43 +3,43 @@
     {
       "frame": "01_cover.png",
       "caption": {
-        "<MORE_DETAILED_CAPTION>": "The image is a promotional graphic for the Ferrari F2004 season. It features a red Ferrari Formula 1 car on a red background. The car is shown from the front three-quarter angle, with the driver's side facing towards the left side of the image. The body of the car is predominantly red, with a sleek and aerodynamic design. The Ferrari logo is prominently displayed on the side, along with the words \"Ferrari F2004\" and \"Season 2004\" in white text. Below the car, there is a subtitle that reads \"The most dominant car in Formula 1 history.\""
+        "<MORE_DETAILED_CAPTION>": "The image is a cover of a book titled \"Ferrari F2004: The most dominant car Formula 1 has ever seen.\" The background is a solid red color, and the title of the book is written in white text at the top and bottom of the image. In the center of the cover, there is a photograph of a red Ferrari Formula 1 car. The car is shown from the front three-quarter angle, with the driver's side facing towards the left side of the frame. The driver's seat is visible, and it appears to be in motion. The Ferrari logo is prominently displayed on the front of the car."
       },
       "ocr": {
-        "<OCR>": "SEASON 2004FERRARIF2004The most dominant carin Formula 1 history."
+        "<OCR>": "16SEASON 2004FERRARIF2004The most dominant carFormula 1 has ever seen."
       },
       "objects": {
         "<OD>": {
           "bboxes": [
             [
-              507.3599853515625,
-              106.11000061035156,
-              937.4400024414062,
-              448.47003173828125
+              109.25350189208984,
+              109.45000457763672,
+              587.7405395507812,
+              290.95001220703125
             ],
             [
-              0.47999998927116394,
-              0.27000001072883606,
-              958.5599975585938,
-              539.1900024414062
+              0.3095000088214874,
+              0.550000011920929,
+              618.071533203125,
+              1098.3499755859375
             ],
             [
-              733.9199829101562,
-              231.9300079345703,
-              824.1599731445312,
-              443.6100158691406
+              109.25350189208984,
+              215.0500030517578,
+              203.3415069580078,
+              288.75
             ],
             [
-              562.0800170898438,
-              210.87001037597656,
-              640.7999877929688,
-              346.4100036621094
+              514.698486328125,
+              201.85000610351562,
+              587.1215209960938,
+              288.75
             ],
             [
-              877.9199829101562,
-              190.8900146484375,
-              936.47998046875,
-              328.59002685546875
+              343.8545227050781,
+              245.85000610351562,
+              429.2765197753906,
+              288.75
             ]
           ],
           "labels": [
@@ -53,59 +53,21 @@
       }
     },
     {
-      "frame": "02_motion.png",
+      "frame": "02_season.png",
       "caption": {
-        "<MORE_DETAILED_CAPTION>": "The image shows a red Formula One racing car on a race track. The car is in motion, with the wheels slightly blurred, indicating that it is moving at a high speed. The background is dark, making the car stand out even more. The text on the image reads \"The numbers 15 wins from 18 races. A season so complete it was never repeated.\""
+        "<MORE_DETAILED_CAPTION>": "The image is a screenshot of a mobile phone screen with the text \"The Season: Fifteen wins. Eighteen races.\" Below the text, there is a red bar with the number 15 on it. On the left side of the screen, there are three options - Ferrari, Bar Honda, Renault, Williams, and Williams. The options are arranged in a horizontal line. The background of the image is white."
       },
       "ocr": {
-        "<OCR>": "THE NUMBERS15 wins from 18 races.A season so complete it was never repeated."
+        "<OCR>": "THE SEASONFifteen wins.Eighteen races.Ferrari15BAR Honda1Renault1Williams115 of 18 – no other constructorwon more than a single race."
       },
       "objects": {
         "<OD>": {
           "bboxes": [
             [
-              0.47999998927116394,
-              69.93000030517578,
-              923.0399780273438,
-              329.6700134277344
-            ],
-            [
-              666.719970703125,
-              121.77000427246094,
-              836.6399536132812,
-              231.9300079345703
-            ],
-            [
-              0.47999998927116394,
-              193.0500030517578,
-              85.91999816894531,
-              330.21002197265625
-            ]
-          ],
-          "labels": [
-            "car",
-            "wheel",
-            "wheel"
-          ]
-        }
-      }
-    },
-    {
-      "frame": "03_engine.png",
-      "caption": {
-        "<MORE_DETAILED_CAPTION>": "The image is a table that shows the performance of a horsepower device under the skin. The table is divided into three columns, each representing a different stage of the device's performance.\n\nThe first column on the left shows the number 865, which is naturally aspirated and 19,000 rpm. The second column shows the weight of the horsepower, which ranges from 600 kg total to 0.9 tonnes downforce. The third column shows that the device has been generated by the wings at maximum speed. The text above the table reads \"Power is nothing without grip.\""
-      },
-      "ocr": {
-        "<OCR>": "UNDER THE SKINPower is nothing without grip.8656000.9horsepowerkg totaltonnes downforceV10, naturally aspiratedwith driver and fuelgenerated by the wings19,000 rpmcarbon monocoqueat maximum speed"
-      },
-      "objects": {
-        "<OD>": {
-          "bboxes": [
-            [
-              0.47999998927116394,
-              0.27000001072883606,
-              958.5599975585938,
-              539.1900024414062
+              0.3095000088214874,
+              0.550000011920929,
+              618.071533203125,
+              1098.3499755859375
             ]
           ],
           "labels": [
@@ -115,9 +77,57 @@
       }
     },
     {
-      "frame": "04_legacy.png",
+      "frame": "03_machine.png",
       "caption": {
-        "<MORE_DETAILED_CAPTION>": "The image is a graphic design with a red background and a gold circle on the right side. On the left side of the image, there is a text that reads \"The Legacy Built once. Never matched.\" The text is written in a bold, sans-serif font and is centered on the image. Below the text, there are two golden crowns, one on top of the other. The overall design is simple and minimalistic."
+        "<MORE_DETAILED_CAPTION>": "The image shows a red race car on a race track with a crowd of spectators in the background. The car is moving at a high speed, with smoke trailing behind it. The sky is blue and the sun is setting, casting a warm glow over the scene. The text on the image reads \"Built to be unfollowable. A V10 that screamed to 19,000 rpm in an era of no substitutions.\""
+      },
+      "ocr": {
+        "<OCR>": "SPORT55SPORTThe MACHINEBuilt to beunfollowable.A V10 that screamed to 19,000 rpmin an era of no substitutions."
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              249.1475067138672,
+              261.25,
+              534.5065307617188,
+              336.0500183105469
+            ]
+          ],
+          "labels": [
+            "land vehicle"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "04_numbers.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a screenshot of a mobile phone screen with three figures. The figures are arranged in a horizontal line, with the first figure on the top left corner and the second figure in the middle. The first figure is 865 horsepower from 3.0 litres, no turbo, and the third figure is 600 kilograms fully fueled, driver aboard. The text below the figures reads \"0.9 tonnes of downforce more than the car weighs\". The background of the screen is white."
+      },
+      "ocr": {
+        "<OCR>": "BY THE NUMBERSThree figures.865horsepowerfrom 3.0 litres, no turbo600kilogramsfully fueled, driver aboard0.9tonnes of downforcemore than the car weighs"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              0.3095000088214874,
+              0.550000011920929,
+              618.071533203125,
+              1098.3499755859375
+            ]
+          ],
+          "labels": [
+            "poster"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "05_legacy.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a graphic design with a red background and a yellow circle in the center. The circle is in the shape of a circle and is surrounded by a thin orange line. Below the circle, there is text that reads \"The Legacy Built once. Never matched.\" The text is written in white and is in a modern sans-serif font. The overall design is simple and minimalistic."
       },
       "ocr": {
         "<OCR>": "THE LEGACYBuilt once.Never matched."
@@ -126,10 +136,10 @@
         "<OD>": {
           "bboxes": [
             [
-              0.47999998927116394,
-              0.27000001072883606,
-              958.5599975585938,
-              539.1900024414062
+              0.3095000088214874,
+              0.550000011920929,
+              618.071533203125,
+              1098.3499755859375
             ]
           ],
           "labels": [
