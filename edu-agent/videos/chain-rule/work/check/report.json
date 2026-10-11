@@ -1,116 +1,93 @@
 {
   "project": "/home/runner/work/Repo/Repo/edu-agent/videos/chain-rule",
   "page": "index.html",
-  "ok": false,
+  "ok": true,
   "findings": [
-    {
-      "severity": "error",
-      "code": "clip_timing",
-      "message": "why: data-start=\"#hook\" no element with id #hook",
-      "fix": "use seconds (2.5), \"+1\" (relative to the parent clip) or \"#id\" / \"#id+0.5\" (after another clip ends)"
-    },
-    {
-      "severity": "error",
-      "code": "clip_timing",
-      "message": "rule: data-start=\"#why\" #why has no end",
-      "fix": "use seconds (2.5), \"+1\" (relative to the parent clip) or \"#id\" / \"#id+0.5\" (after another clip ends)"
-    },
-    {
-      "severity": "error",
-      "code": "clip_timing",
-      "message": "close: data-start=\"#rule\" #rule has no end",
-      "fix": "use seconds (2.5), \"+1\" (relative to the parent clip) or \"#id\" / \"#id+0.5\" (after another clip ends)"
-    },
-    {
-      "severity": "warning",
-      "code": "component",
-      "message": "data-transition on the first scene has nothing to transition from JSHandle@node",
-      "fix": "see the component's options in references/components.md"
-    },
-    {
-      "severity": "warning",
-      "code": "short_text",
-      "message": "\"داخلِ پرانتز فقط یک ایکس نیست\" is readable for only ~0.2s (from 0:00.30); 29 characters need ~2.3s at 17 characters/s or 3 words/s (fa)",
-      "t": 0.3,
-      "selector": "#why section > div.center > h2.t-display.st-kinetic-type",
-      "held": 0.16,
-      "need": 2.3,
-      "fix": "hold it longer, shorten it, or mark it data-caption if it is read along with the voice"
-    },
-    {
-      "severity": "warning",
-      "code": "short_text",
-      "message": "\"قاعده‌ی زنجیره‌ای\" is readable for only ~0.5s (from 0:00.30); 17 characters need ~1.3s at 17 characters/s or 3 words/s (fa)",
-      "t": 0.3,
-      "selector": "#rule section > div.center > h2.t-display.st-kinetic-type",
-      "held": 0.5,
-      "need": 1.3,
-      "fix": "hold it longer, shorten it, or mark it data-caption if it is read along with the voice"
-    },
-    {
-      "severity": "warning",
-      "code": "short_text",
-      "message": "\"دو لایه، دو مشتق\" is readable for only ~0.3s (from 0:00.47); 16 characters need ~1.6s at 17 characters/s or 3 words/s (fa)",
-      "t": 0.4666666666666667,
-      "selector": "#close section > div.center > h2.t-hero.st-kinetic-type",
-      "held": 0.33,
-      "need": 1.63,
-      "fix": "hold it longer, shorten it, or mark it data-caption if it is read along with the voice"
-    },
     {
       "severity": "warning",
       "code": "dead_air",
-      "message": "nothing moves from 0:02.73 to 0:06.50 (~3.9s; qa flags still holds of 2.5s or more)",
-      "t": 2.7333333333333334,
-      "to": 6.5,
-      "seconds": 3.93,
+      "message": "nothing moves from 0:01.13 to 0:06.00 (~5.0s; qa flags still holds of 2.5s or more)",
+      "t": 1.1333333333333333,
+      "to": 6,
+      "seconds": 5.03,
       "fix": "add subtle motion (a slow push-in, drift, a progress element), another beat, or shorten the scene (showtime retime)"
     },
     {
       "severity": "warning",
       "code": "dead_air",
-      "message": "the last 17.3s are a still hold (from 0:08.77); qa warns above 4s",
-      "t": 8.766666666666667,
-      "to": 26,
-      "seconds": 17.31,
-      "fix": "shorten the end hold (showtime retime) or add subtle motion to the end card"
+      "message": "nothing moves from 0:06.80 to 0:09.90 (~3.3s; qa flags still holds of 2.5s or more)",
+      "t": 6.8,
+      "to": 9.9,
+      "seconds": 3.26,
+      "fix": "add subtle motion (a slow push-in, drift, a progress element), another beat, or shorten the scene (showtime retime)"
+    },
+    {
+      "severity": "warning",
+      "code": "short_text",
+      "message": "\"هر دو با هم تغییر می‌کنند — پس هر دو را…\" is readable for only ~3.4s (from 0:10.07); 54 characters need ~4.6s at 17 characters/s or 3 words/s (fa)",
+      "t": 10.066666666666666,
+      "selector": "#why section > div.center > p.t-body.st-kinetic-type",
+      "held": 3.4,
+      "need": 4.63,
+      "fix": "hold it longer, shorten it, or mark it data-caption if it is read along with the voice"
+    },
+    {
+      "severity": "warning",
+      "code": "dead_air",
+      "message": "nothing moves from 0:18.33 to 0:20.93 (~2.8s; qa flags still holds of 2.5s or more)",
+      "t": 18.333333333333332,
+      "to": 20.933333333333334,
+      "seconds": 2.76,
+      "fix": "add subtle motion (a slow push-in, drift, a progress element), another beat, or shorten the scene (showtime retime)"
     },
     {
       "severity": "info",
       "code": "contrast_unmeasured",
-      "message": "contrast of 3 text block(s) could not be measured (drawn on a canvas, image or transition layer at the sampled times)"
+      "message": "contrast of 6 text block(s) could not be measured (drawn on a canvas, image or transition layer at the sampled times)"
     },
     {
       "severity": "info",
       "code": "flat_background",
-      "message": "the background is one flat colour in most frames (96% of the picture within ~2 levels): it reads unlit and generic",
+      "message": "the background is one flat colour in most frames (89% of the picture within ~2 levels): it reads unlit and generic",
       "fix": "light the ground: 1-2 large radial glows from theme colours (peak <= 0.45), a faint grid or texture, depth layers, plus data-st=\"grain\" (references/color.md)"
     },
     {
       "severity": "info",
-      "code": "sparse_frame",
-      "message": "46% of the timeline shows almost nothing (e.g. 0:00.80): small content floating in empty frame",
-      "t": 0.8,
-      "fix": "scale the subject up (hero type 9-12% of the height, product shots >= 60% of the width) or fill the frame with an intentional grid (references/typography.md)"
+      "code": "text_overlap",
+      "message": "\"۱\" overlaps \"دو لایه، دو مشتق\" (100% of the smaller text's glyphs, 14px deep) at 0:21.67 (mid-transition: sdf-iris into #close; the settled frame at 0:21.87 is judged on its own)",
+      "t": 21.666667,
+      "selector": "div.step.st-kinetic-type > span.num > span.st-w | #close section > div.center > h2.t-hero.st-kinetic-type",
+      "overlap_px": 14,
+      "fix": "move one of them by at least 18px, or make sure they are not on screen at the same time (if one is still entering, start it after the other has landed)",
+      "transition": "sdf-iris"
+    },
+    {
+      "severity": "info",
+      "code": "text_overlap",
+      "message": "\"مشتقِ لایه‌ی بیرونی را بگیر\" overlaps \"دو لایه، دو مشتق\" (100% of the smaller text's glyphs, 68px deep) at 0:21.67 (mid-transition: sdf-iris into #close; the settled frame at 0:21.87 is judged on its own)",
+      "t": 21.666667,
+      "selector": "div.steps > div.step.st-kinetic-type > span.t-body | #close section > div.center > h2.t-hero.st-kinetic-type",
+      "overlap_px": 68,
+      "fix": "move one of them by at least 72px, or make sure they are not on screen at the same time (if one is still entering, start it after the other has landed)",
+      "transition": "sdf-iris"
+    },
+    {
+      "severity": "info",
+      "code": "final_hold",
+      "message": "the last 2.5s are a still hold (from 0:23.53); fine for an end card up to 4s",
+      "t": 23.533333333333335,
+      "to": 26
     }
   ],
   "timings": {
-    "ready": 1512,
-    "samples": 4391,
-    "determinism": 1760,
-    "timeline": 13394,
-    "cuts": 1182,
-    "total": 24349
+    "ready": 1078,
+    "samples": 6761,
+    "determinism": 1514,
+    "timeline": 10557,
+    "cuts": 786,
+    "total": 22114
   },
   "samples": [
-    {
-      "t": 0.666667,
-      "blocks": 3
-    },
-    {
-      "t": 0.866667,
-      "blocks": 2
-    },
     {
       "t": 1.433333,
       "blocks": 2
@@ -120,36 +97,48 @@
       "blocks": 3
     },
     {
+      "t": 6.666667,
+      "blocks": 1
+    },
+    {
       "t": 7.2,
       "blocks": 1
     },
     {
       "t": 10.1,
-      "blocks": 0
+      "blocks": 6
     },
     {
       "t": 13,
-      "blocks": 0
+      "blocks": 6
+    },
+    {
+      "t": 13.666667,
+      "blocks": 1
     },
     {
       "t": 15.866667,
-      "blocks": 0
+      "blocks": 5
     },
     {
       "t": 18.766667,
-      "blocks": 0
+      "blocks": 6
     },
     {
       "t": 21.666667,
-      "blocks": 0
+      "blocks": 6
+    },
+    {
+      "t": 21.866667,
+      "blocks": 1
     },
     {
       "t": 24.533333,
-      "blocks": 0
+      "blocks": 2
     },
     {
       "t": 25.966667,
-      "blocks": 0
+      "blocks": 2
     }
   ],
   "info": {
@@ -164,7 +153,7 @@
     "background": "#0d1b1a",
     "title": "قاعده‌ی زنجیره‌ای",
     "poster": 1.5,
-    "clips": 3,
+    "clips": 4,
     "handlers": [
       "onSeek#1",
       "onSeek#2",
@@ -186,8 +175,8 @@
     "conflicts": [],
     "pace": {
       "factor": 1,
-      "frame_ms": 27,
-      "seek_ms": 86,
+      "frame_ms": 17,
+      "seek_ms": 8,
       "seeks": 1,
       "ceiling": 5,
       "on": true
@@ -202,7 +191,15 @@
   "transitions": [
     {
       "type": "push",
-      "start": 0,
+      "start": 6,
+      "dur": 0.6,
+      "gl": false,
+      "from": "hook",
+      "to": "why"
+    },
+    {
+      "type": "push",
+      "start": 13,
       "dur": 0.6,
       "gl": false,
       "from": "why",
@@ -210,7 +207,7 @@
     },
     {
       "type": "sdf-iris",
-      "start": 0,
+      "start": 21,
       "dur": 0.8,
       "gl": true,
       "from": "rule",
@@ -232,7 +229,7 @@
       "ratio": 18.17,
       "worst": 18.17,
       "need": 4.5,
-      "t": 0.866667,
+      "t": 4.333333,
       "fg": "#fbf6f1",
       "bg": "#0e0c0b"
     },
@@ -241,8 +238,135 @@
       "ratio": 8.12,
       "worst": 8.12,
       "need": 4.5,
-      "t": 7.2,
+      "t": 4.333333,
       "fg": "#f08c7a",
+      "bg": "#0e0c0b"
+    },
+    {
+      "text": "داخلِ پرانتز فقط یک ایکس نیست",
+      "ratio": 18.17,
+      "worst": 18.17,
+      "need": 4.5,
+      "t": 6.666667,
+      "fg": "#fbf6f1",
+      "bg": "#0e0c0b"
+    },
+    {
+      "text": "لایه‌ی بیرونی",
+      "ratio": 5.43,
+      "worst": 5.43,
+      "need": 4.5,
+      "t": 10.1,
+      "fg": "#ff5a1f",
+      "bg": "#1f1c1b"
+    },
+    {
+      "text": "(...)2",
+      "ratio": 15.77,
+      "worst": 15.77,
+      "need": 4.5,
+      "t": 10.1,
+      "fg": "#fbf6f1",
+      "bg": "#1f1c1b"
+    },
+    {
+      "text": "لایه‌ی درونی",
+      "ratio": 10.01,
+      "worst": 10.01,
+      "need": 4.5,
+      "t": 10.1,
+      "fg": "#8fd6b0",
+      "bg": "#1f1c1b"
+    },
+    {
+      "text": "3x + 1",
+      "ratio": 15.77,
+      "worst": 15.77,
+      "need": 4.5,
+      "t": 10.1,
+      "fg": "#fbf6f1",
+      "bg": "#1f1c1b"
+    },
+    {
+      "text": "هر دو با هم تغییر می‌کنند — پس هر دو را باید حساب…",
+      "ratio": 12.63,
+      "worst": 12.63,
+      "need": 4.5,
+      "t": 10.1,
+      "fg": "#fbf6f1",
+      "bg": "#0e0c0b",
+      "opacity": 0.83
+    },
+    {
+      "text": "قاعده‌ی زنجیره‌ای",
+      "ratio": 18.17,
+      "worst": 18.17,
+      "need": 4.5,
+      "t": 13.666667,
+      "fg": "#fbf6f1",
+      "bg": "#0e0c0b"
+    },
+    {
+      "text": "۱",
+      "ratio": 9.13,
+      "worst": 9.04,
+      "need": 4.5,
+      "t": 15.866667,
+      "fg": "#10201d",
+      "bg": "#f0b45a"
+    },
+    {
+      "text": "مشتقِ لایه‌ی بیرونی را بگیر",
+      "ratio": 6.26,
+      "worst": 6.26,
+      "need": 4.5,
+      "t": 18.766667,
+      "fg": "#ff5a1f",
+      "bg": "#0e0c0b"
+    },
+    {
+      "text": "۲",
+      "ratio": 9.13,
+      "worst": 9.04,
+      "need": 4.5,
+      "t": 18.766667,
+      "fg": "#10201d",
+      "bg": "#f0b45a"
+    },
+    {
+      "text": "در مشتقِ لایه‌ی درونی ضرب کن",
+      "ratio": 11.54,
+      "worst": 11.54,
+      "need": 4.5,
+      "t": 18.766667,
+      "fg": "#8fd6b0",
+      "bg": "#0e0c0b"
+    },
+    {
+      "text": "2(3x + 1) × 3 = 6(3x + 1)",
+      "ratio": 11.54,
+      "worst": 11.54,
+      "need": 4.5,
+      "t": 18.766667,
+      "fg": "#8fd6b0",
+      "bg": "#0e0c0b"
+    },
+    {
+      "text": "دو لایه، دو مشتق",
+      "ratio": 18.17,
+      "worst": 18.17,
+      "need": 4.5,
+      "t": 21.866667,
+      "fg": "#fbf6f1",
+      "bg": "#0e0c0b"
+    },
+    {
+      "text": "هر وقت تابعی داخلِ تابعِ دیگری دیدی، زنجیره را کا…",
+      "ratio": 18.17,
+      "worst": 18.17,
+      "need": 4.5,
+      "t": 24.533333,
+      "fg": "#fbf6f1",
       "bg": "#0e0c0b"
     }
   ],
@@ -258,13 +382,13 @@
     "used": {
       "Vazirmatn": {
         "custom": true,
-        "glyphs": 65,
+        "glyphs": 250,
         "sample": "مشتقِ این تابع چیست؟",
         "declared": "Vazirmatn, \"Noto Naskh Arabic\", Tahoma, sans-serif"
       },
       "STIX Two Text": {
         "custom": true,
-        "glyphs": 7,
+        "glyphs": 34,
         "sample": "(3x + 1)2",
         "declared": "\"STIX Two Text\", \"Cambria Math\", Georgia, serif"
       }
@@ -311,8 +435,8 @@
   },
   "timeline_holes": [],
   "design": {
-    "flat_share": 0.963,
-    "sparse_share": 0.462
+    "flat_share": 0.888,
+    "sparse_share": 0.101
   },
   "pacing": [],
   "timeline": {
@@ -320,19 +444,31 @@
     "samples": 161,
     "still": [
       [
-        2.7333333333333334,
-        6.5,
-        3.9291666666666667,
+        1.1333333333333333,
+        6,
+        5.029166666666667,
         false
       ],
       [
-        8.766666666666667,
+        6.8,
+        9.9,
+        3.2625000000000006,
+        false
+      ],
+      [
+        18.333333333333332,
+        20.933333333333334,
+        2.7625000000000015,
+        false
+      ],
+      [
+        23.533333333333335,
         26,
-        17.314583333333335,
+        2.547916666666665,
         true
       ]
     ],
-    "textBlocks": 6
+    "textBlocks": 17
   },
   "diag": {
     "timers": {
@@ -344,26 +480,7 @@
     "transitions": 0,
     "errors": [],
     "videos": {},
-    "clips": [
-      {
-        "clip": "why",
-        "attr": "data-start",
-        "value": "#hook",
-        "reason": "no element with id #hook"
-      },
-      {
-        "clip": "rule",
-        "attr": "data-start",
-        "value": "#why",
-        "reason": "#why has no end"
-      },
-      {
-        "clip": "close",
-        "attr": "data-start",
-        "value": "#rule",
-        "reason": "#rule has no end"
-      }
-    ],
+    "clips": [],
     "waits": [
       {
         "label": "waitFor#1",
@@ -427,11 +544,11 @@
       }
     ],
     "rafFlushed": 0,
-    "seeks": 190
+    "seeks": 191
   },
   "pace": {
     "factor": 1,
-    "frame_ms": 27,
+    "frame_ms": 17,
     "seek_ms": 4,
     "ceiling": 5
   },
@@ -439,32 +556,38 @@
   "cancelled_loads": 0,
   "scenes": [
     {
+      "name": "hook",
+      "id": "hook",
+      "start": 0,
+      "end": 6
+    },
+    {
       "name": "why",
       "id": "why",
-      "start": null,
-      "end": 26
+      "start": 6,
+      "end": 13
     },
     {
       "name": "rule",
       "id": "rule",
-      "start": null,
-      "end": 26
+      "start": 13,
+      "end": 21
     },
     {
       "name": "close",
       "id": "close",
-      "start": null,
+      "start": 21,
       "end": 26
     }
   ],
   "estimate": {
-    "seconds": 139,
-    "msPerFrame": 126,
+    "seconds": 118,
+    "msPerFrame": 98,
     "workers": 1,
     "frames": 780,
     "videos": 0,
-    "load": 0.65,
-    "note": null
+    "load": 1.05,
+    "note": "machine busy (load 1.1 per core): x1.1"
   },
   "sheet": "/home/runner/work/Repo/Repo/edu-agent/videos/chain-rule/work/check/sheet.jpg",
   "look": {
@@ -492,19 +615,47 @@
       "reading": true
     },
     "flash_exempt": 0,
-    "texts": 3,
+    "texts": 17,
     "smallest": {
       "text": "مشتقِ این تابع چیست؟",
       "px": 39,
       "pt": 7.8,
-      "t": 0.8
+      "t": 0.3
     },
     "smallest_texts": [
       {
         "text": "مشتقِ این تابع چیست؟",
         "px": 39,
         "pt": 7.8,
-        "t": 0.8,
+        "t": 0.3,
+        "caption": false
+      },
+      {
+        "text": "لایه‌ی بیرونی",
+        "px": 39,
+        "pt": 7.8,
+        "t": 7.47,
+        "caption": false
+      },
+      {
+        "text": "لایه‌ی درونی",
+        "px": 39,
+        "pt": 7.8,
+        "t": 8.43,
+        "caption": false
+      },
+      {
+        "text": "۱",
+        "px": 43,
+        "pt": 8.8,
+        "t": 14.3,
+        "caption": false
+      },
+      {
+        "text": "۲",
+        "px": 43,
+        "pt": 8.8,
+        "t": 15.9,
         "caption": false
       },
       {
@@ -515,10 +666,17 @@
         "caption": false
       },
       {
-        "text": "(3x + 1)2",
-        "px": 97,
-        "pt": 19.7,
-        "t": 0.97,
+        "text": "هر دو با هم تغییر می‌کنند — پس هر دو را ",
+        "px": 54,
+        "pt": 11,
+        "t": 10.07,
+        "caption": false
+      },
+      {
+        "text": "مشتقِ لایه‌ی بیرونی را بگیر",
+        "px": 54,
+        "pt": 11,
+        "t": 14.3,
         "caption": false
       }
     ],
@@ -527,28 +685,10 @@
         "part": "reading",
         "code": "short_text",
         "severity": "warning",
-        "t": 0.3,
-        "message": "\"داخلِ پرانتز فقط یک ایکس نیست\" is readable for only ~0.2s (from 0:00.30); 29 characters need ~2.3s at 17 characters/s or 3 words/s (fa)",
-        "held": 0.16,
-        "need": 2.3
-      },
-      {
-        "part": "reading",
-        "code": "short_text",
-        "severity": "warning",
-        "t": 0.3,
-        "message": "\"قاعده‌ی زنجیره‌ای\" is readable for only ~0.5s (from 0:00.30); 17 characters need ~1.3s at 17 characters/s or 3 words/s (fa)",
-        "held": 0.5,
-        "need": 1.3
-      },
-      {
-        "part": "reading",
-        "code": "short_text",
-        "severity": "warning",
-        "t": 0.4666666666666667,
-        "message": "\"دو لایه، دو مشتق\" is readable for only ~0.3s (from 0:00.47); 16 characters need ~1.6s at 17 characters/s or 3 words/s (fa)",
-        "held": 0.33,
-        "need": 1.63
+        "t": 10.066666666666666,
+        "message": "\"هر دو با هم تغییر می‌کنند — پس هر دو را…\" is readable for only ~3.4s (from 0:10.07); 54 characters need ~4.6s at 17 characters/s or 3 words/s (fa)",
+        "held": 3.4,
+        "need": 4.63
       }
     ]
   },
@@ -561,44 +701,121 @@
       "caption": false
     },
     {
-      "text": "قاعده‌ی زنجیره‌ای",
-      "first": 0.3,
-      "last": 0.667,
-      "source": "dom",
-      "caption": false
-    },
-    {
-      "text": "داخلِ پرانتز فقط یک ایکس نیست",
-      "first": 0.3,
-      "last": 0.3,
-      "source": "dom",
-      "caption": false
-    },
-    {
-      "text": "دو لایه، دو مشتق",
-      "first": 0.467,
-      "last": 0.667,
-      "source": "dom",
-      "caption": false
-    },
-    {
       "text": "(3x + 1)2",
-      "first": 0.867,
-      "last": 6.633,
+      "first": 0.967,
+      "last": 6.167,
       "source": "dom",
       "caption": false
     },
     {
       "text": "جوابِ رایج — و غلط: 2(3x + 1)",
       "first": 2.733,
-      "last": 8.6,
+      "last": 6.167,
+      "source": "dom",
+      "caption": false
+    },
+    {
+      "text": "داخلِ پرانتز فقط یک ایکس نیست",
+      "first": 6.333,
+      "last": 13.133,
+      "source": "dom",
+      "caption": false
+    },
+    {
+      "text": "لایه‌ی بیرونی",
+      "first": 7.467,
+      "last": 13.3,
+      "source": "dom",
+      "caption": false
+    },
+    {
+      "text": "(...)2",
+      "first": 7.633,
+      "last": 13.3,
+      "source": "dom",
+      "caption": false
+    },
+    {
+      "text": "لایه‌ی درونی",
+      "first": 8.433,
+      "last": 13.133,
+      "source": "dom",
+      "caption": false
+    },
+    {
+      "text": "3x + 1",
+      "first": 8.6,
+      "last": 13.133,
+      "source": "dom",
+      "caption": false
+    },
+    {
+      "text": "هر دو با هم تغییر می‌کنند — پس هر دو را باید حساب کرد.",
+      "first": 10.067,
+      "last": 13.3,
+      "source": "dom",
+      "caption": false
+    },
+    {
+      "text": "قاعده‌ی زنجیره‌ای",
+      "first": 13.3,
+      "last": 20.933,
+      "source": "dom",
+      "caption": false
+    },
+    {
+      "text": "۱",
+      "first": 14.3,
+      "last": 21.767,
+      "source": "dom",
+      "caption": false
+    },
+    {
+      "text": "مشتقِ لایه‌ی بیرونی را بگیر",
+      "first": 14.3,
+      "last": 21.767,
+      "source": "dom",
+      "caption": false
+    },
+    {
+      "text": "۲",
+      "first": 15.867,
+      "last": 21.767,
+      "source": "dom",
+      "caption": false
+    },
+    {
+      "text": "در مشتقِ لایه‌ی درونی ضرب کن",
+      "first": 15.9,
+      "last": 21.767,
+      "source": "dom",
+      "caption": false
+    },
+    {
+      "text": "2(3x + 1) × 3 = 6(3x + 1)",
+      "first": 17.867,
+      "last": 21.767,
+      "source": "dom",
+      "caption": false
+    },
+    {
+      "text": "دو لایه، دو مشتق",
+      "first": 21.433,
+      "last": 25.967,
+      "source": "dom",
+      "caption": false
+    },
+    {
+      "text": "هر وقت تابعی داخلِ تابعِ دیگری دیدی، زنجیره را کامل برو.",
+      "first": 22.9,
+      "last": 25.967,
       "source": "dom",
       "caption": false
     }
   ],
   "summary": {
-    "errors": 3,
-    "warnings": 6,
-    "infos": 3
+    "errors": 0,
+    "warnings": 4,
+    "infos": 5
   }
 }
