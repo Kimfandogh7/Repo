@@ -1,0 +1,11 @@
+RUN_ID: 1791689749
+goto: http://127.0.0.1:4173/slides/forgetting-curve
+no canvas found; falling back to full page
+USING: body
+  page-1.png  12689 bytes
+  page-2.png  12689 bytes
+  page-3.png  12689 bytes
+  page-4.png  12689 bytes
+  page-5.png  12689 bytes
+  page-6.png  12689 bytes
+DONE
