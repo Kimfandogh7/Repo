@@ -1,2 +1,4 @@
-# job 1791688490-11081
-https://api.tikwm.com/api/?url=https://vt.tiktok.com/ZSbsDfaub
+# job 1791688490-11082
+https://www.tiktok.com/oembed?url=https://vt.tiktok.com/ZSbsDfaub
+https://www.tiktok.com/oembed?url=https://vt.tiktok.com/ZSbsDVEEK
+https://www.tiktok.com/oembed?url=https://vt.tiktok.com/ZSbsDfo46
