@@ -57,19 +57,22 @@ jobs:
         continue-on-error: true
         run: |
           export PATH="$HOME/.cargo/bin:$PATH"
-          mkdir -p edu-agent/videos/chain-rule
+          W="$GITHUB_WORKSPACE"
+          P="$W/edu-agent/videos/chain-rule"
+          mkdir -p "$P"
+          cd "$P"
           {
-            cd edu-agent/videos/chain-rule
+            echo "=== pwd: $(pwd) ==="
             echo "=== check ==="
             sh "$ST" check . 2>&1 | tail -40
             echo "=== render ==="
             sh "$ST" render . -o final.mp4 2>&1 | tail -40
             echo "render rc=$?"
-            echo "=== خروجی ==="
-            ls -la . 2>&1
-            find . -name '*.mp4' -o -name '*.png' | head -20
-          } > render.log 2>&1
-          cat edu-agent/videos/chain-rule/render.log
+            echo "=== محتویات ==="
+            ls -la "$P"
+            find "$P" -name '*.mp4' -o -name '*.png' | head -20
+          } > "$P/render.log" 2>&1
+          cat "$P/render.log"
 
       - name: Commit video
         if: always()
@@ -77,7 +80,7 @@ jobs:
           mkdir -p edu-agent/videos/chain-rule
           git config user.name "arena-agent"
           git config user.email "agent@arena.local"
-          git add -A edu-agent/videos/chain-rule/final.mp4 edu-agent/videos/chain-rule/look.png edu-agent/videos/chain-rule/render.log
+          git add -A edu-agent/videos
           git diff --cached --quiet && echo "NOTHING TO COMMIT" || \
             git commit -m "video: Persian chain-rule explainer (run $RUN_ID)"
           git push origin HEAD:arena/758efc2d-repo
