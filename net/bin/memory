@@ -1,0 +1,112 @@
+#!/usr/bin/env bash
+# memory — حافظه‌ی پایای ایجنت. منبعِ حقیقت = فایل‌های markdown؛ ایندکس فقط کش است.
+#
+# چرا این ساخته شد: mem0 کلید OpenAI می‌خواهد، cognee/memori/agentmemory مدل از هاست مسدود
+# می‌گیرند. این نسخه بدون مدل و بدون شبکه کار می‌کند و در git زنده می‌ماند.
+#
+#   memory add <category> "متن"        ثبت یک خاطره
+#   memory search "پرسش"               جستجو -> مسیر + خلاصه (متن کامل را paste نمی‌کند)
+#   memory show <category>             نمایش کامل یک دسته
+#   memory journal "چه شد"             ثبت در دفترِ روزانه
+#   memory list                        فهرست دسته‌ها
+#   memory reindex                     بازسازی ایندکس (هر وقت خراب شد، قابل حذف است)
+set -uo pipefail
+ROOT="${MEMORY_ROOT:-$(git rev-parse --show-toplevel 2>/dev/null)}"
+[ -n "${ROOT:-}" ] || ROOT="$HOME/Repo"
+MEM="$ROOT/memory"; MEMORIES="$MEM/memories"; JOURNAL="$MEM/journal"
+DB="$MEM/index.db"
+mkdir -p "$MEMORIES" "$JOURNAL"
+PY="${MEM_PY:-python3}"
+
+case "${1:-}" in
+  add)
+    cat="${2:?دسته را بده}"; shift 2; text="$*"
+    f="$MEMORIES/$cat.md"
+    [ -f "$f" ] || printf '# %s\n\n' "$cat" > "$f"
+    printf '\n## %s\n\n%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$text" >> "$f"
+    echo ">> ثبت شد در $cat"; "$0" reindex >/dev/null
+    "$0" update-index
+    ;;
+  search)
+    shift; q="$*"
+    [ -s "$DB" ] || "$0" reindex >/dev/null 2>&1
+    "$PY" - "$DB" "$q" <<'PY'
+import sys, sqlite3, os
+db, q = sys.argv[1], sys.argv[2]
+if not os.path.exists(db): print("(ایندکس نداریم)"); sys.exit()
+con = sqlite3.connect(db)
+try:
+    rows = con.execute("SELECT path, line, text FROM mem WHERE text MATCH ? ORDER BY bm25(mem) LIMIT 12", (q,)).fetchall()
+except Exception:
+    like = "%" + q + "%"
+    rows = con.execute("SELECT path, line, text FROM mem WHERE text LIKE ? LIMIT 12", (like,)).fetchall()
+if not rows:
+    # فارسی در FTS5 خوب توکنایز نمی‌شود -> امتیازدهی بر اساس شمار واژه‌های مشترک
+    import collections
+    words = [w for w in q.split() if len(w) > 2]
+    scored = collections.defaultdict(int)
+    allrows = con.execute("SELECT path, line, text FROM mem").fetchall()
+    for p, l, t in allrows:
+        s = sum(1 for w in words if w in t)
+        if s: scored[(p, l, t)] = s
+    rows = [k for k, _ in sorted(scored.items(), key=lambda kv: -kv[1])][:12]
+seen=set()
+for p, l, t in rows:
+    k=(p,t[:60])
+    if k in seen: continue
+    seen.add(k)
+    print(f"  {os.path.basename(p)[:-3]}:{l}  {t.strip()[:150]}")
+if not seen: print("  (چیزی پیدا نشد)")
+PY
+    ;;
+  show)
+    f="$MEMORIES/${2:?}.md"; [ -f "$f" ] && cat "$f" || { echo "دسته نیست: $2"; "$0" list; }
+    ;;
+  journal)
+    shift; f="$JOURNAL/$(date -u +%F).md"
+    [ -f "$f" ] || printf '# %s\n\n' "$(date -u +%F)" > "$f"
+    printf '\n## %s\n\n%s\n' "$(date -u +%H:%M:%SZ)" "$*" >> "$f"
+    echo ">> در دفتر ثبت شد"
+    ;;
+  list)
+    for f in "$MEMORIES"/*.md; do [ -e "$f" ] || continue
+      n=$(grep -c '^## ' "$f" 2>/dev/null || echo 0)
+      printf '  %-22s %s خاطره\n' "$(basename "$f" .md)" "$n"
+    done
+    ;;
+  reindex)
+    rm -f "$DB"
+    "$PY" - "$DB" "$MEMORIES" <<'PY'
+import sys, sqlite3, os, re
+db, root = sys.argv[1], sys.argv[2]
+con = sqlite3.connect(db)
+con.execute("CREATE VIRTUAL TABLE mem USING fts5(path, line, text)")
+n=0
+for p in sorted(os.listdir(root)):
+    if not p.endswith('.md'): continue
+    full = os.path.join(root, p)
+    for i, line in enumerate(open(full, encoding='utf8'), 1):
+        line = line.strip()
+        if len(line) < 3 or line.startswith('# ') : continue
+        con.execute("INSERT INTO mem VALUES (?,?,?)", (full, i, line)); n+=1
+con.commit(); print(f"  ایندکس: {n} خط از {len(os.listdir(root))} دسته")
+PY
+    ;;
+  update-index)
+    # MEMORY.md را به‌عنوان L0 (فقط خلاصه‌ی یک‌خطی) بازسازی می‌کند
+    {
+      echo "# حافظه — L0 (فهرست خلاصه)"
+      echo
+      echo "> این فایل خودکار ساخته می‌شود. منبع حقیقت در \`memories/\` است."
+      echo "> هر دسته را فقط به اندازه‌ی نیاز باز کن — همه را یکجا نخوان."
+      echo
+      for f in "$MEMORIES"/*.md; do [ -e "$f" ] || continue
+        name=$(basename "$f" .md)
+        echo "## $name"
+        grep -E '^[-*] ' "$f" 2>/dev/null | head -8 | sed 's/^/  /'
+        echo
+      done
+    } > "$MEM/MEMORY.md"
+    ;;
+  *) echo "کاربرد: memory {add|search|show|journal|list|reindex} ..."; exit 1;;
+esac
