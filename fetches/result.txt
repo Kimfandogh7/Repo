@@ -1,75 +1,384 @@
-# job 1791685961-9467
-=============== #1  https://r.jina.ai/https://www.biodigital.com/terms
+# job 1791687569-10407
+=============== #1  https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/README.md
 
 HTTP_CODE:200
-SIZE:32630
-IP:104.26.10.242
+SIZE:24550
+IP:185.199.111.133
+## License
 
-Last Updated: October 2024  
-© 2024 BIODIGITAL, INC. All rights reserved.
+[MIT](LICENSE).
 ---BODY (max 20KB)---
-Title: The Virtual Body Platform | Human Anatomy, Conditions and Treatments…
+<div align="center">
 
-URL Source: https://www.biodigital.com/terms
+### agent-memory: the long-term memory runtime for AI agents
 
-Markdown Content:
-[![Image 1: Biodigital](https://www.biodigital.com/images/logo-biodigital-anatomage-color.svg)](https://www.biodigital.com/)
+<a href="CLAUDE.md">Invariants</a> · <a href="skills/agent-memory/SKILL.md">Skill</a> · <a href="https://github.com/tigerless-labs/agent-memory/issues">Issues</a>
 
-## Terms of Service
+![](https://img.shields.io/badge/version-0.1.0-369eff?labelColor=black&style=flat-square)
+![](https://img.shields.io/badge/python-3.12+-ffcb47?labelColor=black&style=flat-square)
+![](https://img.shields.io/badge/hosts-Claude%20Code%2C%20Codex%20CLI%2C%20Muse%20Code-ff80eb?labelColor=black&style=flat-square)
+![](https://img.shields.io/badge/dependencies-zero%20API%20keys-c4f042?labelColor=black&style=flat-square)
 
-Last Updated: October 2024
+</div>
 
-PLEASE READ THIS AGREEMENT CAREFULLY BEFORE USING THE SERVICES. BY USING THE WEBSITES [WWW.BIODIGITAL.COM](https://biodigital.com/), [WWW.HUMAN.BIODIGITAL.COM](https://human.biodigital.com/), SUBDOMAINS THEREOF AND OTHER FEATURES, CONTENT, WEBSITES OR APPLICATIONS (COLLECTIVELY, THE "SITES") OFFERED BY BIODIGITAL, INC. ("BD") AND ITS BUSINESS PARTNERS, YOU SIGNIFY YOUR ASSENT TO BECOME BOUND BY THE TERMS AND CONDITIONS OF THIS AGREEMENT. IF YOU DO NOT AGREE TO ALL THE TERMS AND CONDITIONS OF THIS AGREEMENT, YOU DO NOT HAVE ANY RIGHT TO USE THE SITES OR SERVICES. BD'S PROVISION OF SERVICE IS EXPRESSLY CONDITIONED UPON YOUR ASSENT TO ALL THE TERMS AND CONDITIONS OF THIS AGREEMENT, TO THE EXCLUSION OF ALL OTHER TERMS; IF THESE TERMS AND CONDITIONS ARE CONSIDERED AN OFFER BY BD, ACCEPTANCE IS EXPRESSLY LIMITED TO THESE TERMS.
+***
 
-The purpose of the Sites, owned and operated by BD, a Delaware corporation, is to provide an interactive platform to simulate the human body (the "Services"). The Sites are not intended to be used for diagnostic, clinical, or decision-making purposes. This Agreement applies to all users of the Sites and Services including users who contribute content, information, and other materials or services on the Sites. The Sites are accessed by you ("User" or "you") under the following terms and conditions:
+An agent that closes its session forgets everything it learned in it. agent-memory is the
+runtime that fixes that, for any agent — not only coding ones. Markdown files in one store are
+the single source of truth, the SQLite index beside them is a cache you can delete at any time,
+and Claude Code, Codex CLI, Muse Code, and anything else that can run a shell command share
+that store.
 
-**1. ACCESS TO THE SERVICES.**
+Retrieval is local and ranked, and it answers with paths rather than pasted text — the agent
+opens each hit only as deep as the task needs. Writes do not wait for the agent to remember to
+make them: they fire at conversation boundaries. A sleep-time pass then consolidates and
+forgets by value, on its own clock. None of it needs an API key.
 
-Subject to the terms and conditions of this Agreement, BD may provide the Services, as described more fully on the Sites, and which are selected by you, solely for your own use, and not for the use or benefit of any third party. Services shall include, but not be limited to, any services BD performs for you, as well as the offering of any materials displayed or performed on the Sites or the Services (including, but not limited to text, graphics, photographs, images, illustrations, audio clips and video clips, also known as the "Content"). BD may change, suspend or discontinue the Services including any Content for any reason, at any time, including the availability of any feature, database, or content. BD may also impose limits on certain features and services or restrict your access to parts or all of the Services without notice or liability. BD reserves the right, at its discretion, to modify this Agreement or Content at any time by posting a notice on the Sites, or by sending you a notice via e-mail or postal mail. You shall be responsible for reviewing and becoming familiar with any such modifications. Your use of the Services following such notification constitutes your acceptance of the terms and conditions of this Agreement as modified.
+## Two lines, one store
 
-You certify to BD that if you are an individual (i.e., not a corporation) you are at least 18 years of age. You also certify that you are legally permitted to use the Services and access the Sites, and take full responsibility for the selection and use of the Services and access of the Sites. This Agreement is void where prohibited by law, and the right to access the Sites and use the Services is revoked in such jurisdictions.
+Agent memory has grown along two architectural lines. One builds a **retrieval engine** —
+embeddings, a knowledge graph, a ranking pipeline — which finds the right thing, but hands the
+agent an opaque chunk it cannot inspect and a store it cannot migrate off. The other hands the
+agent a **filesystem** — markdown it reads directly, browsable with `ls` and `grep` — which is
+legible and costs nothing to run, but does not rank, and stops scaling the moment the tree
+outgrows a listing.
 
-BD will use reasonable efforts to ensure that the Sites and Services are available twenty-four hours a day, seven days a week. However, there will be occasions when the Sites and/or Services will be interrupted for maintenance, upgrades and emergency repairs or due to failure of telecommunications links and equipment. Every reasonable step will be taken by BD to minimize such disruption where it is within BD's reasonable control. YOU AGREE THAT NEITHER BD NOR THE SITES WILL BE LIABLE IN ANY EVENT TO YOU OR ANY OTHER PARTY FOR ANY SUSPENSION, MODIFICATION, DISCONTINUANCE OR LACK OF AVAILABILITY OF THE SITES, THE SERVICES, YOUR USER CONTENT (AS DEFINED HEREIN) OR OTHER CONTENT.
+agent-memory is the two of them in one store: the retrieval engine indexes a filesystem the
+agent can also just read. Relations live as links inside the memories, a local index ranks
+them, and every hit resolves to a whole markdown file on disk. Recall gains the precision of a
+graph and a vector search without giving up a plain directory an agent can walk — and it stays
+fast, because nothing in the read path calls a model or crosses a network.
 
-You shall be responsible for obtaining and maintaining any equipment or ancillary services needed to connect to, access the Sites or otherwise use the Services, including, without limitation, modems, hardware, software, and long distance or local telephone service. You shall be responsible for ensuring that such equipment or ancillary services are compatible with the Services.
+## Retrieve by path, then read by level
 
-You are responsible for all of your activity in connection with the Services and accessing the Sites. You may not post or transmit, or cause to be posted or transmitted, any communication or solicitation designed or intended to obtain password, account, or private information from any BD user. You shall not use any part of the Sites or Services to violate the security of any computer network, crack passwords or security encryption codes, transfer or store material that is deemed threatening or obscene, or engage in any kind of illegal activity. You will not run Maillist, Listserv, any form of auto-responder, or spam on the Sites or through the Services.
+Recall does not paste text into your context. It answers with an L0 list — one-line abstract,
+file path, anchor, score — and the agent opens what it wants at the depth the task needs:
 
-**2. NO MEDICAL ADVICE.**
+```bash
+mem recall "why files instead of a database"    # L0 list, 8 entries by default
+mem recall "why files instead of a database" --limit 20  # more Memory candidates
+mem read <name> --level outline                 # headings only; or abstract, or full
+mem context "why files instead of a database"   # both in one call, top few expanded in full
+mem trace <name>                                 # cited raw messages, when needed
+```
 
-WE ARE NOT A HEALTH CARE PROVIDER AND WE DO NOT PROVIDE MEDICAL ADVICE. YOU SHOULD NOT RELY ON THE INFORMATION PROVIDED ON THE SITES OR SERVICES AS A SUBSTITUTE FOR, NOR DOES IT REPLACE, PROFESSIONAL MEDICAL ADVICE, DIAGNOSIS, TREATMENT. THE SERVICES ARE NOT INTENDED TO BE USED BY CLINICIANS IN MAKING TREATMENT DECISIONS. YOU ARE ENCOURAGED TO SEEK PROFESSIONAL MEDICAL DIAGNOSIS AND TREATMENT FOR ANY MEDICAL CONDITION, AND TO DISCUSS INFORMATION FROM THE SITES AND SERVICES WITH YOUR HEALTHCARE PROVIDER. INFORMATION PROVIDED ON THE SITES AND SERVICES IS PROVIDED FOR INFORMATIONAL PURPOSES AND IS IN NO WAY INTENDED TO SUBSTITUTE CONSULTING A MEDICAL PROFESSIONAL. NOTHING STATED OR POSTED ON THE SITES OR AVAILABLE THROUGH ANY SERVICES ARE INTENDED TO BE, AND MUST NOT BE TAKEN TO BE, THE PRACTICE OF MEDICINE, THE PROVISION OF MEDICAL CARE, OR A TOOL RELIED ON BY CLINICIANS. IF YOU RELY ON ANY OF THE INFORMATION PROVIDED BY THE SITES OR SERVICES, YOU DO SO SOLELY AT YOUR OWN RISK.
+Index line → abstract → full file → raw material: each rung costs an order of magnitude more
+than the last, and each is a place to stop. Long files add two free rungs — the anchor that
+matched, and an outline computed at read time.
 
-This Agreement does not create, between you and BD, a business associate relationship, as defined in the Health Insurance Portability and Accountability Act of 1996 ("HIPAA") and regulations promulgated thereunder by the U.S. Department of Health and Human Services. Therefore, you must not disclose to BD any information which may constitute Protected Health Information as defined in the Privacy Rule associated with HIPAA. You represent and warrant that you will not disclose any such information in your possession to BD through your use of the Sites and Services.
+## Design commitments
 
-**3. CONTENT OF THE SITES AND SERVICES.**
+- **Three read tracks, so a miss on one is not a miss.** Deterministic `MEMORY.md` injection at
+  session start; BM25 recall over an FTS5 index, with a vector plugin fused in by RRF when you
+  want one; and the plain directory tree, reachable with `ls` and `grep` when both fail.
+  Same-directory memories are a free neighbourhood, and `links` in the frontmatter carry the
+  graph without a graph database under them.
+- **Write coverage is the system's job, not the agent's judgement.** Distillation is triggered
+  at boundaries and runs without holding up the task; the full trace is copied first, so
+  "missed by the distiller" never means "lost by the system".
+- **Files are the truth; every index is a rebuildable cache.** `rm -rf .index/ && mem rebuild`
+  loses zero knowledge — enforced by a test, not promised in a doc. Your memory stays greppable,
+  git-able, and portable off this system.
+- **A real Manage layer, on its own clock.** Sleep-time consolidation with authority tiers: an
+  unattended pass may add and update, deletion only ever arrives as a proposal you confirm.
+  Every competitor either has no M, or buries it in the write path. Supersede leaves the chain
+  intact and `recall --as-of` answers as of a date, so updating never destroys.
+- **No LLM client inside the library.** Zero keys to install and no billing surface: judgement
+  is borrowed from the host agent's own CLI, which keeps every write visible in your transcript.
 
-You may, to the extent the Sites expressly authorize you to do so, download or copy software accessible from the Sites or the Content, and other items displayed on the Sites or Services for download, for personal use only, provided that you maintain all copyright and other notices contained in such Content; otherwise, you shall not store any significant portion of any Content in any form. Copying or storing of any Content for other than personal, non-commercial use is expressly prohibited without prior written permission from BD, or from the copyright holder identified in such Content's copyright notice. All trademarks, service marks, and trade names which appear on the Sites or through the Services (other than those appearing in any Content posted by a User) are proprietary to BD and/or third parties. You shall abide by all copyright notices, information, and restrictions contained in any Content accessed through the Services.
+## The store
 
-The Sites are protected by copyright as a collective work and/or compilation, pursuant to U.S. copyright laws, international conventions, and other copyright laws. You may not modify, publish, transmit, participate in the transfer or sale of, reproduce (except as provided in this Section of this Agreement), create derivative works based on, distribute, perform, display, or in any way exploit, any of the Content, software, materials, or Services in whole or in part. In the event you enter into an additional agreement with BD for the custom development of software or other materials, your ownership, if any, of such custom software or materials does not affect BD's ownership rights in the underlying Content offered by BD on the Site and Services. You acknowledge and agree that if you use any of the Services to contribute Content to the Sites or Services ("User Content"), you hereby do and shall grant BD and its Business Partners a non-exclusive, worldwide, royalty-free, transferable, sublicensable right to use, modify, reproduce, distribute, prepare derivative works of, display, publish, perform and otherwise fully exploit such User Content (including all related intellectual property rights) in any media format and through any media channel and to allow others to do so. To the extent allowed by law, the foregoing includes all rights of paternity, integrity, disclosure and withdrawal and any other rights that may be known as or referred to as "Moral Rights." To the extent you retain any such Moral Rights under applicable law, you hereby ratify and consent to any action that may be taken with respect to such moral rights by BD and agree not to assert any Moral Rights with respect thereto. You also hereby do and shall grant each user of the Sites and the Services a nonexclusive license to access and use your User Content as permitted through the functionality of the Sites and the Services and under this Agreement. You warrant, represent and agree that you have the right to grant BD its Business Partners the rights set forth above. You represent, warrant and agree that you will not contribute any User Content that (a) infringes, violates or otherwise interferes with any copyright or trademark of another party, (b) reveals any trade secret, unless you own the trade secret or have the owner's permission to post it, (c) infringes any intellectual property right of another or the privacy or publicity or any other rights of another, (d) is libelous, defamatory, obscene, pornographic, abusive, indecent, threatening, harassing, hateful, offensive or otherwise violates any law or right of any third party, (e) contains a virus, trojan horse, worm, time bomb or other computer programming routine or engine that is intended to damage, detrimentally interfere with, surreptitiously intercept or expropriate any system, data or information, or (f) remains posted after you have been notified that such User Content violates any of sections (a) to (e) of this sentence.
+```
+$AGENT_MEMORY_STORE/
+├── MEMORY.md              root index, one line per memory — the only resident injection
+├── config.toml            every tunable; an unknown knob is refused at load
+├── schemas/               one file per type: its key fields, the field it groups by, write mode
+├── decision/              memories live at <type>/<group>/<name>.md, placed by the schema
+│   └── agent-memory/        …/markdown-files-are-the-single-source-of-truth.md
+├── archive/               append-only, out of the retrieval surface by default
+│   ├── provenance/        distillation evidence, kept forever
+│   └── sessions/          full trace copies, in case the host prunes its own
+├── dream-reports/         one per sleep: what moved, what was proposed, evidence pointers
+├── .index/                fully rebuildable: content-hash manifest, FTS5, access log
+└── .state/                runtime state that is not: distillation watermark, write lock
+```
 
-BD reserves the right to remove any User Content from the Sites and the Services at any time, for any reason (including, but not limited to, upon receipt of claims or allegations from third parties or authorities relating to such User Content or if BD is concerned that you may have breached the immediately preceding sentence), or for no reason at all. You understand that BD and its Business Partners shall have the right to reformat, excerpt or translate any User Content submitted by you, that all information publicly or privately transmitted through the Sites and the Services is the sole responsibility of the person from whom such information originated and that BD and its Business Partners will not be liable for any errors or omissions in content, and that BD cannot guarantee the identity of any other Users with whom you may interact in the course of using the Sites and the Services or the authenticity of data provided by other Users. You are responsible for all User Content posted or developed under your username, including User Content contributed by a third party whom you have authorized to post User Content under your username. If you believe User Content residing on the Sites or the Services infringes a copyright, please see our Copyright Policy below.
+One memory is one file. `valid_from` and optional `invalid_at` define its validity interval;
+replaced and deleted files stay in the store for `recall --as-of` and trace. Current recall,
+MEMORY.md, BM25, and Vector use files without `invalid_at`. Frontmatter carries the stable
+name, a one-sentence abstract, the type and its schema fields, timestamps, links, weight,
+and provenance; the body is free markdown. Existing files with `status` load without a reset.
 
-Unless otherwise expressly permitted in your agreement with BD, the content on the Sites may not be distributed outside the application. However, you may, as an individual reference content within the Sites in presentations, lectures or in other non-commercial use. Any commercial or public domain use of the content included in books, websites, videos, DVD’s and any other use of the content in the public domain (e.g. advertising) or private applications will be subject to formal permission and an additional license. Please contact BD for additional information or see our plans for schools and business.
+Explicit links must name distinct active memories in the same store. `correct --link`
+replaces the full list; `correct --clear-links` removes every link. MCP `memory_correct`
+uses `links: [...]` and `links: []` for the same operations. Omitting links preserves
+historical relationships during unrelated correction. See the
+[operation boundary design](docs/design/management-operation-boundaries.md).
 
-Any comments, suggestions, or feedback relating to the Sites or the Services (collectively "Feedback") submitted to BD shall become the property of BD or its designee. BD will not be required to treat any Feedback as confidential, and will not be liable for any ideas (including without limitation, product or advertising ideas) and will not incur any liability as a result of any similarities that may appear in our future Sites, Services, or operations. Without limitation, BD will have exclusive ownership of all present and future existing rights to the Feedback of every kind and nature everywhere and will be entitled to use the Feedback for any commercial or other purpose whatsoever, without compensation to you or any other person sending the Feedback. You acknowledge that you are responsible for whatever material you submit, and you, not BD, have full responsibility for the message, including its legality, reliability, appropriateness, originality, and copyright.
+Agents can use `mem correct <name>` to revise a memory, `mem record --supersedes <old>`
+to create a successor, `mem supersede <old> <new>` to use an existing successor,
+`mem merge <first> <second> --abstract ... --body ...` to combine memories atomically,
+and `mem delete <name>` to end current validity. Splitting uses new `record` calls
+followed by `delete` of the original. Core checks file scope, relationships, provenance,
+and concurrent writes; Sleep keeps its proposal and cap limits for unattended actions.
 
-**4. PERSONAL PLUS ACCOUNTS.**
+## Proof it works
 
-BD may provide certain basic features of the BD Human Site and Services at no charge (the "Personal Account"). BD reserves the right to remove, add or modify features, as well as terminate Free Accounts at any time. Without limiting the generality of the foregoing, BD may delete any or all User Content on a Personal Account which is inactive for ninety (90) days or more without providing additional notice. You may choose to purchase a Personal Plus Account which includes enhanced features. BD reserves the right to remove, add or modify Personal Plus Account features at any time.In the event you purchase a Personal Plus Account, the fees for your Personal Plus Account will be billed from the date you convert to a Personal Plus Account and on each monthly or yearly renewal thereafter, depending on which account you select, unless and until you cancel your Personal Plus Account. BD will automatically bill your credit card each month or year on the calendar day corresponding to the commencement of your Personal Plus Account. In the event your Personal Plus Account began on a day not existing in a given month or year, BD will bill your credit card on the last day of such month or year. For example, if your Personal Plus Account began on January 31st, February 28th is the next time your credit card would be billed. You acknowledge that the amount billed each month or year may vary if you purchase promotional offers, change your account, or the amount of applicable sales tax varies, and you authorize us to charge your credit card for such varying amounts. BD may also periodically authorize your credit card in anticipation of account or related charges to ensure your card's validity.
+Measured on LongMemEval-S with a bounded haystack, 120 episodes, `claude -p` (Haiku 4.5) as
+host, one calibrated Sonnet 5 judge, two exam replays per arm.
 
-BD may change the fees and charges in effect, or add new fees and charges from time to time, but we will give you advance notice of these changes by e-mail and the option to cancel your subscription if you do not accept the new fees. If you want to change your credit card information, you may do so by accessing your "Account" page. If your credit card reaches its expiration date, your continued use of our paid services constitutes your authorization for us to continue billing you and you remain responsible for updating your credit card information. It is your responsibility to keep your contact and payment information current.
+| arm | pooled accuracy | paired vs agent-memory |
+|---|---|---|
+| agent-memory W2 | **127/240 = 52.9%** | — |
+| MemCore W2 | 86/240 = 35.8% | +37/−17, p=0.009 · +35/−14, p=0.004 |
+| no memory | 7/120 = 5.8% | +61/−4 · +60/−4, p<0.001 |
 
-BD will automatically charge your credit card monthly or yearly, depending upon which Personal Plus Account you select. If any fee is not paid in a timely manner, or BD is unable to process your transaction using the credit card information provided, BD reserves the right to revoke access to your Personal Plus Account and User Content. If you do not bring your BD balance current within ten (10) days after BD notifies you that your account is in arrears, BD reserves the right to use our discretion to remove User Content associated with your Personal Plus account, and to convert your Personal Plus Account to a Personal Account.
+Absolute numbers are not comparable to published LongMemEval scores — the haystack is bounded
+to 12 sessions per episode, which makes this a write-strategy study rather than a corpus-size
+one. The system-to-system row differs in write and read together, so it is an end-to-end
+comparison and licenses no attribution to either half.
 
-Your Personal Plus Account will continue in effect unless and until you cancel it or we terminate it. You must cancel your Personal Plus Account before it renews each month or year in order to avoid billing of the next month's or year's fees to your credit card. Personal Plus Accounts are prepaid and are non-refundable. BD DOES NOT PROVIDE REFUNDS OR CREDITS FOR ANY PARTIAL MONTHS OR YEARS. You may cancel your Personal Plus Account at any time, and cancellation will be effective immediately. If you wish to cancel your Personal Plus Account you may do so via your "Account" page. Should you elect to cancel your Personal Plus Account, please note that you will not be issued a refund for the most recently (or any previously) charged monthly fees.****
+**One store, three hosts:** all 9 ordered writer/reader pairs across Claude Code, Codex CLI,
+and Hermes pass — what one host's shell writes, another's finds, specifics intact. Pooled net
+contribution over no memory: 2/36 → 13/36, p=0.0074.
 
-**5. WARRANTY DISCLAIMER.**
+The protocol that decides whether a measurement counts as a result, the full ledger, and the
+raw run records live in `docs/experiments.md` and `experiments/` in the working tree. They ship
+with the source, not with git history.
 
-BD and its Business Partners have no special relationship with or fiduciary duty to you. You acknowledge that BD its Business Partners have no control over, and no duty to take any action regarding: which users gain access to the Sites or Services; what Content you access via the Sites or Services; what effects the Content may have on you; how you may interpret or use the Content; or what actions you may take as a result of having been exposed to the Content. You release BD and its Business Partners from all liability for your having acquired or not acquired Content through the Sites. The Sites or Services may contain, or direct you to sites containing, information that some people may find offensive or inappropriate. BD and its Business Partners make no representations concerning any content contained in or accessed through the Sites or Services, and BD snd its Business Partners will not be responsible or liable for the accuracy, copyright compliance, legality or decency of material contained in or accessed through the Sites. THE SERVICES, CONTENT, SITES AND ANY SOFTWARE ARE PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, IMPLIED WARRANTIES OF MERCHANTABILITY, TITLE, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT. SOME JURISDICTIONS DO NOT ALLOW LIMITATIONS ON HOW LONG AN IMPLIED WARRANTY LASTS, SO THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU.
+## Install
 
-TO THE FULLEST EXTENT ALLOWED BY LAW, BD AND ITS BUSINESS PARTNERS DISCLAIM ANY LIABILITY OR RESPONSIBILITY FOR THE ACCURACY, RELIABILITY, AVAILABILITY, COMPLETENESS, LEGALITY OR OPERABILITY OF THE MATERIAL OR SERVICES PROVIDED ON THE SITES AND THROUGH THE SERVICES. BY USING THE SITES AND THE SERVICES, YOU ACKNOWLEDGE THAT BD AND ITS BUSINESS PARTNERS ARE NOT RESPONSIBLE OR LIABLE FOR ANY HARM RESULTING FROM (1) USE OF THE SITES OR SERVICES; (2) DOWNLOADING INFORMATION CONTAINED ON THE SITES OR SERVICES; (3) UNAUTHORIZED DISCLOSURE OF IMAGES, INFORMATION OR DATA THAT RESULTS FROM THE UPLOAD, DOWNLOAD OR STORAGE OF CONTENT POSTED BY USERS; (4) THE TEMPORARY OR PERMANENT INABILITY TO ACCESS OR RETRIEVE ANY USER CONTENT FROM THE SITES OR SERVICES, INCLUDING, WITHOUT LIMITATION, HARM CAUSED BY VIRUSES, WORMS, TROJAN HORSES, OR ANY SIMILAR CONTAMINATION OR DESTRUCTIVE PROGRAM; (5) CONTENT POSTED IN ANY FORUM OR COMMUNITY AREA OF THE SITES OR SERVICES; AND (6) UNAUTHORIZED DISCLOSURE OF IMAGES, INFORMATION OR DATA THAT RESULTS FROM THE UPLOAD, DOWNLOAD OR STORAGE OF POSTED CONTENT.
+Requires Python 3.12 or higher and [uv](https://docs.astral.sh/uv/). There is no release on
+PyPI yet, so install from a checkout:
 
-**6. THIRD PARTY WEBSITES.**
+```bash
+git clone https://github.com/tigerless-labs/agent-memory.git
+cd agent-memory
+uv sync --all-packages
+```
 
-Users of the Sites may gain access from the Sites to third party sites on
+That builds `mem`, `mem-mcp`, and `mem-hook` into `.venv/bin`. Inside the checkout `uv run mem`
+reaches them; put the directory on your `PATH` so your shell can too:
+
+```bash
+export PATH="$PWD/.venv/bin:$PATH"
+```
+
+## Quick start
+
+```bash
+mem init
+```
+
+The store defaults to `~/agent-memory-store`; export `AGENT_MEMORY_STORE` only to put it
+somewhere else, and export it everywhere your agents run, not just in this shell.
+
+Write one memory, find it again, then throw the index away and prove nothing was lost:
+
+```bash
+mem record --type decision --field project=agent-memory \
+  --abstract "Markdown files are the single source of truth" \
+  --body "Indexes are rebuildable caches."
+mem --json recall "source of truth"
+rm -rf ~/agent-memory-store/.index && mem rebuild
+```
+
+## Wire it into your agent
+
+```bash
+mem setup --host claude-code
+mem setup --host codex
+mem setup --host muse-code --provider openrouter
+```
+
+All three commands use the same pipeline: probe the host, initialize or check the Store, safely
+merge host settings, install lifecycle hooks and the skill, perform provider-specific setup,
+then run preflight. A successful command ends with `status: READY`; a written configuration is
+not by itself considered ready. Re-running setup is safe and does not duplicate managed hooks,
+skills, provider routing, or MCP entries. Existing unrelated host settings are retained, and a
+conflicting setting fails closed instead of being replaced.
+
+Use a non-default Store in the usual way; setup pins its absolute path into every installed hook:
+
+```bash
+AGENT_MEMORY_STORE=/absolute/path/to/store mem setup --host codex
+```
+
+Run the same checks later, or get a precise failure layer after setup fails:
+
+```bash
+mem doctor --host claude-code
+mem doctor --host codex
+mem doctor --host muse-code --provider openrouter
+```
+
+Diagnostics distinguish host/config/Store/hook/reasoner failures and, for Muse, credential,
+proxy, authentication, model-catalog, model-availability, and live-request failures. Codex also
+reports disabled hooks, a read-only default sandbox, and the one-time hook trust review. Codex
+user hooks remain subject to Codex's trust prompt. Setup and doctor perform a minimal live
+reasoner request by default; `--no-live` is available for offline inspection but deliberately
+reports `FAILED` because readiness was not proven.
+
+When the Store is outside the Codex workspace, SessionStart injection and boundary hooks still
+run, but agent-initiated CLI recall needs write access for the Store access log. Doctor reports
+`CODEX_STORE_ACCESS_REVIEW` until the Store is covered by
+`sandbox_workspace_write.writable_roots`, or Codex is launched with `--add-dir <store>`.
+Setup does not silently expand sandbox permissions.
+
+Pass `--mcp` to setup when the host should also receive the `agent-memory` stdio MCP server.
+Agents that speak MCP get the same core calls through `mem-mcp` (`memory_recall`,
+`memory_read`, `memory_trace`, `memory_record`, `memory_correct`, `memory_supersede`,
+`memory_merge`, `memory_delete`, `memory_feedback`). Anything that can run a
+shell command needs neither: the CLI is the universal fallback, and it is the wider surface —
+`context`, `sleep`, and the proposal ledger have no MCP tool yet.
+Codex keeps its normal MCP approval boundary; the first tool call can still require explicit
+user approval even after setup has configured and verified the server.
+
+SessionStart injects, Stop and SessionEnd distil where supported, and PreCompact evicts.
+Distillation reasons through the host that fired the boundary, using its existing login. Point
+`[executor]` in Store `config.toml` at a model endpoint instead to use an endpoint reasoner.
+Endpoint use is opt-in and never carries a Tigerless project or credential. A failed host,
+credential, request, or endpoint response is reported and leaves the archived backlog eligible
+for retry. Detached boundary failures are recorded in the Store's `.state/hooks.log`.
+
+To use Vertex AI, enable it in a Google Cloud project you control, grant the calling identity
+prediction access, authenticate the `gcloud` CLI, and configure that project explicitly:
+
+```toml
+[executor]
+reasoner = "endpoint"
+project = "your-google-cloud-project"
+location = "global"
+model = "google/gemini-3.7-flash"
+```
+
+`GOOGLE_CLOUD_PROJECT` and `VERTEX_LOCATION` override the Store values. Alternatively, an
+OpenAI-compatible endpoint can be selected with `endpoint` and a `GEMINI_API_KEY` supplied in
+the environment. Store configuration contains no secret, and service-account keys must not be
+committed to the repository.
+
+### Muse Code
+
+Install [Muse Code](https://dev.meta.ai/docs/muse-code), make sure `muse` is on `PATH`, and make
+an OpenRouter credential available either as `OPENROUTER_API_KEY` or in Muse's credential store.
+Setup recognizes an already provisioned credential and never prints or replaces it:
+
+```bash
+export OPENROUTER_API_KEY="..."  # omit when Muse auth is already provisioned
+mem setup --host muse-code --provider openrouter
+muse
+```
+
+The provider step configures Muse's `meta` transport to the local pproxy bridge, selects the
+Muse model, starts or reuses pproxy, validates OpenRouter authentication and model availability,
+then asks Muse to complete a minimal real request. It merges `SessionStart`, `PreCompact`,
+`Stop`, and `SessionEnd` into `$XDG_CONFIG_HOME/muse/settings.json` (or
+`~/.config/muse/settings.json`) without replacing unrelated settings. Managed hooks pin that
+exact settings path as well as the Store and Muse data directory, so background distillation
+does not depend on Muse preserving the launching shell's XDG environment.
+
+pproxy remains a separate, pinned external dependency. Setup never silently installs system
+software. If it is missing, the FAILED report prints the exact `uv tool install` command; run it
+and repeat setup. pproxy is launched as a user process and recorded under
+`$XDG_STATE_HOME/agent-memory` (or `~/.local/state/agent-memory`). After a reboot, repeat setup
+or run doctor if the proxy is no longer reachable. Use `--mcp` to merge the MCP server too:
+
+```bash
+mem setup --host muse-code --provider openrouter --mcp
+```
+
+Muse native memory and agent-memory's `AGENT_MEMORY_STORE` are separate systems. Setup does not
+read, write, copy, or synchronize Muse native memory. For attributable experiments, use a clean
+workspace with no `.agents/memory` content and isolated `HOME`, `XDG_CONFIG_HOME`, and
+`XDG_DATA_HOME`; the included `tools/muse_sandbox_probe.py` does this while reusing only the
+explicit Muse auth file.
+
+Muse's default sandbox can read outside the workspace but writes only to the workspace and temp
+directories. Muse documents user hooks as outside the agent shell sandbox and MCP servers as
+external processes; use the included live preflight to verify both write paths on your Muse
+build before relying on the default external `~/agent-memory-store`. A Muse shell command such
+as `mem --json recall ...` can read it, but `mem record` from the shell cannot write it.
+The experiment adapter keeps the sandbox enabled and roots its temporary Store and workdir under
+one explicit experiment workspace. It never adds `--yolo` or `--disable-sandbox`.
+
+```bash
+AGENT_MEMORY_LIVE_MUSE=1 uv run python tools/muse_sandbox_probe.py
+```
+
+#### Muse SDK / `muse serve`
+
+SDK applications do not need a manually managed backend or the persistent pproxy process used by
+the interactive setup above. From the SDK application directory, run the managed bootstrap once:
+
+```bash
+export OPENROUTER_API_KEY="..."  # preferably injected by the application's secret manager
+mem setup --host muse-code --provider openrouter --sdk
+```
+
+The command initializes the selected Store, checks Muse, Node 20+, the project-local
+`@muse-code/sdk`, the managed launcher, credential availability, and version compatibility, then
+performs one real request through the same invocation-scoped bridge used by the SDK. It prints the
+absolute `museBin` and arguments to use. It does not modify persistent Muse settings or auth, start
+a persistent pproxy, edit `package.json`, or install system software. When a dependency is absent,
+the failed check includes the exact next command; rerun bootstrap after applying it.
+Run it from the application workspace, not from a workspace nested under the system temporary
+directory: Muse requires its process-lifetime tool-output directory to live outside the workspace.
+
+`OPENROUTER_API_KEY` must be present in the environment of both bootstrap and the application
+process. In production, inject it with the application's secret manager. For a local shell, avoid
+putting the key on a command line or in shell history:
+
+```bash
+read -rsp 'OpenRouter API key: ' OPENROUTER_API_KEY
+echo
+export OPENROUTER_API_KEY
+mem setup --host muse-code --provider openrouter --sdk
+node app.mjs
+unset OPENROUTER_API_KEY
+```
+
+An existing Muse `meta` or `openrouter` credential is also recognized, so the environment variable
+can be omitted in that case. Use the bootstrap result as the SDK launch contract:
+
+```js
+import { MuseClient } from "@muse-code/sdk";
+
+const client = await MuseClient.spawn({
+  museBin: "/absolute/path/printed/by/bootstrap/mem-muse",
+  args: ["serve"],
+  env: process.env,
+  clientInfo: { name: "my_app", version: "1.0.0" },
+});
+const session = await client.startSession({ workspaceRoot: process.cwd() });
+// Send turns through session, then release the owned backend.
+await client.close();
+```
+
+`mem-muse` initializes the selected Store, creates a private invocation configuration, installs
+the lifecycle hooks and skill, enables `mem-mcp` when that optional executable is installed,
+serves the Muse model catalog through an invocation-scoped OpenRouter bridge, and starts the real
+`muse serve`. It leaves the user's Muse settings and auth file unchanged. SDK close and startup
+failure both tear down Muse, the generated credential copy, and the bridge; detached distillation
+starts a fresh hook-free `mem-muse exec`, so it neither depends on the parent backend nor recurses.
+
+The SDK requires Node 20 or newer. Pin `@muse-code/sdk` to the Muse Code CLI version because they
+ship in lockstep. Bootstrap rejects major or minor version skew. Patch skew is reported as an
+advisory warning and must still pass the live request. OpenRouter can reject an otherwise valid
+request when the selected model is unavailable for the account or region; the Store hook log
+retains that redacted upstream error and the archived session remains eligible for retry.
+
+Start with the three ordered portability mechanics before a full four-host matrix:
+
+```bash
+mem-exp interop --workspace /tmp/muse-memory-smoke \
+  --pairs muse-code:muse-code,muse-code:codex,codex:muse-code
+```
+
+Then omit `--pairs` and pass `--hosts claude-code,codex,hermes,muse-code` for the 4×4 matrix.
+Current limitations: only the root Muse session log is captured; child/observer logs are ignored,
+setup installs MCP only when `--mcp` is requested, and live hook/MCP/sandbox behavior must be
+verified on a machine with Muse Code installed and authenticated. Muse 1.4.3 with the tested
+OpenRouter model may shorten a fully qualified MCP tool ID to `memory_recall`; Muse rejects that
+shorthand even though the configured server handshake succeeds. Lifecycle hooks and SessionStart
+injection do not depend on 
 fetched 1 url(s)
