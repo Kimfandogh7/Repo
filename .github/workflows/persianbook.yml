@@ -1,0 +1,71 @@
+name: Persian book render
+
+on:
+  push:
+    paths:
+      - 'edu-agent/render-book.js'
+      - 'edu-agent/books/**'
+      - 'edu-agent/content/**'
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install uv + edge-tts + ffmpeg
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          ffprobe -version | head -1
+
+      - name: Generate Persian narration (Edge TTS)
+        run: |
+          export PATH="$HOME/.cargo/bin:$PATH"
+          cd edu-agent
+          SK=vendor/papermorph/.claude/skills/papermorph
+          uv run --with edge-tts python $SK/scripts/tts.py \
+            content/moshkel/ch01/narration.fa.json \
+            books/moshkel/ch01/audio/fa
+        env:
+          RUN_ID: ${{ github.run_id }}
+
+      - name: List generated audio
+        run: ls -la edu-agent/books/moshkel/ch01/audio/fa/ || echo "NO AUDIO"
+
+      - name: Install Playwright + Chromium
+        run: |
+          cd edu-agent
+          npm i playwright@1.48.0
+          npx playwright install --with-deps chromium
+
+      - name: Serve and render
+        run: |
+          cd edu-agent/books
+          python3 -m http.server 8765 --bind 127.0.0.1 &
+          sleep 2
+          cd /home/runner/work/Repo/Repo/edu-agent
+          node render-book.js
+        env:
+          RUN_ID: ${{ github.run_id }}
+          BASE: http://127.0.0.1:8765
+
+      - name: Commit artifacts
+        if: always()
+        run: |
+          git config user.name "arena-agent"
+          git config user.email "agent@arena.local"
+          git add -f edu-agent/out edu-agent/books/moshkel/ch01/audio 2>/dev/null || true
+          git diff --cached --quiet && echo "nothing to commit" || \
+            git commit -m "book: Persian chapter render (run ${{ github.run_id }})"
+          git push origin HEAD:arena/758efc2d-repo || echo "push skipped"

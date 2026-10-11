@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>قاعده‌ی زنجیره‌ای</title>
+<link rel="stylesheet" href="../lib/engine.css">
+<link rel="expect" href="#bar" blocking="render">
+</head>
+<body>
+<script src="../lib/engine.js"></script>
+<script src="audio/fa/timings.js"></script>
+<script>
+'use strict';
+const CHAPTER = { number: 1, title: 'قاعده‌ی زنجیره‌ای', minutes: 6, language: 'fa', rtl: true };
+
+/* ---------- کمک‌کننده‌ها (مختصاتِ x از راست شمرده می‌شود) ---------- */
+const mline = (p, parts, x, y, t0, fill = COL.chalk, size = 56, anchor = 'middle') => {
+  const e = M(p, [].concat(parts), { x: RTL ? 1600 - x : x, y, size, fill, anchor, o: 0 }); show(e, t0); return e; };
+const text = (p, str, x, y, t0, { size = 32, fill = COL.chalk, weight = 500 } = {}) => {
+  const e = T(p, str, { x, y, size, fill, weight, o: 0 }); show(e, t0); return e; };
+
+/* ---------- بیت‌ها ---------- */
+const BEATS = [
+  ['intro', 'مقدمه', (m, D) => {
+    const g = G(scene, { o: 0, y: 24 });
+    T(g, 'فصل یک', { x: 800, y: 330, size: 28, fill: COL.dim });
+    T(g, 'قاعده‌ی زنجیره‌ای', { x: 800, y: 430, size: 76, weight: 700 });
+    tw(g, { o: 1, y: 0 }, .2, 1.1, out);
+    const r = text(scene, 'وقتی یک تابع، داخلِ تابعِ دیگری است', 800, 600, m('rule'), { size: 34, fill: COL.dim });
+    tw(g, { o: 0, y: -24 }, D - .9, .8); hide(r, D - .9, .8);
+  }],
+
+  ['idea', 'صورتِ مسئله', (m) => {
+    const p = panel(0);
+    text(p, 'مشتقِ این تابع را بگیر:', 800, 240, .2, { size: 38, fill: COL.dim });
+    mline(p, [E('2'), '(3x + 1)'], 800, 380, m('fx'), COL.chalk, 84);
+    text(p, 'اولین چیزی که به ذهنت می‌رسد چیست؟', 800, 540, m('fx') + .6, { size: 32, fill: COL.task, weight: 600 });
+  }],
+
+  ['wrong', 'پاسخِ رایج — و غلط', (m) => {
+    const p = panel(0);
+    text(p, 'پاسخی که بیشترِ دانش‌آموزان می‌نویسند:', 800, 220, .2, { size: 34, fill: COL.dim });
+    mline(p, '2(3x + 1)', 800, 360, m('w'), COL.bad, 76);
+    text(p, 'فقط توان را پایین آورده‌ایم — و این غلط است', 800, 500, m('why'), { size: 34, fill: COL.bad, weight: 600 });
+  }],
+
+  ['why', 'چرا غلط است', (m) => {
+    const p = panel(0);
+    text(p, 'چون داخلِ پرانتز فقط «ایکس» نیست:', 800, 200, .2, { size: 34, fill: COL.dim });
+    // دو لایه را جدا نشان می‌دهیم
+    const outer = G(p, { o: 0 });
+    T(outer, 'لایه‌ی بیرونی', { x: 1180, y: 330, size: 30, fill: COL.task, weight: 600 });
+    mline(outer, [E('2'), '(...)'], 1180, 430, m('inside'), COL.chalk, 60);
+    show(outer, .3);
+    const inner = G(p, { o: 0 });
+    T(inner, 'لایه‌ی درونی', { x: 420, y: 330, size: 30, fill: COL.good, weight: 600 });
+    mline(inner, '3x + 1', 420, 430, m('inside') + .4, COL.chalk, 60);
+    show(inner, .3);
+    text(p, 'وقتی ایکس تغییر می‌کند، هر دو لایه تغییر می‌کنند', 800, 620, m('chain'), { size: 34, fill: COL.chalk, weight: 600 });
+  }],
+
+  ['rule', 'قاعده', (m) => {
+    const p = panel(0);
+    text(p, 'قاعده‌ی زنجیره‌ای:', 800, 200, .2, { size: 38, fill: COL.dim, weight: 600 });
+    const g1 = G(p, { o: 0 });
+    T(g1, '۱. مشتقِ لایه‌ی بیرونی', { x: 900, y: 330, size: 42, fill: COL.task, weight: 700 });
+    show(g1, m('outer'));
+    const g2 = G(p, { o: 0 });
+    T(g2, '۲. ضرب در مشتقِ لایه‌ی درونی', { x: 900, y: 430, size: 42, fill: COL.good, weight: 700 });
+    show(g2, m('inner'));
+    mline(p, [E('′'), '( f(g) )', ' = f′(g) · g′'], 800, 600, m('name'), COL.chalk, 52);
+  }],
+
+  ['example', 'مثالِ کارشده', (m) => {
+    const p = panel(0);
+    // بیرونی
+    const o1 = G(p, { o: 0 });
+    T(o1, 'بیرونی: توانِ دو →', { x: 1240, y: 250, size: 32, fill: COL.task, weight: 600 });
+    M(o1, [E('2'), '(3x + 1)'], { x: 1240, y: 340, size: 52, fill: COL.task, anchor: 'middle', o: 0 });
+    show(o1, m('o1'));
+    // درونی
+    const i1 = G(p, { o: 0 });
+    T(i1, 'درونی: مشتقِ (3x+1) →', { x: 1240, y: 470, size: 32, fill: COL.good, weight: 600 });
+    M(i1, ['3'], { x: 1240, y: 560, size: 52, fill: COL.good, anchor: 'middle', o: 0 });
+    show(i1, m('i1'));
+    // حاصل
+    const res = G(p, { o: 0 });
+    T(res, 'حاصل:', { x: 380, y: 400, size: 34, fill: COL.dim });
+    M(res, ['6(3x + 1)'], { x: 380, y: 500, size: 62, fill: COL.chalk, anchor: 'middle', o: 0 });
+    show(res, m('res'));
+  }],
+
+  ['q1', 'یک تمرین کوتاه', () => { panel(0); }, { ask: done => quiz(BAND, [{
+    id: 'c-chain', prompt: ['مشتقِ ', $m(E('2'), '(5x − 1)'), ' چیست؟'],
+    build: choice(
+      [['10(5x − 1)'], ['2(5x − 1)'], ['10x − 1'], ['2(5x − 1) · 5']],
+      0,
+      'درست است: مشتقِ بیرونی ۲(۵x−۱) است، ضرب در مشتقِ درونی یعنی ۵ → ۱۰(۵x−۱).',
+      [null,
+       'فقط لایه‌ی بیرونی را مشتق گرفته‌ای؛ مشتقِ داخل (یعنی ۵) را حساب نکرده‌ای.',
+       'به نظر می‌رسد ضرب را باز کرده‌ای و بعد اشتباه جمع زده‌ای؛ اول قاعده را بنویس، بعد ساده کن.',
+       'نوشته‌ات از نظرِ مفهومی درست است ولی ناتمام؛ ۲ ضربدر ۵ می‌شود ۱۰.']),
+  }], done, 'یک تمرین کوتاه') }],
+
+  ['wrap', 'خلاصه', (m) => {
+    const p = panel(0);
+    [['لایه‌ی بیرونی را مشتق بگیر.', 'w1'], ['در مشتقِ لایه‌ی درونی ضرب کن.', 'w2']].forEach(([str, mark], i) => {
+      const g = G(p, { x: 0, y: 320 + i * 150, o: 0 });
+      mk('circle', { cx: 1400, cy: -12, r: 26, fill: COL.task }, g);
+      T(g, String(i + 1), { x: 1400, y: -1, size: 30, fill: COL.board, weight: 700 });
+      T(g, str, { x: 1320, size: 40, weight: 600 });
+      tw(g, { o: 1 }, m(mark), .6);
+    });
+  }],
+
+  ['finish', 'پایان', () => { panel(0); }, { ask: finishCard }],
+].map(([id, title, run, extra]) => ({ id, title, run, ...extra }));
+
+boot();
+</script>
+</body>
+</html>
