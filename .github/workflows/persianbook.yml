@@ -103,7 +103,8 @@ jobs:
             cat edu-agent/out/tts.log 2>&1 | head -60
             echo "=== git status ==="
             git status --short | head -30
-          } 2>&1 | tee edu-agent/out/commit-diag.log
+          } > edu-agent/out/diag-$RUN_ID.log 2>&1
+          cp edu-agent/out/diag-$RUN_ID.log edu-agent/out/commit-diag.log
           git config user.name "arena-agent"
           git config user.email "agent@arena.local"
           git add -f edu-agent/out/commit-diag.log
@@ -126,7 +127,8 @@ jobs:
             echo "=== gitignoreهای مؤثر ==="
             git check-ignore -v edu-agent/out/book/moshkel/ch01/beat-00.png 2>&1 || echo "(not ignored)"
             git check-ignore -v edu-agent/out/tts.log 2>&1 || echo "(tts.log not ignored)"
-          } 2>&1 | tee edu-agent/out/commit-diag.log
+          } > edu-agent/out/diag-$RUN_ID.log 2>&1
+          cp edu-agent/out/diag-$RUN_ID.log edu-agent/out/commit-diag.log
           git config user.name "arena-agent"
           git config user.email "agent@arena.local"
           git add -f edu-agent/out edu-agent/books/moshkel/ch01/audio
