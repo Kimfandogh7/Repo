@@ -1,15 +1,51 @@
-/home/runner/work/Repo/Repo/fetches/browse.js:37
-# retrigger 1791686462
-^
-
-SyntaxError: Invalid or unexpected token
-    at wrapSafe (node:internal/modules/cjs/loader:1464:18)
-    at Module._compile (node:internal/modules/cjs/loader:1495:20)
-    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
-    at Module.load (node:internal/modules/cjs/loader:1266:32)
-    at Module._load (node:internal/modules/cjs/loader:1091:12)
-    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12)
-    at node:internal/main/run_main_module:28:49
-
-Node.js v20.20.2
-SCRIPT_FAILED
+RUN_ID: 1791686567
+NODE: v20.20.2
+BROWSER: launched ok
+STATUS: 200
+TITLE: BioDigital | Interactive 3D Anatomy - Disease Platform
+--- TEXT (2000) ---
+BioDigital uses cookies to enhance your experience
+We use cookies to collect data to improve your experience on our site. By using our website, you agree to the collection of data as described in our Cookie Policy.
+OK
+PRODUCT 
+CUSTOMERS 
+RESOURCES 
+LOGIN
+CONTACT
+Powering the World's Understanding of the Human Body
+The BioDigital Human is an interactive 3D software platform for visualizing anatomy, disease, and treatment.
+GET STARTED FOR FREE
+CONTACT US
+Read More Customer Stories
+Our software makes health information visual, simple, and engaging.
+Interactive 3D Visualizations
+Interactive 3D is a proven way to increase comprehension and speed in anatomy, disease, and treatment education.
+Scalable Content Creation and Management
+Create and manage interactive visualizations to use across all your digital channels, at a fraction of the traditional cost.
+Highly Customizable Visualizations
+Create custom visualizations using Human Studio, or work with our professional services team to visualize specific conditions and treatments.
+Easy to Integrate into any Digital Platform
+Embed interactive 3D visualizations into any LMS or digital solution for a seamless end user experience.
+Meet the all-new Studio.
+Sharper tools, cleaner workflows, and a faster UI perfect for medical educators, clinical trainers,
+patient engagement teams, and anyone who needs to simplify complex health concepts through
+interactive 3D visuals.
+SEE WHAT'S NEW
+"... the virtual body as the health equivalent of Google Maps."
+"Think: Google Earth meets the human body."
+"A Digital Revolution for Studying Human Anatomy."
+Read More
+Interactive 3D experiences - now accessible on any device, anywhere, anytime.
+BioDigital's market leading platform powers immersive content across any device - enabling the most engaging education for our customers.
+For the first time organizations can quickly make their health, medical and life science education more immersive using BioDigital’s software. Interactive 3D models of human
+--- AUTH LINKS ---
+https://www.biodigital.com/product/the-biodigital-human
+https://www.biodigital.com/product/human-studio
+https://human.biodigital.com/?ref=www.biodigital.com
+https://human.biodigital.com/login/create?ref=www.biodigital.com
+https://www.wired.com/2012/04/biodigital-human/
+https://itunes.apple.com/us/app/biodigital-human-anatomy-health/id771825569
+https://play.google.com/store/apps/details?id=com.biodigitalhuman.humanAndroid&hl=en_US&gl=US
+https://twitter.com/biodigitalhuman
+https://www.facebook.com/BioDigitalHuman
+https://www.instagram.com/biodigital.human/
