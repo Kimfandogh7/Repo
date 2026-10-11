@@ -7,6 +7,9 @@
   * ۷ لینک تیک‌تاک از اکانت @github.signals: open-slide (۹۱۶۱★)، papermorph (۶۶۷)، mg-styles-15 (۶۳۲)، phreshos/system (۲۲۸)، showtime (۲۲۶) — همه راستی‌آزمایی شدند
   * راه حل برای توصیف ویدیوهای تیک‌تاک: oEmbed رسمی (tiktok.com/oembed?url=...) جواب می‌دهد، حتی از IP دیتاسنتر
   * ۵۰ ایده در edu-agent/IDEAS.md: تشخیص، برنامه‌ریزی، تولید محتوا، روش تدریس، روانشناسی، پیگیری، مشاوره
+  * open-slide v2.1.0 نصب و تست شد: build موفق، خروجی PPTX/PDF دارد اما PPTX فقط در مرورگر (کلیک دستی)
+  * نکته فنی: Vite در open-slide هاستِ پیش‌نمایش را 403 می‌کند مگر اینکه open-slide.config.ts را با allowedHosts:true تنظیم کنی
+  * دکِ نمونه ساخته شد: slides/forgetting-curve — ۶ صفحه، RTL فارسی، انیمیشن SVG، متن گوینده
 
 ## meta
   * سیستم حافظه در memory/ راه‌اندازی شد؛ AGENTS.md در ریشه می‌گوید اول آن را بخوان
