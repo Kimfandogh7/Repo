@@ -1,25 +1,19 @@
-RUN_ID: 1791686754
-STATUS: 200 | URL: https://human.biodigital.com/login/create
-TITLE: Sign Up | BioDigital Human Platform
---- INPUTS ---
-{"type":"text","name":"firstName","id":"","ph":"","req":false}
-{"type":"text","name":"lastName","id":"","ph":"","req":false}
-{"type":"email","name":"email","id":"","ph":"","req":false}
-{"type":"password","name":"password","id":"","ph":"At least 8 characters","req":false}
---- BUTTONS ---
-Sign up with email
---- CAPTCHA SIGNS ---
-recaptcha, g-recaptcha
---- VISIBLE TEXT (1200) ---
-The most complete, scientifically accurate, virtual human body ever assembled.
-Anatomy, health conditions, and treatments - all visualized in interactive 3D.
-Create a free account
-Sign in with Google
-OR
-First Name
-Last Name
-Email
-Password
-Sign up with email
-By signing up, you agree to our Terms of Service and Privacy Policy.
-Already have an account?Sign in
+RUN_ID: 1791686830
+--- recaptcha elements in DOM ---
+IFRAME. sitekey= src=https://recaptcha.net/recaptcha/api2/anchor?ar=1&k=6LdvZvcUAAAAAM0Z1St9WQXwvSYd__hMUY2WZ6u
+--- all iframes ---
+https://accounts.google.com/gsi/button?text=continue_with&theme=outline&type=standard&size=large&wid
+javascript:false
+https://recaptcha.net/recaptcha/api2/anchor?ar=1&k=6LdvZvcUAAAAAM0Z1St9WQXwvSYd__hMUY2WZ6um&co=aHR0c
+
+about:blank
+
+--- scripts mentioning recaptcha ---
+https://www.googletagmanager.com/gtag/js?id=G-088452MNQR&cx=c&gtm=4e6a72
+https://www.gstatic.com/recaptcha/releases/nY0xPItgwtlvjEjk2TqdwOQz/recaptcha__en.js
+https://recaptcha.net/recaptcha/api.js?render=6LdvZvcUAAAAAM0Z1St9WQXwvSYd__hMUY2WZ6um&onload=ng2recaptchaloaded&trustedtypes=true
+https://www.googletagmanager.com/gtag/js?id=UA-1141985-27
+--- is a captcha VISIBLE on screen? ---
+no .g-recaptcha element
+--- google sign-in button present? ---
+YES: DIV
