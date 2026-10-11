@@ -1,0 +1,9 @@
+RUN_ID=38135835494
+=== pwd: /home/runner/work/Repo/Repo ===
+=== ۱. صداهای فارسیِ Edge TTS ===
+Downloading aiohttp (1.8MiB)
+ Downloaded aiohttp
+Installed 13 packages in 8ms
+fa: ['fa-IR-DilaraNeural', 'fa-IR-FaridNeural']
+=== ۲. ساختِ نریشن ===
+/home/runner/.cache/uv/builds-v0/.tmpT6ce1v/bin/python: can't open file '/home/runner/work/Repo/Repo/edu-agent/vendor/papermorph/.claude/skills/papermorph/scripts/tts.py': [Errno 2] No such file or directory
