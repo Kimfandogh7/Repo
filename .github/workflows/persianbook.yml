@@ -83,6 +83,32 @@ jobs:
           RUN_ID: ${{ github.run_id }}
           BASE: http://127.0.0.1:8765
 
+      - name: Push diagnostics (runs first, so we can read it even if commit fails)
+        if: always()
+        run: |
+          mkdir -p edu-agent/out
+          {
+            echo "RUN_ID=${RUN_ID}"
+            echo "=== pwd ==="; pwd
+            echo "=== درختِ خروجی out/ ==="
+            find edu-agent/out -type f 2>&1 | head -40
+            echo "=== صداها / timings ==="
+            find edu-agent/books -name '*.mp3' -o -name 'timings.js' 2>&1 | head -20
+            echo "=== آیا چیزی ignore شده؟ ==="
+            git check-ignore -v edu-agent/out/book/moshkel/ch01/beat-00.png 2>&1 || echo "(png NOT ignored)"
+            git check-ignore -v edu-agent/out/tts.log 2>&1 || echo "(tts.log NOT ignored)"
+            echo "=== محتوای tts.log ==="
+            cat edu-agent/out/tts.log 2>&1 | head -60
+            echo "=== git status ==="
+            git status --short | head -30
+          } 2>&1 | tee edu-agent/out/commit-diag.log
+          git config user.name "arena-agent"
+          git config user.email "agent@arena.local"
+          git add -f edu-agent/out/commit-diag.log
+          git diff --cached --quiet && echo "diag: nothing to commit" || \
+            git commit -m "diag: book render (run ${{ github.run_id }})"
+          git push origin HEAD:arena/758efc2d-repo || echo "DIAG PUSH FAILED"
+
       - name: Commit artifacts
         if: always()
         run: |
