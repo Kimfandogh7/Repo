@@ -24,73 +24,77 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install (torch + torchvision from same index)
+      - name: All-in-one
+        shell: bash
         run: |
-          pip install --quiet torch torchvision numpy --index-url https://download.pytorch.org/whl/cpu
-          pip install --quiet transformers pillow
-          python -c "import torch, torchvision, transformers; print('ok', torch.__version__, torchvision.__version__, transformers.__version__)"
-
-      - name: Describe every frame
-        run: |
-          python - > refs/_out.log 2>&1 <<'PY' || true
-          import sys
+          set +e
+          mkdir -p refs
+          LOGF=refs/_out.log
+          : > $LOGF
+          echo "=== شروع $(date -u) ===" >> $LOGF
+          echo "--- نصب torch+torchvision ---" >> $LOGF
+          pip install torch torchvision numpy --index-url https://download.pytorch.org/whl/cpu >> $LOGF 2>&1
+          echo "exit=$?" >> $LOGF
+          echo "--- نصب transformers ---" >> $LOGF
+          pip install transformers pillow >> $LOGF 2>&1
+          echo "exit=$?" >> $LOGF
+          echo "--- بررسی import ---" >> $LOGF
+          python -c "import torch,torchvision,transformers;print('ok',torch.__version__,torchvision.__version__,transformers.__version__)" >> $LOGF 2>&1
+          echo "exit=$?" >> $LOGF
+          echo "--- اجرای توصیف ---" >> $LOGF
+          python - <<'PY' >> $LOGF 2>&1
           import json, os, torch
           from PIL import Image
           from transformers import AutoProcessor, AutoModelForCausalLM
-
           MODEL = "microsoft/Florence-2-base"
-          model = AutoModelForCausalLM.from_pretrained(
-              MODEL, trust_remote_code=True).eval()
+          model = AutoModelForCausalLM.from_pretrained(MODEL, trust_remote_code=True).eval()
           proc = AutoProcessor.from_pretrained(MODEL, trust_remote_code=True)
           print("model ready", flush=True)
-
           def ask(img, prompt):
               inp = proc(text=prompt, images=img, return_tensors="pt")
               with torch.no_grad():
-                  out = model.generate(
-                      input_ids=inp["input_ids"],
-                      pixel_values=inp["pixel_values"],
-                      max_new_tokens=400, num_beams=3, do_sample=False)
+                  out = model.generate(input_ids=inp["input_ids"],
+                                       pixel_values=inp["pixel_values"],
+                                       max_new_tokens=400, num_beams=3, do_sample=False)
               txt = proc.batch_decode(out, skip_special_tokens=False)[0]
-              return proc.post_process_generation(
-                  txt, task=prompt, image_size=(img.width, img.height))
-
+              return proc.post_process_generation(txt, task=prompt,
+                                                  image_size=(img.width, img.height))
           result = {}
           for vid in ["placeplate", "yerra"]:
               d = f"refs/{vid}"
               if not os.path.isdir(d):
-                  continue
+                  print("missing", d, flush=True); continue
               files = sorted(f for f in os.listdir(d) if f.endswith(".png"))
               result[vid] = []
-              print(f"=== {vid}: {len(files)} فریم ===", flush=True)
+              print(f"=== {vid}: {len(files)} ===", flush=True)
               for f in files:
                   img = Image.open(os.path.join(d, f)).convert("RGB")
                   e = {"frame": f}
-                  for tag, prompt in [
-                          ("caption", "<MORE_DETAILED_CAPTION>"),
-                          ("ocr", "<OCR>"),
-                          ("objects", "<OD>"),
-                  ]:
+                  for tag, prompt in [("caption", "<MORE_DETAILED_CAPTION>"),
+                                      ("ocr", "<OCR>"), ("objects", "<OD>")]:
                       try:
                           e[tag] = ask(img, prompt)
                       except Exception as ex:
-                          e[tag] = f"ERR {type(ex).__name__}"
+                          e[tag] = f"ERR {type(ex).__name__}: {str(ex)[:90]}"
                   result[vid].append(e)
                   c = e.get("caption")
                   if isinstance(c, dict):
                       c = c.get("<MORE_DETAILED_CAPTION>", "")
-                  print(f"{f}: {str(c)[:150]}", flush=True)
-
-          json.dump(result, open("refs/descriptions.json", "w"),
-                    indent=2, ensure_ascii=False)
-          print("SAVED")
+                  print(f"{f}: {str(c)[:160]}", flush=True)
+          json.dump(result, open("refs/descriptions.json", "w"), indent=2, ensure_ascii=False)
+          print("SAVED", flush=True)
           PY
+          echo "exit=$?" >> $LOGF
+          echo "=== پایان $(date -u) ===" >> $LOGF
+          tail -60 $LOGF
 
       - name: Commit
         if: always()
+        shell: bash
         run: |
           git config user.name "arena-bot"
           git config user.email "bot@arena.local"
-          git add -f refs/descriptions.json refs/_out.log
-          git commit -m "vision: توصیف همه فریم‌ها" || echo "nothing"
+          git add -f refs/_out.log || true
+          git add -f refs/descriptions.json 2>/dev/null || true
+          git commit -m "vision: خروجی و توصیف" || echo "nothing to commit"
           git push origin HEAD:arena/758efc2d-repo || echo "push failed"
