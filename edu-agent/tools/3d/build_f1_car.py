@@ -141,18 +141,21 @@ bpy.context.view_layer.update()
 for ax, (lo, hi) in zip("XYZ", _world_bbox(car)):
     print(f"NORM WORLD {ax}: {lo:.3f} .. {hi:.3f}", flush=True)
 
+import mathutils
+
+
+def look_at(obj, point):
+    """Aim obj's -Z axis at point, with +Z up. No constraints (TRACK_TO + UP_Z rendered empty)."""
+    d = mathutils.Vector(point) - mathutils.Vector(obj.location)
+    obj.rotation_euler = d.to_track_quat("-Z", "Z").to_euler()
+
+
 cam_data = bpy.data.cameras.new("cam")
 cam_data.lens = 58
 cam = bpy.data.objects.new("cam", cam_data)
 bpy.context.collection.objects.link(cam)
 cam.location = (0, -7.0, 0.9)
-target = bpy.data.objects.new("target", None)
-bpy.context.collection.objects.link(target)
-target.location = (0, 0, 0)
-tr = cam.constraints.new("TRACK_TO")
-tr.target = target
-tr.track_axis = "TRACK_NEGATIVE_Z"
-tr.up_axis = "UP_Z"
+look_at(cam, (0, 0, 0))
 bpy.context.scene.camera = cam
 
 
@@ -163,10 +166,7 @@ def area(name, loc, energy, size):
     lo = bpy.data.objects.new(name, ld)
     bpy.context.collection.objects.link(lo)
     lo.location = loc
-    t = lo.constraints.new("TRACK_TO")
-    t.target = target
-    t.track_axis = "TRACK_NEGATIVE_Z"
-    t.up_axis = "UP_Z"
+    look_at(lo, (0, 0, 0))
 
 
 area("key", (4, -6, 5), 2600, 6)
@@ -186,8 +186,7 @@ scene.render.image_settings.file_format = "PNG"
 scene.render.image_settings.color_mode = "RGBA"
 
 bpy.context.view_layer.update()
-_cam_pos = cam.matrix_world.translation
-print("CAM at", tuple(round(v, 2) for v in _cam_pos), "target", tuple(round(v, 2) for v in target.matrix_world.translation), flush=True)
+print("CAM at", tuple(round(v, 2) for v in cam.location), "rot", tuple(round(math.degrees(v), 1) for v in cam.rotation_euler), flush=True)
 print("objects in scene:", len(bpy.context.scene.objects), "car visible:", not car.hide_render, flush=True)
 for a in angles:
     car.rotation_euler = (0, 0, math.radians(a))
