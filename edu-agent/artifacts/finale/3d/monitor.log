@@ -1,0 +1,6 @@
+Mon Oct 12 11:09:05 UTC 2026
+               total        used        free      shared  buff/cache   available
+Mem:            7937        1129         319          46        6848        6807
+Swap:           3071           0        3071
+31128       02:02 /usr/bin/python3 -u /usr/sbin/waagent -daemon
+38632       02:01 /usr/bin/python3 -u bin/WALinuxAgent-2.16.0.2-py3.12.egg -run-exthandlers
