@@ -41,6 +41,7 @@ jobs:
         continue-on-error: true
         env:
           TRIPOSR_DIR: /tmp/triposr
+          PYTHONPATH: ${{ github.workspace }}/edu-agent/tools/3d/shim
         run: |
           mkdir -p out3d
           python3 edu-agent/tools/3d/mesh_from_image.py \
