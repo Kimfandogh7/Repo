@@ -103,4 +103,14 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    import traceback
+    try:
+        sys.exit(main())
+    except SystemExit:
+        raise
+    except BaseException:
+        err = traceback.format_exc()
+        print(err, flush=True)
+        with open(os.path.join(OUT_DIR, "error.txt"), "w", encoding="utf-8") as f:
+            f.write(err)
+        sys.exit(1)

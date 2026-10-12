@@ -36,14 +36,17 @@ jobs:
           pip install faster-whisper jiwer
           nproc; free -g
       - name: run persian asr test
+        continue-on-error: true
         env:
           MODELS: ${{ inputs.models || 'small,medium' }}
           N_CLIPS: ${{ inputs.n_clips || '12' }}
         run: python edu-agent/telegram-pipeline/asr-test/persian_asr_test.py
       - name: commit results
+        if: always()
         run: |
           git config user.name "arena-bot"
           git config user.email "arena-bot@users.noreply.github.com"
-          git add edu-agent/telegram-pipeline/asr-test/out || true
+          mkdir -p edu-agent/telegram-pipeline/asr-test/out
+          git add -f edu-agent/telegram-pipeline/asr-test/out || true
           git commit -m "asr: persian test results" || echo "nothing to commit"
           git push origin HEAD:arena/758efc2d-repo || echo "push skipped"
