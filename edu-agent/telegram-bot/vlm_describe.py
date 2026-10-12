@@ -47,22 +47,39 @@ def cut_segments(src, workdir):
     return sorted(glob.glob(os.path.join(workdir, "seg_*.mp4")))
 
 
-def describe_clip(path):
+def probe_duration(path):
+    out = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", path],
+        capture_output=True, text=True, check=True)
+    return float(out.stdout.strip() or 0)
+
+
+def extract_frames(path, workdir, n):
+    """Grab n evenly spaced frames as JPEG. Images avoid the torchvision video decoder."""
+    dur = probe_duration(path)
+    frames = []
+    for i in range(n):
+        t = dur * (i + 0.5) / n
+        fp = os.path.join(workdir, f"f_{i:02d}.jpg")
+        subprocess.run(
+            ["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{t:.2f}", "-i", path,
+             "-frames:v", "1", "-vf", "scale=384:-2", fp], check=True)
+        frames.append(fp)
+    return frames
+
+
+def describe_clip(path, workdir):
     processor, model = load()
-    messages = [{
-        "role": "user",
-        "content": [
-            {"type": "video", "path": path},
-            {"type": "text", "text": "Describe what happens in this video in two short sentences."},
-        ],
-    }]
+    frames = extract_frames(path, workdir, MAX_FRAMES)
+    content = [{"type": "image", "path": f} for f in frames]
+    content.append({"type": "text", "text": "Describe what happens in these video frames in two short sentences."})
+    messages = [{"role": "user", "content": content}]
     inputs = processor.apply_chat_template(
         messages, add_generation_prompt=True, tokenize=True,
-        return_dict=True, return_tensors="pt", max_frames=MAX_FRAMES)
+        return_dict=True, return_tensors="pt")
     with torch.inference_mode():
         out = model.generate(**inputs, do_sample=False, max_new_tokens=80)
     text = processor.batch_decode(out, skip_special_tokens=True)[0]
-    # The decoded text contains the whole prompt; keep only the assistant reply.
     return text.split("Assistant:")[-1].strip()
 
 
@@ -73,7 +90,7 @@ def describe_video(src):
     lines = []
     for i, seg in enumerate(cut_segments(src, workdir)):
         start = i * SEG_SECONDS
-        lines.append(f"[{start // 60:02d}:{start % 60:02d}] {describe_clip(seg)}")
+        lines.append(f"[{start // 60:02d}:{start % 60:02d}] {describe_clip(seg, workdir)}")
     return "\n".join(lines), time.time() - t0
 
 
