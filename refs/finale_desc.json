@@ -1,0 +1,227 @@
+{
+  "finale": [
+    {
+      "frame": "car_000.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a sculpture made of plastic bags. The sculpture is in the shape of a person's body, with their arms and legs stretched out in front of them. The person is wearing a red and white striped shirt and black pants. The bags are transparent, allowing the viewer to see the contents inside. The background is black, making the sculpture stand out. The image appears to be taken from a low angle, looking up at the sculpture."
+      },
+      "ocr": {
+        "<OCR>": "-"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              378.5400085449219,
+              534.719970703125,
+              693.9000244140625,
+              1337.280029296875
+            ]
+          ],
+          "labels": [
+            "statue (sculpture)"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_040.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a red and white object that appears to be floating in the air. The object is made up of multiple layers of white and red material, with the top layer being the largest and the bottom layer being smaller. The red layer is slightly larger than the white layer and is slightly smaller than the red layer. The background is black, making the object stand out. The overall color scheme of the image is predominantly white, red, and gray."
+      },
+      "ocr": {
+        "<OCR>": "-"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              320.2200012207031,
+              768.9599609375,
+              646.3800048828125,
+              1018.5599975585938
+            ],
+            [
+              234.90000915527344,
+              536.6400146484375,
+              817.02001953125,
+              1341.1199951171875
+            ]
+          ],
+          "labels": [
+            "footwear",
+            "toy"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_080.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a digital illustration of a red and white wave-like shape. The wave appears to be floating on a black background. The red wave is in the center of the image, with the white wave on the right side and the red wave in the middle. The white wave is on the left side, with a black outline. The black outline is slightly curved, giving the wave a sense of depth and dimension. The overall effect is a dynamic and dynamic representation of the wave."
+      },
+      "ocr": {
+        "<OCR>": "S"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              105.30000305175781,
+              536.6400146484375,
+              985.5000610351562,
+              1362.239990234375
+            ]
+          ],
+          "labels": [
+            "statue (sculpture)"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_120.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a white and red object with a black background. The object appears to be floating in the air, with its body slightly tilted to the side. The body of the object is covered in a layer of red and white paint, with the red paint being the dominant color. The white paint is splattered across the body, creating a chaotic and dynamic effect. The black background provides a stark contrast to the white and gray colors, making the object stand out."
+      },
+      "ocr": {
+        "<OCR>": "www.paintball.com"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              110.70000457763672,
+              542.3999633789062,
+              954.1800537109375,
+              1383.3599853515625
+            ]
+          ],
+          "labels": [
+            "animal"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_160.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a metallic object with a black background. The object appears to be made of a shiny, metallic material and has a metallic sheen. It has a curved shape with a pointed top and a flat bottom. The body of the object is covered in a red and white striped pattern, giving it a futuristic and futuristic look. The red stripe is slightly larger than the white stripe, and it is slightly smaller than the black stripe. The overall color scheme of the image is predominantly red, white, and gray."
+      },
+      "ocr": {
+        "<OCR>": "www.paintballoons.com"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              262.9800109863281,
+              542.3999633789062,
+              766.260009765625,
+              1402.5599365234375
+            ]
+          ],
+          "labels": [
+            "statue (sculpture)"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_200.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a digital illustration of a person sitting on a rock. The person is wearing a red and white outfit and appears to be in a relaxed pose. The rock is made up of multiple layers of different shades of grey and red, creating a layered effect. The background is black, making the colors of the rock stand out even more. The image has a 3D effect, giving it a realistic look and feel."
+      },
+      "ocr": {
+        "<OCR>": "www.pixabay.com"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              405.5400085449219,
+              538.5599975585938,
+              794.3400268554688,
+              1408.3199462890625
+            ]
+          ],
+          "labels": [
+            "statue (sculpture)"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_240.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a hand holding a red object. The hand appears to be made up of small, irregularly shaped objects, with the fingers slightly curled and the thumb and index finger pointing upwards. The red object is slightly larger than the white object and is slightly smaller than the other two. The background is black, making the red object stand out. The image has a futuristic and abstract feel to it."
+      },
+      "ocr": {
+        "<OCR>": "www.pixabay.com"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              221.94000244140625,
+              536.6400146484375,
+              969.300048828125,
+              1396.7999267578125
+            ]
+          ],
+          "labels": [
+            "statue (sculpture)"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_280.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a white and red object with a black background. The object appears to be made up of a series of curved lines and shapes, creating a sense of depth and dimension. The lines are arranged in a way that they form a wave-like shape, with the topmost line being the largest and the bottommost being the smallest. The red line is slightly larger than the white line, and it is overlaid on top of the red line. The overall color scheme of the object is predominantly white, with some red accents. The image has a futuristic and abstract feel to it."
+      },
+      "ocr": {
+        "<OCR>": "www.pokemon.com"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              90.18000030517578,
+              536.6400146484375,
+              976.8600463867188,
+              1371.8399658203125
+            ]
+          ],
+          "labels": [
+            "statue (sculpture)"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_320.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a robot-like creature with a black background. The creature appears to be made up of multiple layers of white and grey material, with a red and black color scheme. The body of the creature is elongated and has a robotic-like appearance, with sharp edges and sharp teeth. It has two arms and two legs, and its head is tilted downwards, as if it is in mid-air. The red color is splattered across the creature's body, creating a sense of movement and energy. The overall effect is one of power and power."
+      },
+      "ocr": {
+        "<OCR>": "-"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              148.5,
+              536.6400146484375,
+              866.7000122070312,
+              1348.7999267578125
+            ]
+          ],
+          "labels": [
+            "statue (sculpture)"
+          ]
+        }
+      }
+    }
+  ]
+}
