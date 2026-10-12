@@ -2,3 +2,12 @@
                total        used        free      shared  buff/cache   available
 Mem:            7938         957         403          44        6937        6981
 Swap:           3071           0        3071
+[11:39:25] mesh exit=0
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:09.69
+	Maximum resident set size (kbytes): 4271200
+	File system outputs: 3629688
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
