@@ -130,6 +130,7 @@ if angles == [-999.0]:
     sys.exit(0)
 s = 2.0 / max(car.dimensions)
 car.scale = (s, s, s)
+bpy.context.view_layer.update()
 for ax, (lo, hi) in zip("XYZ", _world_bbox(car)):
     print(f"NORM WORLD {ax}: {lo:.3f} .. {hi:.3f}", flush=True)
 
@@ -177,6 +178,10 @@ scene.render.film_transparent = True
 scene.render.image_settings.file_format = "PNG"
 scene.render.image_settings.color_mode = "RGBA"
 
+bpy.context.view_layer.update()
+_cam_pos = cam.matrix_world.translation
+print("CAM at", tuple(round(v, 2) for v in _cam_pos), "target", tuple(round(v, 2) for v in target.matrix_world.translation), flush=True)
+print("objects in scene:", len(bpy.context.scene.objects), "car visible:", not car.hide_render, flush=True)
 for a in angles:
     car.rotation_euler = (0, 0, math.radians(a))
     scene.render.filepath = os.path.join(out_dir, f"car_{int(round(a)):03d}.png")
