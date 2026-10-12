@@ -10,7 +10,7 @@ on:
     inputs:
       models:
         description: "comma-separated faster-whisper sizes"
-        default: "small,medium"
+        default: ""
         required: false
       n_clips:
         description: "number of FLEURS fa_ir test clips"
@@ -33,12 +33,12 @@ jobs:
       - name: install
         run: |
           python -m pip install --upgrade pip
-          pip install faster-whisper jiwer
+          pip install faster-whisper jiwer sherpa-onnx==1.13.8 numpy huggingface_hub
           nproc; free -g
       - name: run persian asr test
         continue-on-error: true
         env:
-          MODELS: ${{ inputs.models || 'small,medium' }}
+          MODELS: ${{ inputs.models || '' }}
           N_CLIPS: ${{ inputs.n_clips || '12' }}
         run: python edu-agent/telegram-pipeline/asr-test/persian_asr_test.py
       - name: commit results
