@@ -1,131 +1,168 @@
-# یادداشت انتقال به ایجنت اصلی
+# کاتالوگ ریپوها، ابزارها و نتایج برای ایجنت بعدی
 
-تاریخ: 2026-10-12 · شاخه: `arena/758efc2d-repo` · مخزن: `Kimfandogh7/Repo` (الان عمومی است؛ `isPrivate=false` با دسترسی ADMIN)
+تاریخ: 2026-10-12 · شاخه: `arena/758efc2d-repo` · مخزن: `Kimfandogh7/Repo` (عمومی؛ `isPrivate=false`)
 
-این فایل خلاصه‌ی کاری است که در این نشست انجام شد، نتایج اندازه‌گیری‌شده، تجربه‌هایی که باید تکرار نشوند، و کارهای باز. قبل از هر کاری، `git fetch && git merge --ff-only origin/arena/758efc2d-repo` را اجرا کنید. در این نشست، شاخه‌ی محلی یک بار عقب بود.
+این فایل یک کاتالوگ است، نه مجموعه دستور. ایجنت بعدی مغز مستقل دارد و خودش تصمیم می‌گیرد. هر ریپو، مدل، ابزار و نتیجه‌ای که این‌جا آمده، با وضعیت آن (تست شده، فقط بررسی شده، یا استفاده نشده) ثبت شده است.
 
----
-
-## ۱. قوانین کار با کاربر (از گفتگوها)
-
-- همیشه به فارسی جواب بده. جواب کوتاه و مستقیم باشد.
-- سؤال‌ها را ساده و کوتاه با `ask_user` بپرس (حداکثر ۳ تا ۴ گزینه). وقتی کاربر گفت «نمیدونم»، خودت تصمیم بگیر و جلو برو.
-- برای تحقیق: حدود ۳۰ دقیقه جستجوی عمیق، منبع مشخص با لینک، و پرهیز از خلاصه‌ی سطحی. کاربر قبلاً کار سطحی را «کم‌کاری» خوانده است.
-- «نمی‌تونم» جواب نیست. اگر راهی هست، آن را امتحان کن.
-- همه‌چیز را روی remote push کن. sandbox ممکن است ریست شود.
-- کاربر گفته: هیچ API فروشنده‌ای (vendor API) استفاده نشود. فقط مدل‌هایی که در دسترس‌اند.
-- دک (deck) بسته است. کاربر آن را رد کرد و دوباره باز نکن مگر درخواست جدید بدهد.
-- ساختار دیدن ویدیو: ویدیوهای مرجع را واقعاً دانلود و تماشا کن، نه از روی snippet جستجو.
-- کیفیت دک‌ها: کف کیفیت `edu-agent/artifacts/morph/morph.pptx` است (۵ اسلاید، morph chain واقعی، نمودار بومی). هر خروجی جدید نباید از آن ساده‌تر باشد.
-- هر دک قبل از تحویل باید QC خودکار لی‌اوت داشته باشد (`edu-agent/tools/pptx/qa_overlap.py`).
-- ایجنت تصویر نمی‌بیند. رندرها را عددی بررسی کن.
-- هشدار `rebase --ours`: در rebase، `--ours` به upstream اشاره می‌کند، نه به شاخه‌ی خودت.
+قبل از کار، شاخه‌ی محلی را همگام کنید: `git fetch && git merge --ff-only origin/arena/758efc2d-repo`. در این نشست شاخه‌ی محلی یک بار عقب مانده بود.
 
 ---
 
-## ۲. کارهای این نشست
+## ۱. وضعیت مخزن
 
-### الف) تست ASR فارسی (کامل شد)
+- مخزن عمومی است. تغییر visibility در این نشست 403 داد، ولی بعداً معلوم شد قبلاً عمومی شده است.
+- تاریخچه‌ی مخزن فریم‌های ویدیوی تیک‌تاک (`refs/dense/placeplate/`) را دارد. مالک حذف آن‌ها از تاریخچه را رد کرده است.
+- Workflowها در `.github/workflows/`. workflow_dispatch فقط روی شاخه‌ی پیش‌فرض کار می‌کند؛ روی شاخه‌ی کاری از trigger روی push استفاده شده است.
 
-- مجموعه داده: FLEURS fa_ir، ۱۲ کلیپ تست، ۲۰۷ ثانیه صدا. روی runner دو vCPU گیت‌هاب.
-- نتایج (اندازه‌گیری‌شده، در `edu-agent/telegram-pipeline/asr-test/out/summary.md`):
+---
+
+## ۲. ریپوهای اوپن‌سورس و ابزارهای خارجی
+
+### الف) گفتار و ASR فارسی (تست شده)
+
+| ابزار / مدل | منبع | لایسنس | وضعیت در این کار |
+|---|---|---|---|
+| sherpa-onnx | github.com/k2-fsa/sherpa-onnx | Apache-2.0 | **استفاده شد** (نسخه‌ی `1.13.8` روی PyPI). از نسخه‌ی ۱٫۱۳٫۵ مدل‌های Persian NeMo CTC را دارد. |
+| Shenava Koochik v1.0 (sherpa-onnx) | `Reza2kn/Shenava-Koochik-v1.0-sherpa-onnx` | Apache-2.0 | **بهترین نتیجه‌ی تست شده**: WER ۹٫۵۲٪. فایل‌ها: `model.onnx`، `tokens.txt`. |
+| Shenava Koochik v1.5 (RNNT) | `Reza2kn/Shenava-Koochik-v1.5-RNNT-sherpa-onnx` | Apache-2.0 | **تست شد**: WER ۱۰٫۱۲٪. |
+| Shenava Koochik v1.0 ONNX fp16 | `Reza2kn/Shenava-Koochik-v1.0-ONNX-fp16` | Apache-2.0 | فقط بررسی شد. |
+| Nimaone/nemotron-asr-streaming-farsi-onnx | `huggingface.co/Nimaone/nemotron-asr-streaming-farsi-onnx` | مشخص نشد | فقط بررسی شد. مدل ۶۰۰ میلیونی streaming؛ WER ۲۷٫۹ تا ۲۹٫۶٪ روی تست خودش، RTF ۰٫۳۵ تا ۰٫۳۹ روی i7 نسل چهارم. |
+| faster-whisper (SYSTRAN) | github.com/SYSTRAN/faster-whisper | مشخص نشد | **تست شد** (small و medium، int8). |
+| Persian wav2vec2 XLS-R 300M | `alifarrokh/persian-asr` | مشخص نشد | فقط بررسی شد: WER ۲۷٫۹۲٪ (بدون LM). |
+| nvidia/stt_fa_fastconformer_hybrid_large | Hugging Face | مشخص نشد | فقط بررسی شد. |
+| speechbrain/asr-whisper-large-v2-commonvoice-fa | Hugging Face | مشخص نشد | فقط بررسی شد: WER ۳۱٫۷۵٪ روی CommonVoice 10. |
+| persian-speech-toolkit | github.com/Omidbn2000/persian-speech-toolkit | بدون لایسنس (مدل‌ها Apache-2.0) | فقط بررسی شد. Shenava + Silero VAD + TTS فارسی. |
+| anti-vocale (issue #105) | github.com/RisorseArtificiali/anti-vocale/issues/105 | مشخص نشد | فقط بررسی شد: Shenava v1.5 روی ۱۰ کلیپ FLEURS، WER ۱۵٫۹٪ (۱۳٫۳٪ با نرمال‌سازی ZWNJ). |
+| FLEURS fa_ir | `google/fleurs` | CC-BY-4.0 (تأیید نشده) | **استفاده شد**: `data/fa_ir/test.tsv` و `audio/test.tar.gz`. |
+
+### ب) بنچمارک‌ها و مقالات فارسی
+
+- **PSRB** (arxiv 2505.21230): بنچمارک ASR فارسی با ۳٬۳۷۲ کلیپ. بهترین نتیجه از Avanegar (تجاری، CER ۸٫۷۵٪، WER ۱۹٫۳٪). Faster-Whisper بهترین متن‌باز با WER ۳۳٫۹۳٪.
+- **PARSA-Bench** (arxiv 2603.14456): بنچمارک مدل‌های صوتی-زبانی فارسی. Qwen3-Omni-30B بهترین ASR متن‌باز است، ولی بزرگ است. Gemma 3n E2B و E4B در فارسی دچار حلقه‌ی تکرار شدند (حدود ۱۲ تا ۱۳٪ جمله‌ها، که ۸۲ تا ۸۶٪ از میانگین WER را ساختند).
+- **ArmanJR/PESTE-Benchmark** (`asr-models-on-hf.md`): فهرست ۸۲ مدل ASR فارسی روی Hugging Face تا ۱ اوت ۲۰۲۶.
+- **Interspeech 2025 (Hameed et al.)**: ASR برای زبان‌های کم‌منبع خاورمیانه، مقایسه‌ی Whisper و مدل‌های monolingual.
+
+### پ) ویدیو و تصویر (VLM)
+
+| ابزار / مدل | منبع | لایسنس | وضعیت |
+|---|---|---|---|
+| **SmolVLM2-500M-Video-Instruct** | `HuggingFaceTB/SmolVLM2-500M-Video-Instruct` | Apache-2.0 (در کارت مدل تأیید نشد) | **تست شد**. روی ۲ vCPU حدود ۳٫۴ برابر زمان واقعی. |
+| SmolVLM2 (حداکثر ۶۴ فریم) | گفتگوی Hugging Face | - | گفته شد که ویدیو تا ۶۴ فریم نمونه‌برداری می‌شود. |
+| Qwen2.5-Omni-3B GGUF (ggml-org) | `ggml-org/Qwen2.5-Omni-3B-GGUF` | مشخص نشد | فقط بررسی شد. ورودی صوت و تصویر دارد، ویدیو ندارد. در llama.cpp گزارش شده که روی صوت طولانی توهم می‌زند. |
+| Qwen2.5-Omni | github.com/QwenLM/Qwen2.5-Omni | Apache-2.0 (ریپو) | فقط بررسی شد. |
+| llama.cpp-omni | github.com/tc-mb/llama.cpp-omni | MIT | فقط بررسی شد. |
+| Gemma 3n | Google | - | **برای فارسی توصیه نمی‌شود** (بخش ۲ب). |
+
+### ت) ربات، گیت‌وی و تلگرام
+
+| ابزار | منبع | لایسنس | وضعیت |
+|---|---|---|---|
+| python-telegram-bot ۲۱٫۶ | PyPI | - | **استفاده شد** در `edu-agent/telegram-bot/bot.py`. نصب و import تست شد؛ اجرای زنده نشد. |
+| Hermes Agent | github.com/NousResearch/hermes-agent | MIT | بررسی شد. Gateway تلگرام، حافظه، skill، cron. نصب سریع پیشنهادی Nous Portal است. |
+| OpenClaw | docs.openclaw.ai | مشخص نشد (ریپوی هسته تأیید نشد) | بررسی شد. سقف media تلگرام ۵ MB. پیش‌فرض‌ها OpenAI/Gemini. |
+| overpod/openclaw-channel-telegram-userbot | github.com/overpod/openclaw-channel-telegram-userbot | MIT | بررسی شد. کانال MTProto برای OpenClaw. |
+| openclaw/telecrawl | github.com/openclaw/telecrawl | MIT | بررسی شد. خواندن Telegram Desktop tdata. |
+| tdlib/telegram-bot-api (Local Bot API) | github.com/tdlib/telegram-bot-api | BSL-1.0 | بررسی شد. برای فایل‌های بزرگ‌تر از ۲۰ MB، نیاز به api_id و api_hash دارد. پیاده نشد. |
+| GeiserX/Telegram-Archive | github.com/GeiserX/Telegram-Archive | GPL-3.0 | بررسی شد. بک‌آپ اکانت با Telethon. |
+| FALKON-CODE/Telegram-Mirror | github.com/FALKON-CODE/Telegram-Mirror | مشخص نشد | **بررسی شد**. relay کانال عمومی با t.me/s در Actions؛ تقسیم فایل به ۹۵ MB. |
+| ffmpeg | ffmpeg.org | LGPL/GPL | **استفاده شد** برای استخراج صدا، تکه‌کردن و برش ویدیو. |
+
+### ث) استنتاج و معماری (تحقیق)
+
+- **antirez/ds4** (github.com/antirez/ds4): موتور استنتاج DeepSeek. ایده‌های قابل استفاده: کش نتایج روی دیسک با کلید hash محتوا، و overlap کردن I/O و محاسبه. نیاز به Metal، CUDA یا ROCm و ۹۶ تا ۱۲۸ GB RAM دارد، پس مستقیم قابل استفاده نیست.
+- **Anemll/ds4-ssd** (docs/DWARFSTAR4_REFERENCE.md): کش prefix با کلید SHA1 که بین ری‌استارت‌ها بماند.
+- **dwarfstar.sh** (گزارش benchmark): حالت streaming از SSD «ظرفیت با هزینه‌ی سرعت» است.
+
+### ج) ابزارهای داخل همین مخزن
+
+| مسیر | کاربرد | وضعیت |
+|---|---|---|
+| `edu-agent/telegram-pipeline/asr-test/persian_asr_test.py` | تست ASR فارسی برای Whisper و Shenava | استفاده شد |
+| `edu-agent/telegram-pipeline/asr-test/out/summary.md` | جدول نهایی ASR | کامل |
+| `edu-agent/telegram-pipeline/docs/make_gateway_chart.py` | چارت مقایسه‌ی رابط‌ها | کامل |
+| `edu-agent/telegram-bot/bot.py` | ربات تلگرام (Shenava + ffmpeg) | نوشته شد، فعال نیست |
+| `edu-agent/telegram-bot/vlm_describe.py` | توصیف ویدیو با SmolVLM2 (فریم JPEG) | تست شد، وصل نشد |
+| `edu-agent/telegram-bot/README.md` | راه‌اندازی ربات | کامل |
+| `.github/workflows/persian-asr.yml` | workflow تست ASR | استفاده شد |
+| `.github/workflows/telegram-bot.yml` | ربات هر ۶ ساعت (concurrency) | فعال نیست |
+| `.github/workflows/vlm-test.yml` | تست سرعت VLM | استفاده شد |
+| `edu-agent/tools/deck/finale_build.py` | ساخت دک نهایی ۵ اسلایدی | قبلی |
+| `edu-agent/tools/pptx/qa_overlap.py`، `profile.py` | QC لی‌اوت | قبلی |
+| `edu-agent/tools/3d/build_f1_car.py` | ساخت ماشین F1 در Blender | قبلی |
+| `edu-agent/tools/3d/` (TripoSR، `shim/torchmcubes.py`) | مسیر TripoSR | کنار گذاشته شده |
+| `edu-agent/vendor/ppt-master/` | سورس ۱۶:۹ و عمودی Phase 4 و 5 | قبلی |
+| `VISION.md` | مستند خط لوله‌ی دید برای اسلایدها | قبلی |
+| `.github/workflows/deckrender.yml`، `vision.yml`، `f1car.yml` | رندر و توصیف با Florence | قبلی |
+| `edu-agent/artifacts/morph/morph.pptx` | نمونه‌ی کف کیفیت دک (۵ اسلاید) | مرجع |
+
+---
+
+## ۳. نتایج اندازه‌گیری‌شده
+
+### ASR فارسی (FLEURS fa_ir، ۱۲ کلیپ، ۲۰۷ ثانیه، ۲ vCPU)
 
 | مدل | WER | RTF |
 |---|---|---|
 | faster-whisper small (int8) | 56.25٪ | 0.565 |
 | faster-whisper medium (int8) | 31.85٪ | 0.964 |
-| Shenava Koochik v1.0 (CTC، sherpa-onnx) | **9.52٪** | 0.013 تا 0.045 |
+| Shenava Koochik v1.0 (CTC، sherpa-onnx) | 9.52٪ | 0.013 تا 0.045 |
 | Shenava Koochik v1.5 (RNNT، sherpa-onnx) | 10.12٪ | 0.018 |
 
-- نتیجه: Shenava حدود ۳ برابر دقیق‌تر و ۲۰ برابر سریع‌تر از Whisper medium است.
-- محدودیت: ۱۲ کلیپ گفتار خوانده‌شده است، نه صدای ویدیوی واقعی. عدد WER تا وقتی نمونه بزرگ‌تر نشده، قطعی نیست. نرمال‌سازی: حذف اعراب، ZWNJ به فاصله، حذف علامت، یکسان‌سازی ی/ک عربی.
-- مدل‌ها: `Reza2kn/Shenava-Koochik-v1.0-sherpa-onnx` (فایل `model.onnx` و `tokens.txt`) و `Reza2kn/Shenava-Koochik-v1.5-RNNT-sherpa-onnx`. مجوز Apache-2.0.
-- اسکریپت: `edu-agent/telegram-pipeline/asr-test/persian_asr_test.py`. workflow: `.github/workflows/persian-asr.yml`.
+محدودیت‌ها: نمونه کوچک است، گفتار خوانده‌شده است، ITN و اعداد فارسی بررسی نشده، و RTF در یک اجرا با زمان لود مدل قاطی شده است.
 
-### ب) تحقیق درباره‌ی Telegram و معماری (کامل شد، اجرا نشد)
+### VLM (SmolVLM2-500M)
 
-- بررسی `FALKON-CODE/Telegram-Mirror`: یک relay عمومی کانال از طریق t.me/s در Actions است. فقط کانال عمومی می‌بیند و تحلیل ویدیو ندارد. ایده‌ی قابل استفاده: تکه‌کردن فایل‌ها به ۹۵ MB و استفاده از مخزن به عنوان storage.
-- ایده‌های ds4 که به کار می‌آیند: کش نتیجه‌ی تحلیل روی دیسک با کلید hash محتوا، و overlap کردن I/O با محاسبه. ds4 به Metal/CUDA و ۹۶–۱۲۸ GB RAM نیاز دارد، پس مستقیم قابل استفاده نیست.
-- گزارش‌های تحقیق: `edu-agent/research/telegram-agent.md` و `telegram-agent-round2.md`.
+- یک ویدیوی ۳ دقیقه‌ای، ۶۱۲ ثانیه، با ۳ بخش ۶۰ ثانیه‌ای و ۸ فریم هر بخش. روی ۲ vCPU.
+- خروجی روی ویدیوی تست رنگی عمومی بود. روی ویدیوی واقعی سنجیده نشده.
+- تخمین، تأیید نشده: حالت ۴ فریم هر ۵ دقیقه حدود ۲۰ دقیقه پردازش برای هر ساعت ویدیو.
 
-### پ) انتخاب رابط ربات (چارت انجام شد)
+### هزینه‌ی GitHub Actions
 
-- چارت: `edu-agent/telegram-pipeline/docs/gateway_comparison.png` (با اسکریپت `make_gateway_chart.py`).
-- Hermes Agent: MIT، با نصب سریع پیشنهادی Nous Portal. OpenClaw: پیش‌فرض‌ها OpenAI/Gemini، سقف media تلگرام ۵ MB.
-- انتخاب کاربر: **ربات کوچک خودمان**.
+- runnerهای استاندارد در مخزن عمومی رایگان‌اند.
+- در مخزن خصوصی، ۲٬۰۰۰ دقیقه‌ی رایگان در ماه و بعد از آن ۰٫۰۰۶ دلار برای هر دقیقه‌ی Linux 2-core ([منبع](https://cicdcalculator.com/github-actions-free-tier)). اجرای ۲۴ ساعته (حدود ۴۳٬۲۰۰ دقیقه) حدود ۲۴۷ دلار در ماه است.
+- هر job حداکثر ۶ ساعت اجرا می‌شود.
 
-### ت) ربات تلگرام (کد نوشته شد، فعال نیست)
+### Telegram: قوانین
 
-- `edu-agent/telegram-bot/bot.py`: python-telegram-bot ۲۱٫۶، دریافت صوت/ویدیو از Bot API، ffmpeg به WAV mono 16k در تکه‌های ۵ دقیقه‌ای، سپس Shenava، خروجی با زمان‌بندی. فقط کاربران در `TELEGRAM_ALLOWED_USER_IDS`.
-- `.github/workflows/telegram-bot.yml`: هر ۶ ساعت، `timeout -s INT 340m`، `concurrency` با `cancel-in-progress: false`. دلیل: job در Actions حداکثر ۶ ساعت است.
-- `edu-agent/telegram-bot/README.md`: راه‌اندازی.
-- تست زنده نشده (sandbox به Telegram و Hugging Face دسترسی ندارد).
-- **فعال‌سازی:** workflow زمان‌بندی‌شده فقط روی شاخه‌ی پیش‌فرض کار می‌کند. باید merge شود (یا PR باز شود). secrets لازم: `TELEGRAM_BOT_TOKEN` و `TELEGRAM_ALLOWED_USER_IDS`. توکن را هرگز در چت نخواهید.
-- محدودیت Bot API: فایل‌های بالای ~۲۰ MB دانلود نمی‌شوند. Local Bot API (با api_id/api_hash از my.telegram.org، لایسنس BSL-1.0) راه حل است ولی پیاده نشده.
-
-### ث) VLM برای ویدیو (تست انجام شد، وصل نشد)
-
-- مدل: `HuggingFaceTB/SmolVLM2-500M-Video-Instruct` (Apache-2.0). کد: `edu-agent/telegram-bot/vlm_describe.py`.
-- روش: برش ویدیو به بخش‌های ۶۰ ثانیه‌ای، ۸ فریم JPEG از هر بخش، توصیف انگلیسی.
-- نتیجه اندازه‌گیری‌شده: ویدیوی ۳ دقیقه‌ای، ۶۱۲ ثانیه روی ۲ vCPU. یعنی حدود **۳٫۴ برابر زمان واقعی**. برای یک ساعت ویدیو حدود ۳٫۴ ساعت لازم است. یک job شش‌ساعته فقط حدود ۱٫۵ ساعت ویدیو را پوشش می‌دهد.
-- کیفیت توصیف: روی ویدیوی تست رنگی، توصیف عمومی بود. روی ویدیوی واقعی سنجیده نشده.
-- تخمین (تأیید نشده): حالت سبک‌تر (هر ۵ دقیقه، ۴ فریم) حدود ۲۰ دقیقه پردازش برای هر ساعت ویدیو.
-- کاربر حالت «کامل» (هر ۶۰ ثانیه، ۸ فریم) را انتخاب کرد. اما به ربات وصل نشده و نیاز به صف کار پس‌زمینه دارد.
-- workflow تست: `.github/workflows/vlm-test.yml` (trigger روی push به مسیرهای مربوط؛ نتیجه در `edu-agent/telegram-bot/vlm-test/out/`).
-
-### ج) مخزن
-
-- وضعیت مخزن: عمومی است. درخواست تغییر visibility در این نشست 403 داد، ولی بعداً معلوم شد مخزن قبلاً عمومی شده است.
-- فایل‌های تیک‌تاک (فریم‌های placeplate در `refs/dense/placeplate/`) در تاریخچه هستند. کاربر حذف از تاریخچه را رد کرد.
-- هزینه Actions: مخزن عمومی با runnerهای استاندارد رایگان است. در مخزن خصوصی، اجرای ۲۴ ساعته حدود ۲۴۷ دلار در ماه می‌شود (تخمین: ۴۳٬۲۰۰ دقیقه منهای ۲٬۰۰۰ دقیقه‌ی رایگان، با نرخ ۰٫۰۰۶ دلار).
+- [شرایط محتوای و AI تلگرام](https://telegram.org/tos/content-licensing): استفاده از داده‌های پلتفرم برای توسعه، آموزش، بنچمارک یا استقرار مدل‌های AI را منع کرده است. استثنا: داده‌ی لازم برای راه‌اندازی یک ربات یا کلاینت قانونی، یا رضایت صریح همه‌ی کاربران مربوط در همان چت.
+- [شرایط API تلگرام](https://core.telegram.org/api/terms) بند ۱٫۵ همین را تکرار می‌کند.
+- این شرایط در ۳ فوریه‌ی ۲۰۲۶ اضافه شده است ([Open Terms Archive](https://opentermsarchive.org/en/memos/telegram-prohibits-collecting-data-for-ai-use/)).
 
 ---
 
-## ۳. تجربه‌ها و تله‌ها (باید تکرار نشوند)
+## ۴. نکته‌های فنی که در عمل دیده شد
 
-1. **workflow_dispatch فقط روی شاخه‌ی پیش‌فرض کار می‌کند.** روی شاخه‌ی کاری خطای 404 می‌گیرید. برای تست روی شاخه‌ی کاری از trigger روی `push` به مسیر مشخص استفاده کنید.
-2. **لاگ Actions قابل خواندن نبود** (`gh run view --log` و API خالی برمی‌گردند). راه کار: خروجی و خطا را در فایل داخل مخزن بنویسید و commit کنید (`out/results.json`، `out/error.txt`)، سپس فایل را بخوانید.
-3. **datasets-server برای `google/fleurs` fa_ir خطای 500 داد.** به جای آن از `test.tsv` و `audio/test.tar.gz` (با `resolve/main`، به صورت stream) استفاده کنید.
-4. **`wave` استاندارد پایتون WAV با فرمت float32 (tag 3) را نمی‌خواند.** از `soundfile` استفاده کنید.
-5. **در `sherpa-onnx` 1.13.8 تابع `sherpa_onnx.read_wave` وجود ندارد.** همین را با `soundfile` حل کنید.
-6. **sherpa-onnx برای Persian NeMo CTC از نسخه ۱٫۱۳٫۵ به بعد است.** مسیر offline اصلاح شده است. مسیر streaming در issue #4003 / PR #4004 باگ fbank داشت (WER از ~۴۰٪ به ~۱۱٫۶٪). اگر streaming لازم شد، نسخه‌ی اصلاح‌شده را بررسی کنید.
-7. **Gemma 3n برای فارسی بد است.** در PARSA-Bench، حدود ۱۲ تا ۱۳٪ جمله‌ها (E2B و E4B) در حلقه‌ی تکرار گیر کردند، ولی همین جمله‌ها ۸۲ تا ۸۶٪ از میانگین WER را ساختند.
-8. **GitHub Actions حداکثر ۶ ساعت به ازای هر job** اجرا می‌کند. هر سرویس دائمی باید به تکه‌های زمانی تقسیم شود.
-9. **نسخه‌های torch / torchvision باید از یک index باشند.** نصب torch از index CPU و torchvision از PyPI باعث `operator torchvision::nms does not exist` شد. هر دو را با هم از `https://download.pytorch.org/whl/cpu` نصب کنید.
-10. **SmolVLM2 پردازشگر ویدیو به `torchvision.io.read_video` نیاز دارد که در torchvision جدید نیست.** راه کار: فریم‌ها را با ffmpeg به JPEG تبدیل کنید و به‌صورت `{"type":"image","path":...}` بدهید. همچنین پکیج‌های `num2words`، `pillow` و `av` لازم‌اند.
-11. **شاخه‌ی محلی ممکن است عقب باشد.** اول `git fetch` و `git merge --ff-only` انجام دهید.
-12. **`gh repo edit --accept-visibility-change-consequences` در این نسخه‌ی gh وجود ندارد.**
-13. **نتایج Whisper در `results.json` پاک شدند** چون اجرای بعدی فقط Shenava را اجرا کرد. فایل `summary.md` را مبنا قرار دهید.
-14. **عدد RTF در ابتدا با زمان لود مدل قاطی می‌شود.** برای اعداد دقیق، زمان decode را جدا اندازه بگیرید.
+- `workflow_dispatch` روی شاخه‌ی غیرپیش‌فرض خطای 404 می‌دهد.
+- `gh run view --log` و API لاگ Actions برای این مخزن خالی برگشت. نتیجه را در فایل داخل مخزن نوشتیم و commit کردیم.
+- datasets-server برای `google/fleurs` fa_ir خطای 500 داد. فایل‌های خام از `resolve/main` کار کردند.
+- `wave` استاندارد پایتون WAV با فرمت float32 (tag 3) را نمی‌خواند؛ `soundfile` کار کرد.
+- در `sherpa-onnx` 1.13.8 تابع `sherpa_onnx.read_wave` وجود ندارد.
+- streaming در sherpa-onnx برای مدل‌های NeMo CTC باگ fbank داشت (issue #4003 و PR #4004: WER از ~۴۰٪ به ~۱۱٫۶٪). مسیر offline درست بود.
+- torch از index CPU و torchvision از PyPI ناسازگار بودند و `operator torchvision::nms does not exist` داد. هر دو را از یک index نصب کنید.
+- SmolVLM2 processor ویدیو به `torchvision.io.read_video` نیاز دارد که در torchvision جدید نیست. فریم JPEG از ffmpeg کار کرد. همچنین `num2words`، `pillow` و `av` لازم بود.
+- `gh repo edit --accept-visibility-change-consequences` در این نسخه‌ی gh وجود ندارد.
+- شاخه‌ی محلی ممکن است عقب باشد؛ قبل از کار fetch کنید.
+- اجرای `results.json` بعدی Whisper را پاک کرد. نتایج کامل در `out/summary.md` است.
 
 ---
 
-## ۴. کارهای باز (به ترتیب پیشنهادی)
+## ۵. وضعیت باز
 
-1. **تصمیم VLM:** حالت «کامل» را پیاده کنید و محدودیت ۱٫۵ ساعت در هر job را گزارش دهید، یا حالت سبک را تست کنید. با ویدیوی واقعی کیفیت توصیف را بسنجید.
-2. **اتصال VLM به ربات:** صف کار پس‌زمینه (چون پردازش ساعت‌ها طول می‌کشد). یک job جدا برای ویدیوهای طولانی‌تر از ۶۰ دقیقه‌ای.
-3. **فعال‌سازی ربات:** merge یا PR، سپس تنظیم secrets توسط کاربر، و تست زنده با یک فایل کوتاه.
-4. **مسیر تحلیل کانال‌های عمومی:** **ساخته نشده.** شرایط محتوای تلگرام (Feb 2026) استفاده از داده‌های پلتفرم برای AI را منع کرده است. کاربر با آگاهی از این موضوع گفت «تحلیل کانال‌ها هم»، ولی هنوز تأیید مجدد و جداگانه لازم است. ماژول MTProto جدا خواهد بود. کاری برای دور زدن تشخیص تلگرام نکن.
-5. **Local Bot API** برای فایل‌های بزرگ‌تر از ۲۰ MB (اختیاری).
-6. **ارزیابی ASR** روی نمونه‌ی بزرگ‌تر و صدای ویدیوی واقعی؛ بررسی اعداد فارسی و ITN.
-7. **دک‌ها و کار سه‌بعدی قبلی** (`edu-agent/artifacts/finale/`، `edu-agent/artifacts/morph/`، `edu-agent/tools/3d/build_f1_car.py`): کار بسته است. فقط با درخواست جدید کاربر ادامه دهید.
+- **ربات تلگرام:** کد هست ولی فعال نیست. فعال‌سازی نیاز به merge روی شاخه‌ی پیش‌فرض، secrets (`TELEGRAM_BOT_TOKEN`، `TELEGRAM_ALLOWED_USER_IDS`) و تست زنده دارد. محدودیت ۲۰ MB Bot API باقی است.
+- **VLM:** حالت «کامل» (هر ۶۰ ثانیه، ۸ فریم) انتخاب مالک بود، ولی با سرعت ۳٫۴ برابر زمان واقعی، هر job شش‌ساعته فقط حدود ۱٫۵ ساعت ویدیو را پوشش می‌دهد. وصل به ربات و صف پس‌زمینه انجام نشده.
+- **تحلیل کانال‌های عمومی:** مالک این مسیر را انتخاب کرد، با اطلاع از شرایط بالا. ماژولی برای آن ساخته نشده است. اگر ادامه داده شود، باید MTProto جدا باشد و تنظیم مجدد قانونی جداگانه با مالک لازم است.
+- **Local Bot API:** برای فایل‌های بزرگ‌تر از ۲۰ MB، پیاده نشده.
+- **ارزیابی ASR:** روی نمونه‌ی بزرگ‌تر و صدای ویدیوی واقعی انجام نشده. ITN و اعداد فارسی هم سنجیده نشده‌اند.
+- **دک‌ها و کار سه‌بعدی قبلی:** مالک آن‌ها را بسته اعلام کرده است.
 
 ---
 
-## ۵. فهرست فایل‌های این نشست
+## ۶. زمینه‌ی مالک
 
-| مسیر | کاربرد |
-|---|---|
-| `edu-agent/telegram-pipeline/asr-test/persian_asr_test.py` | تست ASR فارسی (Whisper و Shenava) |
-| `edu-agent/telegram-pipeline/asr-test/out/summary.md` | جدول نهایی نتایج ASR |
-| `.github/workflows/persian-asr.yml` | workflow تست ASR |
-| `edu-agent/telegram-pipeline/docs/gateway_comparison.png` | چارت مقایسه‌ی رابط‌ها |
-| `edu-agent/telegram-bot/bot.py` | ربات تلگرام (فعال نیست) |
-| `edu-agent/telegram-bot/README.md` | راه‌اندازی ربات |
-| `edu-agent/telegram-bot/requirements.txt` | وابستگی‌های ربات |
-| `.github/workflows/telegram-bot.yml` | اجرای ربات هر ۶ ساعت |
-| `edu-agent/telegram-bot/vlm_describe.py` | توصیف ویدیو با SmolVLM2 |
-| `.github/workflows/vlm-test.yml` | تست سرعت VLM |
-| `edu-agent/telegram-bot/vlm-test/out/result.txt` | خروجی تست VLM |
-| `edu-agent/research/telegram-agent*.md` | گزارش‌های تحقیق |
-| `edu-agent/HANDOFF.md` | همین فایل |
+- زبان کار: فارسی.
+- مالک ترجیح می‌دهد پرسش‌ها کوتاه و ساده، با گزینه‌های مشخص، پرسیده شوند.
+- برای تحقیق، جستجوی عمیق (حدود ۳۰ دقیقه) و منبع مشخص مورد انتظار است.
+- مالک API فروشنده‌ها (vendor API) را نمی‌خواهد؛ مدل‌ها و ابزارهای باز ترجیح داده می‌شوند.
+- ویدیوهای مرجع (placeplate و yerra) را مالک خودش دیده و سبک را از روی ویدیو گرفته است، نه از snippet.
+- نتیجه‌ها باید در مخزن و روی remote باشند، چون sandbox ممکن است ریست شود.
+- مالک نمی‌خواهد قوانین به شکل دستور به ایجنت داده شوند؛ این فایل فقط اطلاعات است.
