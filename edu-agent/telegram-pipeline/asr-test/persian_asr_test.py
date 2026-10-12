@@ -114,9 +114,11 @@ def run_shenava(clips):
         refs, hyps, audio_secs = [], [], 0.0
         t0 = time.time()
         for path, ref in clips:
-            samples, sr = sherpa_onnx.read_wave(path)  # handles float32/int16 WAV
+            import soundfile as sf
+            samples, sr = sf.read(path, dtype="float32", always_2d=False)
+            if samples.ndim > 1:
+                samples = samples.mean(axis=1)
             audio_secs += len(samples) / sr
-            samples = np.asarray(samples, dtype=np.float32)
             st = rec.create_stream()
             st.accept_waveform(sr, samples)
             rec.decode_stream(st)
