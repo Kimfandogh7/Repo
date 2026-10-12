@@ -36,7 +36,7 @@ def main():
     model.to(device)
 
     # Background removal exactly as TripoSR's own run.py does it.
-    session = rembg.new_session()
+    session = rembg.new_session("u2net")  # default is bria-rmbg (1 GB) and OOMs the runner
     img = Image.open(src).convert("RGB")
     img = remove_background(img, session)
     img = resize_foreground(img, 0.85)
