@@ -37,8 +37,8 @@ jobs:
           nproc; free -g
       - name: run persian asr test
         env:
-          MODELS: ${{ inputs.models }}
-          N_CLIPS: ${{ inputs.n_clips }}
+          MODELS: ${{ inputs.models || 'small,medium' }}
+          N_CLIPS: ${{ inputs.n_clips || '12' }}
         run: python edu-agent/telegram-pipeline/asr-test/persian_asr_test.py
       - name: commit results
         run: |
