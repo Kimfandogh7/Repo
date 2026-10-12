@@ -62,41 +62,41 @@
     {
       "frame": "s-2.png",
       "caption": {
-        "<MORE_DETAILED_CAPTION>": "The image is a screenshot of a mobile game interface with a red and white color scheme. The background is white and the text is in black. At the top of the screen, there is a red banner with the text \"The Season Fifteen wins. Eighteen races.\" Below the banner, there are three options - Ferrari, Bar Honda, Renault, Williams, and Williams. \n\nThe first option is \"15 of 18 - no other constructor won more than a single race.\" The second option is labeled \"Bar Honda\" and has a list of options below it. The third option is titled \"Renault\" and is labeled as \"Williams\". The fourth option is labelled as \"Willows\".\n\nAt the bottom right corner of the image, there appears to be an illustration of a red race car. The car is shown in a realistic style with detailed features and curves."
+        "<MORE_DETAILED_CAPTION>": "The image is an infographic that shows the season of fifteen wins. It has a white background with black text and a red line graph in the center. The graph is divided into three sections.\n\nThe first section is titled \"The Season Fifteen wins. Eighteen races.\" It shows that the number of wins in each race is 15 years old. The second section is labeled \"Ferrari\", the third section is numbered \"Bar Honda\", and the fourth section is labelled \"Renault\".\n\nAt the bottom of the graph, there is an illustration of a red race car with the text \"15 of 18 - no other constructor won more than a single race.\" The car is shown in a realistic style with a sleek design and a pointed nose. The text is written in a bold, sans-serif font and is centered on the graph."
       },
       "ocr": {
-        "<OCR>": "THE SEASONFifteen wins.Eighteen races.Ferrari15BAR Honda1Renault1Williams115 of 18 – no other constructorwon more than a single race."
+        "<OCR>": "THE SEASONFifteen wins.Eighteen races.WinsFerrari15BAR Honda1Renault1Williams115 of 18 – no other constructorwon more than a single race."
       },
       "objects": {
         "<OD>": {
           "bboxes": [
             [
-              237.9375,
-              1045.800048828125,
-              462.0375061035156,
-              1126.2000732421875
+              200.1374969482422,
+              1057.800048828125,
+              510.63751220703125,
+              1167.0
             ],
             [
-              322.9875183105469,
-              1078.2000732421875,
-              366.8625183105469,
-              1125.0
+              317.5874938964844,
+              1102.2000732421875,
+              379.01251220703125,
+              1165.800048828125
             ],
             [
-              416.8125,
-              1071.0,
-              459.3374938964844,
-              1115.4000244140625
+              447.8625183105469,
+              1091.4000244140625,
+              507.9375,
+              1151.4000244140625
             ],
             [
-              239.28750610351562,
-              1060.2000732421875,
-              277.0874938964844,
-              1098.60009765625
+              202.16250610351562,
+              1077.0,
+              254.1374969482422,
+              1128.60009765625
             ]
           ],
           "labels": [
-            "land vehicle",
+            "car",
             "wheel",
             "wheel",
             "wheel"
@@ -159,7 +159,7 @@
     {
       "frame": "s-4.png",
       "caption": {
-        "<MORE_DETAILED_CAPTION>": "The image is an infographic that shows three figures by the numbers. The first figure is 865 horsepower from 3.0 litre, no turbo, and the second figure is 600 kilograms fully fueled, driver aboard. The third figure is 0.9 tonnes of downforce, which is more than the car weighs. The infographic has a white background and black text. At the bottom of the infographic, there is an illustration of a red car with a black outline."
+        "<MORE_DETAILED_CAPTION>": "The image is an infographic that shows three figures by the numbers. The first figure is 865 horsepower from 3.0 litre, no turbo, and the second figure is 600 kilograms fully fueled, driver aboard. The third figure is 0.9 tonnes of downforce, which is more than the car weighs. The background of the infographic is white and there is a black circle in the bottom right corner."
       },
       "ocr": {
         "<OCR>": "BY THE NUMBERSThree figures.865horsepowerfrom 3.0 litres, no turbo600kilogramsfully fueled, driver aboard0.9tonnes of downforcemore than the car weighs"
@@ -168,32 +168,46 @@
         "<OD>": {
           "bboxes": [
             [
-              260.2124938964844,
-              1025.4000244140625,
-              420.1875,
-              1123.800048828125
+              232.53750610351562,
+              1031.4000244140625,
+              453.26251220703125,
+              1165.800048828125
             ],
             [
-              390.4875183105469,
-              1071.0,
-              418.8374938964844,
-              1105.800048828125
+              410.0625,
+              1092.60009765625,
+              452.5874938964844,
+              1159.800048828125
             ],
             [
-              261.5625,
-              1050.60009765625,
-              286.5375061035156,
-              1089.0
+              262.9125061035156,
+              1097.4000244140625,
+              299.3625183105469,
+              1162.2000732421875
             ],
             [
-              354.7124938964844,
-              1048.2000732421875,
-              381.0375061035156,
-              1074.60009765625
+              410.7375183105469,
+              1092.60009765625,
+              450.5625,
+              1140.60009765625
+            ],
+            [
+              234.5625,
+              1065.0,
+              268.3125,
+              1116.60009765625
+            ],
+            [
+              362.13751220703125,
+              1062.60009765625,
+              398.5874938964844,
+              1097.4000244140625
             ]
           ],
           "labels": [
             "land vehicle",
+            "wheel",
+            "wheel",
             "wheel",
             "wheel",
             "wheel"
