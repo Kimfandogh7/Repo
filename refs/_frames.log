@@ -1,0 +1,49 @@
+placeplate rc= 0
+placeplate frames: 74
+placeplate probe: {
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "r_frame_rate": "0/0",
+            "nb_frames": "322"
+        },
+        {
+            "width": 576,
+            "height": 1024,
+            "r_frame_rate": "30/1",
+            "nb_frames": "444"
+        }
+    ],
+    "format": {
+        "duration": "14.800000",
+        "size": "848119"
+    }
+}
+
+yerra rc= 0
+yerra frames: 110
+yerra probe: {
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "r_frame_rate": "0/0",
+            "nb_frames": "477"
+        },
+        {
+            "width": 576,
+            "height": 1024,
+            "r_frame_rate": "2997/100",
+            "nb_frames": "658"
+        }
+    ],
+    "format": {
+        "duration": "21.963991",
+        "size": "986270"
+    }
+}
+
+exit=0
