@@ -8,6 +8,17 @@ LOG="$OUT/pipeline.log"
 say() { echo "[$(date -u +%H:%M:%S)] $*" | tee -a "$LOG"; }
 
 if [ "$MODE" = "mesh" ]; then
+  mkdir -p "$ROOT/edu-agent/artifacts/finale/3d"
+  git -C "$ROOT" config user.name "arena-agent"; git -C "$ROOT" config user.email "agent@arena.ai"
+  ( while true; do
+      { date -u; free -m; ps -o rss=,etime=,cmd= -C python3 | head -2; tail -2 "$OUT/mesh.log" 2>/dev/null; } >> "$OUT/monitor.log"
+      cp "$OUT/monitor.log" "$OUT/mesh.log" "$OUT/pipeline.log" "$ROOT/edu-agent/artifacts/finale/3d/" 2>/dev/null
+      git -C "$ROOT" add -f edu-agent/artifacts/finale/3d >/dev/null 2>&1
+      git -C "$ROOT" commit -qm "3d: پایش حافظه" >/dev/null 2>&1
+      git -C "$ROOT" push -q origin HEAD:arena/758efc2d-repo >/dev/null 2>&1
+      sleep 40
+    done ) &
+  MON=$!
   say "memory before mesh:"; free -m | tee -a "$LOG"
   export PYTHONPATH="$ROOT/edu-agent/tools/3d/shim"
   export TRIPOSR_DIR=/tmp/triposr
@@ -15,6 +26,7 @@ if [ "$MODE" = "mesh" ]; then
     "$ROOT/edu-agent/artifacts/finale/car_studio.png" "$OUT/mesh" "${RES:-192}" > "$OUT/mesh.log" 2>&1
   say "mesh exit=$?"; grep -E 'Maximum resident|Elapsed' "$OUT/mesh.log" | tee -a "$LOG"
   tail -6 "$OUT/mesh.log" | tee -a "$LOG"
+  kill $MON 2>/dev/null
 fi
 
 if [ "$MODE" = "render" ]; then
