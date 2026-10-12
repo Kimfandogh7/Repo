@@ -65,10 +65,46 @@
 - **antirez/ds4:** ایده‌های قابل استفاده: کش نتایج با کلید hash محتوا، و overlap کردن I/O و محاسبه. به Metal یا CUDA و ۹۶ تا ۱۲۸ GB RAM نیاز دارد، پس مستقیم قابل استفاده نیست.
 - **Anemll/ds4-ssd:** کش prefix با کلید SHA1 که بین ری‌استارت‌ها بماند.
 
+### ساخت پاورپوینت و دک (native)
+
+| ابزار | منبع | لایسنس | وضعیت |
+|---|---|---|---|
+| ppt-master | github.com/hugohe3/ppt-master | MIT | **استفاده شد**. اسلایدهای SVG به pptx بومی با انتقال و انیمیشن تبدیل می‌شوند. نصب با `edu-agent/tools/pptx/setup.sh` (کلون در `edu-agent/vendor/`، که در این checkout نیست). دستورکار در `tools/pptx/RECIPE.md` |
+| python-pptx | github.com/scanny/python-pptx | MIT | **استفاده شد**. ساخت نمودار بومی و بازنویسی روابط تصویر در `tools/deck/finale_build.py` |
+| morph (انتقال Morph پاورپوینت) | - | - | **استفاده شد**. ۵ اسلاید با زنجیره‌ی morph در `artifacts/morph/morph.pptx` (معیار کیفیت) |
+| LibreOffice Impress + poppler | - | MPL-2.0 (LibreOffice) | **استفاده شد**. رندر pptx به PNG در `.github/workflows/deckrender.yml` |
+| `tools/pptx/qa_overlap.py` | در repo | - | **استفاده شد**. QC همپوشانی و لی‌اوت |
+| `tools/pptx/profile.py` | در repo | - | **استفاده شد**. پروفایل رنگ و تصویر اسلاید |
+| matplotlib | - | PSF | **استفاده شد**. نمودار مقایسه‌ی گیت‌وی (`telegram-pipeline/docs/make_gateway_chart.py`) |
+
+### سه‌بعدی و تصویر
+
+| ابزار / مدل | منبع | لایسنس | وضعیت |
+|---|---|---|---|
+| Blender (bpy) | apt `blender` | GPL | **استفاده شد**. ساخت ماشین F1 رویه‌ای در `tools/3d/build_f1_car.py` و turntable در `render_turntable.py` (workflow: `f1car.yml`) |
+| TripoSR | github.com/VAST-AI-Research/TripoSR | MIT | **آزمایش شد** با `tools/3d/mesh_from_image.py` و `run_pipeline.sh` (workflow: `render3d.yml`). مسیر کنار گذاشته شد |
+| rembg | github.com/danielgatis/rembg | MIT | **استفاده شد** برای حذف پس‌زمینه‌ی تصویر پیش از TripoSR |
+| shim torchmcubes | در repo | - | **استفاده شد** (`tools/3d/shim/torchmcubes.py`) |
+| Florence-2-base | huggingface.co/microsoft/Florence-2-base | بررسی نشد | **استفاده شد** برای توصیف تصویر در `.github/workflows/vision.yml` (خروجی: `refs/deck_desc.json`) |
+
+### ویدیو، مرورگر و صدای کمکی
+
+| ابزار | منبع | لایسنس | وضعیت |
+|---|---|---|---|
+| Playwright (1.48.0) + Chromium | github.com/microsoft/playwright | Apache-2.0 | **استفاده شد**. رندر کتاب و دک در `persianbook.yml`، `netbrowse.yml`، `netexport.yml` |
+| Edge TTS (edge-tts) | github.com/rany2/edge-tts | بررسی نشد | **استفاده شد**. روایت فارسی در `tools/tts.py` و `persianbook.yml` (با `uv run --with edge-tts`) |
+| uv | github.com/astral-sh/uv | MIT/Apache-2.0 | **استفاده شد** برای اجرای اسکریپت‌ها بدون نصب دائمی |
+| tesseract-ocr | github.com/tesseract-ocr/tesseract | Apache-2.0 | **استفاده شد** برای OCR فریم‌های ویدیو در `fetch-refs.yml` |
+| tikwm API | tikwm.com | مشخص نشد | **استفاده شد** برای دانلود ویدیوی تیک‌تاک در `fetch-refs.yml` (ویدیوهای placeplate و yerra) |
+| showtime | در repo (vendor، gitignored) | مشخص نشد | **استفاده شد** برای رندر ویدیوی آموزشی در `showtime.yml` |
+
 ### ابزارهای پایه
 
-- **ffmpeg:** استخراج صدا، تکه‌کردن و برش ویدیو. **استفاده شد.**
-- **Google Drive API:** دانلود جزئی با هدر `Range` ممکن است.
+- **git و gh:** commit، push، workflow و issue روی GitHub. **استفاده شد.**
+- **GitHub Actions:** اجرای Blender، TripoSR، Florence، VLM، ASR و رندرها روی runnerهای اوبونتو. **استفاده شد.** کارهای سنگین‌تر از ۶ ساعت ممکن نیست.
+- **ffmpeg:** استخراج صدا، استخراج فریم، تکه‌کردن و برش ویدیو. **استفاده شد.**
+- **Pillow، numpy، soundfile، jiwer:** پردازش تصویر و صوت و محاسبه‌ی WER. **استفاده شد.**
+- **Google Drive:** آپلود فایل در My Drive ریشه. **استفاده شد.** دانلود جزئی با هدر `Range` ممکن است.
 
 ---
 
