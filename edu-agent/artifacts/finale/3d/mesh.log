@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/runner/work/Repo/Repo/edu-agent/tools/3d/mesh_from_image.py", line 19, in <module>
+    from tsr.system import TSR  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/triposr/tsr/system.py", line 16, in <module>
+    from .models.isosurface import MarchingCubeHelper
+  File "/tmp/triposr/tsr/models/isosurface.py", line 6, in <module>
+    from torchmcubes import marching_cubes
+ModuleNotFoundError: No module named 'torchmcubes'
