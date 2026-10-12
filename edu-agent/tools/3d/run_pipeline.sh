@@ -38,7 +38,7 @@ if [ "$MODE" = "render" ]; then
   if [ ! -f "$OUT/mesh/object.ply" ]; then say "no mesh, skipping render"; exit 0; fi
   ANGLES="0,40,80,120,160,200,240,280,320"
   blender -b -P "$ROOT/edu-agent/tools/3d/render_turntable.py" -- \
-    "$OUT/mesh/object.ply" "$OUT/frames" "$ANGLES" 1080 1920 48 > "$OUT/render.log" 2>&1
+    "$OUT/mesh/object.ply" "$OUT/frames" "$ANGLES" 1080 1920 96 > "$OUT/render.log" 2>&1
   say "render exit=$?"; grep -c '^rendered' "$OUT/render.log" | tee -a "$LOG"
 fi
 exit 0
