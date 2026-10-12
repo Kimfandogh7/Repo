@@ -32,6 +32,16 @@ dims = max(obj.dimensions)
 s = 2.0 / dims
 obj.scale = (s, s, s)  # rotate about the bounds centre; no transform_apply (multi-user data)
 
+# TripoSR meshes are longest along Y; the camera looks along Y, so the car would be
+# seen nose-on. Base rotation 90 deg puts the length across the frame.
+BASE_ROT = 90.0
+
+# Smooth shading + a Smooth modifier to remove the faceted "crystal" look of raw marching cubes.
+bpy.ops.object.shade_smooth()
+mod = obj.modifiers.new("smooth", "SMOOTH")
+mod.factor = 0.6
+mod.iterations = 12
+
 # Material: use vertex colours if the mesh has them, else a clean red.
 mat = bpy.data.materials.new("car")
 mat.use_nodes = True
@@ -94,7 +104,7 @@ scene.render.image_settings.file_format = "PNG"
 scene.render.image_settings.color_mode = "RGBA"
 
 for a in angles:
-    obj.rotation_euler = (0, 0, math.radians(a))
+    obj.rotation_euler = (0, 0, math.radians(BASE_ROT + a))
     scene.render.filepath = os.path.join(out_dir, f"car_{int(round(a)):03d}.png")
     bpy.ops.render.render(write_still=True)
     print("rendered", scene.render.filepath, flush=True)
