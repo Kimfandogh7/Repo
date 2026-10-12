@@ -1,11 +1,11 @@
 Warning: failed to launch javaldx - java may not function correctly
 convert /home/runner/work/Repo/Repo/edu-agent/artifacts/finale/finale.pptx as a Impress document -> /home/runner/work/Repo/Repo/out_deck/finale.pdf using filter : impress_pdf_Export
 soffice exit=0
-total 480
-drwxr-xr-x  2 runner runner   4096 Oct 12 13:24 .
-drwxr-xr-x 11 runner runner   4096 Oct 12 13:24 ..
--rw-r--r--  1 runner runner 475380 Oct 12 13:24 finale.pdf
--rw-r--r--  1 runner runner    265 Oct 12 13:24 lo.log
+total 476
+drwxr-xr-x  2 runner runner   4096 Oct 12 13:28 .
+drwxr-xr-x 11 runner runner   4096 Oct 12 13:28 ..
+-rw-r--r--  1 runner runner 475028 Oct 12 13:28 finale.pdf
+-rw-r--r--  1 runner runner    265 Oct 12 13:28 lo.log
 finale.pdf
 lo.log
 s-1.png
