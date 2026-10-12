@@ -1,0 +1,75 @@
+name: render3d
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ arena/758efc2d-repo ]
+    paths:
+      - '.github/workflows/render3d.yml'
+      - 'refs/_trigger3d.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/758efc2d-repo
+
+      - name: Install Blender
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq blender
+          blender --version | head -2
+
+      - name: Install Python deps (CPU torch in one command)
+        run: |
+          python3 -m pip install --quiet --break-system-packages \
+            torch torchvision --index-url https://download.pytorch.org/whl/cpu
+          python3 -m pip install --quiet --break-system-packages \
+            "transformers==4.49.0" einops omegaconf trimesh pymcubes xatlas \
+            huggingface_hub rembg onnxruntime imageio pillow numpy scikit-image tqdm
+
+      - name: Get TripoSR code
+        run: git clone --depth 1 https://github.com/VAST-AI-Research/TripoSR.git /tmp/triposr
+
+      - name: Image -> mesh
+        env:
+          TRIPOSR_DIR: /tmp/triposr
+        run: |
+          mkdir -p out3d
+          python3 edu-agent/tools/3d/mesh_from_image.py \
+            edu-agent/artifacts/finale/car_studio.png out3d/mesh 256 \
+            > out3d/mesh.log 2>&1 || (tail -80 out3d/mesh.log; exit 1)
+          tail -5 out3d/mesh.log
+
+      - name: Render turntable frames
+        run: |
+          ANGLES="0,40,80,120,160,200,240,280,320"
+          blender -b -P edu-agent/tools/3d/render_turntable.py -- \
+            out3d/mesh/object.ply out3d/frames "$ANGLES" 1080 1920 48 \
+            > out3d/render.log 2>&1 || (tail -80 out3d/render.log; exit 1)
+          grep -E 'rendered|Error' out3d/render.log | tail -12
+
+      - name: Collect outputs
+        run: |
+          mkdir -p edu-agent/artifacts/finale/3d refs/finale
+          cp out3d/frames/*.png edu-agent/artifacts/finale/3d/
+          cp out3d/frames/*.png refs/finale/
+          cp out3d/mesh/object.ply edu-agent/artifacts/finale/3d/object.ply
+          cp out3d/mesh/input_rgb.png edu-agent/artifacts/finale/3d/input_rgb.png
+          cp out3d/mesh.log out3d/render.log edu-agent/artifacts/finale/3d/ || true
+          ls -la edu-agent/artifacts/finale/3d
+
+      - name: Commit outputs
+        if: always()
+        run: |
+          git config user.name "arena-agent"
+          git config user.email "agent@arena.ai"
+          git add -f edu-agent/artifacts/finale refs/finale || true
+          git commit -m "3d: مش سه‌بعدی از تصویر + رندر زاویه‌ها" || echo "nothing to commit"
+          git push origin arena/758efc2d-repo || true
