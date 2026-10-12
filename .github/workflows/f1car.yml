@@ -1,0 +1,47 @@
+name: f1car
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ arena/758efc2d-repo ]
+    paths:
+      - '.github/workflows/f1car.yml'
+      - 'refs/_trigger_f1.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/758efc2d-repo
+
+      - name: Install Blender
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq blender
+          blender --version | head -1
+
+      - name: Build F1 car and render turntable
+        run: |
+          mkdir -p out_f1
+          blender -b -P edu-agent/tools/3d/build_f1_car.py -- out_f1 "0,40,80,120,160,200,240,280,320" 1080 1920 96 > out_f1/build.log 2>&1
+          echo "exit=$?" >> out_f1/build.log
+          grep -E '^rendered|Error|Traceback|exit=' out_f1/build.log | tail -12
+
+      - name: Collect and commit
+        if: always()
+        run: |
+          mkdir -p edu-agent/artifacts/finale/f1 refs/finale_f1
+          cp out_f1/*.png edu-agent/artifacts/finale/f1/ 2>/dev/null || true
+          cp out_f1/*.png refs/finale_f1/ 2>/dev/null || true
+          cp out_f1/build.log edu-agent/artifacts/finale/f1/ 2>/dev/null || true
+          git config user.name "arena-agent"; git config user.email "agent@arena.ai"
+          git add -f edu-agent/artifacts/finale/f1 refs/finale_f1 || true
+          git commit -m "f1: ماشین ساخته‌شده با پریمیتیو + رندر" || echo "nothing to commit"
+          git pull -q --rebase origin arena/758efc2d-repo || true
+          git push origin arena/758efc2d-repo || true

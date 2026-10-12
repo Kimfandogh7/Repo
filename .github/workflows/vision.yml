@@ -60,7 +60,7 @@ jobs:
               return proc.post_process_generation(txt, task=prompt,
                                                   image_size=(img.width, img.height))
           result = {}
-          for vid in ["finale"]:
+          for vid in ["finale_f1"]:
               d = f"refs/{vid}"
               if not os.path.isdir(d):
                   print("missing", d, flush=True); continue
