@@ -1,4 +1,4 @@
-=== شروع Mon Oct 12 08:37:02 UTC 2026 ===
+=== شروع Mon Oct 12 09:07:45 UTC 2026 ===
 --- نصب torch+torchvision ---
 Looking in indexes: https://download.pytorch.org/whl/cpu
 Collecting torch
@@ -27,20 +27,20 @@ Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch)
 Collecting MarkupSafe>=2.0 (from jinja2->torch)
   Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
 Downloading torch-2.14.1%2Bcpu-cp311-cp311-manylinux_2_28_x86_64.whl (196.2 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 196.2/196.2 MB 72.6 MB/s  0:00:02
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 196.2/196.2 MB 42.9 MB/s  0:00:04
 Downloading torchvision-0.29.1%2Bcpu-cp311-cp311-manylinux_2_28_x86_64.whl (1.7 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 158.5 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 91.0 MB/s  0:00:00
 Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 196.5 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 59.1 MB/s  0:00:00
 Downloading fsspec-2026.7.0-py3-none-any.whl (206 kB)
 Downloading networkx-3.6.1-py3-none-any.whl (2.1 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 317.4 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 15.4 MB/s  0:00:00
 Downloading pillow-12.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 342.7 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 82.3 MB/s  0:00:00
 Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 368.3 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 25.3 MB/s  0:00:00
 Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 109.6 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 44.8 MB/s  0:00:00
 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
 Downloading filelock-3.32.3-py3-none-any.whl (98 kB)
 Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
@@ -96,21 +96,21 @@ Requirement already satisfied: jinja2 in /opt/hostedtoolcache/Python/3.11.17/x64
 Requirement already satisfied: mpmath<1.4,>=1.1.0 in /opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages (from sympy>=1.13.3->torch->timm) (1.3.0)
 Requirement already satisfied: MarkupSafe>=2.0 in /opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages (from jinja2->torch->timm) (3.0.3)
 Downloading transformers-4.49.0-py3-none-any.whl (10.0 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.0/10.0 MB 41.0 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.0/10.0 MB 23.4 MB/s  0:00:00
 Downloading huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 63.2 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 34.0 MB/s  0:00:00
 Downloading hf_xet-1.7.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.2 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 107.9 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 22.8 MB/s  0:00:00
 Downloading tokenizers-0.21.4-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.1 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 131.9 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 48.0 MB/s  0:00:00
 Downloading einops-0.8.2-py3-none-any.whl (65 kB)
 Downloading timm-1.0.30-py3-none-any.whl (2.7 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.7/2.7 MB 149.7 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.7/2.7 MB 54.2 MB/s  0:00:00
 Downloading packaging-26.3-py3-none-any.whl (129 kB)
 Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 170.9 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 3.8 MB/s  0:00:00
 Downloading regex-2026.9.29-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (804 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 805.0/805.0 kB 144.7 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 805.0/805.0 kB 49.3 MB/s  0:00:00
 Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
 Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
 Downloading requests-2.34.2-py3-none-any.whl (73 kB)
@@ -239,3 +239,89 @@ f-024.png: The image shows a laptop screen with a red powerpoint presentation sl
 f-025.png: The image is a close-up of a laptop screen with the word "Ferrari" written in bold red letters at the top. Below the word, there is a picture of a red Ferrari F
 f-026.png: The image is a close-up of a laptop screen with a red Ferrari logo on it. The logo is a red car with the word "Ferrari" written in white letters above it. Below
 f-027.png: The image is a screenshot of a PowerPoint presentation on a laptop screen. The background of the screen is red and white with the word "Ferrari" written in bold
+f-028.png: The image is a screenshot of a PowerPoint presentation on a laptop screen. The background of the screen is red and white with the word "Ferrari" written in bold
+f-029.png: The image is a screenshot of a PowerPoint presentation on a laptop screen. The background of the screen is red with the word "Ferrari" written in bold white let
+f-030.png: The image is a screenshot of a PowerPoint presentation on a laptop screen. The background of the screen is red with the word "Ferrari" written in bold white let
+f-031.png: The image is a screenshot of a PowerPoint presentation on a laptop screen. The background of the screen is red with the word "Ferrari" written in bold white let
+f-032.png: The image is a screenshot of a PowerPoint presentation on a laptop screen. The background of the screen is red with the word "Ferrari" written in bold white let
+f-033.png: The image is a screenshot of a PowerPoint presentation on a laptop screen. The background of the screen is red with the word "Ferrari" written in bold white let
+f-034.png: The image is a screenshot of a PowerPoint presentation on a laptop screen. The background of the screen is red with the word "Ferrari" written in bold white let
+f-035.png: The image is a screenshot of a PowerPoint presentation on a laptop screen. The background of the screen is red with the word "Ferrari" written in bold white let
+f-036.png: The image is a screenshot of a PowerPoint presentation on a laptop screen. The background of the screen is red with the word "Ferrari" written in bold white let
+f-037.png: The image is a screenshot of a PowerPoint presentation on a laptop screen. The background of the screen is red with the word "Ferrari" written in white capital 
+f-038.png: The image is a screenshot of a PowerPoint presentation on a laptop screen. The background of the screen is red and white with the word "FERRARI" written in bold
+f-039.png: The image shows a laptop screen with the word "Ferrari" written in bold red letters at the top. Below the word, there is an image of a red Ferrari car with a wh
+f-040.png: The image shows a laptop screen with a PowerPoint presentation on it. The presentation is titled "Ferrari" and has a red background with white text. On the righ
+f-041.png: The image shows a laptop screen with a PowerPoint presentation on it. The presentation is titled "Ferrari" and has a red background with white text. On the righ
+f-042.png: The image shows a laptop screen with a presentation slide on it. The slide has a red background with the word "FERRARI" written in bold white letters at the top
+f-043.png: The image shows a laptop screen with a presentation slide on it. The slide has a red background with the word "FERRARI" written in bold white letters at the top
+f-044.png: The image shows a laptop screen with a presentation slide on it. The slide has a red background with the word "FERRARI" written in bold white letters at the top
+f-045.png: The image is a screenshot of a PowerPoint presentation on a laptop screen. The presentation is titled "Ferrari" and has a red background with white text. On the
+f-046.png: The image shows a laptop screen with a presentation slide on it. The slide has a red background with the word "FERRARI" written in bold white letters at the top
+f-047.png: The image shows a laptop screen with a presentation slide on it. The slide has a red background with the word "FERRARI" written in bold white letters at the top
+f-048.png: The image shows a laptop screen with a presentation slide on it. The slide has a red background with the word "Ferrari" written in bold white letters at the top
+f-049.png: The image shows a laptop screen with a presentation slide on it. The slide has a red background with the word "FERRARI" written in bold white letters at the top
+f-050.png: The image shows a laptop screen with a presentation slide on it. The slide has a red background with the word "Ferrari" written in bold white letters at the top
+f-051.png: The image shows a laptop screen with a presentation slide on it. The slide has a red background with the word "Ferrari" written in bold white letters at the top
+f-052.png: The image shows a laptop screen with a presentation slide on it. The slide has a red background with the word "FERRARI" written in bold white letters at the top
+f-053.png: The image shows a laptop screen with a presentation slide on it. The slide has a red background with the word "FERRARI" written in bold white letters at the top
+f-054.png: The image shows a laptop screen with a PowerPoint presentation on it. The presentation is titled "Powerpoint Presentation" and has a red background with white t
+f-055.png: The image shows a laptop screen with a PowerPoint presentation open on it. The presentation is titled "Powerpoint Presentation" and has a red background with wh
+f-056.png: The image is a close-up of a laptop screen with a PowerPoint presentation on it. The laptop is black and has a black keyboard. On the screen, there is a red and
+f-057.png: The image shows a laptop screen with a PowerPoint presentation on it. The presentation is titled "Powerpoint Presentation" and has a red background with white t
+f-058.png: The image shows a laptop screen with a PowerPoint presentation on it. The presentation is titled "Powerpoint Presentation F2004" and has a red background with w
+f-059.png: The image shows a laptop screen with a PowerPoint presentation on it. The presentation is titled "Powerpoint Presentation F2004" and has a red background with w
+f-060.png: The image is a screenshot of a PowerPoint presentation on a laptop screen. The presentation is titled "Powerpoint Presentation F2004" and has a red background w
+f-061.png: The image shows a laptop screen with a presentation slide on it. The slide has a red background with white text that reads "Powerpoint Presentation F2004". Belo
+f-062.png: The image shows a laptop screen with a presentation slide on it. The slide has a red background with white text that reads "Powerpoint Presentation F2004". Belo
+f-063.png: The image shows a laptop screen with a presentation slide on it. The slide has a red background with white text that reads "Powerpoint Presentation F2004". Belo
+f-064.png: The image shows a laptop screen with a presentation slide on it. The slide has a red background with white text that reads "Powerpoint Presentation F2004". Belo
+f-065.png: The image shows a laptop screen with a presentation slide on it. The slide has a red background with white text that reads "Powerpoint Presentation F2004". Belo
+f-066.png: The image shows a laptop screen with a presentation slide on it. The slide has a red background with white text that reads "Powerpoint Presentation F2004". Belo
+f-067.png: The image shows a laptop screen with a presentation slide on it. The slide has a red background with white text that reads "Powerpoint Presentation F2004". Belo
+f-068.png: The image shows a laptop screen with a presentation slide on it. The slide has a red background with white text that reads "Powerpoint Presentation F2004". Belo
+f-069.png: The image is a screenshot of a PowerPoint presentation on a laptop. The presentation is titled "F2004" and has a red background with white text. On the left sid
+f-070.png: The image shows a laptop screen with a PowerPoint presentation on it. The presentation is titled "Powerpoint Presentation" and has an image of a red Ferrari For
+f-071.png: The image shows a laptop screen with the words "Powerpoint Presentation" written on it. The laptop is open and the screen is displaying a presentation slide wit
+f-072.png: The image shows a laptop screen with the words "Powerpoint Presentation" written on it. The laptop is open and the screen is displaying a presentation slide wit
+f-073.png: The image shows a laptop screen with a presentation slide on it. The slide has a red and white background with a black and white image of a robot in the center.
+f-074.png: The image shows a laptop screen with a presentation slide on it. The slide has a red and white background with a black and white image of a person wearing a hel
+f-075.png: The image shows a laptop screen with a presentation slide on it. The slide has a red and white background with a black and white image of a person wearing a hel
+f-076.png: The image shows a laptop screen with a PowerPoint presentation on it. The presentation is titled "Powerpoint Presentation" and has a red and white color scheme.
+f-077.png: The image shows a laptop screen with a PowerPoint presentation on it. The presentation is titled "Powerpoint Presentation" and has a red and white color scheme.
+f-078.png: The image shows a laptop screen with a presentation on it. The presentation is titled "Powerpoint Presentation" and has a red and white color scheme. On the scr
+f-079.png: The image shows a laptop screen with a PowerPoint presentation on it. The presentation is titled "Powerpoint Presentation" and has a red and white color scheme.
+f-080.png: The image shows a laptop screen with a PowerPoint presentation on it. The presentation is titled "Powerpoint Presentation" and has a red and white color scheme.
+f-081.png: The image shows a laptop screen with a presentation on it. The presentation is titled "Powerpoint Presentation" and has a red and white background with a black 
+f-082.png: The image shows a laptop screen with a PowerPoint presentation on it. The presentation is titled "Powerpoint Presentation" and has a red and white color scheme.
+f-083.png: The image shows a laptop screen with a presentation slide on it. The slide has a red and white background with a black and white image of a person wearing a hel
+f-084.png: The image shows a laptop screen with a presentation on it. The presentation is titled "Powerpoint Presentation" and has a red and white color scheme. On the scr
+f-085.png: The image shows a laptop screen with a presentation on it. The presentation is titled "Powerpoint Presentation" and has a red and white color scheme. On the scr
+f-086.png: The image shows a laptop screen with a PowerPoint presentation on it. The presentation is titled "Powerpoint Presentation" and has a red and white color scheme.
+f-087.png: The image shows a laptop with a PowerPoint presentation open on the screen. The laptop is black in color and has a black keyboard. On the screen, there is a whi
+f-088.png: The image shows a laptop screen with the words "Powerpoint Presentation" written in bold white letters at the top. Below the text, there is an image of a red ba
+f-089.png: The image shows a black laptop with a white screen. On the screen, there is a red logo with the text "Powerpoint Presentation" written in white. The logo appear
+f-090.png: The image is a close-up of a laptop screen with the word "FERRARI" written in red capital letters. The laptop is black and has a black keyboard. The background 
+f-091.png: The image is a close-up of a laptop screen with the word "FERRARI" written in red capital letters. The laptop is black and has a black keyboard. The background 
+f-092.png: The image shows a laptop screen with the Ferrari logo on it. The logo is red and white with the word "FERRARI" written in bold letters in the center. Below the 
+f-093.png: The image is a close-up of a laptop screen with a red Ferrari logo on it. The logo is rectangular in shape and has the word "FERRARI" written in white capital l
+f-094.png: The image is a close-up of a laptop screen with a red Ferrari F2004 logo on it. The logo is rectangular in shape and has the word "FERRARI" written in white cap
+f-095.png: The image is a close-up of a laptop screen with the Ferrari F2004 logo on it. The logo is red and white with the word "FERRARI" written in bold, capital letters
+f-096.png: The image is a close-up of a laptop screen with the Ferrari F2004 logo on it. The logo is red and white with the word "FERRARI" written in bold, capital letters
+f-097.png: The image is a close-up of a laptop screen with the Ferrari F2004 logo on it. The logo is red and white with the word "FERRARI" written in bold, capital letters
+f-098.png: The image is a close-up of a laptop screen with the Ferrari F2004 logo on it. The logo is red and white with the word "Ferrari" written in bold, capital letters
+f-099.png: The image is a close-up of a laptop screen with the Ferrari F2004 logo on it. The logo is red and white with the word "Ferrari" written in bold, capital letters
+f-100.png: The image is a close-up of a laptop screen with a red Ferrari F2004 logo on it. The logo is rectangular in shape and has the word "FERRARI" written in white cap
+f-101.png: The image is a close-up of a laptop screen with a red Ferrari F2004 logo on it. The logo is in the center of the screen and is in white and red colors. The back
+f-102.png: The image is a close-up of a laptop screen with a PowerPoint presentation on it. The presentation is titled "Ferrari F2004" and has a red background with white 
+f-103.png: The image is a close-up of a laptop screen with the word "FERRARI" written in bold red letters at the top. Below the word, there is a red banner with the text "
+f-104.png: The image is a close-up of a laptop screen with the word "FERRARI" written in bold red letters at the top. Below the word, there is a red banner with the words 
+f-105.png: The image is a close-up of a laptop screen with the Ferrari F2004 logo on it. The laptop is black and the keyboard is visible in the foreground. The background 
+f-106.png: The image is a close-up of a laptop screen with the Ferrari F2004 logo on it. The logo is red and white with the word "FERRARI" written in bold, capital letters
+f-107.png: The image is a close-up of a laptop screen with the Ferrari F2004 logo on it. The logo is red and white with the word "FERRARI" written in bold, capital letters
+f-108.png: The image is a close-up of a laptop screen with the Ferrari F2004 logo on it. The logo is red and white with the word "FERRARI" written in bold, capital letters
+f-109.png: The image is a close-up of a laptop screen with the Ferrari F2004 logo on it. The logo is red and white with the word "Ferrari" written in bold, capital letters
+f-110.png: The image is a close-up of a laptop screen with the Ferrari F2004 logo on it. The logo is red and white with the word "FERRARI" written in bold, capital letters
+SAVED
+exit=0
+=== پایان Mon Oct 12 10:05:39 UTC 2026 ===
