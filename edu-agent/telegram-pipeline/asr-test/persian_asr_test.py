@@ -12,7 +12,6 @@ import os
 import re
 import sys
 import time
-import urllib.parse
 import urllib.request
 
 import jiwer
@@ -23,25 +22,35 @@ MODELS = os.environ.get("MODELS", "small,medium").split(",")
 OUT_DIR = os.environ.get("OUT_DIR", "edu-agent/telegram-pipeline/asr-test/out")
 os.makedirs(OUT_DIR, exist_ok=True)
 
-ROWS_API = "https://datasets-server.huggingface.co/rows"
+FLEURS = "https://huggingface.co/datasets/google/fleurs/resolve/main/data/fa_ir"
 
 
-def fetch_rows(n):
-    params = urllib.parse.urlencode({
-        "dataset": "google/fleurs",
-        "config": "fa_ir",
-        "split": "test",
-        "offset": 0,
-        "length": n,
-    })
-    with urllib.request.urlopen(f"{ROWS_API}?{params}", timeout=60) as r:
-        data = json.load(r)
-    return data["rows"]
-
-
-def fetch_audio(url):
-    with urllib.request.urlopen(url, timeout=120) as r:
-        return r.read()
+def fetch_clips(n):
+    """Stream the first n FLEURS fa_ir test clips (tsv + tar.gz streamed, stops early)."""
+    import tarfile
+    with urllib.request.urlopen(f"{FLEURS}/test.tsv", timeout=120) as r:
+        lines = r.read().decode("utf-8").splitlines()[:n]
+    want = {}
+    for line in lines:
+        cols = line.split("\t")
+        # FLEURS tsv: id, file_name, raw_transcription, transcription, ...
+        want[cols[1]] = cols[2]
+    print(f"tsv rows selected: {len(want)}", flush=True)
+    got = []
+    with urllib.request.urlopen(f"{FLEURS}/audio/test.tar.gz", timeout=300) as r:
+        with tarfile.open(fileobj=r, mode="r|gz") as tf:
+            for m in tf:
+                base = os.path.basename(m.name)
+                if base in want and m.isfile():
+                    data = tf.extractfile(m).read()
+                    path = f"/tmp/fa_{len(got):02d}.wav"
+                    with open(path, "wb") as f:
+                        f.write(data)
+                    got.append((path, want[base]))
+                    if len(got) >= n:
+                        break
+    print(f"clips extracted: {len(got)}", flush=True)
+    return got
 
 
 def norm(text):
@@ -52,17 +61,7 @@ def norm(text):
 
 
 def main():
-    rows = fetch_rows(N_CLIPS)
-    print(f"fetched {len(rows)} rows")
-    clips = []
-    for i, row in enumerate(rows):
-        r = row["row"]
-        audio_url = r["audio"][0]["src"]
-        ref = r.get("transcription") or r.get("raw_transcription")
-        path = f"/tmp/fa_{i:02d}.wav"
-        with open(path, "wb") as f:
-            f.write(fetch_audio(audio_url))
-        clips.append((path, ref))
+    clips = fetch_clips(N_CLIPS)
     total_audio = 0.0
     results = {}
     for name in MODELS:
