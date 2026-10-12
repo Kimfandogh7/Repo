@@ -4,3 +4,10 @@ Mem:            7937        1129         319          46        6848        6807
 Swap:           3071           0        3071
 31128       02:02 /usr/bin/python3 -u /usr/sbin/waagent -daemon
 38632       02:01 /usr/bin/python3 -u bin/WALinuxAgent-2.16.0.2-py3.12.egg -run-exthandlers
+Mon Oct 12 11:09:46 UTC 2026
+               total        used        free      shared  buff/cache   available
+Mem:            7937        2014         987          46        5296        5922
+Swap:           3071           0        3071
+31128       02:43 /usr/bin/python3 -u /usr/sbin/waagent -daemon
+38640       02:42 /usr/bin/python3 -u bin/WALinuxAgent-2.16.0.2-py3.12.egg -run-exthandlers
+[0;93m2026-10-12 11:09:06.841935197 [W:onnxruntime:Default, device_discovery.cc:95 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
