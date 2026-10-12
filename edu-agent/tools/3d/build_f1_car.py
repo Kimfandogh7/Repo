@@ -15,7 +15,7 @@ import bpy
 
 argv = sys.argv[sys.argv.index("--") + 1:]
 out_dir = argv[0]
-angles = [float(a) for a in argv[1].split(",")]
+angles = [float(a) for a in argv[1].split(",")] if argv[1] != "none" else [-999.0]
 W = int(argv[2]) if len(argv) > 2 else 1080
 H = int(argv[3]) if len(argv) > 3 else 1920
 SAMPLES = int(argv[4]) if len(argv) > 4 else 96
@@ -116,14 +116,21 @@ car = bpy.context.active_object
 car.name = "f1car"
 bpy.ops.object.origin_set(type="ORIGIN_GEOMETRY", center="BOUNDS")
 car.location = (0, 0, 0)
+def _world_bbox(o):
+    import mathutils
+    ws = [o.matrix_world @ v.co for v in o.data.vertices]
+    return [(min(w[i] for w in ws), max(w[i] for w in ws)) for i in range(3)]
+
 print("RAW dims", tuple(round(d, 3) for d in car.dimensions), "parts", len(parts), flush=True)
+for ax, (lo, hi) in zip("XYZ", _world_bbox(car)):
+    print(f"RAW WORLD {ax}: {lo:.3f} .. {hi:.3f}", flush=True)
+if angles == [-999.0]:
+    print("GEOM_ONLY exit", flush=True)
+    sys.exit(0)
 s = 2.0 / max(car.dimensions)
 car.scale = (s, s, s)
-bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
-import mathutils
-_vs = [v.co for v in car.data.vertices]
-for ax, name in enumerate("XYZ"):
-    print(f"WORLD {name}: {min(v[ax] for v in _vs):.3f} .. {max(v[ax] for v in _vs):.3f}", flush=True)
+for ax, (lo, hi) in zip("XYZ", _world_bbox(car)):
+    print(f"NORM WORLD {ax}: {lo:.3f} .. {hi:.3f}", flush=True)
 
 cam_data = bpy.data.cameras.new("cam")
 cam_data.lens = 58

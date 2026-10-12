@@ -29,7 +29,7 @@ jobs:
       - name: Build F1 car and render turntable
         run: |
           mkdir -p out_f1
-          blender -b -P edu-agent/tools/3d/build_f1_car.py -- out_f1 "0,40,80,120,160,200,240,280,320" 1080 1920 96 > out_f1/build.log 2>&1
+          blender -b -P edu-agent/tools/3d/build_f1_car.py -- out_f1 none 1080 1920 96 > out_f1/build.log 2>&1
           echo "exit=$?" >> out_f1/build.log
           grep -E '^rendered|Error|Traceback|exit=' out_f1/build.log | tail -12
 
