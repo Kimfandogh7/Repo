@@ -1,0 +1,264 @@
+{
+  "finale_deck": [
+    {
+      "frame": "s-1.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a graphic design of a red Ferrari F2004 race car. The car is in the center of the image and is facing towards the left side. It has a sleek and aerodynamic design with a pointed nose and two large wheels on either side. The background is a solid red color. Below the car, there is text that reads \"Ferrari F2004 - The most dominant car - Formula 1 has ever seen.\" The text is in white and is in a modern sans-serif font. The overall design is simple and minimalistic."
+      },
+      "ocr": {
+        "<OCR>": "SEASON 2004FERRARIF2004The most dominant carFormula 1 has ever seen."
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              51.63750076293945,
+              186.60000610351562,
+              612.5625,
+              336.6000061035156
+            ],
+            [
+              0.3375000059604645,
+              0.6000000238418579,
+              673.9874877929688,
+              1198.2000732421875
+            ],
+            [
+              98.2125015258789,
+              251.40000915527344,
+              179.8874969482422,
+              334.20001220703125
+            ],
+            [
+              435.0375061035156,
+              256.20001220703125,
+              510.63751220703125,
+              334.20001220703125
+            ],
+            [
+              428.2875061035156,
+              233.40000915527344,
+              492.4125061035156,
+              264.6000061035156
+            ],
+            [
+              131.28750610351562,
+              229.8000030517578,
+              165.03750610351562,
+              252.60000610351562
+            ]
+          ],
+          "labels": [
+            "car",
+            "poster",
+            "wheel",
+            "wheel",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "s-2.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a screenshot of a mobile game interface with a red and white color scheme. The background is white and the text is in black. At the top of the screen, there is a red banner with the text \"The Season Fifteen wins. Eighteen races.\" Below the banner, there are three options - Ferrari, Bar Honda, Renault, Williams, and Williams. \n\nThe first option is \"15 of 18 - no other constructor won more than a single race.\" The second option is labeled \"Bar Honda\" and has a list of options below it. The third option is titled \"Renault\" and is labeled as \"Williams\". The fourth option is labelled as \"Willows\".\n\nAt the bottom right corner of the image, there appears to be an illustration of a red race car. The car is shown in a realistic style with detailed features and curves."
+      },
+      "ocr": {
+        "<OCR>": "THE SEASONFifteen wins.Eighteen races.Ferrari15BAR Honda1Renault1Williams115 of 18 – no other constructorwon more than a single race."
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              237.9375,
+              1045.800048828125,
+              462.0375061035156,
+              1126.2000732421875
+            ],
+            [
+              322.9875183105469,
+              1078.2000732421875,
+              366.8625183105469,
+              1125.0
+            ],
+            [
+              416.8125,
+              1071.0,
+              459.3374938964844,
+              1115.4000244140625
+            ],
+            [
+              239.28750610351562,
+              1060.2000732421875,
+              277.0874938964844,
+              1098.60009765625
+            ]
+          ],
+          "labels": [
+            "land vehicle",
+            "wheel",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "s-3.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a digital illustration of a red race car on a red background. The car is in the center of the image, with the text \"The Machine Built to be unfollowable. A V10 that screamed to 19,000 rpm in an era of no substitutions.\" The text is written in white and is in a modern sans-serif font. The overall design is simple and minimalistic, with a focus on the car and the text."
+      },
+      "ocr": {
+        "<OCR>": "THE MACHINEBuilt to beunfollowable.A V10 that screamed to 19,000 rpmin an era of no substitutions."
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              113.0625,
+              130.20001220703125,
+              574.0875244140625,
+              269.4000244140625
+            ],
+            [
+              0.3375000059604645,
+              0.6000000238418579,
+              673.9874877929688,
+              1198.2000732421875
+            ],
+            [
+              480.9375,
+              184.20001220703125,
+              551.1375122070312,
+              250.20001220703125
+            ],
+            [
+              227.8125,
+              198.60000610351562,
+              294.63751220703125,
+              265.8000183105469
+            ],
+            [
+              183.2624969482422,
+              180.60000610351562,
+              243.33750915527344,
+              216.60000610351562
+            ]
+          ],
+          "labels": [
+            "car",
+            "poster",
+            "wheel",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "s-4.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is an infographic that shows three figures by the numbers. The first figure is 865 horsepower from 3.0 litre, no turbo, and the second figure is 600 kilograms fully fueled, driver aboard. The third figure is 0.9 tonnes of downforce, which is more than the car weighs. The infographic has a white background and black text. At the bottom of the infographic, there is an illustration of a red car with a black outline."
+      },
+      "ocr": {
+        "<OCR>": "BY THE NUMBERSThree figures.865horsepowerfrom 3.0 litres, no turbo600kilogramsfully fueled, driver aboard0.9tonnes of downforcemore than the car weighs"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              260.2124938964844,
+              1025.4000244140625,
+              420.1875,
+              1123.800048828125
+            ],
+            [
+              390.4875183105469,
+              1071.0,
+              418.8374938964844,
+              1105.800048828125
+            ],
+            [
+              261.5625,
+              1050.60009765625,
+              286.5375061035156,
+              1089.0
+            ],
+            [
+              354.7124938964844,
+              1048.2000732421875,
+              381.0375061035156,
+              1074.60009765625
+            ]
+          ],
+          "labels": [
+            "land vehicle",
+            "wheel",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "s-5.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a graphic design with a red background and a yellow circle in the center. Inside the circle, there is a red toy car with black wheels. The car appears to be a race car with a sleek design and a spoiler on the back. The text on the image reads \"The Legacy Built once. Never matched.\" The text is in white and is in a modern sans-serif font. The overall design is simple and minimalistic."
+      },
+      "ocr": {
+        "<OCR>": "THE LEGACYBuilt once.Never matched."
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              117.7874984741211,
+              522.6000366210938,
+              511.9875183105469,
+              646.2000122070312
+            ],
+            [
+              0.3375000059604645,
+              0.6000000238418579,
+              673.9874877929688,
+              1198.2000732421875
+            ],
+            [
+              227.8125,
+              576.6000366210938,
+              300.0375061035156,
+              645.0
+            ],
+            [
+              433.6875,
+              557.4000244140625,
+              491.7375183105469,
+              616.2000122070312
+            ],
+            [
+              136.6875,
+              587.4000244140625,
+              197.4375,
+              623.4000244140625
+            ],
+            [
+              343.2375183105469,
+              545.4000244140625,
+              391.1625061035156,
+              567.0
+            ]
+          ],
+          "labels": [
+            "land vehicle",
+            "poster",
+            "wheel",
+            "wheel",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    }
+  ]
+}
