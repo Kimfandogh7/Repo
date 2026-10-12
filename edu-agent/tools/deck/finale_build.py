@@ -30,9 +30,9 @@ ASPECT = (CROP[2] - CROP[0]) / (CROP[3] - CROP[1])
 # slide -> (angle, x, y, width_px)
 PLAN = {
     1: (0, 60, 250, 960),     # hero, big, top
-    2: (120, 280, 1625, 520),  # small, under the bars
+    2: (120, 180, 1625, 720),  # under the bars (was 520px: too small to read)
     3: (200, 140, 180, 800),   # big, top
-    4: (280, 280, 1625, 520),  # small, under the stats
+    4: (280, 180, 1625, 720),  # under the stats
     5: (40, 160, 781, 760),    # centred over the rings
 }
 
