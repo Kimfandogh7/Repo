@@ -51,7 +51,7 @@
 ### پ) انتخاب رابط ربات (چارت انجام شد)
 
 - چارت: `edu-agent/telegram-pipeline/docs/gateway_comparison.png` (با اسکریپت `make_gateway_chart.py`).
-- Hermes Agent: MIT، پیش‌فرض Nous Portal. OpenClaw: پیش‌فرض‌ها OpenAI/Gemini، سقف media تلگرام ۵ MB.
+- Hermes Agent: MIT، با نصب سریع پیشنهادی Nous Portal. OpenClaw: پیش‌فرض‌ها OpenAI/Gemini، سقف media تلگرام ۵ MB.
 - انتخاب کاربر: **ربات کوچک خودمان**.
 
 ### ت) ربات تلگرام (کد نوشته شد، فعال نیست)
@@ -77,7 +77,7 @@
 
 - وضعیت مخزن: عمومی است. درخواست تغییر visibility در این نشست 403 داد، ولی بعداً معلوم شد مخزن قبلاً عمومی شده است.
 - فایل‌های تیک‌تاک (فریم‌های placeplate در `refs/dense/placeplate/`) در تاریخچه هستند. کاربر حذف از تاریخچه را رد کرد.
-- هزینه Actions: مخزن عمومی با runnerهای استاندارد رایگان است. در مخزن خصوصی، اجرای ۲۴ ساعته حدود ۲۴۷ دلار در ماه می‌شود.
+- هزینه Actions: مخزن عمومی با runnerهای استاندارد رایگان است. در مخزن خصوصی، اجرای ۲۴ ساعته حدود ۲۴۷ دلار در ماه می‌شود (تخمین: ۴۳٬۲۰۰ دقیقه منهای ۲٬۰۰۰ دقیقه‌ی رایگان، با نرخ ۰٫۰۰۶ دلار).
 
 ---
 
@@ -89,7 +89,7 @@
 4. **`wave` استاندارد پایتون WAV با فرمت float32 (tag 3) را نمی‌خواند.** از `soundfile` استفاده کنید.
 5. **در `sherpa-onnx` 1.13.8 تابع `sherpa_onnx.read_wave` وجود ندارد.** همین را با `soundfile` حل کنید.
 6. **sherpa-onnx برای Persian NeMo CTC از نسخه ۱٫۱۳٫۵ به بعد است.** مسیر offline اصلاح شده است. مسیر streaming در issue #4003 / PR #4004 باگ fbank داشت (WER از ~۴۰٪ به ~۱۱٫۶٪). اگر streaming لازم شد، نسخه‌ی اصلاح‌شده را بررسی کنید.
-7. **Gemma 3n برای فارسی بد است.** در PARSA-Bench، مدل‌های E2B و E4B تا ۸۶٪ جمله‌ها را در حلقه‌ی تکرار گیر انداختند.
+7. **Gemma 3n برای فارسی بد است.** در PARSA-Bench، حدود ۱۲ تا ۱۳٪ جمله‌ها (E2B و E4B) در حلقه‌ی تکرار گیر کردند، ولی همین جمله‌ها ۸۲ تا ۸۶٪ از میانگین WER را ساختند.
 8. **GitHub Actions حداکثر ۶ ساعت به ازای هر job** اجرا می‌کند. هر سرویس دائمی باید به تکه‌های زمانی تقسیم شود.
 9. **نسخه‌های torch / torchvision باید از یک index باشند.** نصب torch از index CPU و torchvision از PyPI باعث `operator torchvision::nms does not exist` شد. هر دو را با هم از `https://download.pytorch.org/whl/cpu` نصب کنید.
 10. **SmolVLM2 پردازشگر ویدیو به `torchvision.io.read_video` نیاز دارد که در torchvision جدید نیست.** راه کار: فریم‌ها را با ffmpeg به JPEG تبدیل کنید و به‌صورت `{"type":"image","path":...}` بدهید. همچنین پکیج‌های `num2words`، `pillow` و `av` لازم‌اند.
