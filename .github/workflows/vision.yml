@@ -60,7 +60,7 @@ jobs:
               return proc.post_process_generation(txt, task=prompt,
                                                   image_size=(img.width, img.height))
           result = {}
-          for vid in ["finale"]:
+          for vid in ["finale_src"]:
               d = f"refs/{vid}"
               if not os.path.isdir(d):
                   print("missing", d, flush=True); continue
@@ -81,7 +81,7 @@ jobs:
                   if isinstance(c, dict):
                       c = c.get("<MORE_DETAILED_CAPTION>", "")
                   print(f"{f}: {str(c)[:160]}", flush=True)
-          json.dump(result, open("refs/finale_desc.json", "w"), indent=2, ensure_ascii=False)
+          json.dump(result, open("refs/finale_src_desc.json", "w"), indent=2, ensure_ascii=False)
           print("SAVED", flush=True)
           PY
           echo "exit=$?" >> $LOGF
@@ -95,6 +95,6 @@ jobs:
           git config user.name "arena-bot"
           git config user.email "bot@arena.local"
           git add -f refs/_out.log || true
-          git add -f refs/finale_desc.json 2>/dev/null || true
+          git add -f refs/finale_src_desc.json 2>/dev/null || true
           git commit -m "vision: خروجی و توصیف" || echo "nothing to commit"
           git push origin HEAD:arena/758efc2d-repo || echo "push failed"
