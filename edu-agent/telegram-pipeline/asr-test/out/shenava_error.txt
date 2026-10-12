@@ -1,17 +1,8 @@
 Traceback (most recent call last):
-  File "/home/runner/work/Repo/Repo/edu-agent/telegram-pipeline/asr-test/persian_asr_test.py", line 171, in main
+  File "/home/runner/work/Repo/Repo/edu-agent/telegram-pipeline/asr-test/persian_asr_test.py", line 168, in main
     tag, res = run_shenava(clips)
                ^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Repo/Repo/edu-agent/telegram-pipeline/asr-test/persian_asr_test.py", line 118, in run_shenava
-    with wave.open(path, "rb") as w:
-         ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/wave.py", line 631, in open
-    return Wave_read(f)
-           ^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/wave.py", line 283, in __init__
-    self.initfp(f)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/wave.py", line 263, in initfp
-    self._read_fmt_chunk(chunk)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/wave.py", line 388, in _read_fmt_chunk
-    raise Error('unknown format: %r' % (wFormatTag,))
-wave.Error: unknown format: 3
+  File "/home/runner/work/Repo/Repo/edu-agent/telegram-pipeline/asr-test/persian_asr_test.py", line 117, in run_shenava
+    samples, sr = sherpa_onnx.read_wave(path)  # handles float32/int16 WAV
+                  ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'sherpa_onnx' has no attribute 'read_wave'
