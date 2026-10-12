@@ -124,7 +124,7 @@ def _world_bbox(o):
 print("RAW dims", tuple(round(d, 3) for d in car.dimensions), "parts", len(parts), flush=True)
 for ax, (lo, hi) in zip("XYZ", _world_bbox(car)):
     print(f"RAW WORLD {ax}: {lo:.3f} .. {hi:.3f}", flush=True)
-print(f"fixed up_axis in {n} constraints (scene is Z-up)", flush=True)
+print("fixed up_axis to UP_Z (scene is Z-up)", flush=True)
 if angles == [-999.0]:
     print("GEOM_ONLY exit", flush=True)
     sys.exit(0)
