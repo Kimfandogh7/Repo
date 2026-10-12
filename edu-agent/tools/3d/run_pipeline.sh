@@ -7,6 +7,11 @@ OUT="$ROOT/out3d"; mkdir -p "$OUT"
 LOG="$OUT/pipeline.log"
 say() { echo "[$(date -u +%H:%M:%S)] $*" | tee -a "$LOG"; }
 
+if [ "$MODE" = "mesh" ] && [ -f "$ROOT/edu-agent/artifacts/finale/3d/object.ply" ] && [ -z "$REMESH" ]; then
+  mkdir -p "$OUT/mesh" && cp "$ROOT/edu-agent/artifacts/finale/3d/object.ply" "$OUT/mesh/"
+  say "reusing committed mesh (set REMESH=1 to rebuild)"; exit 0
+fi
+
 if [ "$MODE" = "mesh" ]; then
   mkdir -p "$ROOT/edu-agent/artifacts/finale/3d"
   git -C "$ROOT" config user.name "arena-agent"; git -C "$ROOT" config user.email "agent@arena.ai"

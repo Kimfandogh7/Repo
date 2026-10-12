@@ -30,8 +30,7 @@ bpy.ops.object.origin_set(type="ORIGIN_GEOMETRY", center="BOUNDS")
 obj.location = (0, 0, 0)
 dims = max(obj.dimensions)
 s = 2.0 / dims
-obj.scale = (s, s, s)
-bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
+obj.scale = (s, s, s)  # rotate about the bounds centre; no transform_apply (multi-user data)
 
 # Material: use vertex colours if the mesh has them, else a clean red.
 mat = bpy.data.materials.new("car")
