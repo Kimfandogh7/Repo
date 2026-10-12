@@ -2,6 +2,12 @@ RAW dims (5.8, 2.46, 1.23) parts 28
 RAW WORLD X: -2.500 .. 3.300
 RAW WORLD Y: -1.230 .. 1.230
 RAW WORLD Z: -0.010 .. 1.220
-GEOM_ONLY exit
 Blender 4.0.2
+Traceback (most recent call last):
+  File "/home/runner/work/Repo/Repo/edu-agent/tools/3d/build_f1_car.py", line 127, in <module>
+    print(f"fixed up_axis in {n} constraints (scene is Z-up)", flush=True)
+                              ^
+NameError: name 'n' is not defined
+
+Blender quit
 exit=0
