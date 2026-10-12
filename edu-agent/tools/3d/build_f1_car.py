@@ -124,6 +124,7 @@ def _world_bbox(o):
 print("RAW dims", tuple(round(d, 3) for d in car.dimensions), "parts", len(parts), flush=True)
 for ax, (lo, hi) in zip("XYZ", _world_bbox(car)):
     print(f"RAW WORLD {ax}: {lo:.3f} .. {hi:.3f}", flush=True)
+print(f"fixed up_axis in {n} constraints (scene is Z-up)", flush=True)
 if angles == [-999.0]:
     print("GEOM_ONLY exit", flush=True)
     sys.exit(0)
@@ -143,7 +144,7 @@ target.location = (0, 0, 0)
 tr = cam.constraints.new("TRACK_TO")
 tr.target = target
 tr.track_axis = "TRACK_NEGATIVE_Z"
-tr.up_axis = "UP_Y"
+tr.up_axis = "UP_Z"
 bpy.context.scene.camera = cam
 
 
@@ -157,7 +158,7 @@ def area(name, loc, energy, size):
     t = lo.constraints.new("TRACK_TO")
     t.target = target
     t.track_axis = "TRACK_NEGATIVE_Z"
-    t.up_axis = "UP_Y"
+    t.up_axis = "UP_Z"
 
 
 area("key", (4, -6, 5), 2600, 6)
