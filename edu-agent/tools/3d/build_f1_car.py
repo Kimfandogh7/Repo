@@ -107,6 +107,13 @@ for x, y, r, wdt in WHEELS:
     add("cyl", (x, y + (0.01 if y > 0 else -0.01), r), rot=rot, r=r * 0.58, d=wdt + 0.02, m=CHROME)  # rim
 
 # --- join, normalise, light, render ------------------------------------------
+# Bake each part's scale/rotation first. join() otherwise inherits the active part's
+# non-uniform scale (the tub is 1.9 x 0.42 x 0.22) and squashes the whole car.
+for o in parts:
+    bpy.ops.object.select_all(action="DESELECT")
+    o.select_set(True)
+    bpy.context.view_layer.objects.active = o
+    bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
 bpy.ops.object.select_all(action="DESELECT")
 for o in parts:
     o.select_set(True)
