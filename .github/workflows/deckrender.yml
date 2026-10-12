@@ -1,0 +1,47 @@
+name: deckrender
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ arena/758efc2d-repo ]
+    paths:
+      - '.github/workflows/deckrender.yml'
+      - 'refs/_trigger_deck.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/758efc2d-repo
+
+      - name: Install LibreOffice and poppler
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libreoffice-impress poppler-utils fonts-dejavu fonts-noto-core
+
+      - name: Convert pptx to PNG
+        run: |
+          mkdir -p out_deck refs/finale_deck
+          timeout 900 soffice --headless --convert-to pdf --outdir out_deck edu-agent/artifacts/finale/finale.pptx > out_deck/lo.log 2>&1
+          echo "soffice exit=$?" >> out_deck/lo.log
+          ls -la out_deck >> out_deck/lo.log
+          pdftoppm -r 60 -png out_deck/finale.pdf out_deck/s >> out_deck/lo.log 2>&1
+          ls out_deck >> out_deck/lo.log
+          cp out_deck/s-*.png refs/finale_deck/ 2>/dev/null || true
+          cp out_deck/lo.log edu-agent/artifacts/finale/deck_render.log 2>/dev/null || true
+
+      - name: Commit renders
+        if: always()
+        run: |
+          git config user.name "arena-agent"; git config user.email "agent@arena.ai"
+          mkdir -p edu-agent/artifacts/finale
+          git add -f refs/finale_deck edu-agent/artifacts/finale/deck_render.log || true
+          git commit -m "deck: رندر اسلایدهای نهایی برای بازبینی" || echo "nothing"
+          git pull -q --rebase origin arena/758efc2d-repo || true
+          git push origin arena/758efc2d-repo || true
