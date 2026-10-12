@@ -1,0 +1,5 @@
+python-telegram-bot==21.6
+sherpa-onnx==1.13.8
+numpy
+soundfile
+huggingface_hub
