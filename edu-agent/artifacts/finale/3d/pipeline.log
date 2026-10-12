@@ -1,4 +1,4 @@
-[11:09:05] memory before mesh:
+[11:13:11] memory before mesh:
                total        used        free      shared  buff/cache   available
-Mem:            7937        1129         319          46        6848        6807
+Mem:            7938         992         391          45        6914        6946
 Swap:           3071           0        3071
