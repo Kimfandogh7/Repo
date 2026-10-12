@@ -1,0 +1,101 @@
+{
+  "finale_src": [
+    {
+      "frame": "a_source.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a red race car. The car is shown from the front three-quarter angle, with the driver's side facing towards the left side of the image. It has a sleek and aerodynamic design with a low profile and sharp angles. The body of the car is predominantly red, with a black stripe running along the side and a black spoiler on the back. The wheels are black with silver rims. The background is completely black, making the red car stand out. The image is taken from a slightly elevated angle, highlighting the car's curves and angles."
+      },
+      "ocr": {
+        "<OCR>": "-"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              85.18399810791016,
+              226.94400024414062,
+              1325.6319580078125,
+              660.0960083007812
+            ],
+            [
+              494.9119873046875,
+              435.0719909667969,
+              727.2319946289062,
+              655.4879760742188
+            ],
+            [
+              192.19200134277344,
+              382.08001708984375,
+              389.31201171875,
+              576.384033203125
+            ],
+            [
+              1136.9599609375,
+              355.968017578125,
+              1324.2239990234375,
+              547.968017578125
+            ]
+          ],
+          "labels": [
+            "car",
+            "wheel",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "b_model_input.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a red race car. The car is in a side view, with the front and rear of the car facing towards the left side of the image. It has a sleek and aerodynamic design with a low profile and sharp angles. The body of the vehicle is predominantly red, with a black stripe running along the side and a black spoiler on the back. The wheels are black with silver rims. The background is a plain grey color, making the car stand out."
+      },
+      "ocr": {
+        "<OCR>": "-"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              125.48249816894531,
+              520.4924926757812,
+              1368.427490234375,
+              963.0225219726562
+            ],
+            [
+              536.8275146484375,
+              729.8775024414062,
+              767.0025024414062,
+              954.1124877929688
+            ],
+            [
+              229.4324951171875,
+              676.41748046875,
+              429.9075012207031,
+              873.9224853515625
+            ],
+            [
+              1181.3175048828125,
+              651.1724853515625,
+              1366.9425048828125,
+              851.6475219726562
+            ],
+            [
+              841.2525024414062,
+              520.4924926757812,
+              931.8375244140625,
+              541.2825317382812
+            ]
+          ],
+          "labels": [
+            "car",
+            "wheel",
+            "wheel",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    }
+  ]
+}

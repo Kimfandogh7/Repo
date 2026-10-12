@@ -1,4 +1,4 @@
-=== شروع Mon Oct 12 11:28:06 UTC 2026 ===
+=== شروع Mon Oct 12 11:33:18 UTC 2026 ===
 --- نصب torch+torchvision ---
 Looking in indexes: https://download.pytorch.org/whl/cpu
 Collecting torch
@@ -27,20 +27,20 @@ Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch)
 Collecting MarkupSafe>=2.0 (from jinja2->torch)
   Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
 Downloading torch-2.14.1%2Bcpu-cp311-cp311-manylinux_2_28_x86_64.whl (196.2 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 196.2/196.2 MB 71.9 MB/s  0:00:02
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 196.2/196.2 MB 64.6 MB/s  0:00:03
 Downloading torchvision-0.29.1%2Bcpu-cp311-cp311-manylinux_2_28_x86_64.whl (1.7 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 127.6 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 177.7 MB/s  0:00:00
 Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 182.9 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 152.2 MB/s  0:00:00
 Downloading fsspec-2026.7.0-py3-none-any.whl (206 kB)
 Downloading networkx-3.6.1-py3-none-any.whl (2.1 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 284.3 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 351.1 MB/s  0:00:00
 Downloading pillow-12.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 311.5 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 416.5 MB/s  0:00:00
 Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 130.4 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 408.4 MB/s  0:00:00
 Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 48.5 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 128.9 MB/s  0:00:00
 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
 Downloading filelock-3.32.3-py3-none-any.whl (98 kB)
 Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
@@ -96,21 +96,21 @@ Requirement already satisfied: jinja2 in /opt/hostedtoolcache/Python/3.11.17/x64
 Requirement already satisfied: mpmath<1.4,>=1.1.0 in /opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages (from sympy>=1.13.3->torch->timm) (1.3.0)
 Requirement already satisfied: MarkupSafe>=2.0 in /opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages (from jinja2->torch->timm) (3.0.3)
 Downloading transformers-4.49.0-py3-none-any.whl (10.0 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.0/10.0 MB 39.4 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.0/10.0 MB 27.9 MB/s  0:00:00
 Downloading huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 55.6 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 52.9 MB/s  0:00:00
 Downloading hf_xet-1.7.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.2 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 105.5 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 70.4 MB/s  0:00:00
 Downloading tokenizers-0.21.4-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.1 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 124.0 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 86.1 MB/s  0:00:00
 Downloading einops-0.8.2-py3-none-any.whl (65 kB)
 Downloading timm-1.0.30-py3-none-any.whl (2.7 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.7/2.7 MB 108.2 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.7/2.7 MB 100.3 MB/s  0:00:00
 Downloading packaging-26.3-py3-none-any.whl (129 kB)
 Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 153.9 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 103.9 MB/s  0:00:00
 Downloading regex-2026.9.29-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (804 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 805.0/805.0 kB 135.0 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 805.0/805.0 kB 105.2 MB/s  0:00:00
 Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
 Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
 Downloading requests-2.34.2-py3-none-any.whl (73 kB)
@@ -136,16 +136,9 @@ A new version of the following files was downloaded from https://huggingface.co/
 - processing_florence2.py
 . Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
 model ready
-=== finale: 9 ===
-car_000.png: The image is a 3D rendering of a sculpture made of plastic bags. The sculpture is in the shape of a person's body, with their arms and legs stretched out in fro
-car_040.png: The image is a 3D rendering of a red and white object that appears to be floating in the air. The object is made up of multiple layers of white and red material
-car_080.png: The image is a digital illustration of a red and white wave-like shape. The wave appears to be floating on a black background. The red wave is in the center of 
-car_120.png: The image is a 3D rendering of a white and red object with a black background. The object appears to be floating in the air, with its body slightly tilted to th
-car_160.png: The image is a 3D rendering of a metallic object with a black background. The object appears to be made of a shiny, metallic material and has a metallic sheen. 
-car_200.png: The image is a digital illustration of a person sitting on a rock. The person is wearing a red and white outfit and appears to be in a relaxed pose. The rock is
-car_240.png: The image is a 3D rendering of a hand holding a red object. The hand appears to be made up of small, irregularly shaped objects, with the fingers slightly curle
-car_280.png: The image is a 3D rendering of a white and red object with a black background. The object appears to be made up of a series of curved lines and shapes, creating
-car_320.png: The image is a 3D rendering of a robot-like creature with a black background. The creature appears to be made up of multiple layers of white and grey material, 
+=== finale_src: 2 ===
+a_source.png: The image is a 3D rendering of a red race car. The car is shown from the front three-quarter angle, with the driver's side facing towards the left side of the i
+b_model_input.png: The image is a 3D rendering of a red race car. The car is in a side view, with the front and rear of the car facing towards the left side of the image. It has a
 SAVED
 exit=0
-=== پایان Mon Oct 12 11:32:45 UTC 2026 ===
+=== پایان Mon Oct 12 11:34:47 UTC 2026 ===
