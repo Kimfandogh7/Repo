@@ -1,0 +1,64 @@
+name: frames
+
+on:
+  push:
+    branches: [ arena/758efc2d-repo ]
+    paths: [ '.github/workflows/frames.yml' ]
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/758efc2d-repo
+
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+
+      - name: Extract dense frames
+        run: |
+          python3 - <<'PY' > refs/_frames.log 2>&1
+          import subprocess, os, json
+          os.makedirs("refs/dense", exist_ok=True)
+          report = {}
+          for name in ["placeplate", "yerra"]:
+              src = f"refs/{name}.mp4"
+              if not os.path.exists(src):
+                  print("missing", src, flush=True); continue
+              out = f"refs/dense/{name}"
+              os.makedirs(out, exist_ok=True)
+              # 5 frames per second, scaled to 360 wide
+              r = subprocess.run(
+                  ["ffmpeg", "-y", "-i", src, "-vf", "fps=5,scale=360:-1",
+                   f"{out}/f-%03d.png"],
+                  capture_output=True, text=True)
+              print(name, "rc=", r.returncode, flush=True)
+              if r.returncode != 0:
+                  print(r.stderr[-2000:], flush=True)
+              n = len([f for f in os.listdir(out) if f.endswith(".png")])
+              report[name] = n
+              print(name, "frames:", n, flush=True)
+              # probe
+              p = subprocess.run(["ffprobe", "-v", "error", "-show_entries",
+                                  "format=duration,size:stream=width,height,r_frame_rate,nb_frames",
+                                  "-of", "json", src],
+                                 capture_output=True, text=True)
+              print(name, "probe:", p.stdout[:600], flush=True)
+          json.dump(report, open("refs/dense/report.json", "w"), indent=2)
+          PY
+          echo "exit=$?" >> refs/_frames.log
+
+      - name: Commit frames
+        if: always()
+        run: |
+          git config user.name "arena-agent"
+          git config user.email "agent@arena.ai"
+          git add -f refs/dense refs/_frames.log 2>/dev/null || true
+          git commit -m "frames: استخراج انبوه ۵ فریم بر ثانیه" || echo "nothing to commit"
+          git push origin arena/758efc2d-repo || true
