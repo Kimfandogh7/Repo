@@ -1,13 +1,55 @@
 Blender 4.0.2
-PLY import of 'object.ply' took 9.2 ms
+PLY import of 'object.ply' took 6.6 ms
+Fra:1 Mem:12.20M (Peak 12.20M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | object
+Fra:1 Mem:14.79M (Peak 14.79M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Initializing
+Fra:1 Mem:14.60M (Peak 14.79M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Waiting for render to start
+Fra:1 Mem:14.60M (Peak 14.79M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Loading render kernels (may take a few minutes the first time)
+Fra:1 Mem:14.60M (Peak 14.79M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Scene
+Fra:1 Mem:14.60M (Peak 14.79M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Shaders
+Fra:1 Mem:14.68M (Peak 14.79M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Procedurals
+Fra:1 Mem:14.68M (Peak 14.79M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Background
+Fra:1 Mem:14.68M (Peak 14.79M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Camera
+Fra:1 Mem:14.68M (Peak 14.79M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:14.68M (Peak 14.79M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Objects
+Fra:1 Mem:14.68M (Peak 14.79M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:14.68M (Peak 14.79M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:14.68M (Peak 14.79M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Particle Systems
+Fra:1 Mem:14.68M (Peak 14.79M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Particle Systems | Copying Particles to device
+Fra:1 Mem:14.68M (Peak 14.79M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Meshes
+Fra:1 Mem:15.32M (Peak 15.32M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:15.88M (Peak 15.88M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:15.88M (Peak 15.88M) | Time:00:00.00 | Mem:0.56M, Peak:0.56M | Scene, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:15.88M (Peak 15.88M) | Time:00:00.00 | Mem:0.56M, Peak:0.56M | Scene, ViewLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:15.88M (Peak 15.88M) | Time:00:00.00 | Mem:1.83M, Peak:1.83M | Scene, ViewLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:15.88M (Peak 15.88M) | Time:00:00.01 | Mem:3.35M, Peak:4.63M | Scene, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:15.88M (Peak 15.88M) | Time:00:00.01 | Mem:3.35M, Peak:4.63M | Scene, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:17.31M (Peak 17.31M) | Time:00:00.01 | Mem:3.35M, Peak:4.63M | Scene, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:17.31M (Peak 17.31M) | Time:00:00.01 | Mem:4.78M, Peak:4.78M | Scene, ViewLayer | Updating Objects Flags
+Fra:1 Mem:17.31M (Peak 17.31M) | Time:00:00.01 | Mem:4.78M, Peak:4.78M | Scene, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:17.31M (Peak 17.31M) | Time:00:00.01 | Mem:4.78M, Peak:4.78M | Scene, ViewLayer | Updating Images
+Fra:1 Mem:17.31M (Peak 17.31M) | Time:00:00.01 | Mem:4.78M, Peak:4.78M | Scene, ViewLayer | Updating Camera Volume
+Fra:1 Mem:17.31M (Peak 17.31M) | Time:00:00.01 | Mem:4.78M, Peak:4.78M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:17.31M (Peak 17.31M) | Time:00:00.01 | Mem:4.87M, Peak:4.87M | Scene, ViewLayer | Updating Lights
+Fra:1 Mem:17.31M (Peak 17.31M) | Time:00:00.01 | Mem:4.87M, Peak:4.87M | Scene, ViewLayer | Updating Lights | Computing distribution
+Fra:1 Mem:17.31M (Peak 17.31M) | Time:00:00.01 | Mem:4.87M, Peak:4.87M | Scene, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:17.31M (Peak 17.31M) | Time:00:00.01 | Mem:4.87M, Peak:4.87M | Scene, ViewLayer | Updating Integrator
+Fra:1 Mem:18.31M (Peak 18.31M) | Time:00:00.01 | Mem:5.87M, Peak:5.87M | Scene, ViewLayer | Updating Film
+Fra:1 Mem:18.32M (Peak 18.32M) | Time:00:00.01 | Mem:5.79M, Peak:5.87M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:18.32M (Peak 18.32M) | Time:00:00.01 | Mem:5.87M, Peak:5.87M | Scene, ViewLayer | Updating Baking
+Fra:1 Mem:18.32M (Peak 18.32M) | Time:00:00.01 | Mem:5.87M, Peak:5.87M | Scene, ViewLayer | Updating Device | Writing constant memory
+Build without OpenImageDenoiser
+No device available to denoise on
+Fra:1 Mem:18.32M (Peak 18.32M) | Time:00:00.01 | Mem:5.87M, Peak:5.87M | Scene, ViewLayer | Build without OpenImageDenoiser
 Traceback (most recent call last):
-  File "/home/runner/work/Repo/Repo/edu-agent/tools/3d/render_turntable.py", line 34, in <module>
-    bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
+  File "/home/runner/work/Repo/Repo/edu-agent/tools/3d/render_turntable.py", line 99, in <module>
+    bpy.ops.render.render(write_still=True)
   File "/usr/share/blender/scripts/modules/bpy/ops.py", line 109, in __call__
     ret = _op_call(self.idname_py(), kw)
           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-RuntimeError: Error: Cannot apply to a multi user: Object "object", Mesh "object", aborting
+RuntimeError: Error: Build without OpenImageDenoiser
+Error: Build without OpenImageDenoiser
 
-Error: Cannot apply to a multi user: Object "object", Mesh "object", aborting
+Error: Build without OpenImageDenoiser
+Error: Build without OpenImageDenoiser
 
 Blender quit
