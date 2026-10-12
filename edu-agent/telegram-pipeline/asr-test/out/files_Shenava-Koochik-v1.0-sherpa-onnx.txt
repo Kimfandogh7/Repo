@@ -1,0 +1,6 @@
+LICENSE
+README.md
+hotwords_fa.txt
+model.onnx
+persian_itn.py
+tokens.txt
