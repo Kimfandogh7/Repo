@@ -1,0 +1,43 @@
+name: persian-asr-test
+
+on:
+  workflow_dispatch:
+    inputs:
+      models:
+        description: "comma-separated faster-whisper sizes"
+        default: "small,medium"
+      n_clips:
+        description: "number of FLEURS fa_ir test clips"
+        default: "12"
+
+permissions:
+  contents: write
+
+jobs:
+  asr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/758efc2d-repo
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: install
+        run: |
+          python -m pip install --upgrade pip
+          pip install faster-whisper jiwer
+          nproc; free -g
+      - name: run persian asr test
+        env:
+          MODELS: ${{ inputs.models }}
+          N_CLIPS: ${{ inputs.n_clips }}
+        run: python edu-agent/telegram-pipeline/asr-test/persian_asr_test.py
+      - name: commit results
+        run: |
+          git config user.name "arena-bot"
+          git config user.email "arena-bot@users.noreply.github.com"
+          git add edu-agent/telegram-pipeline/asr-test/out || true
+          git commit -m "asr: persian test results" || echo "nothing to commit"
+          git push origin HEAD:arena/758efc2d-repo || echo "push skipped"
