@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "/home/runner/work/Repo/Repo/edu-agent/telegram-bot/vlm_describe.py", line 82, in <module>
+    text, secs = describe_video(sys.argv[1])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Repo/Repo/edu-agent/telegram-bot/vlm_describe.py", line 76, in describe_video
+    lines.append(f"[{start // 60:02d}:{start % 60:02d}] {describe_clip(seg)}")
+                                                         ^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Repo/Repo/edu-agent/telegram-bot/vlm_describe.py", line 51, in describe_clip
+    processor, model = load()
+                       ^^^^^^
+  File "/home/runner/work/Repo/Repo/edu-agent/telegram-bot/vlm_describe.py", line 34, in load
+    _processor = AutoProcessor.from_pretrained(MODEL)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/transformers/models/auto/processing_auto.py", line 391, in from_pretrained
+    return processor_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/transformers/processing_utils.py", line 1331, in from_pretrained
+    args = cls._get_arguments_from_pretrained(pretrained_model_name_or_path, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/transformers/processing_utils.py", line 1390, in _get_arguments_from_pretrained
+    args.append(attribute_class.from_pretrained(pretrained_model_name_or_path, **kwargs))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2142, in __getattribute__
+    requires_backends(cls, cls._backends)
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2128, in requires_backends
+    raise ImportError("".join(failed))
+ImportError: 
+SmolVLMImageProcessor requires the PIL library but it was not found in your environment. You can install it with pip:
+`pip install pillow`. Please note that you may need to restart your runtime after installation.
+
