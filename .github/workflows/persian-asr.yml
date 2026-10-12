@@ -1,11 +1,17 @@
 name: persian-asr-test
 
 on:
+  push:
+    branches: [arena/758efc2d-repo]
+    paths:
+      - "edu-agent/telegram-pipeline/asr-test/**"
+      - ".github/workflows/persian-asr.yml"
   workflow_dispatch:
     inputs:
       models:
         description: "comma-separated faster-whisper sizes"
         default: "small,medium"
+        required: false
       n_clips:
         description: "number of FLEURS fa_ir test clips"
         default: "12"
