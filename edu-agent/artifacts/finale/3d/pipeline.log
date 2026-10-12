@@ -1,15 +1,1 @@
-[11:13:11] memory before mesh:
-               total        used        free      shared  buff/cache   available
-Mem:            7938         992         391          45        6914        6946
-Swap:           3071           0        3071
-[11:15:19] mesh exit=0
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:07.61
-	Maximum resident set size (kbytes): 4140416
-	File system outputs: 3628744
-	Socket messages sent: 0
-	Socket messages received: 0
-	Signals delivered: 0
-	Page size (bytes): 4096
-	Exit status: 0
-[11:15:28] render exit=0
-0
+[11:17:23] reusing committed mesh (set REMESH=1 to rebuild)
