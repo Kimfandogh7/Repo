@@ -116,8 +116,14 @@ car = bpy.context.active_object
 car.name = "f1car"
 bpy.ops.object.origin_set(type="ORIGIN_GEOMETRY", center="BOUNDS")
 car.location = (0, 0, 0)
+print("RAW dims", tuple(round(d, 3) for d in car.dimensions), "parts", len(parts), flush=True)
 s = 2.0 / max(car.dimensions)
 car.scale = (s, s, s)
+bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
+import mathutils
+_vs = [v.co for v in car.data.vertices]
+for ax, name in enumerate("XYZ"):
+    print(f"WORLD {name}: {min(v[ax] for v in _vs):.3f} .. {max(v[ax] for v in _vs):.3f}", flush=True)
 
 cam_data = bpy.data.cameras.new("cam")
 cam_data.lens = 58
