@@ -1,9 +1,9 @@
 {
   "finale": [
     {
-      "frame": "car_000.png",
+      "frame": "0_input.png",
       "caption": {
-        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a sculpture made of plastic bags. The sculpture is in the shape of a person's body, with their arms and legs stretched out in front of them. The person is wearing a red and white striped shirt and black pants. The bags are transparent, allowing the viewer to see the contents inside. The background is black, making the sculpture stand out. The image appears to be taken from a low angle, looking up at the sculpture."
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a red race car. The car is shown from the side, with the front and rear of the car facing towards the left side of the image. It has a sleek and aerodynamic design with a low profile and sharp angles. The body of the vehicle is predominantly red, with a black stripe running along the side and a black spoiler on the back. The wheels are black with silver rims. The background is a plain grey color, making the car stand out."
       },
       "ocr": {
         "<OCR>": "-"
@@ -12,14 +12,80 @@
         "<OD>": {
           "bboxes": [
             [
-              378.5400085449219,
-              534.719970703125,
-              693.9000244140625,
-              1337.280029296875
+              129.87649536132812,
+              615.5684814453125,
+              1413.271484375,
+              927.5794677734375
+            ],
+            [
+              1159.66650390625,
+              749.2874755859375,
+              1351.79150390625,
+              922.9684448242188
+            ],
+            [
+              292.7984924316406,
+              752.3614501953125,
+              484.9234924316406,
+              919.8944702148438
+            ],
+            [
+              1193.48046875,
+              635.5494995117188,
+              1304.1444091796875,
+              746.2135009765625
+            ],
+            [
+              383.4814758300781,
+              698.5664672851562,
+              506.44146728515625,
+              750.824462890625
+            ],
+            [
+              223.63348388671875,
+              775.4164428710938,
+              305.094482421875,
+              810.7674560546875
+            ],
+            [
+              744.6764526367188,
+              669.3634643554688,
+              809.23046875,
+              706.25146484375
             ]
           ],
           "labels": [
-            "statue (sculpture)"
+            "car",
+            "wheel",
+            "wheel",
+            "wheel",
+            "wheel",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_000.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a black background with a small white object in the center. The object appears to be made of plastic or a similar material and has a red and white color scheme. It has a cylindrical shape with a pointed top and a flat bottom. The top part of the object is covered in small white plastic bags, while the bottom part is covered with a white plastic bag. The bags are arranged in a way that they are overlapping each other, creating a 3D effect. The red bag is slightly larger than the white bag and is slightly smaller than the red bag."
+      },
+      "ocr": {
+        "<OCR>": "-"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              416.34002685546875,
+              763.2000122070312,
+              652.8600463867188,
+              1202.8800048828125
+            ]
+          ],
+          "labels": [
+            "toy"
           ]
         }
       }
@@ -27,7 +93,7 @@
     {
       "frame": "car_040.png",
       "caption": {
-        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a red and white object that appears to be floating in the air. The object is made up of multiple layers of white and red material, with the top layer being the largest and the bottom layer being smaller. The red layer is slightly larger than the white layer and is slightly smaller than the red layer. The background is black, making the object stand out. The overall color scheme of the image is predominantly white, red, and gray."
+        "<MORE_DETAILED_CAPTION>": "The image is a black background with a red and white abstract design in the center. The design appears to be made up of multiple layers of white and red paint splatters, creating a chaotic and dynamic composition. The paint is splattered across the surface of the image, with some areas appearing to be larger than others. The red paint is in the shape of a heart, with the white paint splatter creating a sense of depth and dimension. The overall effect is one of chaos and destruction."
       },
       "ocr": {
         "<OCR>": "-"
@@ -36,20 +102,13 @@
         "<OD>": {
           "bboxes": [
             [
-              320.2200012207031,
-              768.9599609375,
-              646.3800048828125,
-              1018.5599975585938
-            ],
-            [
-              234.90000915527344,
-              536.6400146484375,
-              817.02001953125,
-              1341.1199951171875
+              244.62001037597656,
+              767.0399780273438,
+              840.780029296875,
+              1187.52001953125
             ]
           ],
           "labels": [
-            "footwear",
             "toy"
           ]
         }
@@ -58,151 +117,7 @@
     {
       "frame": "car_080.png",
       "caption": {
-        "<MORE_DETAILED_CAPTION>": "The image is a digital illustration of a red and white wave-like shape. The wave appears to be floating on a black background. The red wave is in the center of the image, with the white wave on the right side and the red wave in the middle. The white wave is on the left side, with a black outline. The black outline is slightly curved, giving the wave a sense of depth and dimension. The overall effect is a dynamic and dynamic representation of the wave."
-      },
-      "ocr": {
-        "<OCR>": "S"
-      },
-      "objects": {
-        "<OD>": {
-          "bboxes": [
-            [
-              105.30000305175781,
-              536.6400146484375,
-              985.5000610351562,
-              1362.239990234375
-            ]
-          ],
-          "labels": [
-            "statue (sculpture)"
-          ]
-        }
-      }
-    },
-    {
-      "frame": "car_120.png",
-      "caption": {
-        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a white and red object with a black background. The object appears to be floating in the air, with its body slightly tilted to the side. The body of the object is covered in a layer of red and white paint, with the red paint being the dominant color. The white paint is splattered across the body, creating a chaotic and dynamic effect. The black background provides a stark contrast to the white and gray colors, making the object stand out."
-      },
-      "ocr": {
-        "<OCR>": "www.paintball.com"
-      },
-      "objects": {
-        "<OD>": {
-          "bboxes": [
-            [
-              110.70000457763672,
-              542.3999633789062,
-              954.1800537109375,
-              1383.3599853515625
-            ]
-          ],
-          "labels": [
-            "animal"
-          ]
-        }
-      }
-    },
-    {
-      "frame": "car_160.png",
-      "caption": {
-        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a metallic object with a black background. The object appears to be made of a shiny, metallic material and has a metallic sheen. It has a curved shape with a pointed top and a flat bottom. The body of the object is covered in a red and white striped pattern, giving it a futuristic and futuristic look. The red stripe is slightly larger than the white stripe, and it is slightly smaller than the black stripe. The overall color scheme of the image is predominantly red, white, and gray."
-      },
-      "ocr": {
-        "<OCR>": "www.paintballoons.com"
-      },
-      "objects": {
-        "<OD>": {
-          "bboxes": [
-            [
-              262.9800109863281,
-              542.3999633789062,
-              766.260009765625,
-              1402.5599365234375
-            ]
-          ],
-          "labels": [
-            "statue (sculpture)"
-          ]
-        }
-      }
-    },
-    {
-      "frame": "car_200.png",
-      "caption": {
-        "<MORE_DETAILED_CAPTION>": "The image is a digital illustration of a person sitting on a rock. The person is wearing a red and white outfit and appears to be in a relaxed pose. The rock is made up of multiple layers of different shades of grey and red, creating a layered effect. The background is black, making the colors of the rock stand out even more. The image has a 3D effect, giving it a realistic look and feel."
-      },
-      "ocr": {
-        "<OCR>": "www.pixabay.com"
-      },
-      "objects": {
-        "<OD>": {
-          "bboxes": [
-            [
-              405.5400085449219,
-              538.5599975585938,
-              794.3400268554688,
-              1408.3199462890625
-            ]
-          ],
-          "labels": [
-            "statue (sculpture)"
-          ]
-        }
-      }
-    },
-    {
-      "frame": "car_240.png",
-      "caption": {
-        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a hand holding a red object. The hand appears to be made up of small, irregularly shaped objects, with the fingers slightly curled and the thumb and index finger pointing upwards. The red object is slightly larger than the white object and is slightly smaller than the other two. The background is black, making the red object stand out. The image has a futuristic and abstract feel to it."
-      },
-      "ocr": {
-        "<OCR>": "www.pixabay.com"
-      },
-      "objects": {
-        "<OD>": {
-          "bboxes": [
-            [
-              221.94000244140625,
-              536.6400146484375,
-              969.300048828125,
-              1396.7999267578125
-            ]
-          ],
-          "labels": [
-            "statue (sculpture)"
-          ]
-        }
-      }
-    },
-    {
-      "frame": "car_280.png",
-      "caption": {
-        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a white and red object with a black background. The object appears to be made up of a series of curved lines and shapes, creating a sense of depth and dimension. The lines are arranged in a way that they form a wave-like shape, with the topmost line being the largest and the bottommost being the smallest. The red line is slightly larger than the white line, and it is overlaid on top of the red line. The overall color scheme of the object is predominantly white, with some red accents. The image has a futuristic and abstract feel to it."
-      },
-      "ocr": {
-        "<OCR>": "www.pokemon.com"
-      },
-      "objects": {
-        "<OD>": {
-          "bboxes": [
-            [
-              90.18000030517578,
-              536.6400146484375,
-              976.8600463867188,
-              1371.8399658203125
-            ]
-          ],
-          "labels": [
-            "statue (sculpture)"
-          ]
-        }
-      }
-    },
-    {
-      "frame": "car_320.png",
-      "caption": {
-        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a robot-like creature with a black background. The creature appears to be made up of multiple layers of white and grey material, with a red and black color scheme. The body of the creature is elongated and has a robotic-like appearance, with sharp edges and sharp teeth. It has two arms and two legs, and its head is tilted downwards, as if it is in mid-air. The red color is splattered across the creature's body, creating a sense of movement and energy. The overall effect is one of power and power."
+        "<MORE_DETAILED_CAPTION>": "The image is a black background with a reflection of a red and white object in the center. The object appears to be made up of a series of small, irregularly shaped objects that are arranged in a way that creates a sense of depth and dimension. The objects are white and red in color, with some areas appearing darker and others lighter. The red object is slightly larger than the white objects and is slightly smaller than the red object. The reflection of the objects can be seen on the surface of the water below. The overall mood of the image is dark and mysterious."
       },
       "ocr": {
         "<OCR>": "-"
@@ -211,14 +126,158 @@
         "<OD>": {
           "bboxes": [
             [
-              148.5,
-              536.6400146484375,
-              866.7000122070312,
-              1348.7999267578125
+              127.9800033569336,
+              782.3999633789062,
+              984.4200439453125,
+              1149.1199951171875
             ]
           ],
           "labels": [
-            "statue (sculpture)"
+            "vehicle"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_120.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a red and white abstract object on a black background. The object appears to be made up of multiple layers of different shapes and sizes, with the top layer being white and the bottom layer being red. The shapes are arranged in a way that creates a sense of depth and dimension, with some overlapping each other. The red color is the dominant color in the image, while the white and red colors are scattered throughout. The overall effect is a striking contrast between the two colors."
+      },
+      "ocr": {
+        "<OCR>": "-"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              98.82000732421875,
+              776.6399536132812,
+              945.5400390625,
+              1168.3199462890625
+            ]
+          ],
+          "labels": [
+            "vehicle"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_160.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a black background with a red and white abstract design in the center. The design appears to be made up of multiple layers of different shapes and sizes, creating a layered effect. The shapes are arranged in a way that creates a sense of depth and dimension, with some overlapping and some standing out. The red color is bold and stands out against the white background, making it the focal point of the image. The overall effect is one of movement and energy."
+      },
+      "ocr": {
+        "<OCR>": "-"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              265.1400146484375,
+              768.9599609375,
+              752.2200317382812,
+              1197.1199951171875
+            ]
+          ],
+          "labels": [
+            "footwear"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_200.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a red and white object on a black background. The object appears to be made up of multiple layers of white and red crystals, with the top layer being the largest and the bottom layer being smaller. The crystals are arranged in a way that they form a triangular shape, with some overlapping each other. The red crystals are scattered across the surface of the object, creating a sense of depth and dimension. The overall effect is a striking contrast between the two colors."
+      },
+      "ocr": {
+        "<OCR>": "www.pixabay.com"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              408.780029296875,
+              765.1199951171875,
+              787.8600463867188,
+              1189.43994140625
+            ]
+          ],
+          "labels": [
+            "toy"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_240.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a red and white object on a black background. The object appears to be made up of multiple layers of ice or snow, with the top layer being white and the bottom layer being red. The ice is arranged in a way that creates a sense of depth and dimension, with some overlapping each other. The red color is vibrant and stands out against the white background, making it the focal point of the image. The overall effect is a striking contrast between the two colors."
+      },
+      "ocr": {
+        "<OCR>": "-"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              200.3400115966797,
+              770.8800048828125,
+              942.300048828125,
+              1152.9599609375
+            ]
+          ],
+          "labels": [
+            "vehicle"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_280.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a digital art piece that appears to be a 3D rendering of a red and white abstract design. The design is made up of a series of curved lines and shapes that create a sense of movement and depth. The lines are arranged in a way that they form a wave-like pattern, with some overlapping each other. The colors are predominantly red, white, and gray, with hints of blue and green. The background is black, making the design stand out even more. The overall effect is a striking contrast between the two colors."
+      },
+      "ocr": {
+        "<OCR>": "-"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              93.42000579833984,
+              778.5599975585938,
+              987.6600341796875,
+              1129.919921875
+            ]
+          ],
+          "labels": [
+            "vehicle"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_320.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a red and white object on a black background. The object appears to be made up of multiple layers of ice, with the top layer being white and the bottom layer being red. The ice is arranged in a way that creates a sense of depth and dimension, with some overlapping each other. The red color is vibrant and stands out against the white background, making it the focal point of the image. The overall effect is a striking contrast between the two colors."
+      },
+      "ocr": {
+        "<OCR>": "1.1"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              156.0600128173828,
+              767.0399780273438,
+              865.6200561523438,
+              1174.0799560546875
+            ]
+          ],
+          "labels": [
+            "toy"
           ]
         }
       }
