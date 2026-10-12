@@ -2,8 +2,8 @@
 
 | model | WER % | RTF | source run |
 |---|---|---|---|
-| faster-whisper small (int8, beam 1) | 56.25 | 0.565 | run 38260272699 (results in commit d3fadb7) |
-| faster-whisper medium (int8, beam 1) | 31.85 | 0.964 | run 38260272699 (results in commit d3fadb7) |
+| faster-whisper small (int8, beam 1) | 56.25 | 0.565 | run 38260386535 (results in commit d3fadb7) |
+| faster-whisper medium (int8, beam 1) | 31.85 | 0.964 | run 38260386535 (results in commit d3fadb7) |
 | Shenava Koochik v1.0 (CTC, sherpa-onnx) | 9.52 | 0.013 to 0.045 | runs 38263340618 to 38264023792 |
 | Shenava Koochik v1.5 (RNNT, sherpa-onnx) | 10.12 | 0.018 | run 38264023792 |
 
