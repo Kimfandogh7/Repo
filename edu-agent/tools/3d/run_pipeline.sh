@@ -27,8 +27,9 @@ if [ "$MODE" = "mesh" ]; then
   say "memory before mesh:"; free -m | tee -a "$LOG"
   export PYTHONPATH="$ROOT/edu-agent/tools/3d/shim"
   export TRIPOSR_DIR=/tmp/triposr
+  SRC="${SRC:-car_studio.png}"
   /usr/bin/time -v python3 "$ROOT/edu-agent/tools/3d/mesh_from_image.py" \
-    "$ROOT/edu-agent/artifacts/finale/car_studio.png" "$OUT/mesh" "${RES:-192}" > "$OUT/mesh.log" 2>&1
+    "$ROOT/edu-agent/artifacts/finale/$SRC" "$OUT/mesh" "${RES:-192}" > "$OUT/mesh.log" 2>&1
   say "mesh exit=$?"; grep -E 'Maximum resident|Elapsed' "$OUT/mesh.log" | tee -a "$LOG"
   tail -6 "$OUT/mesh.log" | tee -a "$LOG"
   kill $MON 2>/dev/null

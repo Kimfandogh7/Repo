@@ -38,6 +38,10 @@ jobs:
         run: git clone --depth 1 https://github.com/VAST-AI-Research/TripoSR.git /tmp/triposr
 
       - name: Mesh from image
+        env:
+          SRC: car_side.png
+          RES: "256"
+          REMESH: "1"
         run: bash edu-agent/tools/3d/run_pipeline.sh mesh
 
       - name: Commit mesh logs
