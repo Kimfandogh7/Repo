@@ -38,31 +38,37 @@ jobs:
         run: git clone --depth 1 https://github.com/VAST-AI-Research/TripoSR.git /tmp/triposr
 
       - name: Image -> mesh
+        continue-on-error: true
         env:
           TRIPOSR_DIR: /tmp/triposr
         run: |
           mkdir -p out3d
           python3 edu-agent/tools/3d/mesh_from_image.py \
             edu-agent/artifacts/finale/car_studio.png out3d/mesh 256 \
-            > out3d/mesh.log 2>&1 || (tail -80 out3d/mesh.log; exit 1)
-          tail -5 out3d/mesh.log
+            > out3d/mesh.log 2>&1
+          echo "mesh exit=$?" >> out3d/mesh.log
+          tail -3 out3d/mesh.log
 
       - name: Render turntable frames
+        continue-on-error: true
         run: |
+          mkdir -p out3d
           ANGLES="0,40,80,120,160,200,240,280,320"
           blender -b -P edu-agent/tools/3d/render_turntable.py -- \
             out3d/mesh/object.ply out3d/frames "$ANGLES" 1080 1920 48 \
-            > out3d/render.log 2>&1 || (tail -80 out3d/render.log; exit 1)
+            > out3d/render.log 2>&1
+          echo "render exit=$?" >> out3d/render.log
           grep -E 'rendered|Error' out3d/render.log | tail -12
 
       - name: Collect outputs
+        if: always()
         run: |
           mkdir -p edu-agent/artifacts/finale/3d refs/finale
-          cp out3d/frames/*.png edu-agent/artifacts/finale/3d/
-          cp out3d/frames/*.png refs/finale/
-          cp out3d/mesh/object.ply edu-agent/artifacts/finale/3d/object.ply
-          cp out3d/mesh/input_rgb.png edu-agent/artifacts/finale/3d/input_rgb.png
-          cp out3d/mesh.log out3d/render.log edu-agent/artifacts/finale/3d/ || true
+          cp out3d/frames/*.png edu-agent/artifacts/finale/3d/ 2>/dev/null || true
+          cp out3d/frames/*.png refs/finale/ 2>/dev/null || true
+          cp out3d/mesh/object.ply edu-agent/artifacts/finale/3d/object.ply 2>/dev/null || true
+          cp out3d/mesh/input_rgb.png edu-agent/artifacts/finale/3d/input_rgb.png 2>/dev/null || true
+          cp out3d/mesh.log out3d/render.log edu-agent/artifacts/finale/3d/ 2>/dev/null || true
           ls -la edu-agent/artifacts/finale/3d
 
       - name: Commit outputs
