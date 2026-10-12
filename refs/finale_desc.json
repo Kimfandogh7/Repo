@@ -1,1 +1,437 @@
-{}
+{
+  "finale_f1": [
+    {
+      "frame": "car_000.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a red race car on a black background. The car has a sleek and aerodynamic design with a pointed nose and two large wheels on either side. The body of the car is predominantly red, with a black stripe running along the side and a black spoiler on the back. The wheels are black and appear to be made of metal. The background is completely black, making the red car stand out."
+      },
+      "ocr": {
+        "<OCR>": "O"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              80.46000671386719,
+              849.5999755859375,
+              977.9400634765625,
+              1089.5999755859375
+            ],
+            [
+              154.98001098632812,
+              951.3599853515625,
+              285.6600036621094,
+              1083.8399658203125
+            ],
+            [
+              693.9000244140625,
+              959.0399780273438,
+              814.8600463867188,
+              1083.8399658203125
+            ],
+            [
+              682.02001953125,
+              920.6399536132812,
+              787.8600463867188,
+              970.5599975585938
+            ]
+          ],
+          "labels": [
+            "land vehicle",
+            "wheel",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_040.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a red toy car. The car has a sleek and modern design with a pointed nose and two large black wheels. The body of the car is made of a shiny red material, while the wheels are black. The background is completely black, making the car stand out. The image appears to be a digital illustration, with no other elements in the background."
+      },
+      "ocr": {
+        "<OCR>": "O"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              96.66000366210938,
+              872.6399536132812,
+              896.9400634765625,
+              1116.47998046875
+            ],
+            [
+              315.9000244140625,
+              976.3200073242188,
+              464.9400329589844,
+              1112.6400146484375
+            ],
+            [
+              732.780029296875,
+              937.9199829101562,
+              850.5000610351562,
+              1056.9599609375
+            ],
+            [
+              547.02001953125,
+              912.9599609375,
+              648.5400390625,
+              955.199951171875
+            ]
+          ],
+          "labels": [
+            "land vehicle",
+            "wheel",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_080.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a red race car on a black background. The car is in the center of the image and is facing towards the left side of the frame. It has a sleek and aerodynamic design with a pointed nose and a curved body. The body of the car is predominantly red with a black stripe running along the side. The wheels are black and appear to be made of rubber. The background is completely black, making the car stand out."
+      },
+      "ocr": {
+        "<OCR>": "O"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              266.2200012207031,
+              891.8399658203125,
+              748.9800415039062,
+              1116.47998046875
+            ],
+            [
+              267.3000183105469,
+              968.6399536132812,
+              369.9000244140625,
+              1103.0399169921875
+            ],
+            [
+              599.9400024414062,
+              976.3200073242188,
+              693.9000244140625,
+              1114.5599365234375
+            ],
+            [
+              679.8600463867188,
+              920.6399536132812,
+              747.9000244140625,
+              1032.0
+            ],
+            [
+              397.9800109863281,
+              916.7999877929688,
+              469.260009765625,
+              982.0799560546875
+            ]
+          ],
+          "labels": [
+            "land vehicle",
+            "wheel",
+            "wheel",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_120.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a red race car on a black background. The car is in the center of the image and is facing towards the left side of the frame. It has a sleek and aerodynamic design with a pointed nose and a curved body. The body of the car is predominantly red, with a black stripe running along the side. The wheels are black and appear to be made of rubber. The background is completely black, making the red car stand out."
+      },
+      "ocr": {
+        "<OCR>": "O"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              247.86001586914062,
+              884.1599731445312,
+              907.7400512695312,
+              1120.3199462890625
+            ],
+            [
+              496.260009765625,
+              982.0799560546875,
+              629.1000366210938,
+              1116.47998046875
+            ],
+            [
+              773.8200073242188,
+              960.9599609375,
+              904.5000610351562,
+              1089.5999755859375
+            ],
+            [
+              250.02000427246094,
+              928.3200073242188,
+              362.34002685546875,
+              1043.52001953125
+            ]
+          ],
+          "labels": [
+            "land vehicle",
+            "wheel",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_160.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a red sports car on a black background. The car has a sleek and modern design with a pointed nose and two large wheels on either side. The body of the car is predominantly red, with a black stripe running along the side and a small black spoiler on the back. The wheels are black with white spokes. The background is completely black, making the red car stand out."
+      },
+      "ocr": {
+        "<OCR>": "O"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              145.260009765625,
+              861.1199951171875,
+              1001.7000122070312,
+              1104.9599609375
+            ],
+            [
+              719.8200073242188,
+              964.7999877929688,
+              862.3800048828125,
+              1101.1199951171875
+            ],
+            [
+              227.3400115966797,
+              947.5199584960938,
+              353.70001220703125,
+              1070.4000244140625
+            ],
+            [
+              810.5400390625,
+              934.0799560546875,
+              919.6200561523438,
+              1053.1199951171875
+            ],
+            [
+              352.6200256347656,
+              914.8800048828125,
+              463.8600158691406,
+              964.7999877929688
+            ]
+          ],
+          "labels": [
+            "land vehicle",
+            "wheel",
+            "wheel",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_200.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a red race car on a black background. The car has a sleek and modern design with a pointed nose and two large wheels on either side. The body of the car is predominantly red, with a black stripe running along the side and a black spoiler on the back. The wheels are black and appear to be made of rubber. The background is completely black, making the car stand out."
+      },
+      "ocr": {
+        "<OCR>": "O"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              108.54000091552734,
+              838.0799560546875,
+              993.06005859375,
+              1103.0399169921875
+            ],
+            [
+              812.7000122070312,
+              936.0,
+              949.8600463867188,
+              1064.6400146484375
+            ],
+            [
+              327.7799987792969,
+              964.7999877929688,
+              458.46002197265625,
+              1093.43994140625
+            ],
+            [
+              243.54000854492188,
+              928.3200073242188,
+              360.1800231933594,
+              999.3599853515625
+            ]
+          ],
+          "labels": [
+            "land vehicle",
+            "wheel",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_240.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a red race car on a black background. The car is in the center of the image, with its body facing towards the left side of the frame. It has a sleek and aerodynamic design with a pointed nose and two large wheels on either side. The body of the car is predominantly red, with a black stripe running along the top and bottom of the body. The wheels are black and appear to be made of rubber or a similar material. The background is completely black, making the red car stand out."
+      },
+      "ocr": {
+        "<OCR>": "O"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              203.5800018310547,
+              826.5599975585938,
+              860.2200317382812,
+              1122.239990234375
+            ],
+            [
+              515.7000122070312,
+              976.3200073242188,
+              628.02001953125,
+              1103.0399169921875
+            ],
+            [
+              753.300048828125,
+              914.8800048828125,
+              858.06005859375,
+              1032.0
+            ],
+            [
+              243.54000854492188,
+              953.2799682617188,
+              355.8600158691406,
+              1053.1199951171875
+            ],
+            [
+              507.0600280761719,
+              897.5999755859375,
+              552.4200439453125,
+              945.5999755859375
+            ]
+          ],
+          "labels": [
+            "land vehicle",
+            "wheel",
+            "wheel",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_280.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a red race car on a black background. The car is in the center of the image and is facing towards the left side of the frame. It has a sleek and aerodynamic design with a pointed nose and two large wheels on either side. The body of the car is predominantly red, with a black stripe running along the top and bottom. The wheels are black and appear to be made of rubber. The background is completely black, making the red car stand out."
+      },
+      "ocr": {
+        "<OCR>": "-"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              318.05999755859375,
+              826.5599975585938,
+              786.780029296875,
+              1116.47998046875
+            ],
+            [
+              380.70001220703125,
+              972.47998046875,
+              458.46002197265625,
+              1114.5599365234375
+            ],
+            [
+              692.8200073242188,
+              962.8800048828125,
+              781.3800048828125,
+              1066.5599365234375
+            ],
+            [
+              319.1400146484375,
+              905.2799682617188,
+              393.6600036621094,
+              1018.5599975585938
+            ],
+            [
+              593.4600219726562,
+              901.4400024414062,
+              670.1400146484375,
+              972.47998046875
+            ]
+          ],
+          "labels": [
+            "land vehicle",
+            "wheel",
+            "wheel",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    },
+    {
+      "frame": "car_320.png",
+      "caption": {
+        "<MORE_DETAILED_CAPTION>": "The image is a 3D rendering of a red race car on a black background. The car is in the center of the image, with its body facing towards the left side of the frame. It has a sleek and aerodynamic design with a pointed nose and a curved body. The body of the car is predominantly red, with black accents on the sides and roof. The wheels are black and appear to be made of rubber. The background is completely black, making the red car stand out."
+      },
+      "ocr": {
+        "<OCR>": "O"
+      },
+      "objects": {
+        "<OD>": {
+          "bboxes": [
+            [
+              148.5,
+              830.3999633789062,
+              920.7000122070312,
+              1116.47998046875
+            ],
+            [
+              538.3800048828125,
+              972.47998046875,
+              667.9800415039062,
+              1099.199951171875
+            ],
+            [
+              157.13999938964844,
+              922.5599975585938,
+              284.58001708984375,
+              1045.43994140625
+            ],
+            [
+              732.780029296875,
+              939.8399658203125,
+              856.9800415039062,
+              1022.3999633789062
+            ]
+          ],
+          "labels": [
+            "land vehicle",
+            "wheel",
+            "wheel",
+            "wheel"
+          ]
+        }
+      }
+    }
+  ]
+}
