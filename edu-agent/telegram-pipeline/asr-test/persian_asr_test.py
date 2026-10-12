@@ -101,9 +101,8 @@ def load_shenava(repo):
 
 
 def run_shenava(clips):
-    import wave
     import numpy as np
-    import sherpa_onnx  # noqa: F401
+    import sherpa_onnx
     last_err = None
     for repo in SHENAVA_REPOS:
         try:
@@ -115,11 +114,9 @@ def run_shenava(clips):
         refs, hyps, audio_secs = [], [], 0.0
         t0 = time.time()
         for path, ref in clips:
-            with wave.open(path, "rb") as w:
-                sr = w.getframerate()
-                raw = w.readframes(w.getnframes())
-                audio_secs += w.getnframes() / sr
-            samples = np.frombuffer(raw, dtype=np.int16).astype(np.float32) / 32768.0
+            samples, sr = sherpa_onnx.read_wave(path)  # handles float32/int16 WAV
+            audio_secs += len(samples) / sr
+            samples = np.asarray(samples, dtype=np.float32)
             st = rec.create_stream()
             st.accept_waveform(sr, samples)
             rec.decode_stream(st)
