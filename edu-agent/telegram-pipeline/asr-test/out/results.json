@@ -1,9 +1,16 @@
 {
   "shenava_koochik_v1.0": {
     "wer": 9.52,
-    "rtf": 0.045,
+    "rtf": 0.013,
     "audio_seconds": 207.0,
     "clips": 12,
     "repo": "Reza2kn/Shenava-Koochik-v1.0-sherpa-onnx"
+  },
+  "shenava_koochik_v1.5": {
+    "wer": 10.12,
+    "rtf": 0.018,
+    "audio_seconds": 207.0,
+    "clips": 12,
+    "repo": "Reza2kn/Shenava-Koochik-v1.5-RNNT-sherpa-onnx"
   }
 }
