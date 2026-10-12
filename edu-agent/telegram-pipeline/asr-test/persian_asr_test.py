@@ -67,6 +67,7 @@ SHENAVA_REPOS = [
     "Reza2kn/Shenava-Koochik-v1.0-sherpa-onnx",
     "Reza2kn/Shenava-Koochik-v1.5-RNNT-sherpa-onnx",
 ]
+# Trial order is informational; results.json keys by export name.
 
 
 def load_shenava(repo):
@@ -103,13 +104,13 @@ def load_shenava(repo):
 def run_shenava(clips):
     import numpy as np
     import sherpa_onnx
-    last_err = None
+    out, errs = {}, []
     for repo in SHENAVA_REPOS:
         try:
             rec = load_shenava(repo)
         except Exception as e:  # try the next export
-            last_err = f"{repo}: {e!r}"
-            print("shenava load failed:", last_err, flush=True)
+            errs.append(f"{repo}: {e!r}")
+            print("shenava load failed:", errs[-1], flush=True)
             continue
         refs, hyps, audio_secs = [], [], 0.0
         t0 = time.time()
@@ -130,9 +131,12 @@ def run_shenava(clips):
         with open(os.path.join(OUT_DIR, f"hyp_{tag}.txt"), "w", encoding="utf-8") as f:
             for r_, h_ in zip(refs, hyps):
                 f.write(f"REF: {r_}\nHYP: {h_}\n\n")
-        return tag, {"wer": round(wer * 100, 2), "rtf": round(elapsed / audio_secs, 3),
-                     "audio_seconds": round(audio_secs, 1), "clips": len(clips), "repo": repo}
-    raise RuntimeError("no Shenava export loaded: " + str(last_err))
+        out[tag] = {"wer": round(wer * 100, 2), "rtf": round(elapsed / audio_secs, 3),
+                    "audio_seconds": round(audio_secs, 1), "clips": len(clips), "repo": repo}
+        print(tag, out[tag], flush=True)
+    if not out:
+        raise RuntimeError("no Shenava export loaded: " + " | ".join(errs))
+    return out
 
 
 def main():
@@ -167,9 +171,7 @@ def main():
         print(name, results[name], flush=True)
     if os.environ.get("SHENAVA", "1") == "1":
         try:
-            tag, res = run_shenava(clips)
-            results[tag] = res
-            print(tag, res, flush=True)
+            results.update(run_shenava(clips))
         except Exception as e:
             import traceback
             with open(os.path.join(OUT_DIR, "shenava_error.txt"), "w", encoding="utf-8") as f:
