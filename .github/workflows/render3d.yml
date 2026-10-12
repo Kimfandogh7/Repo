@@ -37,29 +37,8 @@ jobs:
       - name: Get TripoSR code
         run: git clone --depth 1 https://github.com/VAST-AI-Research/TripoSR.git /tmp/triposr
 
-      - name: Image -> mesh
-        continue-on-error: true
-        env:
-          TRIPOSR_DIR: /tmp/triposr
-          PYTHONPATH: ${{ github.workspace }}/edu-agent/tools/3d/shim
-        run: |
-          mkdir -p out3d
-          python3 edu-agent/tools/3d/mesh_from_image.py \
-            edu-agent/artifacts/finale/car_studio.png out3d/mesh 256 \
-            > out3d/mesh.log 2>&1
-          echo "mesh exit=$?" >> out3d/mesh.log
-          tail -3 out3d/mesh.log
-
-      - name: Render turntable frames
-        continue-on-error: true
-        run: |
-          mkdir -p out3d
-          ANGLES="0,40,80,120,160,200,240,280,320"
-          blender -b -P edu-agent/tools/3d/render_turntable.py -- \
-            out3d/mesh/object.ply out3d/frames "$ANGLES" 1080 1920 48 \
-            > out3d/render.log 2>&1
-          echo "render exit=$?" >> out3d/render.log
-          grep -E 'rendered|Error' out3d/render.log | tail -12
+      - name: Mesh and render (one script, always exits 0)
+        run: bash edu-agent/tools/3d/run_pipeline.sh
 
       - name: Collect outputs
         if: always()
@@ -67,9 +46,10 @@ jobs:
           mkdir -p edu-agent/artifacts/finale/3d refs/finale
           cp out3d/frames/*.png edu-agent/artifacts/finale/3d/ 2>/dev/null || true
           cp out3d/frames/*.png refs/finale/ 2>/dev/null || true
-          cp out3d/mesh/object.ply edu-agent/artifacts/finale/3d/object.ply 2>/dev/null || true
-          cp out3d/mesh/input_rgb.png edu-agent/artifacts/finale/3d/input_rgb.png 2>/dev/null || true
-          cp out3d/mesh.log out3d/render.log edu-agent/artifacts/finale/3d/ 2>/dev/null || true
+          cp out3d/mesh/object.ply edu-agent/artifacts/finale/3d/ 2>/dev/null || true
+          cp out3d/mesh/input_rgb.png edu-agent/artifacts/finale/3d/ 2>/dev/null || true
+          cp out3d/*.log out3d/pipeline.log edu-agent/artifacts/finale/3d/ 2>/dev/null || true
+          cp out3d/mesh.log edu-agent/artifacts/finale/3d/ 2>/dev/null || true
           ls -la edu-agent/artifacts/finale/3d
 
       - name: Commit outputs
@@ -78,5 +58,5 @@ jobs:
           git config user.name "arena-agent"
           git config user.email "agent@arena.ai"
           git add -f edu-agent/artifacts/finale refs/finale || true
-          git commit -m "3d: مش سه‌بعدی از تصویر + رندر زاویه‌ها" || echo "nothing to commit"
+          git commit -m "3d: خروجی خط لوله مش و رندر" || echo "nothing to commit"
           git push origin arena/758efc2d-repo || true
